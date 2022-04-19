@@ -10,10 +10,13 @@
     <img src="../../../../assets/svg/question-mark.svg" class="question-mark align-self-start">
   </div>
   <div class="d-flex justify-content-center align-items-center w-100 question-mark-gap">
-    <button type="button" class="setting-screen-btn setting-screen-btn-activated setting-screen-btn-first-form">Standard
+    <button type="button" class="setting-screen-btn setting-screen-btn-first-form"
+      [class.setting-screen-btn-activated]="firstButtonForm[0]" (click)="updateFirstButtonForm(0)">Standard
       (5)</button>
-    <button type="button" class="setting-screen-btn setting-screen-btn-first-form">Fast (6)</button>
-    <button type="button" class="setting-screen-btn setting-screen-btn-first-form">Instant
+    <button type="button" class="setting-screen-btn setting-screen-btn-first-form"
+      [class.setting-screen-btn-activated]="firstButtonForm[1]" (click)="updateFirstButtonForm(1)">Fast (6)</button>
+    <button type="button" class="setting-screen-btn setting-screen-btn-first-form"
+      [class.setting-screen-btn-activated]="firstButtonForm[2]" (click)="updateFirstButtonForm(2)">Instant
       (7)</button>
   </div>
 </div>
@@ -25,11 +28,14 @@
     <img src="../../../../assets/svg/question-mark.svg" class="question-mark align-self-start">
   </div>
   <div class="d-flex justify-content-center align-items-center question-mark-gap" id="slippage-inputs">
-    <button type="button" class="setting-screen-btn setting-screen-btn-second-form">0.1%</button>
-    <button type="button"
-      class="setting-screen-btn setting-screen-btn-activated setting-screen-btn-second-form">0.5%</button>
-    <button type="button" class="setting-screen-btn setting-screen-btn-second-form">1.0%</button>
-    <input type="text" class="setting-screen-input setting-screen-input-slippage" placeholder="0.50">
+    <button type="button" class="setting-screen-btn setting-screen-btn-second-form"
+      [class.setting-screen-btn-activated]="secondButtonForm[0]" (click)="updateSecondButtonForm(0)">0.1%</button>
+    <button type="button" class="setting-screen-btn setting-screen-btn-second-form"
+      [class.setting-screen-btn-activated]="secondButtonForm[1]" (click)="updateSecondButtonForm(1)">0.5%</button>
+    <button type="button" class="setting-screen-btn setting-screen-btn-second-form"
+      [class.setting-screen-btn-activated]="secondButtonForm[2]" (click)="updateSecondButtonForm(2)">1.0%</button>
+    <input type="number" class="setting-screen-input setting-screen-input-slippage" placeholder="0.50"
+      [(ngModel)]="secondButtonFormValue">
     <h3>%</h3>
   </div>
   <div class="d-flex justify-content-between align-items-center w-100">
@@ -37,7 +43,7 @@
       <h3>Tx deadline (mins)</h3>
       <img src="../../../../assets/svg/question-mark.svg" class="question-mark align-self-start">
     </div>
-    <input type="text" class="setting-screen-input" placeholder="3">
+    <input type="number" class="setting-screen-input" placeholder="3">
   </div>
   <div class="d-flex justify-content-between align-items-center w-100">
     <div class="d-flex justify-content-start align-items-center question-mark-gap">
