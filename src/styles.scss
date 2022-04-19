@@ -1,1 +1,215 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    font-family: 'Kanit', sans-serif !important;
+}
+
+/*ScrollBar*/
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: rgb(122, 110, 170);
+    border-radius: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    box-shadow: rgb(238 234 244) 0px 0px 5px inset;
+    border-radius: 10px;
+}
+
+body {
+    --background-0: rgb(250, 249, 250);
+    --background-1: rgb(255, 255, 255);
+    --background-2: rgba(239, 244, 245, 255);
+    --background-3: linear-gradient(139.73deg, rgb(230, 253, 255) 0%, rgb(243, 239, 255) 100%);
+    --background-4: rgba(0, 0, 0, 0) linear-gradient(111.68deg, #f2ecf2 0%, #e8f2f6 100%) repeat scroll 0% 0%;
+    --background-5: linear-gradient(rgb(111, 182, 241) 0%, rgb(234, 242, 246) 100%);
+    --background-6: rgba(255, 255, 255, 0.6);
+    --background-7: linear-gradient(111.68deg, rgb(242, 236, 242) 0%, rgb(232, 242, 246) 100%);
+    --background-8: linear-gradient(139.73deg, rgb(229, 253, 255) 0%, rgb(243, 239, 255) 100%);
+    --background-9: rgb(39, 38, 44);
+    --background-10: rgb(238, 234, 244);
+    --background-11: rgb(238, 234, 244);
+    --background-12: rgb(122, 110, 170);
+    --border: 1px solid rgb(231, 227, 235);
+    --border-2: 1px solid rgb(215, 202, 236);
+    --border-3: 1px solid rgb(215, 202, 236);
+    --color-1: rgb(118, 69, 217);
+    --color-2: rgb(40, 13, 95);
+    --color-3: rgb(122, 110, 170);
+    --color-5: rgb(122, 110, 170);
+    --color-6: black;
+    --color-7: rgb(216, 203, 237);
+    --color-8: rgb(244, 238, 255);
+    --color-9: white;
+    background-color: var(--background-0);
+}
+
+body.dark-mode {
+    --background-0: rgb(8, 6, 11);
+    --background-1: rgba(39, 38, 44, 255);
+    --background-2: rgba(53, 53, 71, 255);
+    --background-3: radial-gradient(103.12% 50% at 50% 50%, rgb(33, 25, 58) 0%, rgb(25, 19, 38) 100%);
+    --background-4: linear-gradient(166.77deg, rgb(59, 65, 85) 0%, rgb(58, 48, 69) 100%);
+    --background-5: linear-gradient(rgb(11, 69, 118) 0%, rgb(9, 17, 21) 100%);
+    --background-6: rgba(8, 6, 11, 0.6);
+    --background-7: linear-gradient(166.77deg, rgb(59, 65, 85) 0%, rgb(58, 48, 69) 100%);
+    --background-8: linear-gradient(139.73deg, rgb(49, 61, 92) 0%, rgb(61, 42, 84) 100%);
+    --background-9: rgb(255, 255, 255);
+    --background-10: rgb(53, 53, 71);
+    --background-11: rgba(55, 47, 71, 255);
+    --background-12: rgb(184, 173, 210);
+    --border: 1px solid rgb(56, 50, 65);
+    --border-2: 1px solid rgb(38, 33, 48);
+    --border-3: none;
+    --color-1: rgb(154, 106, 255);
+    --color-2: rgb(244, 238, 255);
+    --color-3: rgb(184, 173, 210);
+    --color-5: rgb(244, 238, 255);
+    --color-6: rgb(244, 238, 255);
+    --color-7: rgb(32, 19, 53);
+    --color-8: rgb(40, 13, 95);
+    --color-9: black;
+}
+
+body.scroll-disabled {
+    height: 100%;
+    overflow: hidden;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
