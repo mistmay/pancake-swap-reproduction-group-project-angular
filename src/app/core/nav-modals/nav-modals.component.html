@@ -1,0 +1,16 @@
+<div class="setting-screen position-fixed top-0 start-0 vw-100 vh-100 d-flex justify-content-center align-items-center"
+  (click)="clickOutsideModal($event)">
+  <div class="setting-screen-wrapper">
+    <div class="setting-screen-container" [ngSwitch]="modalType">
+      <div class="d-flex justify-content-between align-items-center setting-screen-padding setting-screen-title"
+        [style.background]="getSettingScreenTitleBackground()">
+        <h2>{{ settingScreenTitle }}</h2>
+        <img src="../../../assets/svg/setting-screen-close-x.svg"
+          (click)="settingScreenLauncherService.changeSettingScreenLauncherStatus('')" id="setting-screen-close-x">
+      </div>
+      <app-setting-screen-content-connect-wallet *ngSwitchCase="'connect'"></app-setting-screen-content-connect-wallet>
+      <app-setting-screen-content-setting-menu *ngSwitchDefault></app-setting-screen-content-setting-menu>
+      <div class="setting-screen-final-part"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div>
+  <label for="dark-mode-checkbox"
+    class="position-relative d-flex justify-content-between align-items-center label-dark-mode"
+    (click)="darkModeService.darkModeActivation()">
+    <div
+      class="position-absolute bg-white rounded-circle d-flex justify-content-center align-items-center dark-mode-circle"
+      [class.dark-mode-circle-activated]="darkModeService.darkModeStatus">
+      <app-dark-mode-btn-sun *ngIf="!darkModeService.darkModeStatus; else darkModeBtnMoonPlaceholder">
+      </app-dark-mode-btn-sun>
+    </div>
+    <app-dark-mode-btn-sun [isActivated]="true"></app-dark-mode-btn-sun>
+    <app-dark-mode-btn-moon></app-dark-mode-btn-moon>
+  </label>
+  <input type="checkbox" class="position-absolute setting-screen-disappear-checkbox">
+</div>
+
+<ng-template #darkModeBtnMoonPlaceholder>
+  <app-dark-mode-btn-moon [moonCheck]="true"></app-dark-mode-btn-moon>
+</ng-template>

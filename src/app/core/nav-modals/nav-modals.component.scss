@@ -1,0 +1,49 @@
+.setting-screen {
+    z-index: 5;
+    background-color: rgba(120, 105, 159, 0.5);
+}
+
+.setting-screen-wrapper {
+    border-radius: 32px;
+    overflow: hidden;
+}
+
+.setting-screen-container {
+    border-radius: 32px;
+    min-width: 320px;
+    max-width: 420px;
+    box-shadow: rgb(14 14 44 / 10%) 0px 20px 36px -8px, rgb(0 0 0 / 5%) 0px 1px 1px;
+    background-color: var(--background-1);
+    border: var(--border);
+    max-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.setting-screen-padding {
+    padding: 24px;
+    gap: 24px;
+}
+
+.setting-screen-title {
+    color: var(--color-2);
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: var(--border);
+    overflow: hidden;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+}
+
+.setting-screen-final-part {
+    height: 24px;
+    width: 100%;
+    overflow: hidden;
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+}
+
+#setting-screen-close-x {
+    cursor: pointer;
+    filter: invert(90%) sepia(37%) saturate(3326%) hue-rotate(155deg) brightness(90%) contrast(94%);
+}

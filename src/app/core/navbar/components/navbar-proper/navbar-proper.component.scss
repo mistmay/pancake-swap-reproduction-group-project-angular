@@ -1,0 +1,153 @@
+nav {
+    height: 56px;
+    background-color: var(--background-1);
+    border-bottom: var(--border);
+    padding-left: 16px;
+    padding-right: 16px;
+    color: rgb(122, 110, 170);
+    font-size: 16px;
+    font-weight: 400;
+    gap: 15px;
+    a {
+        color: rgb(122, 110, 170) !important;
+        font-size: 16px;
+        font-weight: 400; 
+    }
+}
+
+.toogle-menu {
+    padding: 4px 0;
+    background-color: var(--background-1);
+    border: var(--border);
+    border-radius: 16px;
+    z-index: 3;
+    a {
+        padding: 15px;
+        width: 100%;
+        &:hover {
+            background-color: var(--background-2);
+        }
+    }
+    hr {
+        border: var(--border);
+        width: 100%;
+        margin: 4px 0;
+    }
+}
+
+.toogle-menu-top {
+    top: 45px;
+    left: 0;
+    width: 280px;
+}
+
+#nav-left {
+    gap: 25px;
+    ul {
+        display: none;
+        li {
+            height: 100%;
+            a {
+                padding: 15px;
+                border-radius: 8px;
+                &:hover {
+                    background-color: var(--background-2);
+                }
+            }
+        }
+    }
+}
+
+.open-menu {
+    display: flex !important;
+}
+
+#nav-right {
+    gap: 20px;
+}
+
+#money-bunny {
+    display: none;
+    gap: 9px;
+}
+
+.language-menu-navbar {
+    top: 50px;
+    left: -80px;
+}
+
+.language-menu {
+    color: var(--color-5);
+    padding: 20px 0;
+    font-weight: 600;
+    height: 400px;
+    width: 200px;
+    gap: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: var(--background-1);
+    border-bottom: var(--border);
+    z-index: 3;
+    span {
+        &:hover {
+            opacity: 0.6;
+            cursor: pointer; 
+        }
+    }
+}
+
+#bunny-mobile {
+    width: 30px;
+}
+
+.pancake-logo {
+    width: 160px;
+}
+
+#nav-points {
+    filter: invert(58%) sepia(5%) saturate(3918%) hue-rotate(211deg) brightness(77%) contrast(85%);
+}
+
+.dark-mode #nav-points {
+    filter: invert(83%) sepia(35%) saturate(617%) hue-rotate(197deg) brightness(86%) contrast(90%);
+}
+
+.nav-escape-logo {
+    filter: invert(47%) sepia(15%) saturate(1221%) hue-rotate(211deg) brightness(93%) contrast(85%);
+}
+
+#nav-pancake-token-logo {
+    &:hover {
+        transform: scale(1.2);
+        transition: 0.3s ease;
+    }
+}
+
+#nav-world {
+    filter: invert(47%) sepia(15%) saturate(1221%) hue-rotate(211deg) brightness(93%) contrast(85%);
+    &:hover {
+        opacity: 0.6;
+        transition: 0.2s ease;
+        cursor: pointer;
+    }
+}
+
+#nav-setting {
+    filter: invert(47%) sepia(15%) saturate(1221%) hue-rotate(211deg) brightness(93%) contrast(85%);
+    min-width: 24px;
+    &:hover {
+        opacity: 0.6;
+        transition: 0.2s ease;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 678px) {
+    #nav-left ul {
+        display: flex;
+    }
+
+    #money-bunny {
+        display: flex;
+    }
+}

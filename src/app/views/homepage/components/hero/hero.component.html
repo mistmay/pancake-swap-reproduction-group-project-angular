@@ -1,1 +1,23 @@
-<p>hero works!</p>
+<section id="hero" class="position-relative">
+  <div id="separator" class="w-100 d-none d-lg-block"></div>
+  <div id="hero-container"
+    class="d-flex flex-column-reverse flex-lg-row justify-content-center justify-content-lg-between justify-content-xl-center align-items-center">
+    <div id="hero-left">
+      <h1>The moon is made of pancakes.</h1>
+      <p>Trade, earn, and win crypto on the most popular decentralized platform in the galaxy.</p>
+      <div class=" d-flex justify-content-start align-items-center">
+        <app-btn-standard-big [content]="'Connect Wallet'"
+          (click)="settingScreenLauncherService.changeSettingScreenLauncherStatus('connect')"></app-btn-standard-big>
+        <app-btn-transparent [content]="'Trade Now'"></app-btn-transparent>
+      </div>
+    </div>
+    <div id="hero-right" class="position-relative">
+      <img src="../../../../../assets/img/bunny@2x.webp">
+      <img src="../../../../../assets/img/star-l@2x.webp" class="position-absolute start-0 top-0">
+      <img src="../../../../../assets/img/star-r@2x.webp" class="position-absolute start-0 top-0">
+      <img src="../../../../../assets/img/star-top-r@2x.webp" class="position-absolute start-0 top-0">
+    </div>
+  </div>
+  <img src="../../../../../assets/svg/hero-separator-light.svg" *ngIf="!darkModeService.darkModeStatus">
+  <img src="../../../../../assets/svg/hero-separator-dark.svg" *ngIf="darkModeService.darkModeStatus">
+</section>

@@ -1,0 +1,80 @@
+#footer-mobile-aside {
+    border-top: var(--border);
+    background-color: var(--background-1);
+    padding: 10px 8px;
+    font-size: 10px;
+    z-index: 2;
+    a {
+        cursor: pointer;
+        color: var(--color-6);
+        gap: 5px;
+        font-weight: bold;
+        border-radius: 8px;
+        padding: 4px 12px;
+        height: 44px;
+    }
+}
+
+.footer-mobile-aside-icons {
+    cursor: pointer;
+    color: var(--color-3);
+    gap: 5px;
+    border-radius: 8px;
+    padding: 4px 12px;
+    height: 44px;
+}
+
+.footer-mobile-aside-icons:hover,
+#footer-mobile-aside>a:hover {
+    background-color: var(--background-2);
+}
+
+.toogle-menu {
+    padding: 4px 0;
+    background-color: var(--background-1);
+    border: var(--border);
+    border-radius: 16px;
+    z-index: 3;
+    a {
+        padding: 15px !important;
+        width: 100% !important;
+        &:hover {
+            background-color: var(--background-2) !important;
+        }
+    }
+    hr {
+        border: var(--border);
+        width: 100%;
+        margin: 4px 0;
+    }
+}
+
+.toogle-menu-bottom {
+    width: calc(100vw - 32px);
+    bottom: 100%;
+    a {
+        color: rgb(122, 110, 170) !important;
+        font-size: 16px !important;
+        font-weight: 400 !important;
+    }
+}
+
+.open-menu {
+    display: flex !important;
+}
+
+.mobile-footer-icons {
+    filter: invert(58%) sepia(5%) saturate(3918%) hue-rotate(211deg) brightness(77%) contrast(85%);
+}
+
+.dark-mode .mobile-footer-icons {
+    filter: invert(83%) sepia(35%) saturate(617%) hue-rotate(197deg) brightness(86%) contrast(90%);
+}
+
+#mobile-footer-trade {
+    filter: invert(29%) sepia(76%) saturate(3509%) hue-rotate(248deg) brightness(90%) contrast(89%);
+}
+
+.escape.logo {
+    filter: invert(47%) sepia(15%) saturate(1221%) hue-rotate(211deg) brightness(93%) contrast(85%);
+}

@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer-mobile.component.scss']
 })
 export class FooterMobileComponent implements OnInit {
+  showEarnMenu: boolean = false;
+  showWinMenu: boolean = false;
+  showNftMenu: boolean = false;
+  showPointsMenu: boolean = false;
 
   constructor() { }
 
