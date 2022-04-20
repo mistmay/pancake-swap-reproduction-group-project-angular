@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-earn-passive',
@@ -7,9 +7,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EarnPassiveComponent implements OnInit {
 
-  constructor() { }
+  top: boolean = true
+  bottom: boolean = false
+
+  constructor(private elementRef: ElementRef) { }
 
   ngOnInit(): void {
+    setInterval(() => {
+      this.showTop();
+    }, 6000);
+    setInterval(() => {
+      this.showBottom()
+    }, 12000)
   }
 
+  cliccabile() {
+      this.top = !this.top;
+      this.bottom = !this.bottom;
+  }
+
+  showTop() {
+    if(this.top) {
+      this.top = false
+    } else {
+      this.top = true
+    }
+  }
+
+  showBottom() {
+    if(this.bottom) {
+      this.bottom = false
+    } else {
+      this.bottom = true
+    }
+  }
 }

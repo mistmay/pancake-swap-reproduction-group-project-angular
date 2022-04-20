@@ -26,6 +26,8 @@ import { StartInSecondsComponent } from './views/homepage/components/start-in-se
 import { TradeAnythingComponent } from './views/homepage/components/trade-anything/trade-anything.component';
 import { UsedByComponent } from './views/homepage/components/used-by/used-by.component';
 import { WinMillionsComponent } from './views/homepage/components/win-millions/win-millions.component';
+import { EarnPassiveFarmComponent } from './views/homepage/components/earn-passive/earn-passive-farm/earn-passive-farm.component';
+import { EarnPassivePoolsComponent } from './views/homepage/components/earn-passive/earn-passive-pools/earn-passive-pools.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { WinMillionsComponent } from './views/homepage/components/win-millions/w
     StartInSecondsComponent,
     TradeAnythingComponent,
     UsedByComponent,
-    WinMillionsComponent
+    WinMillionsComponent,
+    EarnPassiveFarmComponent,
+    EarnPassivePoolsComponent
   ],
   imports: [
     BrowserModule,
