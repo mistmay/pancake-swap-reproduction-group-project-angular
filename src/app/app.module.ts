@@ -20,6 +20,12 @@ import { ToogleBtnComponent } from './shared/toogle-btn/toogle-btn.component';
 import { NavModalsComponent } from './core/nav-modals/nav-modals.component';
 import { SettingScreenContentConnectWalletComponent } from './core/nav-modals/setting-screen-content-connect-wallet/setting-screen-content-connect-wallet.component';
 import { SettingScreenContentSettingMenuComponent } from './core/nav-modals/setting-screen-content-setting-menu/setting-screen-content-setting-menu.component';
+import { CakeMakesComponent } from './views/homepage/components/cake-makes/cake-makes.component';
+import { EarnPassiveComponent } from './views/homepage/components/earn-passive/earn-passive.component';
+import { StartInSecondsComponent } from './views/homepage/components/start-in-seconds/start-in-seconds.component';
+import { TradeAnythingComponent } from './views/homepage/components/trade-anything/trade-anything.component';
+import { UsedByComponent } from './views/homepage/components/used-by/used-by.component';
+import { WinMillionsComponent } from './views/homepage/components/win-millions/win-millions.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +46,13 @@ import { SettingScreenContentSettingMenuComponent } from './core/nav-modals/sett
     ToogleBtnComponent,
     NavModalsComponent,
     SettingScreenContentConnectWalletComponent,
-    SettingScreenContentSettingMenuComponent
+    SettingScreenContentSettingMenuComponent,
+    CakeMakesComponent,
+    EarnPassiveComponent,
+    StartInSecondsComponent,
+    TradeAnythingComponent,
+    UsedByComponent,
+    WinMillionsComponent
   ],
   imports: [
     BrowserModule,
