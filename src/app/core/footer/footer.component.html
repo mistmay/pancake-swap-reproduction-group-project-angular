@@ -1,1 +1,173 @@
-<p>footer works!</p>
+<footer>
+    <div class="wrapper-footer">
+      <div class="footer-container">
+        <div class="inside-container">
+          <div class="panckake-swap-piccolo">
+            <img class="pancake-logo-dark" src="../../../assets/svg/Pancake-logo-footer.svg" alt="">>
+            
+          </div>
+          <div class="piccolo flex-column-reverse justify-content-between align-items-start gap-4">
+            <div class="left-bottom-content d-flex justify-content-start align-items-center gap-4">
+              <app-dark-mode-button></app-dark-mode-button>
+              <div class="d-flex justify-content-between align-items-center footer-language position-relative"
+                (mouseover)="showLanguageMenuMobile = true" (mouseout)="showLanguageMenuMobile = false">
+                <img class="nav-world" src="../../../assets/svg/nav-world.svg" alt="">
+                <p>EN</p>
+                <div
+                  class="position-absolute flex-column justify-content-start align-items-center text-center language-menu language-menu-footer"
+                  [ngClass]="showLanguageMenuMobile ? 'd-flex' : 'd-none'">
+                  <span>العربية</span>
+                  <span>বাংলা</span>
+                  <span>English</span>
+                  <span>Deutsch</span>
+                  <span>Ελληνικά</span>
+                  <span>Español</span>
+                  <span>Suomalainen</span>
+                  <span>Filipino</span>
+                  <span>Français</span>
+                  <span>हिंदी</span>
+                  <span>Magyar</span>
+                  <span>Bahasa Indonesia</span>
+                  <span>Italiano</span>
+                  <span>日本語</span>
+                  <span>한국어</span>
+                  <span>Nederlands</span>
+                  <span>Polski</span>
+                  <span>Português (Brazil)</span>
+                  <span>Português</span>
+                  <span>Română</span>
+                  <span>Русский</span>
+                  <span>Svenska</span>
+                  <span>தமிழ்</span>
+                  <span>Türkçe</span>
+                  <span>Українська</span>
+                  <span>Tiếng Việt</span>
+                  <span>简体中文</span>
+                  <span>繁體中文</span>
+                </div>
+              </div>
+            </div>
+            <div class="right-bottom-content">
+              <div class="pu">
+                <a class="grow"
+                  href="https://pancakeswap.finance/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82">
+                  <img class="nav-pancake-token-logo" src="../../../assets/svg/nav-pancake-token-logo.svg" alt="">
+                  <div class="soldi-style">$5.926</div>
+                </a>
+              </div>
+              <app-btn-standard-small [content]="'Buy CAKE'" [arrowCheck]="true"></app-btn-standard-small>
+            </div>
+          </div>
+          <div class="links-container">
+            <ul class="footer-links-style">
+              <div class="top-content-link">ABOUT</div>
+              <li><a href="https://docs.pancakeswap.finance/contact-us" >Contact</a></li>
+              <li><a href="https://docs.pancakeswap.finance/brand">Brand</a></li>
+              <li><a href="https://medium.com/pancakeswap">Blog</a></li>
+              <li><a href="https://docs.pancakeswap.finance/contact-us/telegram">Community</a></li>
+              <li><a href="https://docs.pancakeswap.finance/tokenomics/cake">CAKE Token</a></li>
+              <div id="trattino">—</div>
+              <li><a href="https://pancakeswap.creator-spring.com/ " style="color: orange;">Online
+                  Store</a>
+              </li>
+            </ul>
+            <ul class="footer-links-style">
+              <div class="top-content-link">Help</div>
+              <li><a href="https://docs.pancakeswap.finance/contact-us/customer-support">Customer
+                  Support</a>
+              </li>
+              <li><a href="https://docs.pancakeswap.finance/help/troubleshooting">Troubleshooting</a></li>
+              <li><a href="https://docs.pancakeswap.finance/get-started">Guides</a></li>
+            </ul>
+            <ul class="footer-links-style">
+              <div class="top-content-link">DEVELOPERS</div>
+              <li><a href="https://github.com/pancakeswap">Github</a></li>
+              <li><a href="https://docs.pancakeswap.finance/">Documentation</a></li>
+              <li><a href="https://docs.pancakeswap.finance/code/bug-bounty">Bug Bounty</a></li>
+              <li><a
+                  href="https://docs.pancakeswap.finance/help/faq#is-pancakeswap-safe-has-pancakeswap-been-audited">Audits</a>
+              </li>
+              <li><a href="https://docs.pancakeswap.finance/code/bug-bounty">Careers</a></li>
+            </ul>
+            <div class="panckake-swap-grande">
+                <img class="pancake-logo-dark" src="../../../assets/svg/Pancake-logo-footer.svg" alt="">
+            </div>
+          </div>
+          <div class="icons-content">
+            <a href="https://twitter.com/pancakeswap">
+              <img class="footer-icon" src="../../../assets/svg/twitter-icon.svg" alt="">
+            </a>
+            <a href="https://www.reddit.com/r/pancakeswap">
+              <img class="footer-icon" src="../../../assets/svg/reddit-icon.svg" alt="">
+            </a>
+            <a href="https://www.instagram.com/pancakeswap_official/">
+              <img class="footer-icon" src="../../../assets/svg/instagram-icon.svg" alt="">
+            </a>
+            <a href="https://github.com/pancakeswap/">
+              <img class="footer-icon" src="../../../assets/svg/github-icon.svg" alt="">
+            </a>
+            <a href="https://discord.com/invite/pancakeswap">
+              <img class="footer-icon" src="../../../assets/svg/discord-icon.svg" alt="">
+            </a>
+            <a href="https://pancakeswap.medium.com/">
+             <img class="footer-icon" src="../../../assets/svg/medium-icon.svg" alt="">
+            </a>
+          </div>
+          <div class="bottom-content">
+            <div class="grande justify-content-between align-items-center w-100">
+              <div class="left-bottom-content d-flex justify-content-start align-items-center gap-4">
+                <app-dark-mode-button></app-dark-mode-button>
+                <div class="d-flex justify-content-between align-items-center footer-language position-relative"
+                  (mouseover)="showLanguageMenuDesktop = true" (mouseout)="showLanguageMenuDesktop = false">
+                  <img class="nav-world" src="/src/assets/svg/nav-world.svg" alt="">
+                  <p>EN</p>
+                  <div
+                    class="position-absolute flex-column justify-content-start align-items-center text-center language-menu language-menu-footer"
+                    [ngClass]="showLanguageMenuDesktop ? 'd-flex' : 'd-none'">
+                    <span>العربية</span>
+                    <span>বাংলা</span>
+                    <span>English</span>
+                    <span>Deutsch</span>
+                    <span>Ελληνικά</span>
+                    <span>Español</span>
+                    <span>Suomalainen</span>
+                    <span>Filipino</span>
+                    <span>Français</span>
+                    <span>हिंदी</span>
+                    <span>Magyar</span>
+                    <span>Bahasa Indonesia</span>
+                    <span>Italiano</span>
+                    <span>日本語</span>
+                    <span>한국어</span>
+                    <span>Nederlands</span>
+                    <span>Polski</span>
+                    <span>Português (Brazil)</span>
+                    <span>Português</span>
+                    <span>Română</span>
+                    <span>Русский</span>
+                    <span>Svenska</span>
+                    <span>தமிழ்</span>
+                    <span>Türkçe</span>
+                    <span>Українська</span>
+                    <span>Tiếng Việt</span>
+                    <span>简体中文</span>
+                    <span>繁體中文</span>
+                  </div>
+                </div>
+              </div>
+              <div class="right-bottom-content">
+                <div class="pu">
+                  <a class="grow"
+                    href="https://pancakeswap.finance/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82">
+                    <img class="nav-pancake-token-logo" src="../../../assets/svg/nav-pancake-token-logo.svg" alt="">
+                    <div class="soldi-style">$5.926</div>
+                  </a>
+                </div>
+                <app-btn-standard-small [content]="'Buy CAKE'" [arrowCheck]="true"></app-btn-standard-small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
