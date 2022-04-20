@@ -1,0 +1,64 @@
+<div
+  class="d-flex flex-column justify-content-between align-items-start setting-screen-padding setting-screen-first-section">
+  <div class="d-flex justify-content-between align-items-center w-100">
+    <div class="d-flex flex-column justify-content-between align-items-center wallet-icons">
+      <img src="../../../../assets/svg/metamask-icon.svg">
+      <span>Metamask</span>
+    </div>
+    <div class="d-flex flex-column justify-content-between align-items-center wallet-icons">
+      <img src="../../../../assets/svg/wallet-connect-icon.svg">
+      <span>WalletConnect</span>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between align-items-center w-100"
+    *ngIf="!settingScreenLauncherService.showMoreWalletIcons">
+    <div class="d-flex flex-column justify-content-between align-items-center wallet-icons">
+      <img src="../../../../assets/svg/trust-wallet-icon.svg">
+      <span>Trust Wallet</span>
+    </div>
+    <div class="d-flex flex-column justify-content-between align-items-center wallet-icons"
+      (click)="settingScreenLauncherService.showMoreWalletIcons = true">
+      <img src="../../../../assets/svg/more.icon.svg">
+      <span>More</span>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between align-items-center w-100"
+    *ngIf="settingScreenLauncherService.showMoreWalletIcons">
+    <div class="d-flex flex-column justify-content-between align-items-center wallet-icons">
+      <img src="../../../../assets/svg/trust-wallet-icon.svg">
+      <span>Trust Wallet</span>
+    </div>
+    <div class="d-flex flex-column justify-content-between align-items-center wallet-icons">
+      <img src="../../../../assets/svg/math-wallet-icon.svg">
+      <span>MathWallet</span>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between align-items-center w-100"
+    *ngIf="settingScreenLauncherService.showMoreWalletIcons">
+    <div class="d-flex flex-column justify-content-between align-items-center wallet-icons">
+      <img src="../../../../assets/svg/token-pocket-icon.svg">
+      <span>TokenPocket</span>
+    </div>
+    <div class="d-flex flex-column justify-content-between align-items-center wallet-icons">
+      <img src="../../../../assets/svg/binance-chain-icon.svg">
+      <span>Binance Chain</span>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between align-items-center w-100"
+    *ngIf="settingScreenLauncherService.showMoreWalletIcons">
+    <div class="d-flex flex-column justify-content-between align-items-center wallet-icons">
+      <img src="../../../../assets/svg/safepal-icon.svg">
+      <span>SafePal</span>
+    </div>
+    <div class="d-flex flex-column justify-content-between align-items-center wallet-icons">
+      <img src="../../../../assets/svg/coin98-icon.svg">
+      <span>Coin98</span>
+    </div>
+  </div>
+</div>
+<div class="d-flex flex-column justify-content-between align-items-center setting-screen-second-section">
+  <p>Haven’t got a crypto wallet yet?</p>
+  <a href="#" id="how-connect-btn" class="d-flex justify-content-center align-items-center">Learn How
+    to
+    Connect</a>
+</div>

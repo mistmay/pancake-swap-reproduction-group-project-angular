@@ -1,1 +1,4 @@
-<p>navbar works!</p>
+<header class="container-fluid position-fixed w-100" [ngStyle]="{'top': getHeaderTop()}">
+  <app-phishing-bar *ngIf="showPhishingBar" (closePhishingBar)="hidePhishingBar()"></app-phishing-bar>
+  <app-navbar-proper></app-navbar-proper>
+</header>

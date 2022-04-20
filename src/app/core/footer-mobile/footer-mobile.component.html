@@ -1,1 +1,64 @@
-<p>footer-mobile works!</p>
+<aside id="footer-mobile-aside"
+  class="position-fixed bottom-0 d-flex d-sm-none justify-content-around align-items-center vw-100">
+  <a href="#" class="d-flex flex-column justify-content-center align-items-center">
+    <img src="../../../assets/svg/mobile-footer-trade.svg" id="mobile-footer-trade">
+    <span>Trade</span>
+  </a>
+  <div class="footer-mobile-aside-icons d-flex flex-column justify-content-center align-items-center"
+    (mouseover)="showEarnMenu = true" (mouseout)="showEarnMenu = false">
+    <img src="../../../assets/svg/mobile-footer-earn.svg" class="mobile-footer-icons">
+    <span>Earn</span>
+    <div
+      class="d-none toogle-menu toogle-menu-bottom position-absolute start-0 flex-column align-items-start justify-content-start"
+      [class.open-menu]="showEarnMenu">
+      <a href="#">Farms</a>
+      <a href="#">Pools</a>
+    </div>
+  </div>
+  <div class="footer-mobile-aside-icons d-flex flex-column justify-content-center align-items-center"
+    (mouseover)="showWinMenu = true" (mouseout)="showWinMenu = false">
+    <img src="../../../assets/svg/mobile-footer-win.svg" class="mobile-footer-icons">
+    <span>Win</span>
+    <div
+      class="d-none toogle-menu toogle-menu-bottom position-absolute flex-column align-items-start justify-content-start"
+      [class.open-menu]="showWinMenu">
+      <a href="#">Trading Competition</a>
+      <a href="#">Prediction (BETA)</a>
+      <a href="#">Lottery</a>
+    </div>
+  </div>
+  <div class="footer-mobile-aside-icons d-flex flex-column justify-content-center align-items-center"
+    (mouseover)="showNftMenu = true" (mouseout)="showNftMenu = false">
+    <img src="../../../assets/svg/mobile-footer-nft.svg" class="mobile-footer-icons">
+    <span>NFT</span>
+    <div
+      class="d-none toogle-menu toogle-menu-bottom position-absolute end-0 flex-column align-items-start justify-content-start"
+      [class.open-menu]="showNftMenu">
+      <a href="#">Overview</a>
+      <a href="#">Collections</a>
+      <a href="#">Activity</a>
+    </div>
+  </div>
+  <div class="footer-mobile-aside-icons d-flex flex-column justify-content-center align-items-center"
+    (mouseover)="showPointsMenu = true" (mouseout)="showPointsMenu = false">
+    <img src="../../../assets/svg/nav-points.svg" class="mobile-footer-icons">
+    <div
+      class="d-none toogle-menu toogle-menu-bottom position-absolute end-0 flex-column align-items-start justify-content-start"
+      [class.open-menu]="showPointsMenu">
+      <a href="#">Info</a>
+      <a href="#">IFO</a>
+      <a href="#">Voting</a>
+      <hr />
+      <a href="#">Leaderboard</a>
+      <hr />
+      <a href="#" class="d-flex justify-content-between align-items-center">
+        IFO
+        <img src="../../../assets/svg/nav-escape-logo.svg" class="escape-logo">
+      </a>
+      <a href="#" class="d-flex justify-content-between align-items-center">
+        Voting
+        <img src="../../../assets/svg/nav-escape-logo.svg" class="escape-logo">
+      </a>
+    </div>
+  </div>
+</aside>

@@ -1,0 +1,17 @@
+<label for="{{ toogleId }}" class="position-relative setting-screen-label"
+  [class.setting-screen-label-activated]="labelActivated" (click)="labelActivation()">
+  <div class="position-absolute rounded-circle setting-screen-circle"
+    [class.setting-screen-circle-activated]="labelActivated"
+    [class.setting-screen-circle-no-outline]="labelActivated && pancakeButter"></div>
+  <div id="pancake-setting-circle" class="position-absolute rounded-circle pancake-setting-circle-style"
+    *ngIf="pancakeButter" [class.pancake-setting-circle-activated]="labelActivated">
+    <div id="pancake-setting-circle-2" class="position-absolute rounded-circle pancake-setting-circle-style"
+      *ngIf="pancakeButter">
+      <div id="pancake-setting-circle-3" class="position-absolute rounded-circle pancake-setting-circle-style"
+        *ngIf="pancakeButter">
+        <div id="setting-butter" class="position-absolute rounded-circle" *ngIf="pancakeButter"></div>
+      </div>
+    </div>
+  </div>
+</label>
+<input type="checkbox" id="{{ toogleId }}" class="position-absolute setting-screen-disappear-checkbox">

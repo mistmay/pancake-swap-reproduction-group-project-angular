@@ -1,1 +1,12 @@
-<p>app.component works</p>
+<aside [ngSwitch]="settingScreenLauncherService.settingScreenLauncherStatus">
+  <app-nav-modals [settingScreenTitle]="'Settings'" *ngSwitchCase="'settings'"></app-nav-modals>
+  <app-nav-modals [settingScreenTitle]="'Connect Wallet'" [settingScreenTitleBackgroundType]="false"
+    [modalType]="'connect'" *ngSwitchCase="'connect'"></app-nav-modals>
+  <div *ngSwitchDefault></div>
+</aside>
+<app-navbar (changeMarginTop)="noPhishingMarginTop()"></app-navbar>
+<main [ngStyle]="{'margin-top': getMarginTop()}">
+  <app-homepage></app-homepage>
+</main>
+<app-footer></app-footer>
+<app-footer-mobile></app-footer-mobile>

@@ -1,0 +1,21 @@
+a {
+    border-radius: 16px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    outline: 0px;
+    transition: 0.2s ease;
+    height: 48px;
+    padding: 0px 24px;
+    background-color: transparent;
+    border: 2px solid rgb(31, 199, 212);
+    box-shadow: none;
+    color: rgb(31, 199, 212);
+    &:hover {
+        opacity: 0.6;
+        color: rgb(31, 199, 212);
+    }
+}

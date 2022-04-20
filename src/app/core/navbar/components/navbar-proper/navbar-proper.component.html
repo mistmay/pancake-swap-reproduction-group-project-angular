@@ -1,0 +1,122 @@
+<nav class="row justify-content-between align-items-center">
+  <div id="nav-left" class="col-2 col-sm-5 d-flex justify-content-start align-items-center p-0">
+    <a href="#" class="d-lg-none">
+      <img src="../../../../../assets/svg/nav-bunny-mobile.svg" id="bunny-mobile">
+    </a>
+    <a href="#" class="d-none d-lg-block">
+      <img src="../../../../../assets/svg/pancake-logo-light.svg" class="pancake-logo"
+        *ngIf="!darkModeService.darkModeStatus">
+      <img src="../../../../../assets/svg/pancake-logo-dark.svg" class="pancake-logo"
+        *ngIf="darkModeService.darkModeStatus">
+    </a>
+    <ul class=" justify-content-start align-items-center h-100">
+      <li class="position-relative" (mouseover)="showTradeMenu = true" (mouseout)="showTradeMenu = false">
+        <a href="#" class="d-flex justify-content-center align-items-center">Trade</a>
+        <div
+          class="d-none toogle-menu toogle-menu-top position-absolute flex-column align-items-start justify-content-start"
+          [class.open-menu]="showTradeMenu">
+          <a href="#">Exchange</a>
+          <a href="#">Liquidity</a>
+        </div>
+      </li>
+      <li class="position-relative" (mouseover)="showEarnMenu = true" (mouseout)="showEarnMenu = false">
+        <a href="#" class="d-flex justify-content-center align-items-center">Earn</a>
+        <div
+          class="d-none toogle-menu toogle-menu-top position-absolute flex-column align-items-start justify-content-start"
+          [class.open-menu]="showEarnMenu">
+          <a href="#">Farms</a>
+          <a href="#">Pools</a>
+        </div>
+      </li>
+      <li class="position-relative" (mouseover)="showWinMenu = true" (mouseout)="showWinMenu = false">
+        <a href="#" class="d-flex justify-content-center align-items-center">Win</a>
+        <div
+          class="d-none toogle-menu toogle-menu-top position-absolute flex-column align-items-start justify-content-start"
+          [class.open-menu]="showWinMenu">
+          <a href="#">Trading Competition</a>
+          <a href="#">Prediction (BETA)</a>
+          <a href="#">Lottery</a>
+        </div>
+      </li>
+      <li class="position-relative" (mouseover)="showNftMenu = true" (mouseout)="showNftMenu = false">
+        <a href="#" class="d-flex justify-content-center align-items-center">NFT</a>
+        <div
+          class="d-none toogle-menu toogle-menu-top position-absolute flex-column align-items-start justify-content-start"
+          [class.open-menu]="showNftMenu">
+          <a href="#">Overview</a>
+          <a href="#">Collections</a>
+          <a href="#">Activity</a>
+        </div>
+      </li>
+      <li class="position-relative" (mouseover)="showPointsMenu = true" (mouseout)="showPointsMenu = false">
+        <a href="#" class="d-flex justify-content-center align-items-center">
+          <img src="../../../../../assets/svg/nav-points.svg" id="nav-points">
+        </a>
+        <div
+          class="d-none toogle-menu toogle-menu-top position-absolute flex-column align-items-start justify-content-start"
+          [class.open-menu]="showPointsMenu">
+          <a href="#">Info</a>
+          <a href="#">IFO</a>
+          <a href="#">Voting</a>
+          <hr />
+          <a href="#">Leaderboard</a>
+          <hr />
+          <a href="#" class="d-flex justify-content-between align-items-center">
+            IFO
+            <img src="../../../../../assets/svg/nav-escape-logo.svg" class="nav-escape-logo">
+          </a>
+          <a href="#" class="d-flex justify-content-between align-items-center">
+            Voting
+            <img src="../../../../../assets/svg/nav-escape-logo.svg" class="nav-escape-logo">
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="nav-right" class="col-9 col-sm-5 d-flex justify-content-end align-items-center h-100 p-0">
+    <a href="#" class="justify-content-between align-items-center" id="money-bunny">
+      <img src="../../../../../assets/svg/nav-pancake-token-logo.svg" id="nav-pancake-token-logo">
+      $7.012
+    </a>
+    <div class="position-relative h-100 d-flex justify-content-center align-items-center"
+      (mouseover)="showLanguageMenu = true" (mouseout)="showLanguageMenu = false">
+      <img src="../../../../../assets/svg/nav-world.svg" id="nav-world">
+      <div
+        class="position-absolute flex-column justify-content-start align-items-center text-center language-menu language-menu-navbar"
+        [ngClass]="showLanguageMenu ? 'd-flex' : 'd-none'">
+        <span>العربية</span>
+        <span>বাংলা</span>
+        <span>English</span>
+        <span>Deutsch</span>
+        <span>Ελληνικά</span>
+        <span>Español</span>
+        <span>Suomalainen</span>
+        <span>Filipino</span>
+        <span>Français</span>
+        <span>हिंदी</span>
+        <span>Magyar</span>
+        <span>Bahasa Indonesia</span>
+        <span>Italiano</span>
+        <span>日本語</span>
+        <span>한국어</span>
+        <span>Nederlands</span>
+        <span>Polski</span>
+        <span>Português (Brazil)</span>
+        <span>Português</span>
+        <span>Română</span>
+        <span>Русский</span>
+        <span>Svenska</span>
+        <span>தமிழ்</span>
+        <span>Türkçe</span>
+        <span>Українська</span>
+        <span>Tiếng Việt</span>
+        <span>简体中文</span>
+        <span>繁體中文</span>
+      </div>
+    </div>
+    <img src="../../../../../assets/svg/nav-setting.svg" id="nav-setting"
+      (click)="settingScreenLauncherService.changeSettingScreenLauncherStatus('settings')">
+    <app-btn-standard-small [content]="'Connect Wallet'"
+      (click)="settingScreenLauncherService.changeSettingScreenLauncherStatus('connect')"></app-btn-standard-small>
+  </div>
+</nav>

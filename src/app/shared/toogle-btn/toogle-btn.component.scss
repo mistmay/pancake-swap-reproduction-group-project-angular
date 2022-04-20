@@ -1,0 +1,78 @@
+.setting-screen-disappear-checkbox {
+    top: -1000000px;
+    left: -10000000px;
+}
+
+.setting-screen-label {
+    background-color: var(--background-11);
+    border-radius: 16px;
+    box-shadow: rgb(74 74 104 / 10%) 0px 2px 2px -1px inset;
+    height: 32px;
+    outline: 0px;
+    padding: 0px 16px;
+    border: var(--border-3);
+    width: 55px;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.setting-screen-label-activated {
+    background-color: rgba(49, 208, 170, 255) !important;
+}
+
+.setting-screen-circle {
+    width: 25px;
+    height: 25px;
+    top: 2px;
+    left: 0;
+    background-color: var(--color-9);
+}
+
+.setting-screen-circle:hover {
+    outline: 4px solid rgba(173, 143, 232, 255);
+}
+
+.setting-screen-circle-activated {
+    left: 30px;
+    outline: 4px solid rgba(173, 143, 232, 255);
+}
+
+.setting-screen-circle-no-outline {
+    outline: none !important;
+}
+
+#pancake-setting-circle {
+    display: none;
+    top: 2px;
+    left: 30px;
+    z-index: 6;
+}
+
+#pancake-setting-circle-2 {
+    top: -3px;
+    left: -5px;
+}
+
+#pancake-setting-circle-3 {
+    top: -5px;
+    left: 5px;
+}
+
+#setting-butter {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(251, 219, 96, 255);
+    bottom: 5px;
+    left: 10px;
+}
+
+.pancake-setting-circle-style {
+    width: 25px;
+    height: 25px;
+    outline: 2px solid rgba(250, 188, 122, 255);
+    background-color: rgb(226, 124, 49);
+}
+
+.pancake-setting-circle-activated {
+    display: block !important;
+}

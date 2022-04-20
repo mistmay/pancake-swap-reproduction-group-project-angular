@@ -1,0 +1,91 @@
+.setting-screen-padding {
+    padding: 24px;
+    gap: 24px;
+}
+
+.setting-screen-first-section {
+    border-bottom: var(--border);
+}
+
+.setting-screen-second-section {
+    padding: 24px 24px 0 24px;
+    gap: 24px;
+}
+
+h4 {
+    color: var(--color-1);
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 12px;
+}
+
+h3 {
+    color: var(--color-2);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.question-mark-gap {
+    gap: 6px;
+}
+
+.setting-screen-btn {
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    transition: 0.2s ease;
+    height: 32px;
+    padding: 0px 16px;
+    background-color: var(--background-2);
+    color: rgb(31, 199, 212);
+    border: none;
+    outline: 0;
+}
+
+.setting-screen-btn:hover {
+    opacity: 0.6;
+}
+
+.setting-screen-btn-activated {
+    background-color: rgb(31, 199, 212) !important;
+    color: white !important;
+    box-shadow: rgb(14 14 44 / 40%) 0px -1px 0px 0px inset !important;
+}
+
+.setting-screen-input {
+    background-color: var(--background-10);
+    border-radius: 16px;
+    box-shadow: rgb(74 74 104 / 10%) 0px 2px 2px -1px inset;
+    color: var(--color-2);
+    font-size: 16px;
+    height: 32px;
+    outline: 0px;
+    padding: 0px 16px;
+    border: var(--border-3);
+    width: 50px;
+}
+
+.setting-screen-input-slippage {
+    width: 75px !important;
+}
+
+.setting-screen-input::-webkit-outer-spin-button, 
+.setting-screen-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.setting-screen-input:focus {
+    outline: 4px solid rgba(173, 143, 232, 255);
+}
+
+.question-mark {
+    filter: invert(59%) sepia(6%) saturate(1899%) hue-rotate(211deg) brightness(92%) contrast(89%);
+    &:hover {
+        opacity: 0.6;
+    }
+}
