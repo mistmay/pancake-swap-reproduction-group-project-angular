@@ -1,0 +1,128 @@
+.wrapper-start-in-seconds .start-in-seconds-container {
+    width: 100%;
+    align-items: center;
+    z-index: 1;
+    padding: 100px;
+    background: url("../../../../../assets/img/63-635099_rays-japanese-rising-sun.png"), linear-gradient(rgb(118, 69, 217) 0%, rgb(81, 33, 177) 100%);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+.wrapper-start-in-seconds .text-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.wrapper-start-in-seconds #testo1 {
+    font-size: 50px;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: bold;
+
+}
+
+.wrapper-start-in-seconds #testo2 {
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    letter-spacing: 0.03em;
+}
+
+.wrapper-start-in-seconds #testo3 {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.wrapper-start-in-seconds .how-to-start {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: rgb(31, 199, 212);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.wrapper-start-in-seconds .how-to-start:hover {
+    text-decoration: underline;
+    color: rgb(31, 199, 212);
+}
+
+.wrapper-start-in-seconds .panckakes {
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    top: 0;
+    left: 293px;
+    margin-top: 20px;
+    animation: 3s ease-in-out 0.66s infinite normal none running panckake-animation;
+}
+
+@keyframes panckake-animation {
+    0% {
+        transform: translate(0px, 0px);
+    }
+
+    50% {
+        transform: translate(5px, 10px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+.wrapper-start-in-seconds .panckakes2 {
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    bottom: 0;
+
+    margin-top: 20px;
+    animation: 3s ease-in-out 0.66s infinite normal none running panckake-animation2;
+}
+
+.wrapper-start-in-seconds .reverse {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    bottom: 0;
+    right: 293px;
+    margin-top: 20px;
+}
+
+
+@keyframes panckake-animation2 {
+    0% {
+        transform: translate(0px, 0px);
+    }
+
+    50% {
+        transform: translate(5px, 10px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+@media (max-width: 365px) {
+    .wrapper-start-in-seconds .start-in-seconds-container {
+        padding: 100px 10px;
+    }
+}
+
+@media (max-width: 1379px) {
+    .wrapper-start-in-seconds .panckakes {
+        display: none;
+    }
+
+    .wrapper-start-in-seconds .panckakes2 {
+        display: none;
+    }
+}
