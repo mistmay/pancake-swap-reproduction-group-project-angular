@@ -243,7 +243,14 @@
 
 .grid-template {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, auto);
+    gap: 6rem;
+}
+
+.grid-template1 {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 6rem;
 }
 
 @media screen and (min-width: 576px) {
@@ -255,6 +262,20 @@
 
 @media screen and (min-width: 852px) {
     .grid-template {
+        gap: 32px;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .grid-template1 {
+        gap: 16px;
+        grid-template-columns: repeat(5, auto);
+        margin-top: 270px;
+    }
+}
+
+@media screen and (min-width: 852px) {
+    .grid-template1 {
         gap: 32px;
     }
 }

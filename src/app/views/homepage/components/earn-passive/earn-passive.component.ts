@@ -1,3 +1,4 @@
+import { Time } from '@angular/common';
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -8,22 +9,24 @@ import { Component, ElementRef, Input, OnInit } from '@angular/core';
 export class EarnPassiveComponent implements OnInit {
 
   top: boolean = true
-  bottom: boolean = false
+  timer!: any
 
   constructor(private elementRef: ElementRef) { }
 
   ngOnInit(): void {
-    setInterval(() => {
-      this.showTop();
-    }, 6000);
-    setInterval(() => {
-      this.showBottom()
-    }, 12000)
+    this.toggle()
   }
 
   cliccabile() {
-      this.top = !this.top;
-      this.bottom = !this.bottom;
+    this.top = !this.top;
+    clearInterval(this.timer)
+    this.toggle()
+}
+
+  toggle: any = () => {
+    this.timer = setInterval(() => {
+      this.showTop();
+    }, 6000);
   }
 
   showTop() {
@@ -34,11 +37,4 @@ export class EarnPassiveComponent implements OnInit {
     }
   }
 
-  showBottom() {
-    if(this.bottom) {
-      this.bottom = false
-    } else {
-      this.bottom = true
-    }
-  }
 }

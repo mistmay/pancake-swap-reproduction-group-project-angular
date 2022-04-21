@@ -19,21 +19,15 @@
                         you.</div>
                     <div class="d-flex">
                         <app-btn-standard-big [content]="'Explore'"></app-btn-standard-big>
-                        <a class="d-flex align-items-center link-light" href="http://"
-                            target="_blank" rel="noopener noreferrer">Learn</a>
+                        <a class="d-flex align-items-center link-light" href="http://" target="_blank"
+                            rel="noopener noreferrer">Learn</a>
                     </div>
                 </div>
                 <div class="left-inner d-flex position-relative">
                     <div class="float-images-container h-100">
-                        <img class="h-100"
-                            src="../../../../../assets/img/pie@2x.webp"
-                            alt="Pie chart">
-                        <img class="h-100"
-                            src="../../../../../assets/img/stonks@2x.webp"
-                            alt="Stocks chart">
-                        <img class="h-100"
-                            src="../../../../../assets/img/folder@2x.webp"
-                            alt="Folder with cake token">
+                        <img class="h-100" src="../../../../../assets/img/pie@2x.webp" alt="Pie chart">
+                        <img class="h-100" src="../../../../../assets/img/stonks@2x.webp" alt="Stocks chart">
+                        <img class="h-100" src="../../../../../assets/img/folder@2x.webp" alt="Folder with cake token">
                     </div>
                 </div>
             </div>
@@ -43,41 +37,34 @@
                 <div class="d-flex mb-4">
                     <h2 class="title-h2-top">
                         Top
-                        <span id="tops-name" class="purple-h2">Farms</span>
+                        <span id="tops-name" class="purple-h2">{{top? "Farms" : "Syrup Pools"}}</span>
                     </h2>
-                    <button id="clicker" class="button-tops" height="100%" width="auto"
-                        scale="md" (click)="cliccabile()">
-                        <img class="svg-clicker" src="../../../../../assets/svg/earn-passive-clicker.svg" alt="" srcset="">
+                    <button id="clicker" class="button-tops" height="100%" width="auto" scale="md"
+                        (click)="cliccabile()">
+                        <img class="svg-clicker" src="../../../../../assets/svg/earn-passive-clicker.svg" alt=""
+                            srcset="">
                     </button>
                 </div>
                 <div class="tops-bottom">
                     <div class=" grid-template">
-                        <div *ngFor="let i of [1,2,3,4,5]" class="position-relative d-flex" [ngStyle]="{
-                            'margin-top': top ? '0%' : '50%',
-                            'opacity': top ? '1' : '0',
-                            'transition': 'opacity 0s ease 0s, margin-top 0s ease 0s, all 0.4s ease-out 0s'
-                        }">
-                            <div class="d-flex position-absolute top-0 changely border-left-charts">
-                                <div>FIGHT-BUSD LP</div>
-                                <div>
-                                    <span>390.752%</span>
-                                </div>
-                                <div>APR</div>
+                        <div *ngFor="let i of [1,2,3,4,5]">
+                            <div class="position-relative d-flex top-0" [ngStyle]="{
+                                'margin-top': top ? '0px' : '40px',
+                                'opacity': top ? '1' : '0',
+                                'transition': 'opacity 0s ease 0s, margin-top 0s ease 0s, all 0.4s ease-out 0s'
+                            }">
+                                <app-earn-passive-farm></app-earn-passive-farm>
                             </div>
                         </div>
                     </div>
-                    <div class=" grid-template" >
-                        <div *ngFor="let i of [1,2,3,4,5]" class="position-relative d-flex" [ngStyle]="{
-                            'margin-top': !top ? '0%' : '50%',
-                            'opacity': !top ? '1' : '0',
-                            'transition': 'opacity 0s ease 0s, margin-top 0s ease 0s, all 0.4s ease-out 0s'
-                        }">
-                            <div class="d-flex position-absolute top-0 changely border-left-charts">
-                                <div>Provone</div>
-                                <div>
-                                    <span>390.752%</span>
-                                </div>
-                                <div>APR</div>
+                    <div class=" grid-template1">
+                        <div *ngFor="let i of [1,2,3,4,5]">
+                            <div class="position-relative d-flex top-0" [ngStyle]="{
+                                'margin-top': !top ? '-310px' : '40px',
+                                'opacity': !top ? '1' : '0',
+                                'transition': 'opacity 0s ease 0s, margin-top 0s ease 0s, all 0.5s ease-out 0s'
+                            }">
+                                <app-earn-passive-pools></app-earn-passive-pools>
                             </div>
                         </div>
                     </div>

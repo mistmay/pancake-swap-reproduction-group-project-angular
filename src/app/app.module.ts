@@ -29,6 +29,7 @@ import { WinMillionsComponent } from './views/homepage/components/win-millions/w
 import { EarnPassiveFarmComponent } from './views/homepage/components/earn-passive/earn-passive-farm/earn-passive-farm.component';
 import { EarnPassivePoolsComponent } from './views/homepage/components/earn-passive/earn-passive-pools/earn-passive-pools.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +57,7 @@ import { EarnPassivePoolsComponent } from './views/homepage/components/earn-pass
     UsedByComponent,
     WinMillionsComponent,
     EarnPassiveFarmComponent,
-    EarnPassivePoolsComponent
+    EarnPassivePoolsComponent,
   ],
   imports: [
     BrowserModule,
