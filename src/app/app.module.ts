@@ -14,20 +14,20 @@ import { BtnStandardSmallComponent } from './shared/btn-standard-small/btn-stand
 import { BtnStandardBigComponent } from './shared/btn-standard-big/btn-standard-big.component';
 import { BtnTransparentComponent } from './shared/btn-transparent/btn-transparent.component';
 import { DarkModeButtonComponent } from './shared/dark-mode-button/dark-mode-button.component';
-import { DarkModeBtnSunComponent } from './shared/dark-mode-button/dark-mode-btn-sun/dark-mode-btn-sun.component';
-import { DarkModeBtnMoonComponent } from './shared/dark-mode-button/dark-mode-btn-moon/dark-mode-btn-moon.component';
+import { DarkModeBtnSunComponent } from './shared/dark-mode-button/components/dark-mode-btn-sun/dark-mode-btn-sun.component';
+import { DarkModeBtnMoonComponent } from './shared/dark-mode-button/components/dark-mode-btn-moon/dark-mode-btn-moon.component';
 import { ToogleBtnComponent } from './shared/toogle-btn/toogle-btn.component';
 import { NavModalsComponent } from './core/nav-modals/nav-modals.component';
-import { SettingScreenContentConnectWalletComponent } from './core/nav-modals/setting-screen-content-connect-wallet/setting-screen-content-connect-wallet.component';
-import { SettingScreenContentSettingMenuComponent } from './core/nav-modals/setting-screen-content-setting-menu/setting-screen-content-setting-menu.component';
+import { SettingScreenContentConnectWalletComponent } from './core/nav-modals/components/setting-screen-content-connect-wallet/setting-screen-content-connect-wallet.component';
+import { SettingScreenContentSettingMenuComponent } from './core/nav-modals/components/setting-screen-content-setting-menu/setting-screen-content-setting-menu.component';
 import { CakeMakesComponent } from './views/homepage/components/cake-makes/cake-makes.component';
 import { EarnPassiveComponent } from './views/homepage/components/earn-passive/earn-passive.component';
 import { StartInSecondsComponent } from './views/homepage/components/start-in-seconds/start-in-seconds.component';
 import { TradeAnythingComponent } from './views/homepage/components/trade-anything/trade-anything.component';
 import { UsedByComponent } from './views/homepage/components/used-by/used-by.component';
 import { WinMillionsComponent } from './views/homepage/components/win-millions/win-millions.component';
-import { EarnPassiveFarmComponent } from './views/homepage/components/earn-passive/earn-passive-farm/earn-passive-farm.component';
-import { EarnPassivePoolsComponent } from './views/homepage/components/earn-passive/earn-passive-pools/earn-passive-pools.component';
+import { EarnPassiveFarmComponent } from './views/homepage/components/earn-passive/components/earn-passive-farm/earn-passive-farm.component';
+import { EarnPassivePoolsComponent } from './views/homepage/components/earn-passive/components/earn-passive-pools/earn-passive-pools.component';
 
 
 @NgModule({

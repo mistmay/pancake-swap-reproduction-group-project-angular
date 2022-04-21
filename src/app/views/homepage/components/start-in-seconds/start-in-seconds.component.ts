@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SettingScreenLauncherService } from "../../../../setting-screen-launcher.service";
+import { SettingScreenLauncherService } from "../../../../services/setting-screen-launcher.service";
 @Component({
   selector: 'app-start-in-seconds',
   templateUrl: './start-in-seconds.component.html',
@@ -7,9 +7,13 @@ import { SettingScreenLauncherService } from "../../../../setting-screen-launche
 })
 export class StartInSecondsComponent implements OnInit {
 
-  constructor(public settingScreenLauncherService: SettingScreenLauncherService) { }
+  constructor(private settingScreenLauncherService: SettingScreenLauncherService) { }
 
   ngOnInit(): void {
+  }
+
+  changeSettingScreenLauncherStatus(status: string): void {
+    this.settingScreenLauncherService.changeSettingScreenLauncherStatus(status);
   }
 
 }

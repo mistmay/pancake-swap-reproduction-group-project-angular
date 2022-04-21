@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DarkModeService } from 'src/app/dark-mode.service';
-import { SettingScreenLauncherService } from 'src/app/setting-screen-launcher.service';
+import { DarkModeService } from 'src/app/services/dark-mode.service';
+import { SettingScreenLauncherService } from 'src/app/services/setting-screen-launcher.service';
 
 @Component({
   selector: 'app-navbar-proper',
@@ -15,9 +15,17 @@ export class NavbarProperComponent implements OnInit {
   showPointsMenu: boolean = false;
   showLanguageMenu: boolean = false;
 
-  constructor(public darkModeService: DarkModeService, public settingScreenLauncherService: SettingScreenLauncherService) { }
+  constructor(private darkModeService: DarkModeService, private settingScreenLauncherService: SettingScreenLauncherService) { }
 
   ngOnInit(): void {
+  }
+
+  darkModeStatus(): boolean {
+    return this.darkModeService.darkModeStatus;
+  }
+
+  changeSettingScreenLauncherStatus(status: string): void {
+    this.settingScreenLauncherService.changeSettingScreenLauncherStatus(status);
   }
 
 }

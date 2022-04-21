@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ElementRef } from '@angular/core';
-import { SettingScreenLauncherService } from 'src/app/setting-screen-launcher.service';
+import { SettingScreenLauncherService } from 'src/app/services/setting-screen-launcher.service';
 
 @Component({
   selector: 'app-nav-modals',
@@ -11,7 +11,7 @@ export class NavModalsComponent implements OnInit {
   @Input() settingScreenTitleBackgroundType: boolean = true;
   @Input() modalType: string = '';
 
-  constructor(public settingScreenLauncherService: SettingScreenLauncherService, private elementRef: ElementRef) { }
+  constructor(private settingScreenLauncherService: SettingScreenLauncherService, private elementRef: ElementRef) { }
 
   ngOnInit(): void {
   }
@@ -30,6 +30,10 @@ export class NavModalsComponent implements OnInit {
     } else {
       this.settingScreenLauncherService.changeSettingScreenLauncherStatus('');
     }
+  }
+
+  closeModal(): void {
+    this.settingScreenLauncherService.changeSettingScreenLauncherStatus('');
   }
 
 }

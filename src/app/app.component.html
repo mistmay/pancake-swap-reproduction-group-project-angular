@@ -1,4 +1,4 @@
-<aside [ngSwitch]="settingScreenLauncherService.settingScreenLauncherStatus">
+<aside [ngSwitch]="settingScreenLauncherStatus()">
   <app-nav-modals [settingScreenTitle]="'Settings'" *ngSwitchCase="'settings'"></app-nav-modals>
   <app-nav-modals [settingScreenTitle]="'Connect Wallet'" [settingScreenTitleBackgroundType]="false"
     [modalType]="'connect'" *ngSwitchCase="'connect'"></app-nav-modals>
