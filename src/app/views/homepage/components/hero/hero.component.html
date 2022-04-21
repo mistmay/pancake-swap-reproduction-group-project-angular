@@ -6,8 +6,8 @@
       <h1>The moon is made of pancakes.</h1>
       <p>Trade, earn, and win crypto on the most popular decentralized platform in the galaxy.</p>
       <div class=" d-flex justify-content-start align-items-center">
-        <app-btn-standard-big [content]="'Connect Wallet'"
-          (click)="settingScreenLauncherService.changeSettingScreenLauncherStatus('connect')"></app-btn-standard-big>
+        <app-btn-standard-big [content]="'Connect Wallet'" (click)="changeSettingScreenLauncherStatus('connect')">
+        </app-btn-standard-big>
         <app-btn-transparent [content]="'Trade Now'"></app-btn-transparent>
       </div>
     </div>
@@ -18,6 +18,6 @@
       <img src="../../../../../assets/img/star-top-r@2x.webp" class="position-absolute start-0 top-0">
     </div>
   </div>
-  <img src="../../../../../assets/svg/hero-separator-light.svg" *ngIf="!darkModeService.darkModeStatus">
-  <img src="../../../../../assets/svg/hero-separator-dark.svg" *ngIf="darkModeService.darkModeStatus">
+  <img src="../../../../../assets/svg/hero-separator-light.svg" *ngIf="!darkModeStatus()">
+  <img src="../../../../../assets/svg/hero-separator-dark.svg" *ngIf="darkModeStatus()">
 </section>

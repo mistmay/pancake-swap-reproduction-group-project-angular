@@ -1,5 +1,4 @@
-import { Time } from '@angular/common';
-import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-earn-passive',
@@ -11,7 +10,7 @@ export class EarnPassiveComponent implements OnInit {
   top: boolean = true
   timer!: ReturnType<typeof setInterval>
 
-  constructor(private elementRef: ElementRef) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.resetTimer()
@@ -21,7 +20,7 @@ export class EarnPassiveComponent implements OnInit {
     this.top = !this.top;
     clearInterval(this.timer)
     this.resetTimer()
-}
+  }
 
   resetTimer = () => {
     this.timer = setInterval(() => {
@@ -30,7 +29,7 @@ export class EarnPassiveComponent implements OnInit {
   }
 
   showTop() {
-    if(this.top) {
+    if (this.top) {
       this.top = false
     } else {
       this.top = true

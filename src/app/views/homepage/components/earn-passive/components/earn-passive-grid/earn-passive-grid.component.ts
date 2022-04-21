@@ -1,11 +1,10 @@
-import { Component, Input, OnInit, HostBinding  } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {
   trigger,
   state,
   style,
   animate,
-  transition,
-  // ...
+  transition
 } from '@angular/animations';
 
 @Component({
@@ -13,7 +12,7 @@ import {
   templateUrl: './earn-passive-grid.component.html',
   styleUrls: ['./earn-passive-grid.component.scss'],
   animations: [
-    trigger("showHide",[
+    trigger("showHide", [
       state("open", style({
         marginTop: "0%",
         opacity: 1,

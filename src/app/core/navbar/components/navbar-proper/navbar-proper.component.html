@@ -4,10 +4,8 @@
       <img src="../../../../../assets/svg/nav-bunny-mobile.svg" id="bunny-mobile">
     </a>
     <a href="#" class="d-none d-lg-block">
-      <img src="../../../../../assets/svg/pancake-logo-light.svg" class="pancake-logo"
-        *ngIf="!darkModeService.darkModeStatus">
-      <img src="../../../../../assets/svg/pancake-logo-dark.svg" class="pancake-logo"
-        *ngIf="darkModeService.darkModeStatus">
+      <img src="../../../../../assets/svg/pancake-logo-light.svg" class="pancake-logo" *ngIf="!darkModeStatus()">
+      <img src="../../../../../assets/svg/pancake-logo-dark.svg" class="pancake-logo" *ngIf="darkModeStatus()">
     </a>
     <ul class=" justify-content-start align-items-center h-100">
       <li class="position-relative" (mouseover)="showTradeMenu = true" (mouseout)="showTradeMenu = false">
@@ -115,8 +113,8 @@
       </div>
     </div>
     <img src="../../../../../assets/svg/nav-setting.svg" id="nav-setting"
-      (click)="settingScreenLauncherService.changeSettingScreenLauncherStatus('settings')">
-    <app-btn-standard-small [content]="'Connect Wallet'"
-      (click)="settingScreenLauncherService.changeSettingScreenLauncherStatus('connect')"></app-btn-standard-small>
+      (click)="changeSettingScreenLauncherStatus('settings')">
+    <app-btn-standard-small [content]="'Connect Wallet'" (click)="changeSettingScreenLauncherStatus('connect')">
+    </app-btn-standard-small>
   </div>
 </nav>

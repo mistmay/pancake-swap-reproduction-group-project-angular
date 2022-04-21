@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DarkModeService } from 'src/app/dark-mode.service';
-import { SettingScreenLauncherService } from 'src/app/setting-screen-launcher.service';
+import { DarkModeService } from 'src/app/services/dark-mode.service';
+import { SettingScreenLauncherService } from 'src/app/services/setting-screen-launcher.service';
 
 @Component({
   selector: 'app-hero',
@@ -9,9 +9,17 @@ import { SettingScreenLauncherService } from 'src/app/setting-screen-launcher.se
 })
 export class HeroComponent implements OnInit {
 
-  constructor(public darkModeService: DarkModeService, public settingScreenLauncherService: SettingScreenLauncherService) { }
+  constructor(private darkModeService: DarkModeService, private settingScreenLauncherService: SettingScreenLauncherService) { }
 
   ngOnInit(): void {
+  }
+
+  changeSettingScreenLauncherStatus(status: string): void {
+    this.settingScreenLauncherService.changeSettingScreenLauncherStatus(status);
+  }
+
+  darkModeStatus(): boolean {
+    return this.darkModeService.darkModeStatus;
   }
 
 }
