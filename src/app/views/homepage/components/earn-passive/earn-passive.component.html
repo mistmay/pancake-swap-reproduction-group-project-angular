@@ -32,39 +32,39 @@
                 </div>
             </div>
         </div>
-        <div class="tops">
+        <div class="tops overflow-hidden">
             <div class="d-flex flex-column tops mt-4">
                 <div class="d-flex mb-4">
                     <h2 class="title-h2-top">
                         Top
                         <span id="tops-name" class="purple-h2">{{top? "Farms" : "Syrup Pools"}}</span>
-                    </h2>
+                    </h2>  
                     <button id="clicker" class="button-tops" height="100%" width="auto" scale="md"
                         (click)="cliccabile()">
                         <img class="svg-clicker" src="../../../../../assets/svg/earn-passive-clicker.svg" alt=""
                             srcset="">
                     </button>
-                </div>
-                <div class="tops-bottom">
+                </div> 
+                <div class="tops-bottom overflow-hidden"> 
                     <div class=" grid-template">
-                        <div *ngFor="let i of [1,2,3,4,5]">
-                            <div class="position-relative d-flex top-0" [ngStyle]="{
+                        <div *ngFor="let i of [1,2,3,4,5]; let a = index" >
+                            <div  class="position-relative d-flex top-0" [ngStyle]="{
                                 'margin-top': top ? '0px' : '40px',
                                 'opacity': top ? '1' : '0',
-                                'transition': 'opacity 0s ease 0s, margin-top 0s ease 0s, all 0.4s ease-out 0s'
-                            }">
-                                <app-earn-passive-farm></app-earn-passive-farm>
+                                'transition': 'opacity 0s ease 0s, margin-top 0s ease 0s, all 0.5s ease-out 0s'
+                            }">  
+                                <app-earn-passive-farm [a]="a"></app-earn-passive-farm>
                             </div>
                         </div>
                     </div>
                     <div class=" grid-template1">
-                        <div *ngFor="let i of [1,2,3,4,5]">
-                            <div class="position-relative d-flex top-0" [ngStyle]="{
+                        <div *ngFor="let i of [1,2,3,4,5]; let b = index">
+                            <div [ngClass]="b == 0 ? 'bg-warning' : 'border-left-charts'" class="position-relative d-flex top-0" [ngStyle]="{
                                 'margin-top': !top ? '-310px' : '40px',
                                 'opacity': !top ? '1' : '0',
                                 'transition': 'opacity 0s ease 0s, margin-top 0s ease 0s, all 0.5s ease-out 0s'
                             }">
-                                <app-earn-passive-pools></app-earn-passive-pools>
+                                <app-earn-passive-pools [b]="b" ></app-earn-passive-pools>
                             </div>
                         </div>
                     </div>

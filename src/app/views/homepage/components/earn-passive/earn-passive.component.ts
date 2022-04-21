@@ -9,21 +9,21 @@ import { Component, ElementRef, Input, OnInit } from '@angular/core';
 export class EarnPassiveComponent implements OnInit {
 
   top: boolean = true
-  timer!: any
+  timer!: ReturnType<typeof setInterval>
 
   constructor(private elementRef: ElementRef) { }
 
   ngOnInit(): void {
-    this.toggle()
+    this.resetTimer()
   }
 
   cliccabile() {
     this.top = !this.top;
     clearInterval(this.timer)
-    this.toggle()
+    this.resetTimer()
 }
 
-  toggle: any = () => {
+  resetTimer = () => {
     this.timer = setInterval(() => {
       this.showTop();
     }, 6000);

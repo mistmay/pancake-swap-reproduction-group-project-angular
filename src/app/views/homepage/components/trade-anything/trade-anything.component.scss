@@ -29,7 +29,7 @@
 .inner-central-section {
     margin: 0px;
     width: 100%;
-    max-width: 1200px;
+    max-width: 968px;
     padding-left: 16px;
     padding-right: 16px;
     margin-left: auto;
@@ -95,13 +95,13 @@
 @media screen and (min-width: 852px) {
     .right-inner {
         align-self: center !important;
-        margin-left: 64px;
+        margin-right: 64px !important;
     }
 }
 
 .title-h2 {
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.1;
     color: var(--color-2);
     margin-bottom: 24px;
@@ -232,7 +232,6 @@
 
 .tops-bottom {
     height: 240px;
-
 }
 
 @media screen and (min-width: 576px) {
