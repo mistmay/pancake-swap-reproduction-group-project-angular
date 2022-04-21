@@ -1,0 +1,410 @@
+@import "../trade-anything/trade-anything.component.scss";
+
+.win-millions {
+    z-index: 1;
+    background: var(--background-5);
+    padding: 48px 0px;
+    height: 100%;
+}
+
+.win-millions-central-section {
+    margin: 0px;
+    width: 100%;
+    max-width: 968px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: auto;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    height: 100%;
+}
+
+@media screen and (min-width: 968px)
+{
+    .win-millions-central-section {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+}
+
+@media screen and (min-width: 576px)
+{
+    .win-millions-central-section {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+}
+
+@media screen and (min-width: 370px)
+{
+    .win-millions-central-section {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+.max-height {
+    max-height: 512px;
+}
+
+.balls-left {
+    max-width: 192px;
+    max-height: 500px;
+}
+
+.balls-left-imgs {
+    position: absolute;
+    left: 0px;
+    bottom: -64px;
+}
+
+.balls-right {
+    max-width: 192px;
+    max-height: 500px;
+}
+
+.balls-right-imgs {
+    position: absolute;
+    top: -64px;
+    right: -5px;
+}
+
+/* @media screen and (min-width: 852px) {
+    .balls-left {
+        max-width: 100%;
+    }
+} */
+
+
+@media screen and (min-width: 852px) {
+    .balls-right {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 851px) {
+    .balls-left-imgs {
+        width: 192px;
+        height: 192px;
+    }
+    .balls-right-imgs {
+        width: 192px;
+        height: 192px;
+    }
+}
+
+.animate1 {
+    animation: 3s ease-in-out 1s infinite normal none running trial;
+}
+
+.animate2 {
+    animation: 3s ease-in-out 0.66s infinite normal none running trial;
+}
+
+.animate3 {
+    animation: 3s ease-in-out 0.33s infinite normal none running trial;
+}
+
+.animate4 {
+    animation: 3s ease-in-out 0s infinite normal none running trial;
+}
+
+.win-millions-inner {
+    padding: 16px;
+    background: var(--background-6);
+    border: 1px solid var(--border);
+    box-sizing: border-box;
+    border-radius: 72px; 
+}
+
+.cards-container {
+    max-width: 600px;
+    margin: 0px auto;
+    flex-direction: column;  
+}
+
+@media screen and (min-width: 852px){
+    .cards-container {
+        flex-direction: row; 
+    }
+    .win-millions-inner {
+        padding: 40px;
+    }
+}
+
+.card-left {
+    flex: 1 1 0%;
+    max-width: 275px;
+    margin-bottom: 32px;
+}
+
+.card-right {
+    flex: 1 1 0%;
+    max-width: 275px;
+}
+
+@media screen and (min-width: 852px){
+    .card-left {
+        margin-right: 24px;
+        margin-bottom: 0px;
+        max-width: 100%;
+    }
+    .card-right {
+        max-width: 100%;
+    }
+}
+
+.card-yellow {
+    background: rgb(255, 178, 55) none repeat scroll 0% 0%;
+    border-radius: 24px;
+    color: rgb(40, 13, 95);
+    overflow: hidden;
+    position: relative;
+    padding: 1px 1px 3px;
+    height: fit-content;
+    padding: 1px 1px 4px;
+    box-sizing: border-box;
+}
+
+.card-purple {
+    height: fit-content;
+    padding: 1px 1px 4px;
+    box-sizing: border-box;
+    background: rgb(60, 23, 134) none repeat scroll 0% 0%;
+    border-radius: 24px;
+    color: rgb(40, 13, 95);
+    overflow: hidden;
+    position: relative;
+}
+
+.card-yellow-body {
+    overflow: initial;
+    background: rgba(0, 0, 0, 0) linear-gradient(rgb(255, 178, 55) 0%, rgb(255, 205, 81) 51.17%, rgb(255, 231, 106) 100%) repeat scroll 0% 0%;
+    border-radius: 24px;
+}
+
+.card-purple-body {
+    overflow: initial;
+    background: rgba(0, 0, 0, 0) linear-gradient(rgb(118, 69, 217) 0%, rgb(81, 33, 177) 100%) repeat scroll 0% 0%;
+    border-radius: 24px;
+}
+
+.png-top-right {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+}
+
+.png-top-right > svg {
+    align-self: center;
+    flex-shrink: 0;
+    fill: black;
+}
+
+.card-purple-body .png-top-right > svg {
+    align-self: center;
+    flex-shrink: 0;
+    fill: white;
+}
+
+.card-top {
+    color: rgb(40, 13, 95);
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.card-h2 {
+    color: rgb(40, 13, 95);
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.card-footer1 {
+    color: rgb(40, 13, 95);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    border-radius: 0;
+}
+
+.card-purple-body .card-top,
+.card-purple-body .card-footer1 {
+    color: white;
+}
+
+.titolone{
+    color: rgb(255, 216, 0);
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.card-button {
+    -moz-box-align: center;
+    align-items: center;
+    border: 0px none;
+    border-radius: 16px;
+    box-shadow: rgba(14, 14, 44, 0.4) 0px -1px 0px 0px inset;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    -moz-box-pack: center;
+    justify-content: center;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    opacity: 1;
+    outline: currentcolor none 0px;
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+    height: 48px;
+    padding: 0px 24px;
+    background-color: rgb(31, 199, 212);
+    color: white;
+}
+
+.card-button:hover {
+    opacity: 0.65;
+}
+
+.card-button-text {
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.card-button svg {
+    align-self: center;
+    fill: rgb(255, 255, 255);
+    flex-shrink: 0;
+    margin-left: 4px;
+}
+
+@media screen and (min-width: 852px) {
+    .card-yellow {
+        transform: rotate(-2.36deg);
+    }
+
+    .card-purple {
+        transform: rotate(1.43deg);
+    }
+
+    .png-top-right {
+        transform: rotate(-2.36deg);
+    }
+
+    .card-h2 {
+        font-size: 40px;
+    }
+
+    .titolone {
+        font-size: 40px;
+    }
+}
+
+@keyframes trial {
+    0% {
+        transform: translate(0px, 0px);
+    }
+
+    50% {
+        transform: translate(-5px, -5px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+.central-section2 {
+    position: relative;
+    flex-direction: column;
+    -moz-box-align: center;
+    align-items: center;
+    z-index: 1;
+    background: rgb(250, 249, 250) none repeat scroll 0% 0%;
+    padding: 48px 0px;
+}
+
+.inner-central-section2 {
+    margin: 0px;
+    width: 100%;
+    max-width: 968px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: auto;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+@media screen and (min-width: 968px)
+{
+    .inner-central-section2 {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+}
+
+@media screen and (min-width: 576px)
+{
+    .inner-central-section2 {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+}
+
+@media screen and (min-width: 370px)
+{
+    .inner-central-section2 {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+.grid-template2 {
+    gap: 16px 8px;
+    margin-top: 24px;
+    grid-template-columns: repeat(2, auto);
+}
+
+@media screen and (min-width: 576px) {
+    .grid-template2{
+    gap: 16px;
+    }
+}
+
+@media screen and (min-width: 852px) {
+    .grid-template2 {
+    gap: 32px;
+    grid-template-columns: repeat(4, auto);
+    }
+}
+
+.border-left {
+    border-left: 1px solid rgb(215, 202, 236);
+    padding: 0px 16px;
+}
+
+.border-left1 {
+    border-left: 1px solid rgb(215, 202, 236);
+    padding: 0px 16px;
+}
+
+@media screen and (max-width: 851px) {
+    .border-left1 {
+        border-left: 0px;
+        padding: 0;
+    }
+}

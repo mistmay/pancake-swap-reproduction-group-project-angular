@@ -64,11 +64,7 @@
 }
 
 .mobile-footer-icons {
-    filter: invert(58%) sepia(5%) saturate(3918%) hue-rotate(211deg) brightness(77%) contrast(85%);
-}
-
-.dark-mode .mobile-footer-icons {
-    filter: invert(83%) sepia(35%) saturate(617%) hue-rotate(197deg) brightness(86%) contrast(90%);
+    filter: var(--filter-3);
 }
 
 #mobile-footer-trade {

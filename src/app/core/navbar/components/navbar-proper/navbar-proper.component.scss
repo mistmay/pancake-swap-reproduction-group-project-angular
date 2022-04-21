@@ -105,12 +105,9 @@ nav {
 }
 
 #nav-points {
-    filter: invert(58%) sepia(5%) saturate(3918%) hue-rotate(211deg) brightness(77%) contrast(85%);
+    filter: var(--filter-3);
 }
 
-.dark-mode #nav-points {
-    filter: invert(83%) sepia(35%) saturate(617%) hue-rotate(197deg) brightness(86%) contrast(90%);
-}
 
 .nav-escape-logo {
     filter: invert(47%) sepia(15%) saturate(1221%) hue-rotate(211deg) brightness(93%) contrast(85%);
