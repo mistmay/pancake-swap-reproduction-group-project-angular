@@ -114,7 +114,7 @@
     </div>
     <img src="../../../../../assets/svg/nav-setting.svg" id="nav-setting"
       (click)="changeSettingScreenLauncherStatus('settings')">
-    <app-btn-standard-small [content]="'Connect Wallet'" (click)="changeSettingScreenLauncherStatus('connect')">
-    </app-btn-standard-small>
+    <app-standard-button [content]="'Connect Wallet'" (click)="changeSettingScreenLauncherStatus('connect')"
+      [isSmall]="true"></app-standard-button>
   </div>
 </nav>

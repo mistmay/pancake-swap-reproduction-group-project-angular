@@ -1,0 +1,5 @@
+<button type="button" class="d-flex justify-content-between align-items-center"
+  [ngClass]="(isTransparent ? 'btn-transparent' : 'btn-standard') + ' ' + (isSmall ? 'btn-small' : 'btn-big')">
+  {{ content }}
+  <img src="../../../assets/svg/btn-arrow.svg" id="btn-arrow" *ngIf="arrowCheck">
+</button>

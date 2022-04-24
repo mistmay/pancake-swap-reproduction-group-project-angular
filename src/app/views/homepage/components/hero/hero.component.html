@@ -6,9 +6,9 @@
       <h1>The moon is made of pancakes.</h1>
       <p>Trade, earn, and win crypto on the most popular decentralized platform in the galaxy.</p>
       <div class=" d-flex justify-content-start align-items-center">
-        <app-btn-standard-big [content]="'Connect Wallet'" (click)="changeSettingScreenLauncherStatus('connect')">
-        </app-btn-standard-big>
-        <app-btn-transparent [content]="'Trade Now'"></app-btn-transparent>
+        <app-standard-button [content]="'Connect Wallet'" (click)="changeSettingScreenLauncherStatus('connect')">
+        </app-standard-button>
+        <app-standard-button [content]="'Trade Now'" [isTransparent]="true"></app-standard-button>
       </div>
     </div>
     <div id="hero-right" class="position-relative">

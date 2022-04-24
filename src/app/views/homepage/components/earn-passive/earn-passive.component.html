@@ -1,76 +1,75 @@
 <div class="d-flex position-relative flex-column align-items-center central-section">
-    <div class="inner-central-section m-0 w-100">
-        <div class="overflow-hidden position-absolute start-0 top-0 w-100 h-100 hidden">
-            <div class="top-0 w-100 position-absolute" fill="#FFFFFF">
-                <img src="../../../../../assets/svg/earn-passive-connection.svg" class="svg-earn">
-            </div>
+  <div class="inner-central-section m-0 w-100">
+    <div class="overflow-hidden position-absolute start-0 top-0 w-100 h-100 hidden">
+      <div class="top-0 w-100 position-absolute" fill="#FFFFFF">
+        <img src="../../../../../assets/svg/earn-passive-connection.svg" class="svg-earn">
+      </div>
+    </div>
+    <div class="d-flex flex-column">
+      <div class="inner-central-section-hero">
+        <div class="d-flex flex-column right-inner align-self-start">
+          <h2 class="title-h2">
+            <span class="purple-h2">Earn </span>
+            passive income with crypto.
+          </h2>
+          <div class="paragraph-text">PancakeSwap makes it easy to make your
+            crypto
+            work
+            for
+            you.</div>
+          <div class="d-flex">
+            <app-standard-button [content]="'Explore'"></app-standard-button>
+            <a class="d-flex align-items-center link-light" href="http://" target="_blank"
+              rel="noopener noreferrer">Learn</a>
+          </div>
         </div>
-        <div class="d-flex flex-column">
-            <div class="inner-central-section-hero">
-                <div class="d-flex flex-column right-inner align-self-start">
-                    <h2 class="title-h2">
-                        <span class="purple-h2">Earn </span>
-                        passive income with crypto.
-                    </h2>
-                    <div class="paragraph-text">PancakeSwap makes it easy to make your
-                        crypto
-                        work
-                        for
-                        you.</div>
-                    <div class="d-flex">
-                        <app-btn-standard-big [content]="'Explore'"></app-btn-standard-big>
-                        <a class="d-flex align-items-center link-light" href="http://" target="_blank"
-                            rel="noopener noreferrer">Learn</a>
-                    </div>
-                </div>
-                <div class="left-inner d-flex position-relative">
-                    <div class="float-images-container h-100">
-                        <img class="h-100" src="../../../../../assets/img/pie@2x.webp" alt="Pie chart">
-                        <img class="h-100" src="../../../../../assets/img/stonks@2x.webp" alt="Stocks chart">
-                        <img class="h-100" src="../../../../../assets/img/folder@2x.webp" alt="Folder with cake token">
-                    </div>
-                </div>
-            </div>
+        <div class="left-inner d-flex position-relative">
+          <div class="float-images-container h-100">
+            <img class="h-100" src="../../../../../assets/img/pie@2x.webp" alt="Pie chart">
+            <img class="h-100" src="../../../../../assets/img/stonks@2x.webp" alt="Stocks chart">
+            <img class="h-100" src="../../../../../assets/img/folder@2x.webp" alt="Folder with cake token">
+          </div>
         </div>
-        <div class="tops overflow-hidden">
-            <div class="d-flex flex-column tops mt-4">
-                <div class="d-flex mb-4">
-                    <h2 class="title-h2-top">
-                        Top
-                        <span id="tops-name" class="purple-h2">{{top? "Farms" : "Syrup Pools"}}</span>
-                    </h2>  
-                    <button id="clicker" class="button-tops" height="100%" width="auto" scale="md"
-                        (click)="cliccabile()">
-                        <img class="svg-clicker" src="../../../../../assets/svg/earn-passive-clicker.svg" alt=""
-                            srcset="">
-                    </button>
-                </div> 
-                <div class="tops-bottom overflow-hidden"> 
-                    <div class=" grid-template">
-                        <div *ngFor="let i of [1,2,3,4,5]; let a = index" >
-                            <div  class="position-relative d-flex top-0" [ngStyle]="{
+      </div>
+    </div>
+    <div class="tops overflow-hidden">
+      <div class="d-flex flex-column tops mt-4">
+        <div class="d-flex mb-4">
+          <h2 class="title-h2-top">
+            Top
+            <span id="tops-name" class="purple-h2">{{top? "Farms" : "Syrup Pools"}}</span>
+          </h2>
+          <button id="clicker" class="button-tops" height="100%" width="auto" scale="md" (click)="cliccabile()">
+            <img class="svg-clicker" src="../../../../../assets/svg/earn-passive-clicker.svg" alt="" srcset="">
+          </button>
+        </div>
+        <div class="tops-bottom overflow-hidden">
+          <div class=" grid-template">
+            <div *ngFor="let i of [1,2,3,4,5]; let a = index">
+              <div class="position-relative d-flex top-0" [ngStyle]="{
                                 'margin-top': top ? '0px' : '40px',
                                 'opacity': top ? '1' : '0',
                                 'transition': 'opacity 0s ease 0s, margin-top 0s ease 0s, all 0.5s ease-out 0s'
-                            }">  
-                                <app-earn-passive-farm [a]="a"></app-earn-passive-farm>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=" grid-template1">
-                        <div *ngFor="let i of [1,2,3,4,5]; let b = index">
-                            <div [ngClass]="b == 0 ? 'bg-warning' : 'border-left-charts'" class="position-relative d-flex top-0" [ngStyle]="{
+                            }">
+                <app-earn-passive-farm [a]="a"></app-earn-passive-farm>
+              </div>
+            </div>
+          </div>
+          <div class=" grid-template1">
+            <div *ngFor="let i of [1,2,3,4,5]; let b = index">
+              <div [ngClass]="b == 0 ? 'bg-warning' : 'border-left-charts'" class="position-relative d-flex top-0"
+                [ngStyle]="{
                                 'margin-top': !top ? '-310px' : '40px',
                                 'opacity': !top ? '1' : '0',
                                 'transition': 'opacity 0s ease 0s, margin-top 0s ease 0s, all 0.5s ease-out 0s'
                             }">
-                                <app-earn-passive-pools [b]="b" ></app-earn-passive-pools>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <app-earn-passive-pools [b]="b"></app-earn-passive-pools>
+              </div>
             </div>
-
+          </div>
         </div>
+      </div>
+
     </div>
+  </div>
 </div>

@@ -10,9 +10,6 @@ import { HomepageComponent } from './views/homepage/homepage.component';
 import { HeroComponent } from './views/homepage/components/hero/hero.component';
 import { PhishingBarComponent } from './core/navbar/components/phishing-bar/phishing-bar.component';
 import { NavbarProperComponent } from './core/navbar/components/navbar-proper/navbar-proper.component';
-import { BtnStandardSmallComponent } from './shared/btn-standard-small/btn-standard-small.component';
-import { BtnStandardBigComponent } from './shared/btn-standard-big/btn-standard-big.component';
-import { BtnTransparentComponent } from './shared/btn-transparent/btn-transparent.component';
 import { DarkModeButtonComponent } from './shared/dark-mode-button/dark-mode-button.component';
 import { DarkModeBtnSunComponent } from './shared/dark-mode-button/components/dark-mode-btn-sun/dark-mode-btn-sun.component';
 import { DarkModeBtnMoonComponent } from './shared/dark-mode-button/components/dark-mode-btn-moon/dark-mode-btn-moon.component';
@@ -28,6 +25,7 @@ import { UsedByComponent } from './views/homepage/components/used-by/used-by.com
 import { WinMillionsComponent } from './views/homepage/components/win-millions/win-millions.component';
 import { EarnPassiveFarmComponent } from './views/homepage/components/earn-passive/components/earn-passive-farm/earn-passive-farm.component';
 import { EarnPassivePoolsComponent } from './views/homepage/components/earn-passive/components/earn-passive-pools/earn-passive-pools.component';
+import { StandardButtonComponent } from './shared/standard-button/standard-button.component';
 
 
 @NgModule({
@@ -40,9 +38,6 @@ import { EarnPassivePoolsComponent } from './views/homepage/components/earn-pass
     HeroComponent,
     PhishingBarComponent,
     NavbarProperComponent,
-    BtnStandardSmallComponent,
-    BtnStandardBigComponent,
-    BtnTransparentComponent,
     DarkModeButtonComponent,
     DarkModeBtnSunComponent,
     DarkModeBtnMoonComponent,
@@ -58,6 +53,7 @@ import { EarnPassivePoolsComponent } from './views/homepage/components/earn-pass
     WinMillionsComponent,
     EarnPassiveFarmComponent,
     EarnPassivePoolsComponent,
+    StandardButtonComponent,
   ],
   imports: [
     BrowserModule,
