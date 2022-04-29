@@ -32,6 +32,7 @@ import { NftCardCollectionComponent } from './shared/nft-card-collection/nft-car
 import { NftArrivalCardComponent } from './views/nft-overview/components/nft-arrival-card/nft-arrival-card.component';
 import { FaqComponent } from './shared/faq/faq.component';
 import { AccordionBtnComponent } from './shared/accordion-btn/accordion-btn.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import { AccordionBtnComponent } from './shared/accordion-btn/accordion-btn.comp
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

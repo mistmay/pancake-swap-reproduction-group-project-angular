@@ -27,16 +27,14 @@ export class EarnPassiveFarmComponent implements OnInit {
     }, 10);
   }
 
-    // Cambiare num in base al valore della APY
-    
-    counter() {
-        let arr = this.num.toString().split(".")
-        this.count = `${this.integer++},${this.decimal++}%`;
-        console.log(this.integer, Number(arr[0]))
-        if (this.integer == Number(arr[0])) {
-            this.count = this.num + "%"
-            console.log(this.count)
-            clearInterval(this.timer);
+  // Cambiare num in base al valore della APY
+
+  counter() {
+    let arr = this.num.toString().split(".")
+    this.count = `${this.integer++},${this.decimal++}%`;
+    if (this.integer == Number(arr[0])) {
+      this.count = this.num + "%"
+      clearInterval(this.timer);
     }
   }
 }
