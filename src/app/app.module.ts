@@ -26,6 +26,12 @@ import { WinMillionsComponent } from './views/homepage/components/win-millions/w
 import { EarnPassiveFarmComponent } from './views/homepage/components/earn-passive/components/earn-passive-farm/earn-passive-farm.component';
 import { EarnPassivePoolsComponent } from './views/homepage/components/earn-passive/components/earn-passive-pools/earn-passive-pools.component';
 import { StandardButtonComponent } from './shared/standard-button/standard-button.component';
+import { LiquidityCardComponent } from './shared/liquidity-card/liquidity-card.component';
+import { NftOverviewComponent } from './views/nft-overview/nft-overview.component';
+import { NftCardCollectionComponent } from './shared/nft-card-collection/nft-card-collection.component';
+import { NftArrivalCardComponent } from './views/nft-overview/components/nft-arrival-card/nft-arrival-card.component';
+import { FaqComponent } from './shared/faq/faq.component';
+import { AccordionBtnComponent } from './shared/accordion-btn/accordion-btn.component';
 
 
 @NgModule({
@@ -54,6 +60,12 @@ import { StandardButtonComponent } from './shared/standard-button/standard-butto
     EarnPassiveFarmComponent,
     EarnPassivePoolsComponent,
     StandardButtonComponent,
+    LiquidityCardComponent,
+    NftOverviewComponent,
+    NftCardCollectionComponent,
+    NftArrivalCardComponent,
+    FaqComponent,
+    AccordionBtnComponent,
   ],
   imports: [
     BrowserModule,
