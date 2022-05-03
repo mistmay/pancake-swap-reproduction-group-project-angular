@@ -26,7 +26,7 @@ body {
     --background-1: rgb(255, 255, 255);
     --background-2: rgba(239, 244, 245, 255);
     --background-3: linear-gradient(139.73deg, rgb(230, 253, 255) 0%, rgb(243, 239, 255) 100%);
-    --background-4: rgba(0, 0, 0, 0) linear-gradient(111.68deg, #f2ecf2 0%, #e8f2f6 100%) repeat scroll 0% 0%;
+    --background-4: rgba(0, 0, 0, 0) linear-gradient(111.68deg, rgb(242, 236, 242) 0%, #e8f2f6 100%) repeat scroll 0% 0%;
     --background-5: linear-gradient(rgb(111, 182, 241) 0%, rgb(234, 242, 246) 100%);
     --background-6: rgba(255, 255, 255, 0.6);
     --background-7: linear-gradient(111.68deg, rgb(242, 236, 242) 0%, rgb(232, 242, 246) 100%);
@@ -35,10 +35,11 @@ body {
     --background-10: rgb(238, 234, 244);
     --background-11: rgb(238, 234, 244);
     --background-12: rgb(122, 110, 170);
+    --background-13: linear-gradient(rgb(255, 255, 255) 22%, rgb(215, 202, 236) 100%);
     --border: 1px solid rgb(231, 227, 235);
     --border-2: 1px solid rgb(215, 202, 236);
     --border-3: 1px solid rgb(215, 202, 236);
-    --color-1: rgb(118, 69, 217);
+    --color-1: #7645d9;
     --color-2: rgb(40, 13, 95);
     --color-3: #7a6eaa;
     --color-5: rgb(122, 110, 170);
@@ -46,6 +47,8 @@ body {
     --color-7: rgb(216, 203, 237);
     --color-8: rgb(244, 238, 255);
     --color-9: white;
+    --color-10: #1fc7d4;
+    --color-11: #ed4b9e;
     --filter-1: invert(87%) sepia(4%) saturate(1583%) hue-rotate(216deg) brightness(95%) contrast(95%);
     --filter-2: invert(83%) sepia(3%) saturate(7%) hue-rotate(252deg) brightness(116%) contrast(102%);
     --filter-3: invert(58%) sepia(5%) saturate(3918%) hue-rotate(211deg) brightness(77%) contrast(85%);
@@ -66,6 +69,7 @@ body.dark-mode {
     --background-10: rgb(53, 53, 71);
     --background-11: rgba(55, 47, 71, 255);
     --background-12: rgb(184, 173, 210);
+    --background-13: linear-gradient(rgb(9, 7, 12) 22%, rgb(32, 19, 53) 100%);
     --border: 1px solid rgb(56, 50, 65);
     --border-2: 1px solid rgb(38, 33, 48);
     --border-3: none;

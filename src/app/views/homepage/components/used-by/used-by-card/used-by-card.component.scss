@@ -1,0 +1,54 @@
+@import "../used-by.component.scss";
+
+.card-used {
+    background: var(--background-10);
+    border-radius: 24px;
+    color: var(--color-2);
+    margin-bottom: 16px;
+    height: fit-content;
+    padding: 1px 1px 4px;
+}
+
+.color-1 {
+    color: var(--color-1);
+}
+.color-2 {
+    color: var(--color-10);
+}
+.color-3 {
+    color: var(--color-11);
+}
+
+.svg-color-1 {
+    filter: invert(33%) sepia(58%) saturate(5789%) hue-rotate(249deg) brightness(89%) contrast(89%);
+}
+
+.svg-color-2 {
+    filter: invert(56%) sepia(63%) saturate(521%) hue-rotate(136deg) brightness(102%) contrast(96%);
+}
+
+.svg-color-3 {
+    filter: invert(48%) sepia(73%) saturate(3695%) hue-rotate(303deg) brightness(98%) contrast(89%);
+}
+
+.card-used-border {
+    background: var(--background-1);
+    border-radius: 24px;
+}
+
+.card-used-svg {
+    top: 24px;
+    right: 24px;
+}
+
+.card-used-body {
+    min-width: 232px;
+    width: fit-content;
+}
+
+@media screen and (min-width: 852px) {
+    .card-used-body {
+        margin-top: 64px;
+        min-height: 168px;
+    }
+}

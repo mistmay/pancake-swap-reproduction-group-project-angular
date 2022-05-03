@@ -28,6 +28,7 @@ import { UsedByComponent } from './views/homepage/components/used-by/used-by.com
 import { WinMillionsComponent } from './views/homepage/components/win-millions/win-millions.component';
 import { EarnPassiveFarmComponent } from './views/homepage/components/earn-passive/earn-passive-farm/earn-passive-farm.component';
 import { EarnPassivePoolsComponent } from './views/homepage/components/earn-passive/earn-passive-pools/earn-passive-pools.component';
+import { UsedByCardComponent } from './views/homepage/components/used-by/used-by-card/used-by-card.component';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { EarnPassivePoolsComponent } from './views/homepage/components/earn-pass
     WinMillionsComponent,
     EarnPassiveFarmComponent,
     EarnPassivePoolsComponent,
+    UsedByCardComponent,
   ],
   imports: [
     BrowserModule,
