@@ -10,7 +10,7 @@ export class EarnPassiveFarmComponent implements OnInit {
   count!: String
   integer: number = 0
   decimal: number = 0
-  num: number = 345.22
+  num: number = 186.65
   timer!: ReturnType<typeof setInterval>
 
   constructor() { }
