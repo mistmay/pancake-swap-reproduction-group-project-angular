@@ -23,6 +23,7 @@ import { StartInSecondsComponent } from './views/homepage/components/start-in-se
 import { TradeAnythingComponent } from './views/homepage/components/trade-anything/trade-anything.component';
 import { UsedByComponent } from './views/homepage/components/used-by/used-by.component';
 import { WinMillionsComponent } from './views/homepage/components/win-millions/win-millions.component';
+import { UsedByCardComponent } from './views/homepage/components/used-by/used-by-card/used-by-card.component';
 import { EarnPassiveFarmComponent } from './views/homepage/components/earn-passive/components/earn-passive-farm/earn-passive-farm.component';
 import { EarnPassivePoolsComponent } from './views/homepage/components/earn-passive/components/earn-passive-pools/earn-passive-pools.component';
 import { StandardButtonComponent } from './shared/standard-button/standard-button.component';
@@ -60,6 +61,7 @@ import { HttpClientModule } from '@angular/common/http';
     WinMillionsComponent,
     EarnPassiveFarmComponent,
     EarnPassivePoolsComponent,
+    UsedByCardComponent,
     StandardButtonComponent,
     LiquidityCardComponent,
     NftOverviewComponent,
