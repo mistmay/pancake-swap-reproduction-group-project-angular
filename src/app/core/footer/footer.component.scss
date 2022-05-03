@@ -1,40 +1,46 @@
+
 footer {
     background: rgb(39, 38, 44);
-    padding: 32px;
-    height: 500px;
+    padding: 40px 16px;
+    margin-bottom: 44px;
 }
 
 footer .footer-container {
     display: flex;
+    flex-direction: column;
+    width: 1200px;
 }
 
 footer .inside-container {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
-    margin-top: 40px;
 }
 
 footer .links-container {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 1rem 2rem;
     gap: 40px;
+    
 }
 
 footer .top-content-link {
     color: rgb(154, 106, 255);
     font-weight: 600;
     text-transform: uppercase;
+    font-family: "Kanit", sans-serif !important;
 }
 
 footer .footer-links-style a {
     color: rgb(244, 238, 255);
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 400 !important;
     line-height: 1.5;
+    font-family: "Kanit", sans-serif !important;
 }
 
 footer .footer-links-style li:hover {
@@ -56,6 +62,7 @@ footer .icons-content {
     fill: rgba(214, 198, 250, 0.808);
     padding: 0.5rem 2rem;
     margin-right: 10px;
+    border-bottom: 1px solid rgb(56, 50, 65);
 }
 
 footer .icons-content a {
@@ -91,6 +98,7 @@ footer .soldi-style {
     margin-left: 8px !important;
     display: flex;
     margin-left: -12px;
+    font-family: "Kanit", sans-serif !important;
 }
 
 footer .grow {
@@ -99,8 +107,7 @@ footer .grow {
 }
 
 footer .panckake-swap-piccolo {
-    margin-bottom: 20px;
-    margin-left: 15px;
+    margin-bottom: 24px;
 }
 
 footer .piccolo {
@@ -131,6 +138,7 @@ footer .piccolo .left-bottom-content {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
+    font-family: "Kanit", sans-serif !important;
 }
 
 .language-menu {
@@ -144,6 +152,7 @@ footer .piccolo .left-bottom-content {
     overflow-x: hidden;
     background-color: var(--background-1);
     border-bottom: var(--border);
+    font-family: "Kanit", sans-serif !important;
     z-index: 3;
     span {
         &:hover {
@@ -181,7 +190,7 @@ footer .piccolo .left-bottom-content {
     filter: invert(82%) sepia(18%) saturate(774%) hue-rotate(208deg) brightness(87%) contrast(88%);
 }
 
-@media (min-width: 768px) {
+@media screen and  (min-width: 768px) {
 
     footer .panckake-swap-piccolo {
         display: none;
@@ -194,9 +203,22 @@ footer .piccolo .left-bottom-content {
     footer .icons-content {
         border-bottom: 1px solid rgb(56, 50, 65);
     }
+
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 520px) {
+    .grow {
+        padding: 0px !important;
+        margin: 0px !important;
+    }
+
+    footer .piccolo .left-bottom-content {
+        padding: 0px !important;
+        margin: 0px !important;
+    }
+}
+
+@media screen and  (max-width: 767px) {
 
     footer .panckake-swap-grande {
         display: none;
@@ -205,6 +227,10 @@ footer .piccolo .left-bottom-content {
     footer .links-container {
         border-top: 1px solid rgb(56, 50, 65);
         flex-direction: column;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-left: 0px;
+        padding-right: 0px;
     }
 
     footer .right-bottom-content-piccolo {
@@ -220,7 +246,7 @@ footer .piccolo .left-bottom-content {
     }
 }
 
-@media (max-width: 411px) {
+@media screen and  (max-width: 411px) {
     footer .piccolo {
         display: none;
     }
@@ -236,8 +262,9 @@ footer .piccolo .left-bottom-content {
 
 }
 
-@media (max-width: 767px) {
+@media screen and (min-width: 576px) {
     footer {
-        height: 1075px;
+        padding: 56px 40px 32px;
+        margin-bottom: 0px !important;
     }
 }
