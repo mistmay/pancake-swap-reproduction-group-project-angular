@@ -5,8 +5,7 @@
       <div class="d-flex justify-content-between align-items-center setting-screen-padding setting-screen-title"
         [style.background]="getSettingScreenTitleBackground()">
         <h2>{{ settingScreenTitle }}</h2>
-        <img src="../../../assets/svg/setting-screen-close-x.svg"
-          (click)="settingScreenLauncherService.changeSettingScreenLauncherStatus('')" id="setting-screen-close-x">
+        <img src="../../../assets/svg/setting-screen-close-x.svg" (click)="closeModal()" id="setting-screen-close-x">
       </div>
       <app-setting-screen-content-connect-wallet *ngSwitchCase="'connect'"></app-setting-screen-content-connect-wallet>
       <app-setting-screen-content-setting-menu *ngSwitchDefault></app-setting-screen-content-setting-menu>

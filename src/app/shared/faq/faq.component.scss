@@ -1,0 +1,37 @@
+#ifo-page-accordion-container {
+  background-color: var(--background-1);
+  border-radius: 24px;
+  overflow: hidden;
+  border: var(--border);
+}
+
+#ifo-page-accordion-header {
+  background: var(--background-4);
+  padding: 24px;
+  font-weight: 600;
+  line-height: 1.1;
+  font-size: 24px;
+  color: var(--color-1);
+}
+
+#ifo-page-accordion-main {
+  padding: 24px;
+}
+
+#ifo-page-accordion-main>div {
+  border-bottom: var(--border);
+}
+
+#ifo-page-accordion-main span {
+  color: var(--color-2);
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+#ifo-page-accordion-main p {
+  color: var(--color-3);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}

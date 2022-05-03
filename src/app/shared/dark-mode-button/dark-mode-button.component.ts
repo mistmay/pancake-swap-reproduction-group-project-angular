@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DarkModeService } from 'src/app/dark-mode.service';
+import { DarkModeService } from 'src/app/services/dark-mode.service';
 
 @Component({
   selector: 'app-dark-mode-button',
@@ -8,9 +8,17 @@ import { DarkModeService } from 'src/app/dark-mode.service';
 })
 export class DarkModeButtonComponent implements OnInit {
 
-  constructor(public darkModeService: DarkModeService) { }
+  constructor(private darkModeService: DarkModeService) { }
 
   ngOnInit(): void {
+  }
+
+  darkModeActivation(): void {
+    this.darkModeService.darkModeActivation();
+  }
+
+  darkModeStatus(): boolean {
+    return this.darkModeService.darkModeStatus;
   }
 
 }

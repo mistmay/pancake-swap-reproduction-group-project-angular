@@ -10,25 +10,30 @@ import { HomepageComponent } from './views/homepage/homepage.component';
 import { HeroComponent } from './views/homepage/components/hero/hero.component';
 import { PhishingBarComponent } from './core/navbar/components/phishing-bar/phishing-bar.component';
 import { NavbarProperComponent } from './core/navbar/components/navbar-proper/navbar-proper.component';
-import { BtnStandardSmallComponent } from './shared/btn-standard-small/btn-standard-small.component';
-import { BtnStandardBigComponent } from './shared/btn-standard-big/btn-standard-big.component';
-import { BtnTransparentComponent } from './shared/btn-transparent/btn-transparent.component';
 import { DarkModeButtonComponent } from './shared/dark-mode-button/dark-mode-button.component';
-import { DarkModeBtnSunComponent } from './shared/dark-mode-button/dark-mode-btn-sun/dark-mode-btn-sun.component';
-import { DarkModeBtnMoonComponent } from './shared/dark-mode-button/dark-mode-btn-moon/dark-mode-btn-moon.component';
+import { DarkModeBtnSunComponent } from './shared/dark-mode-button/components/dark-mode-btn-sun/dark-mode-btn-sun.component';
+import { DarkModeBtnMoonComponent } from './shared/dark-mode-button/components/dark-mode-btn-moon/dark-mode-btn-moon.component';
 import { ToogleBtnComponent } from './shared/toogle-btn/toogle-btn.component';
 import { NavModalsComponent } from './core/nav-modals/nav-modals.component';
-import { SettingScreenContentConnectWalletComponent } from './core/nav-modals/setting-screen-content-connect-wallet/setting-screen-content-connect-wallet.component';
-import { SettingScreenContentSettingMenuComponent } from './core/nav-modals/setting-screen-content-setting-menu/setting-screen-content-setting-menu.component';
+import { SettingScreenContentConnectWalletComponent } from './core/nav-modals/components/setting-screen-content-connect-wallet/setting-screen-content-connect-wallet.component';
+import { SettingScreenContentSettingMenuComponent } from './core/nav-modals/components/setting-screen-content-setting-menu/setting-screen-content-setting-menu.component';
 import { CakeMakesComponent } from './views/homepage/components/cake-makes/cake-makes.component';
 import { EarnPassiveComponent } from './views/homepage/components/earn-passive/earn-passive.component';
 import { StartInSecondsComponent } from './views/homepage/components/start-in-seconds/start-in-seconds.component';
 import { TradeAnythingComponent } from './views/homepage/components/trade-anything/trade-anything.component';
 import { UsedByComponent } from './views/homepage/components/used-by/used-by.component';
 import { WinMillionsComponent } from './views/homepage/components/win-millions/win-millions.component';
-import { EarnPassiveFarmComponent } from './views/homepage/components/earn-passive/earn-passive-farm/earn-passive-farm.component';
-import { EarnPassivePoolsComponent } from './views/homepage/components/earn-passive/earn-passive-pools/earn-passive-pools.component';
 import { UsedByCardComponent } from './views/homepage/components/used-by/used-by-card/used-by-card.component';
+import { EarnPassiveFarmComponent } from './views/homepage/components/earn-passive/components/earn-passive-farm/earn-passive-farm.component';
+import { EarnPassivePoolsComponent } from './views/homepage/components/earn-passive/components/earn-passive-pools/earn-passive-pools.component';
+import { StandardButtonComponent } from './shared/standard-button/standard-button.component';
+import { LiquidityCardComponent } from './shared/liquidity-card/liquidity-card.component';
+import { NftOverviewComponent } from './views/nft-overview/nft-overview.component';
+import { NftCardCollectionComponent } from './shared/nft-card-collection/nft-card-collection.component';
+import { NftArrivalCardComponent } from './views/nft-overview/components/nft-arrival-card/nft-arrival-card.component';
+import { FaqComponent } from './shared/faq/faq.component';
+import { AccordionBtnComponent } from './shared/accordion-btn/accordion-btn.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -41,9 +46,6 @@ import { UsedByCardComponent } from './views/homepage/components/used-by/used-by
     HeroComponent,
     PhishingBarComponent,
     NavbarProperComponent,
-    BtnStandardSmallComponent,
-    BtnStandardBigComponent,
-    BtnTransparentComponent,
     DarkModeButtonComponent,
     DarkModeBtnSunComponent,
     DarkModeBtnMoonComponent,
@@ -60,11 +62,19 @@ import { UsedByCardComponent } from './views/homepage/components/used-by/used-by
     EarnPassiveFarmComponent,
     EarnPassivePoolsComponent,
     UsedByCardComponent,
+    StandardButtonComponent,
+    LiquidityCardComponent,
+    NftOverviewComponent,
+    NftCardCollectionComponent,
+    NftArrivalCardComponent,
+    FaqComponent,
+    AccordionBtnComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

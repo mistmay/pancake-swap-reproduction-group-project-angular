@@ -1,0 +1,48 @@
+button {
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  opacity: 1;
+  outline: 0px;
+
+  &:hover {
+    opacity: 0.6;
+    transition: 0.2s ease;
+    cursor: pointer;
+  }
+}
+
+.btn-standard {
+  border: none;
+  box-shadow: rgb(14 14 44 / 40%) 0px -1px 0px 0px inset;
+  background-color: rgb(31, 199, 212);
+  color: white;
+}
+
+.btn-transparent {
+  border: 2px solid rgb(31, 199, 212);
+  box-shadow: none;
+  background-color: transparent;
+  color: rgb(31, 199, 212);
+
+  &:hover {
+    color: rgb(31, 199, 212);
+  }
+}
+
+.btn-big {
+  height: 48px;
+  padding: 0px 24px;
+}
+
+.btn-small {
+  height: 32px;
+  padding: 0px 16px;
+}
+
+#btn-arrow {
+  filter: invert(100%) sepia(0%) saturate(1789%) hue-rotate(131deg) brightness(112%) contrast(96%);
+}

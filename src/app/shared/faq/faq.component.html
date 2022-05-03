@@ -1,0 +1,16 @@
+<div class="w-100 w-lg-50" id="ifo-page-accordion-container">
+  <div class="w-100" id="ifo-page-accordion-header">
+    <h2>Details</h2>
+  </div>
+  <div id="ifo-page-accordion-main">
+    <div *ngFor="let faqBox of faqBoxes">
+      <div class="d-flex justify-content-between align-items-center pb-3 gap-2">
+        <span>{{ faqBox.question }}</span>
+        <app-accordion-btn (click)="faqBox.showAnswer = !faqBox.showAnswer"></app-accordion-btn>
+      </div>
+      <div class="pb-3" [ngClass]="faqBox.showAnswer ? 'd-block' : 'd-none'">
+        <p>{{ faqBox.answer }}</p>
+      </div>
+    </div>
+  </div>
+</div>

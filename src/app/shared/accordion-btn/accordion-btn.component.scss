@@ -1,0 +1,26 @@
+.ifo-page-card-xl-hide-btn {
+  border: 0px;
+  border-radius: 16px;
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  transition: 0.2s ease;
+  height: 48px;
+  background-color: transparent;
+  color: rgb(31, 199, 212);
+  gap: 10px;
+  padding: 0;
+}
+
+.ifo-page-card-xl-hide-btn img {
+  filter: invert(60%) sepia(75%) saturate(450%) hue-rotate(136deg) brightness(94%) contrast(95%);
+}
+
+.ifo-page-card-xl-hide-btn:hover {
+  opacity: 0.8;
+}

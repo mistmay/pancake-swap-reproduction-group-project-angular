@@ -1,0 +1,243 @@
+footer {
+    background: rgb(39, 38, 44);
+    padding: 32px;
+    height: 500px;
+}
+
+footer .footer-container {
+    display: flex;
+}
+
+footer .inside-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+footer .links-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    gap: 40px;
+}
+
+footer .top-content-link {
+    color: rgb(154, 106, 255);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+footer .footer-links-style a {
+    color: rgb(244, 238, 255);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+footer .footer-links-style li:hover {
+    text-decoration: underline;
+
+}
+
+footer .footer-links-style li {
+    margin-bottom: 5px;
+}
+
+footer #trattino {
+    color: rgb(244, 238, 255);
+}
+
+footer .icons-content {
+    display: flex;
+    justify-content: flex-start;
+    fill: rgba(214, 198, 250, 0.808);
+    padding: 0.5rem 2rem;
+    margin-right: 10px;
+}
+
+footer .icons-content a {
+    margin-right: 20px;
+}
+
+footer .bottom-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 32px;
+}
+
+footer .right-bottom-content {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+footer .pu a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+footer .soldi-style {
+    color: rgb(184, 173, 210);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-right: 30px;
+    margin-left: 8px !important;
+    display: flex;
+    margin-left: -12px;
+}
+
+footer .grow {
+    margin-left: 20px;
+
+}
+
+footer .panckake-swap-piccolo {
+    margin-bottom: 20px;
+    margin-left: 15px;
+}
+
+footer .piccolo {
+    margin-bottom: 40px;
+    border-top: 1px solid rgb(57, 43, 80);
+}
+
+footer .grande .left-bottom-content {
+    margin-top: 30px;
+}
+
+footer .piccolo .left-bottom-content {
+    padding: 0 20px;
+}
+
+.grande,
+.piccolo {
+    display: flex;
+}
+
+.footer-language {
+    gap: 8px;
+    cursor: pointer;
+}
+
+.footer-language p {
+    color: rgb(184, 173, 210);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.language-menu {
+    color: var(--color-5);
+    padding: 20px 0;
+    font-weight: 600;
+    height: 400px;
+    width: 200px;
+    gap: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: var(--background-1);
+    border-bottom: var(--border);
+    z-index: 3;
+    span {
+        &:hover {
+            opacity: 0.6;
+            cursor: pointer; 
+        }
+    }
+}
+
+.language-menu-footer {
+    bottom: 27px;
+    left: -25px;
+}
+
+.pancake-logo-dark {
+    width: 160px;
+}
+
+.nav-world {
+    filter: invert(47%) sepia(15%) saturate(1221%) hue-rotate(211deg) brightness(93%) contrast(85%);
+    &:hover {
+        opacity: 0.6;
+        transition: 0.2s ease;
+        cursor: pointer;
+    }
+}
+
+.nav-pancake-token-logo:hover {
+    transform: scale(1.2);
+    transition: 0.3s ease;
+}
+
+
+.footer-icon {
+    filter: invert(82%) sepia(18%) saturate(774%) hue-rotate(208deg) brightness(87%) contrast(88%);
+}
+
+@media (min-width: 768px) {
+
+    footer .panckake-swap-piccolo {
+        display: none;
+    }
+
+    footer .piccolo {
+        display: none;
+    }
+
+    footer .icons-content {
+        border-bottom: 1px solid rgb(56, 50, 65);
+    }
+}
+
+@media (max-width: 767px) {
+
+    footer .panckake-swap-grande {
+        display: none;
+    }
+
+    footer .links-container {
+        border-top: 1px solid rgb(56, 50, 65);
+        flex-direction: column;
+    }
+
+    footer .right-bottom-content-piccolo {
+        display: none;
+    }
+
+    footer .grande {
+        display: none;
+    }
+
+    footer .right-bottom-content {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 411px) {
+    footer .piccolo {
+        display: none;
+    }
+
+    footer .grande {
+        display: none;
+    }
+
+    footer .wrapper-footer {
+        margin-right: 200vh;
+
+    }
+
+}
+
+@media (max-width: 767px) {
+    footer {
+        height: 1075px;
+    }
+}
