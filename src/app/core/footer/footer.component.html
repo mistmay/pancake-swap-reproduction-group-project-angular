@@ -1,5 +1,5 @@
 <footer>
-  <div class="wrapper-footer">
+  <div class="wrapper-footer d-flex justify-content-center">
     <div class="footer-container">
       <div class="inside-container">
         <div class="panckake-swap-piccolo">
@@ -47,7 +47,7 @@
               </div>
             </div>
           </div>
-          <div class="right-bottom-content">
+          <div class="right-bottom-content w-100 justify-content-between">
             <div class="pu">
               <a class="grow"
                 href="https://pancakeswap.finance/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82">
@@ -55,12 +55,14 @@
                 <div class="soldi-style">${{getCakePrice()}}</div>
               </a>
             </div>
-            <app-standard-button [content]="'Buy CAKE'" [arrowCheck]="true" [isSmall]="true"></app-standard-button>
+            <ng-container>
+              <app-standard-button [content]="'Buy CAKE'" [arrowCheck]="true" [isSmall]="true"></app-standard-button>
+            </ng-container>
           </div>
         </div>
-        <div class="links-container">
+        <div class="links-container pb-5">
           <ul class="footer-links-style">
-            <div class="top-content-link">ABOUT</div>
+            <div class="top-content-link pb-3">ABOUT</div>
             <li><a href="https://docs.pancakeswap.finance/contact-us">Contact</a></li>
             <li><a href="https://docs.pancakeswap.finance/brand">Brand</a></li>
             <li><a href="https://medium.com/pancakeswap">Blog</a></li>
@@ -72,7 +74,7 @@
             </li>
           </ul>
           <ul class="footer-links-style">
-            <div class="top-content-link">Help</div>
+            <div class="top-content-link pb-3">Help</div>
             <li><a href="https://docs.pancakeswap.finance/contact-us/customer-support">Customer
                 Support</a>
             </li>
@@ -80,7 +82,7 @@
             <li><a href="https://docs.pancakeswap.finance/get-started">Guides</a></li>
           </ul>
           <ul class="footer-links-style">
-            <div class="top-content-link">DEVELOPERS</div>
+            <div class="top-content-link pb-3">DEVELOPERS</div>
             <li><a href="https://github.com/pancakeswap">Github</a></li>
             <li><a href="https://docs.pancakeswap.finance/">Documentation</a></li>
             <li><a href="https://docs.pancakeswap.finance/code/bug-bounty">Bug Bounty</a></li>
@@ -93,7 +95,7 @@
             <img class="pancake-logo-dark" src="../../../assets/svg/Pancake-logo-footer.svg" alt="">
           </div>
         </div>
-        <div class="icons-content">
+        <div class="icons-content pb-5">
           <a href="https://twitter.com/pancakeswap">
             <img class="footer-icon" src="../../../assets/svg/twitter-icon.svg" alt="">
           </a>

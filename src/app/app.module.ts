@@ -34,6 +34,14 @@ import { NftArrivalCardComponent } from './views/nft-overview/components/nft-arr
 import { FaqComponent } from './shared/faq/faq.component';
 import { AccordionBtnComponent } from './shared/accordion-btn/accordion-btn.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CakeGridComponent } from './views/homepage/components/cake-makes/cake-grid/cake-grid.component';
+import { WinBackgroundComponent } from './views/homepage/components/win-millions/win-background/win-background.component';
+import { WinCardLeftComponent } from './views/homepage/components/win-millions/win-card-left/win-card-left.component';
+import { WinCardRightComponent } from './views/homepage/components/win-millions/win-card-right/win-card-right.component';
+import { ButtonArrowComponent } from './shared/button-arrow/button-arrow.component';
+import { WinBackgroundLeftComponent } from './views/homepage/components/win-millions/win-background/win-background-left/win-background-left.component';
+import { WinBackgroundRightComponent } from './views/homepage/components/win-millions/win-background/win-background-right/win-background-right.component';
+import { TopsFarmsPoolsComponent } from './views/homepage/components/earn-passive/components/tops-farms-pools/tops-farms-pools.component';
 
 
 @NgModule({
@@ -69,6 +77,14 @@ import { HttpClientModule } from '@angular/common/http';
     NftArrivalCardComponent,
     FaqComponent,
     AccordionBtnComponent,
+    CakeGridComponent,
+    WinBackgroundComponent,
+    WinCardLeftComponent,
+    WinCardRightComponent,
+    ButtonArrowComponent,
+    WinBackgroundLeftComponent,
+    WinBackgroundRightComponent,
+    TopsFarmsPoolsComponent,
   ],
   imports: [
     BrowserModule,

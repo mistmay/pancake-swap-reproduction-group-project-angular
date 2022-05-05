@@ -17,9 +17,9 @@
             <p class="paragraph-text text-center mt-2 m-0">PancakeSwap has the most users of any decentralized platform, ever.</p>
             <p class="paragraph-text text-center m-0">And those users are now entrusting the platform with over $6 billion in funds.</p>
             <p class="p-color-5 mt-4">Will you join them?</p>
-            <div class="d-flex flex-column flex-lg-row">
+            <div class="d-flex flex-column mq-f">
                 <ng-container *ngFor="let card of cards; index as i">
-                    <app-used-by-card [card]="card" ></app-used-by-card>
+                    <app-used-by-card [marginEnd]="'me-md-3'" [card]="card" ></app-used-by-card>
                 </ng-container>
             </div>
         </div>

@@ -9,6 +9,7 @@ import { UsedByCard } from 'src/app/models/Used-By-Card';
 export class UsedByCardComponent implements OnInit {
 
   @Input() card!: UsedByCard
+  @Input() marginEnd!: string
 
   constructor() { }
 
