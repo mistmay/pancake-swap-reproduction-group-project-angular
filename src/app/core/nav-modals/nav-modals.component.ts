@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 import { SettingScreenLauncherService } from 'src/app/services/setting-screen-launcher.service';
 
 @Component({
@@ -10,6 +10,7 @@ export class NavModalsComponent implements OnInit {
   @Input() settingScreenTitle: string = '';
   @Input() settingScreenTitleBackgroundType: boolean = true;
   @Input() modalType: string = '';
+  @ViewChild('modal') modal!: ElementRef;
 
   constructor(private settingScreenLauncherService: SettingScreenLauncherService, private elementRef: ElementRef) { }
 
@@ -25,7 +26,7 @@ export class NavModalsComponent implements OnInit {
   }
 
   clickOutsideModal(event: Event): void {
-    if (event.target !== this.elementRef.nativeElement.querySelector('.setting-screen')) {
+    if (event.target !== this.modal.nativeElement) {
       return;
     } else {
       this.settingScreenLauncherService.changeSettingScreenLauncherStatus('');

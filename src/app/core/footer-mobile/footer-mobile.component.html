@@ -1,5 +1,6 @@
 <aside id="footer-mobile-aside"
-  class="position-fixed bottom-0 d-flex d-sm-none justify-content-around align-items-center vw-100">
+  class="position-fixed bottom-0 d-flex d-sm-none justify-content-around align-items-center vw-100"
+  (click)="closeSearchModal()">
   <a href="#" class="d-flex flex-column justify-content-center align-items-center">
     <img src="../../../assets/svg/mobile-footer-trade.svg" id="mobile-footer-trade">
     <span>Trade</span>
@@ -45,7 +46,7 @@
     <div
       class="d-none toogle-menu toogle-menu-bottom position-absolute end-0 flex-column align-items-start justify-content-start"
       [class.open-menu]="showPointsMenu">
-      <a href="#">Info</a>
+      <a routerLink="/info">Info</a>
       <a href="#">IFO</a>
       <a href="#">Voting</a>
       <hr />

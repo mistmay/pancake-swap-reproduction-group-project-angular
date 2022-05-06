@@ -1,0 +1,37 @@
+<aside class="w-100 h-100" (click)="closeModal($event)" #modal>
+  <input type="text" placeholder="Search polls or tokens" id="info-page-real-searchbar">
+  <div id="info-page-aside-container">
+    <div>
+      <button type="button" class="info-page-btn-1">Search</button>
+      <button type="button" class="info-page-btn-2">WatchList</button>
+    </div>
+    <div class="container-fluid">
+      <div class="row info-page-aside-margin">
+        <div class="col col-sm-6">
+          <span>Tokens</span>
+        </div>
+        <div class="col d-none d-sm-block">Price</div>
+        <div class="col d-none d-sm-block">Volume 24H</div>
+        <div class="col d-none d-sm-block">Liquidity</div>
+      </div>
+      <div class="row info-page-aside-padding" id="token-search-result">
+        <div class="col info-page-aside-search-result">
+          <p>Search pools or tokens</p>
+        </div>
+      </div>
+      <div class="row info-page-aside-margin">
+        <div class="col col-sm-6">
+          <span>Pools</span>
+        </div>
+        <div class="col d-none d-sm-block">Volume 24H</div>
+        <div class="col d-none d-sm-block">Volume 7D</div>
+        <div class="col d-none d-sm-block">Liquidity</div>
+      </div>
+      <div class="row" id="pool-search-result">
+        <div class="col info-page-aside-search-result">
+          <p>Search pools or tokens</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>

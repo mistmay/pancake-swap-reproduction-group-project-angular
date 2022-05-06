@@ -8,8 +8,8 @@ export class SettingScreenLauncherService {
   settingScreenLauncherStatus: string = '';
   showMoreWalletIcons: boolean = false;
 
-  constructor(rendererFactory: RendererFactory2) {
-    this.renderer = rendererFactory.createRenderer(null, null);
+  constructor(private rendererFactory: RendererFactory2) {
+    this.renderer = this.rendererFactory.createRenderer(null, null);
   }
 
   changeSettingScreenLauncherStatus(status: string): void {

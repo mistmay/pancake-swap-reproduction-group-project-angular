@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InfoSearchModalService } from 'src/app/services/info-search-modal.service';
 
 @Component({
   selector: 'app-footer-mobile',
@@ -11,9 +12,13 @@ export class FooterMobileComponent implements OnInit {
   showNftMenu: boolean = false;
   showPointsMenu: boolean = false;
 
-  constructor() { }
+  constructor(private infoSearch: InfoSearchModalService) { }
 
   ngOnInit(): void {
+  }
+
+  closeSearchModal(): void {
+    this.infoSearch.closeModal();
   }
 
 }

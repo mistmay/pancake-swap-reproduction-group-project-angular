@@ -42,6 +42,13 @@ import { ButtonArrowComponent } from './shared/button-arrow/button-arrow.compone
 import { WinBackgroundLeftComponent } from './views/homepage/components/win-millions/win-background/win-background-left/win-background-left.component';
 import { WinBackgroundRightComponent } from './views/homepage/components/win-millions/win-background/win-background-right/win-background-right.component';
 import { TopsFarmsPoolsComponent } from './views/homepage/components/earn-passive/components/tops-farms-pools/tops-farms-pools.component';
+import { InfoPageComponent } from './views/info-page/info-page.component';
+import { SearchNavbarComponent } from './views/info-page/components/search-navbar/search-navbar.component';
+import { SearchModalComponent } from './views/info-page/components/search-modal/search-modal.component';
+import { InfoTableComponent } from './views/info-page/components/info-table/info-table.component';
+import { InfoGraphComponent } from './views/info-page/components/info-graph/info-graph.component';
+import { InfoPoolsComponent } from './views/info-page/sub-pages/info-pools/info-pools.component';
+import { InfoTokensComponent } from './views/info-page/sub-pages/info-tokens/info-tokens.component';
 
 
 @NgModule({
@@ -85,6 +92,13 @@ import { TopsFarmsPoolsComponent } from './views/homepage/components/earn-passiv
     WinBackgroundLeftComponent,
     WinBackgroundRightComponent,
     TopsFarmsPoolsComponent,
+    InfoPageComponent,
+    SearchNavbarComponent,
+    SearchModalComponent,
+    InfoTableComponent,
+    InfoGraphComponent,
+    InfoPoolsComponent,
+    InfoTokensComponent,
   ],
   imports: [
     BrowserModule,
