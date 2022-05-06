@@ -112,9 +112,8 @@
         <span>繁體中文</span>
       </div>
     </div>
-    <img src="../../../../../assets/svg/nav-setting.svg" id="nav-setting"
-      (click)="changeSettingScreenLauncherStatus('settings')">
-    <app-standard-button [content]="'Connect Wallet'" (click)="changeSettingScreenLauncherStatus('connect')"
-      [isSmall]="true"></app-standard-button>
+    <img src="../../../../../assets/svg/nav-setting.svg" id="nav-setting" (click)="openModal('settings')">
+    <app-standard-button [content]="'Connect Wallet'" (click)="openModal('connect')" [isSmall]="true">
+    </app-standard-button>
   </div>
 </nav>

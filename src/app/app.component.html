@@ -1,8 +1,5 @@
-<aside [ngSwitch]="settingScreenLauncherStatus()">
-  <app-nav-modals [settingScreenTitle]="'Settings'" *ngSwitchCase="'settings'"></app-nav-modals>
-  <app-nav-modals [settingScreenTitle]="'Connect Wallet'" [settingScreenTitleBackgroundType]="false"
-    [modalType]="'connect'" *ngSwitchCase="'connect'"></app-nav-modals>
-  <div *ngSwitchDefault></div>
+<aside *ngIf="showModal">
+  <app-nav-modals></app-nav-modals>
 </aside>
 <app-navbar (changeMarginTop)="noPhishingMarginTop()"></app-navbar>
 <main [ngStyle]="{'margin-top': getMarginTop()}">

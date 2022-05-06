@@ -7,18 +7,19 @@ import { SettingScreenLauncherService } from 'src/app/services/setting-screen-la
   styleUrls: ['./setting-screen-content-connect-wallet.component.scss']
 })
 export class SettingScreenContentConnectWalletComponent implements OnInit {
+  showMoreWallet!: boolean;
 
   constructor(private settingScreenLauncherService: SettingScreenLauncherService) { }
 
   ngOnInit(): void {
-  }
-
-  showMoreWalletIcons(): boolean {
-    return this.settingScreenLauncherService.showMoreWalletIcons;
+    this.settingScreenLauncherService.getShowMoreWallet()
+      .subscribe((res: boolean) => {
+        this.showMoreWallet = res;
+      });
   }
 
   setShowMoreWalletIconsTrue(): void {
-    this.settingScreenLauncherService.showMoreWalletIcons = true;
+    this.settingScreenLauncherService.showMoreWallet.next(true);
   }
 
 }

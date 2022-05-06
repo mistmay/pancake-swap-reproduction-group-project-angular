@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { SettingScreenLauncherService } from 'src/app/services/setting-screen-launcher.service';
 
 @Component({
@@ -7,14 +7,30 @@ import { SettingScreenLauncherService } from 'src/app/services/setting-screen-la
   styleUrls: ['./nav-modals.component.scss']
 })
 export class NavModalsComponent implements OnInit {
-  @Input() settingScreenTitle: string = '';
-  @Input() settingScreenTitleBackgroundType: boolean = true;
-  @Input() modalType: string = '';
+  settingScreenTitle!: string;
+  settingScreenTitleBackgroundType!: boolean;
+  modalType!: 'connect' | 'settings' | 'roi';
   @ViewChild('modal') modal!: ElementRef;
 
-  constructor(private settingScreenLauncherService: SettingScreenLauncherService, private elementRef: ElementRef) { }
+  constructor(private settingScreenLauncherService: SettingScreenLauncherService) { }
 
   ngOnInit(): void {
+    this.settingScreenLauncherService.getModalType()
+      .subscribe((res: 'connect' | 'settings' | 'roi') => {
+        this.modalType = res;
+        switch (this.modalType) {
+          case 'connect':
+            this.settingScreenTitle = 'Connect Wallet';
+            this.settingScreenTitleBackgroundType = false;
+            break;
+          case 'settings':
+            this.settingScreenTitle = 'Settings';
+            this.settingScreenTitleBackgroundType = true;
+            break;
+          case 'roi':
+            break;
+        }
+      });
   }
 
   getSettingScreenTitleBackground(): string {
@@ -29,12 +45,12 @@ export class NavModalsComponent implements OnInit {
     if (event.target !== this.modal.nativeElement) {
       return;
     } else {
-      this.settingScreenLauncherService.changeSettingScreenLauncherStatus('');
+      this.settingScreenLauncherService.closeModal();
     }
   }
 
   closeModal(): void {
-    this.settingScreenLauncherService.changeSettingScreenLauncherStatus('');
+    this.settingScreenLauncherService.closeModal();
   }
 
 }

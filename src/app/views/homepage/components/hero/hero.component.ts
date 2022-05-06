@@ -14,8 +14,8 @@ export class HeroComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  changeSettingScreenLauncherStatus(status: string): void {
-    this.settingScreenLauncherService.changeSettingScreenLauncherStatus(status);
+  changeSettingScreenLauncherStatus(status: 'connect' | 'settings' | 'roi'): void {
+    this.settingScreenLauncherService.openModal(status);
   }
 
   darkModeStatus(): boolean {

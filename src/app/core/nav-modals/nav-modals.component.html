@@ -8,7 +8,7 @@
         <img src="../../../assets/svg/setting-screen-close-x.svg" (click)="closeModal()" id="setting-screen-close-x">
       </div>
       <app-setting-screen-content-connect-wallet *ngSwitchCase="'connect'"></app-setting-screen-content-connect-wallet>
-      <app-setting-screen-content-setting-menu *ngSwitchDefault></app-setting-screen-content-setting-menu>
+      <app-setting-screen-content-setting-menu *ngSwitchCase="'settings'"></app-setting-screen-content-setting-menu>
       <div class="setting-screen-final-part"></div>
     </div>
   </div>
