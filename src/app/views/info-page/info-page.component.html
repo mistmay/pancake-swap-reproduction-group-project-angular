@@ -9,32 +9,10 @@
   </div>
   <div>
     <h2>Top Tokens</h2>
-    <app-info-table class="w-100"></app-info-table>
+    <app-info-table class="w-100" [tableType]="'tokens'"></app-info-table>
   </div>
   <div>
     <h2>Top Pools</h2>
-    <app-info-table class="w-100"></app-info-table>
-  </div>
-  <div>
-    <h2>Transactions</h2>
-    <div class="d-flex justify-content-start align-items-center flex-wrap" id="info-page-transactions-label">
-      <label for="info-page-transactions-all" class="d-flex align-items-center gap-2">
-        <input type="radio" id="info-page-transactions-all" name="transactions-search" value="all" checked>
-        All
-      </label>
-      <label for="info-page-transactions-swaps" class="d-flex align-items-center gap-2">
-        <input type="radio" id="info-page-transactions-swaps" name="transactions-search" value="swaps">
-        Swaps
-      </label>
-      <label for="info-page-transactions-adds" class="d-flex align-items-center gap-2">
-        <input type="radio" id="info-page-transactions-adds" name="transactions-search" value="adds">
-        Adds
-      </label>
-      <label for="info-page-transactions-removes" class="d-flex align-items-center gap-2">
-        <input type="radio" id="info-page-transactions-removes" name="transactions-search" value="removes">
-        Removes
-      </label>
-    </div>
-    <app-info-table class="w-100"></app-info-table>
+    <app-info-table class="w-100" [tableType]="'pools'"></app-info-table>
   </div>
 </section>

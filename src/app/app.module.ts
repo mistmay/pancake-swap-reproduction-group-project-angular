@@ -50,6 +50,8 @@ import { InfoGraphComponent } from './views/info-page/components/info-graph/info
 import { InfoPoolsComponent } from './views/info-page/sub-pages/info-pools/info-pools.component';
 import { InfoTokensComponent } from './views/info-page/sub-pages/info-tokens/info-tokens.component';
 import { NgChartsModule } from 'ng2-charts';
+import { TablePaginatorFilterPipe } from './pipes/table-paginator-filter.pipe';
+import { InfoTopMoversComponent } from './views/info-page/sub-pages/info-tokens/components/info-top-movers/info-top-movers.component';
 
 
 @NgModule({
@@ -100,6 +102,8 @@ import { NgChartsModule } from 'ng2-charts';
     InfoGraphComponent,
     InfoPoolsComponent,
     InfoTokensComponent,
+    TablePaginatorFilterPipe,
+    InfoTopMoversComponent,
   ],
   imports: [
     BrowserModule,

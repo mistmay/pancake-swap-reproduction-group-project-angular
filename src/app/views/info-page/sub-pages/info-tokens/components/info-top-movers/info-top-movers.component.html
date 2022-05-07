@@ -1,0 +1,26 @@
+<div id="info-page-top-movers-container" class="w-100" *ngIf="trendingList.length > 0">
+  <div class="w-100">
+    <span>Top Coins</span>
+    <marquee behavior="alternate" direction="left" loop="infinite">
+      <div class="d-flex justify-content-start align-items-center" id="info-page-top-movers-scrolling-container">
+        <div class="d-flex justify-content-center align-items-start info-page-top-movers-card"
+          *ngFor="let token of trendingList">
+          <img [src]="token.image">
+          <div class="d-flex flex-column justify-content-between align-items-start">
+            <span>{{token.symbol | uppercase}}</span>
+            <div class="d-flex justify-content-start align-items-center">
+              <span>{{token.current_price | currency}}</span>
+              <span
+                [ngClass]="token.price_change_percentage_24h >= 0 ? 'info-table-positive-color' : 'info-table-negative-color'"
+                class="d-flex align-items-center">
+                <span *ngIf="token.price_change_percentage_24h >= 0">↑</span>
+                <span *ngIf="token.price_change_percentage_24h < 0">↓</span>
+                {{token.price_change_percentage_24h.toFixed(2)}}%
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </marquee>
+  </div>
+</div>
