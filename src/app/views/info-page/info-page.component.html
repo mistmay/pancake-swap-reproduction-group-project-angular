@@ -1,1 +1,40 @@
 <app-search-navbar [pageChecker]="'overview'"></app-search-navbar>
+<section class="info-page-container info-page-padding-bottom">
+  <div id="info-page-graph-container">
+    <h2>PancakeSwap Info & Analytics</h2>
+    <div class="info-page-graph d-block w-100 w-md-auto d-md-flex justify-content-between align-items-center">
+      <app-info-graph [graphType]="'price'"></app-info-graph>
+      <app-info-graph [graphType]="'volume'"></app-info-graph>
+    </div>
+  </div>
+  <div>
+    <h2>Top Tokens</h2>
+    <app-info-table class="w-100"></app-info-table>
+  </div>
+  <div>
+    <h2>Top Pools</h2>
+    <app-info-table class="w-100"></app-info-table>
+  </div>
+  <div>
+    <h2>Transactions</h2>
+    <div class="d-flex justify-content-start align-items-center flex-wrap" id="info-page-transactions-label">
+      <label for="info-page-transactions-all" class="d-flex align-items-center gap-2">
+        <input type="radio" id="info-page-transactions-all" name="transactions-search" value="all" checked>
+        All
+      </label>
+      <label for="info-page-transactions-swaps" class="d-flex align-items-center gap-2">
+        <input type="radio" id="info-page-transactions-swaps" name="transactions-search" value="swaps">
+        Swaps
+      </label>
+      <label for="info-page-transactions-adds" class="d-flex align-items-center gap-2">
+        <input type="radio" id="info-page-transactions-adds" name="transactions-search" value="adds">
+        Adds
+      </label>
+      <label for="info-page-transactions-removes" class="d-flex align-items-center gap-2">
+        <input type="radio" id="info-page-transactions-removes" name="transactions-search" value="removes">
+        Removes
+      </label>
+    </div>
+    <app-info-table class="w-100"></app-info-table>
+  </div>
+</section>

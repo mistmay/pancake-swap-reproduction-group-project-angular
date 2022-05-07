@@ -49,6 +49,7 @@ import { InfoTableComponent } from './views/info-page/components/info-table/info
 import { InfoGraphComponent } from './views/info-page/components/info-graph/info-graph.component';
 import { InfoPoolsComponent } from './views/info-page/sub-pages/info-pools/info-pools.component';
 import { InfoTokensComponent } from './views/info-page/sub-pages/info-tokens/info-tokens.component';
+import { NgChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -104,7 +105,8 @@ import { InfoTokensComponent } from './views/info-page/sub-pages/info-tokens/inf
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
