@@ -112,6 +112,14 @@ input:focus {
   opacity: 0.8;
 }
 
+.results-row {
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
 @media (max-width: 576px) {
   input {
     width: 100%;

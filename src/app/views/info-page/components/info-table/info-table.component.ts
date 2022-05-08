@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CoingeckoApiService } from 'src/app/api/coingecko-api.service';
 import { PancakeApiService } from 'src/app/api/pancake-api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-info-table',
@@ -9,11 +10,13 @@ import { PancakeApiService } from 'src/app/api/pancake-api.service';
 })
 export class InfoTableComponent implements OnInit {
   @Input() tableType!: 'tokens' | 'pools';
+  @Input() isFiltered: boolean = false;
+  @Input() filteringToken!: string;
   tokensList!: any[];
   currentPage: number = 1;
   itemsForPage: number = 10;
 
-  constructor(private api: CoingeckoApiService, private api2: PancakeApiService) { }
+  constructor(private api: CoingeckoApiService, private api2: PancakeApiService, private router: Router) { }
 
   ngOnInit(): void {
     if (this.tableType === 'tokens') {
@@ -22,10 +25,16 @@ export class InfoTableComponent implements OnInit {
           this.tokensList = res.slice(0, 30);
         });
     }
-    if (this.tableType === 'pools') {
+    if (this.tableType === 'pools' && !this.isFiltered) {
       this.api2.getPairs()
         .subscribe((res: any) => {
           this.tokensList = Object.values(res.data).slice(0, 30);
+        });
+    }
+    if (this.tableType === 'pools' && this.isFiltered) {
+      this.api2.getPairs()
+        .subscribe((res: any) => {
+          this.tokensList = Object.values(res.data);
         });
     }
   }
@@ -46,6 +55,10 @@ export class InfoTableComponent implements OnInit {
     } else {
       return 'https://thumbs.dreamstime.com/b/illustrazione-rotonda-nera-piana-di-vettore-del-bottone-dell-icona-punto-interrogativo-progettazione-isolata-sul-rotondo-nero-142988106.jpg';
     }
+  }
+
+  goToDetails(id: string): void {
+    this.router.navigate(['info/token', id]);
   }
 
 }

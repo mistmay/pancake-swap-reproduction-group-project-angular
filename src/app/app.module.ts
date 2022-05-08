@@ -52,6 +52,10 @@ import { InfoTokensComponent } from './views/info-page/sub-pages/info-tokens/inf
 import { NgChartsModule } from 'ng2-charts';
 import { TablePaginatorFilterPipe } from './pipes/table-paginator-filter.pipe';
 import { InfoTopMoversComponent } from './views/info-page/sub-pages/info-tokens/components/info-top-movers/info-top-movers.component';
+import { MathCeilPipe } from './pipes/math-ceil.pipe';
+import { InfoSearchPipe } from './pipes/info-search.pipe';
+import { InfoTokenDetailsComponent } from './views/info-page/sub-pages/info-token-details/info-token-details.component';
+import { ErrorPageComponent } from './views/error-page/error-page.component';
 
 
 @NgModule({
@@ -104,6 +108,10 @@ import { InfoTopMoversComponent } from './views/info-page/sub-pages/info-tokens/
     InfoTokensComponent,
     TablePaginatorFilterPipe,
     InfoTopMoversComponent,
+    MathCeilPipe,
+    InfoSearchPipe,
+    InfoTokenDetailsComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,

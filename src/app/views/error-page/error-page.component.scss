@@ -1,0 +1,22 @@
+section {
+  height: calc(100vh - 64px);
+
+  img {
+    width: 56px;
+  }
+
+  h3 {
+    font-weight: 600;
+    line-height: 1.1;
+    font-size: 64px;
+    color: var(--color-2);
+  }
+
+  p {
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    font-size: 16px;
+    color: var(--color-2);
+  }
+}

@@ -1,5 +1,6 @@
 <aside class="w-100 h-100" (click)="closeModal($event)" #modal>
-  <input type="text" placeholder="Search polls or tokens" id="info-page-real-searchbar">
+  <input type="text" placeholder="Search polls or tokens" id="info-page-real-searchbar" [(ngModel)]="searchedKey"
+    #input>
   <div id="info-page-aside-container">
     <div>
       <button type="button" class="info-page-btn-1">Search</button>
@@ -11,10 +12,10 @@
           <span>Tokens</span>
         </div>
         <div class="col d-none d-sm-block">Price</div>
-        <div class="col d-none d-sm-block">Volume 24H</div>
-        <div class="col d-none d-sm-block">Liquidity</div>
+        <div class="col d-none d-sm-block">Total Volume</div>
+        <div class="col d-none d-sm-block">Market Cap</div>
       </div>
-      <div class="row info-page-aside-padding" id="token-search-result">
+      <div class="row info-page-aside-padding" *ngIf="searchedKey === ''; else tokensResults">
         <div class="col info-page-aside-search-result">
           <p>Search pools or tokens</p>
         </div>
@@ -23,11 +24,11 @@
         <div class="col col-sm-6">
           <span>Pools</span>
         </div>
-        <div class="col d-none d-sm-block">Volume 24H</div>
-        <div class="col d-none d-sm-block">Volume 7D</div>
+        <div class="col d-none d-sm-block">Base Volume</div>
+        <div class="col d-none d-sm-block">Quote Volume</div>
         <div class="col d-none d-sm-block">Liquidity</div>
       </div>
-      <div class="row" id="pool-search-result">
+      <div class="row" *ngIf="searchedKey === ''; else poolsResults">
         <div class="col info-page-aside-search-result">
           <p>Search pools or tokens</p>
         </div>
@@ -35,3 +36,47 @@
     </div>
   </div>
 </aside>
+<ng-template #tokensResults>
+  <ng-container *ngIf="(tokensArray | infoSearch:searchedKey:'name':'symbol').length > 0; else noResults">
+    <div class="row info-page-aside-padding results-row"
+      *ngFor="let token of tokensArray | infoSearch:searchedKey:'name':'symbol'" (click)="goToDetails(token.id)">
+      <div class="col col-sm-6 info-page-aside-search-result d-flex justify-content-start align-items-center gap-1">
+        <img [style.width.px]="24" [src]="token.image">
+        <span class="search-result-text-style">{{token.name}} ({{token.symbol | uppercase}})</span>
+        <img src="../../../../../assets/svg/search-star.svg">
+      </div>
+      <div class="col d-none d-sm-block info-page-aside-search-result search-result-text-style">
+        {{token.current_price.toFixed(2) | currency}}</div>
+      <div class="col d-none d-sm-block info-page-aside-search-result search-result-text-style">
+        {{(token.total_volume/1000000).toFixed(2) | currency}}M</div>
+      <div class="col d-none d-sm-block info-page-aside-search-result search-result-text-style">
+        {{(token.market_cap/1000000).toFixed(2) | currency}}M</div>
+    </div>
+  </ng-container>
+</ng-template>
+<ng-template #poolsResults>
+  <ng-container *ngIf="(pairsArray | infoSearch:searchedKey:'base_symbol':'quote_symbol').length > 0; else noResults">
+    <div class="row info-page-aside-padding"
+      *ngFor="let pair of pairsArray | infoSearch:searchedKey:'base_symbol':'quote_symbol'">
+      <div class="col col-sm-6 info-page-aside-search-result d-flex justify-content-start align-items-center gap-1">
+        <img [style.width.px]="16" [src]="chooseImg(pair.base_symbol)">
+        <img [style.width.px]="16" [src]="chooseImg(pair.quote_symbol)">
+        <span class="search-result-text-style">{{pair.base_symbol | uppercase}}/{{pair.quote_symbol | uppercase}}</span>
+        <img src="../../../../../assets/svg/search-star.svg">
+      </div>
+      <div class="col d-none d-sm-block info-page-aside-search-result search-result-text-style">
+        {{(pair.base_volume/1000000).toFixed(2) | currency}}M</div>
+      <div class="col d-none d-sm-block info-page-aside-search-result search-result-text-style">
+        {{(pair.quote_volume/1000000).toFixed(2) | currency}}M</div>
+      <div class="col d-none d-sm-block info-page-aside-search-result search-result-text-style">
+        {{(pair.liquidity/1000000).toFixed(2) | currency}}M</div>
+    </div>
+  </ng-container>
+</ng-template>
+<ng-template #noResults>
+  <div class="row info-page-aside-padding">
+    <div class="col info-page-aside-search-result">
+      <p>No results</p>
+    </div>
+  </div>
+</ng-template>

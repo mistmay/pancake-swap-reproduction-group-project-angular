@@ -10,6 +10,8 @@ import { BaseChartDirective } from 'ng2-charts';
 })
 export class InfoGraphComponent implements OnInit {
   @Input() graphType!: 'price' | 'volume';
+  @Input() isBoxed: boolean = true;
+  @Input() token: string = 'pancakeswap-token';
   title!: string;
   price!: number;
   date!: string;
@@ -52,7 +54,7 @@ export class InfoGraphComponent implements OnInit {
   }
 
   getGraphData(): void {
-    this.api.getGraphData('pancakeswap-token', 'USD', 365)
+    this.api.getGraphData(this.token, 'USD', 365)
       .subscribe((res: any) => {
         setTimeout(() => {
           this.myLineChart.chart?.update();
