@@ -68,7 +68,7 @@
     <div class="col d-none d-md-block">LIQUIDITY BNB</div>
   </div>
   <ng-container *ngIf="!isFiltered; else filtered">
-    <a href="#" class="row info-table-row"
+    <a href="#" class="row info-table-row disabled-link"
       *ngFor="let token of tokensList | tablePaginatorFilter:itemsForPage:currentPage; let index = index">
       <div class="col col-sm-7 col-md-5 d-flex justify-content-start align-items-center">
         <span class="info-table-number d-none d-md-block">{{(index + 1) + (itemsForPage * (currentPage - 1))}}</span>
@@ -95,7 +95,7 @@
 </ng-template>
 <ng-template #filtered>
   <ng-container *ngIf="(tokensList | infoSearch:filteringToken:'base_symbol':'quote_symbol').length > 0">
-    <a href="#" class="row info-table-row"
+    <a href="#" class="row info-table-row disabled-link"
       *ngFor="let token of tokensList | infoSearch:filteringToken:'base_symbol':'quote_symbol' | tablePaginatorFilter:itemsForPage:currentPage; let index = index">
       <div class="col col-sm-7 col-md-5 d-flex justify-content-start align-items-center">
         <span class="info-table-number d-none d-md-block">{{(index + 1) + (itemsForPage * (currentPage - 1))}}</span>
