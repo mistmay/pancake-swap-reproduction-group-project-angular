@@ -83,7 +83,7 @@ export class InfoGraphComponent implements OnInit {
 
   updateData(event: any): void {
     if (this.isBoxed === true) {
-      if (event.active[0].index) {
+      if (event.active[0]) {
         if (this.lineChartData.datasets[0].data[event.active[0].index]) {
           this.price = Number(this.lineChartData.datasets[0].data[event.active[0].index]);
           if (this.lineChartData.labels) {

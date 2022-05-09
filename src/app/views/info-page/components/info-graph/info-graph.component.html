@@ -1,8 +1,8 @@
 <div class="d-flex flex-column justify-content-between align-items-start w-100 mb-md-0 info-page-graph-margin"
   [ngClass]="{'graph': isBoxed}">
   <h4 *ngIf="isBoxed">{{title}}</h4>
-  <p *ngIf="isBoxed && graphType === 'price'">{{price.toFixed(2) | currency}}</p>
-  <p *ngIf="isBoxed && graphType === 'volume'">{{(price/1000000).toFixed(2)| currency}}M</p>
+  <p *ngIf="isBoxed && graphType === 'price'">{{price | currency}}</p>
+  <p *ngIf="isBoxed && graphType === 'volume'">{{(price/1000000) | currency}}M</p>
   <span class="mb-1" *ngIf="isBoxed">{{date}}</span>
   <canvas baseChart [data]="lineChartData" [options]="lineChartOptions" [type]="lineChartType"
     (chartHover)="updateData($event)"></canvas>
