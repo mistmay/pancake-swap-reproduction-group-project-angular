@@ -1,0 +1,16 @@
+<app-search-navbar [pageChecker]="'tokens'"></app-search-navbar>
+<section class="info-page-container info-page-padding-bottom">
+  <div>
+    <h2>Your Watchlist</h2>
+    <div class="w-100 info-page-watchlist">
+      <p>Saved tokens will appear here</p>
+    </div>
+  </div>
+  <div>
+    <app-info-top-movers class="w-100"></app-info-top-movers>
+  </div>
+  <div>
+    <h2>All Tokens</h2>
+    <app-info-table class="w-100" [tableType]="'tokens'"></app-info-table>
+  </div>
+</section>

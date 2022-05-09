@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, HostListener } from '@angular/core';
+import { InfoSearchModalService } from 'src/app/services/info-search-modal.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +12,7 @@ export class NavbarComponent implements OnInit {
   scrollPos: number = 0;
   hideHeader: boolean = false;
 
-  constructor() { }
+  constructor(private infoSearch: InfoSearchModalService) { }
 
   ngOnInit(): void {
   }
@@ -19,6 +20,7 @@ export class NavbarComponent implements OnInit {
   hidePhishingBar(): void {
     this.showPhishingBar = false;
     this.changeMarginTop.emit();
+    this.infoSearch.isModalUp.next(true);
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -35,6 +37,10 @@ export class NavbarComponent implements OnInit {
 
   getHeaderTop(): string {
     return this.hideHeader ? '-126px' : '0';
+  }
+
+  closeSearchModal(): void {
+    this.infoSearch.closeModal();
   }
 
 }

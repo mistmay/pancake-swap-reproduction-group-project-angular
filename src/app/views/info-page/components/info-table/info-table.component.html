@@ -1,0 +1,138 @@
+<div class="info-table container-fluid" *ngIf="tokensList && tokensList.length > 0">
+  <ng-container *ngIf="tableType === 'tokens'; else pools">
+    <div class="row info-table-head">
+      <div class="col col-sm-7 col-md-5 d-flex justify-content-start align-items-center">
+        <span class="d-none d-md-block info-table-number">#</span>
+        <span>NAME</span>
+      </div>
+      <div class="col d-none d-md-block">PRICE</div>
+      <div class="col d-none d-lg-block">PRICE CHANGE</div>
+      <div class="col-4 col-sm">TOTAL VOLUME</div>
+      <div class="col d-none d-md-block">MARKET CAP</div>
+    </div>
+    <a (click)="goToDetails(token.id)" class="row info-table-row"
+      *ngFor="let token of tokensList | tablePaginatorFilter:itemsForPage:currentPage; let index = index">
+      <div class="col col-sm-7 col-md-5 d-flex justify-content-start align-items-center">
+        <span class="info-table-number d-none d-md-block">{{(index + 1) + (itemsForPage * (currentPage - 1))}}</span>
+        <div class="d-flex justify-content-between align-items-center">
+          <img [src]="token.image">
+          <span class="d-none d-sm-block">{{token.name}} ({{token.symbol | uppercase}})</span>
+          <span class="d-sm-none">{{token.symbol | uppercase}}</span>
+        </div>
+      </div>
+      <div class="col d-none d-md-block">
+        <span>{{token.current_price.toFixed(2) | currency}}</span>
+      </div>
+      <div class="col d-none d-lg-block"
+        [ngClass]="token.price_change_percentage_24h >= 0 ? 'info-table-positive-color' : 'info-table-negative-color'">
+        <span>
+          <span *ngIf="token.price_change_percentage_24h >= 0">↑</span>
+          <span *ngIf="token.price_change_percentage_24h < 0">↓</span>
+          {{token.price_change_percentage_24h.toFixed(2)}}%
+        </span>
+      </div>
+      <div class="col-4 col-sm">
+        <span>{{(token.total_volume/1000000).toFixed(2) | currency}}M</span>
+      </div>
+      <div class="col d-none d-md-block">
+        <span>{{(token.market_cap/1000000).toFixed(2) | currency}}M</span>
+      </div>
+    </a>
+  </ng-container>
+  <div class="row info-table-row border-0 h-auto">
+    <ng-container *ngIf="!isFiltered; else filterPaginator">
+      <div class="col-12 d-flex justify-content-center align-items-center info-table-footer">
+        <button type="button" class="p-0 d-flex justify-content-center align-items-center bg-transparent border-0"
+          [disabled]="currentPage <= 1" (click)="currentPage = currentPage - 1">
+          <img src="../../../../../assets/svg/table-arrow-left.svg">
+        </button>
+        <span>Page <span id="info-page-tokens-index">{{currentPage}}</span> of
+          {{tokensList.length/itemsForPage | mathCeil}}</span>
+        <button type="button" class="p-0 d-flex justify-content-center align-items-center bg-transparent border-0"
+          [disabled]="currentPage >= tokensList.length/itemsForPage" (click)="currentPage = currentPage + 1">
+          <img src="../../../../../assets/svg/table-arrow-right.svg">
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</div>
+<ng-template #pools>
+  <div class="row info-table-head">
+    <div class="col col-sm-7 col-md-5 d-flex justify-content-start align-items-center">
+      <span class="d-none d-md-block info-table-number">#</span>
+      <span>Pools</span>
+    </div>
+    <div class="col d-none d-md-block">BASE VOLUME</div>
+    <div class="col d-none d-lg-block">QUOTE VOLUME</div>
+    <div class="col-4 col-sm">LIQUIDITY</div>
+    <div class="col d-none d-md-block">LIQUIDITY BNB</div>
+  </div>
+  <ng-container *ngIf="!isFiltered; else filtered">
+    <a href="#" class="row info-table-row disabled-link"
+      *ngFor="let token of tokensList | tablePaginatorFilter:itemsForPage:currentPage; let index = index">
+      <div class="col col-sm-7 col-md-5 d-flex justify-content-start align-items-center">
+        <span class="info-table-number d-none d-md-block">{{(index + 1) + (itemsForPage * (currentPage - 1))}}</span>
+        <div class="d-flex justify-content-between align-items-center">
+          <img [src]="chooseImg(token.base_symbol)" class="info-table-little-img d-none d-sm-block">
+          <img [src]="chooseImg(token.quote_symbol)" class="info-table-little-img d-none d-sm-block">
+          <span>{{token.base_symbol | uppercase}}/{{token.quote_symbol | uppercase}}</span>
+        </div>
+      </div>
+      <div class="col d-none d-md-block">
+        <span>{{(token.base_volume/1000000).toFixed(2) | currency}}M</span>
+      </div>
+      <div class="col d-none d-lg-block">
+        <span>{{(token.quote_volume/1000000).toFixed(2) | currency}}M</span>
+      </div>
+      <div class="col-4 col-sm">
+        <span>{{(token.liquidity/1000000).toFixed(2) | currency}}M</span>
+      </div>
+      <div class="col d-none d-md-block">
+        <span>{{(token.liquidity_BNB/1000000).toFixed(2) | currency}}M</span>
+      </div>
+    </a>
+  </ng-container>
+</ng-template>
+<ng-template #filtered>
+  <ng-container *ngIf="(tokensList | infoSearch:filteringToken:'base_symbol':'quote_symbol').length > 0">
+    <a href="#" class="row info-table-row disabled-link"
+      *ngFor="let token of tokensList | infoSearch:filteringToken:'base_symbol':'quote_symbol' | tablePaginatorFilter:itemsForPage:currentPage; let index = index">
+      <div class="col col-sm-7 col-md-5 d-flex justify-content-start align-items-center">
+        <span class="info-table-number d-none d-md-block">{{(index + 1) + (itemsForPage * (currentPage - 1))}}</span>
+        <div class="d-flex justify-content-between align-items-center">
+          <img [src]="chooseImg(token.base_symbol)" class="info-table-little-img d-none d-sm-block">
+          <img [src]="chooseImg(token.quote_symbol)" class="info-table-little-img d-none d-sm-block">
+          <span>{{token.base_symbol | uppercase}}/{{token.quote_symbol | uppercase}}</span>
+        </div>
+      </div>
+      <div class="col d-none d-md-block">
+        <span>{{(token.base_volume/1000000).toFixed(2) | currency}}M</span>
+      </div>
+      <div class="col d-none d-lg-block">
+        <span>{{(token.quote_volume/1000000).toFixed(2) | currency}}M</span>
+      </div>
+      <div class="col-4 col-sm">
+        <span>{{(token.liquidity/1000000).toFixed(2) | currency}}M</span>
+      </div>
+      <div class="col d-none d-md-block">
+        <span>{{(token.liquidity_BNB/1000000).toFixed(2) | currency}}M</span>
+      </div>
+    </a>
+  </ng-container>
+</ng-template>
+<ng-template #filterPaginator>
+  <div class="col-12 d-flex justify-content-center align-items-center info-table-footer"
+    *ngIf="(tokensList | infoSearch:filteringToken:'base_symbol':'quote_symbol').length > 0">
+    <button type="button" class="p-0 d-flex justify-content-center align-items-center bg-transparent border-0"
+      [disabled]="currentPage <= 1" (click)="currentPage = currentPage - 1">
+      <img src="../../../../../assets/svg/table-arrow-left.svg">
+    </button>
+    <span>Page <span id="info-page-tokens-index">{{currentPage}}</span> of
+      {{(tokensList | infoSearch:filteringToken:'base_symbol':'quote_symbol').length/itemsForPage | mathCeil}}</span>
+    <button type="button" class="p-0 d-flex justify-content-center align-items-center bg-transparent border-0"
+      [disabled]="currentPage >= (tokensList | infoSearch:filteringToken:'base_symbol':'quote_symbol').length/itemsForPage"
+      (click)="currentPage = currentPage + 1">
+      <img src="../../../../../assets/svg/table-arrow-right.svg">
+    </button>
+  </div>
+</ng-template>

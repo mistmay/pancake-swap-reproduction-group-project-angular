@@ -42,6 +42,20 @@ import { ButtonArrowComponent } from './shared/button-arrow/button-arrow.compone
 import { WinBackgroundLeftComponent } from './views/homepage/components/win-millions/win-background/win-background-left/win-background-left.component';
 import { WinBackgroundRightComponent } from './views/homepage/components/win-millions/win-background/win-background-right/win-background-right.component';
 import { TopsFarmsPoolsComponent } from './views/homepage/components/earn-passive/components/tops-farms-pools/tops-farms-pools.component';
+import { InfoPageComponent } from './views/info-page/info-page.component';
+import { SearchNavbarComponent } from './views/info-page/components/search-navbar/search-navbar.component';
+import { SearchModalComponent } from './views/info-page/components/search-modal/search-modal.component';
+import { InfoTableComponent } from './views/info-page/components/info-table/info-table.component';
+import { InfoGraphComponent } from './views/info-page/components/info-graph/info-graph.component';
+import { InfoPoolsComponent } from './views/info-page/sub-pages/info-pools/info-pools.component';
+import { InfoTokensComponent } from './views/info-page/sub-pages/info-tokens/info-tokens.component';
+import { NgChartsModule } from 'ng2-charts';
+import { TablePaginatorFilterPipe } from './pipes/table-paginator-filter.pipe';
+import { InfoTopMoversComponent } from './views/info-page/sub-pages/info-tokens/components/info-top-movers/info-top-movers.component';
+import { MathCeilPipe } from './pipes/math-ceil.pipe';
+import { InfoSearchPipe } from './pipes/info-search.pipe';
+import { InfoTokenDetailsComponent } from './views/info-page/sub-pages/info-token-details/info-token-details.component';
+import { ErrorPageComponent } from './views/error-page/error-page.component';
 
 
 @NgModule({
@@ -85,12 +99,26 @@ import { TopsFarmsPoolsComponent } from './views/homepage/components/earn-passiv
     WinBackgroundLeftComponent,
     WinBackgroundRightComponent,
     TopsFarmsPoolsComponent,
+    InfoPageComponent,
+    SearchNavbarComponent,
+    SearchModalComponent,
+    InfoTableComponent,
+    InfoGraphComponent,
+    InfoPoolsComponent,
+    InfoTokensComponent,
+    TablePaginatorFilterPipe,
+    InfoTopMoversComponent,
+    MathCeilPipe,
+    InfoSearchPipe,
+    InfoTokenDetailsComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

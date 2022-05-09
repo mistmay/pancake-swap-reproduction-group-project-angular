@@ -1,9 +1,9 @@
 <nav class="row justify-content-between align-items-center">
   <div id="nav-left" class="col-2 col-sm-5 d-flex justify-content-start align-items-center p-0">
-    <a href="#" class="d-lg-none">
+    <a routerLink="/home" class="d-lg-none">
       <img src="../../../../../assets/svg/nav-bunny-mobile.svg" id="bunny-mobile">
     </a>
-    <a href="#" class="d-none d-lg-block">
+    <a routerLink="/home" class="d-none d-lg-block">
       <img src="../../../../../assets/svg/pancake-logo-light.svg" class="pancake-logo" *ngIf="!darkModeStatus()">
       <img src="../../../../../assets/svg/pancake-logo-dark.svg" class="pancake-logo" *ngIf="darkModeStatus()">
     </a>
@@ -47,13 +47,13 @@
         </div>
       </li>
       <li class="position-relative" (mouseover)="showPointsMenu = true" (mouseout)="showPointsMenu = false">
-        <a href="#" class="d-flex justify-content-center align-items-center">
+        <a routerLink="/info" class="d-flex justify-content-center align-items-center">
           <img src="../../../../../assets/svg/nav-points.svg" id="nav-points">
         </a>
         <div
           class="d-none toogle-menu toogle-menu-top position-absolute flex-column align-items-start justify-content-start"
           [class.open-menu]="showPointsMenu">
-          <a href="#">Info</a>
+          <a routerLink="/info">Info</a>
           <a href="#">IFO</a>
           <a href="#">Voting</a>
           <hr />
@@ -112,9 +112,8 @@
         <span>繁體中文</span>
       </div>
     </div>
-    <img src="../../../../../assets/svg/nav-setting.svg" id="nav-setting"
-      (click)="changeSettingScreenLauncherStatus('settings')">
-    <app-standard-button [content]="'Connect Wallet'" (click)="changeSettingScreenLauncherStatus('connect')"
-      [isSmall]="true"></app-standard-button>
+    <img src="../../../../../assets/svg/nav-setting.svg" id="nav-setting" (click)="openModal('settings')">
+    <app-standard-button [content]="'Connect Wallet'" (click)="openModal('connect')" [isSmall]="true">
+    </app-standard-button>
   </div>
 </nav>

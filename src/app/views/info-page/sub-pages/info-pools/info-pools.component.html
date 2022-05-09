@@ -1,0 +1,13 @@
+<app-search-navbar [pageChecker]="'pools'"></app-search-navbar>
+<section class="info-page-container info-page-padding-bottom">
+  <div>
+    <h2>Your Watchlist</h2>
+    <div class="w-100 info-page-watchlist">
+      <p>Saved pools will appear here</p>
+    </div>
+  </div>
+  <div>
+    <h2>All Pools</h2>
+    <app-info-table class="w-100" [tableType]="'pools'"></app-info-table>
+  </div>
+</section>

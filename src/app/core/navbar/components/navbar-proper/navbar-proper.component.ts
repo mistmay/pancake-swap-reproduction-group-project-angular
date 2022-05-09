@@ -25,8 +25,8 @@ export class NavbarProperComponent implements OnInit {
     return this.darkModeService.darkModeStatus;
   }
 
-  changeSettingScreenLauncherStatus(status: string): void {
-    this.settingScreenLauncherService.changeSettingScreenLauncherStatus(status);
+  openModal(type: 'connect' | 'settings' | 'roi'): void {
+    this.settingScreenLauncherService.openModal(type);
   }
 
   getCakePrice(): string {

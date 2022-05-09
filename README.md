@@ -1,6 +1,6 @@
 Reproduction of the website https://pancakeswap.finance/ made for studying and exercize purpose for a group-project of my school. We don't have any copyrights on the original webisite. This is just a reproduction of the website in order to learn GIT, Html and CSS, Javascript and Angular.
 
-Members: Beto Caprera, Ermes Marino, Giuseppe Marchesiello, Alessandro Mochionori, Francesco Pirri. Work in progress....
+Members: Ermes Marino, Giuseppe Marchesiello, Alessandro Mochionori, Francesco Pirri. Work in progress....
 
 # PancakeSwapAngular
 

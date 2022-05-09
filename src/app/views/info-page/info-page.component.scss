@@ -1,0 +1,26 @@
+.info-page-container {
+  background-color: var(--background-0);
+}
+
+.info-page-container>div {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 0 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--color-2);
+}
+
+.info-page-padding-bottom {
+  padding-bottom: 32px !important;
+}
+
+app-info-graph {
+  width: 49%;
+}

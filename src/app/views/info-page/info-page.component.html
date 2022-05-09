@@ -1,0 +1,18 @@
+<app-search-navbar [pageChecker]="'overview'"></app-search-navbar>
+<section class="info-page-container info-page-padding-bottom">
+  <div id="info-page-graph-container">
+    <h2>PancakeSwap Info & Analytics</h2>
+    <div class="info-page-graph d-block w-100 w-md-auto d-md-flex justify-content-between align-items-center">
+      <app-info-graph [graphType]="'price'"></app-info-graph>
+      <app-info-graph [graphType]="'volume'"></app-info-graph>
+    </div>
+  </div>
+  <div>
+    <h2>Top Tokens</h2>
+    <app-info-table class="w-100" [tableType]="'tokens'"></app-info-table>
+  </div>
+  <div>
+    <h2>Top Pools</h2>
+    <app-info-table class="w-100" [tableType]="'pools'"></app-info-table>
+  </div>
+</section>

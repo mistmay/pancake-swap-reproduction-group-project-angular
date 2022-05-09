@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SettingScreenLauncherService } from './services/setting-screen-launcher.service';
 
 @Component({
@@ -6,11 +6,18 @@ import { SettingScreenLauncherService } from './services/setting-screen-launcher
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'pancake-swap-angular';
+export class AppComponent implements OnInit {
   marginTop: string = 'calc(70px + 56px)';
+  showModal!: boolean;
 
   constructor(private settingScreenLauncherService: SettingScreenLauncherService) { }
+
+  ngOnInit(): void {
+    this.settingScreenLauncherService.getShowModal()
+      .subscribe((res: boolean) => {
+        this.showModal = res;
+      });
+  }
 
   getMarginTop(): string {
     return this.marginTop;
@@ -18,10 +25,6 @@ export class AppComponent {
 
   noPhishingMarginTop(): void {
     this.marginTop = '56px';
-  }
-
-  settingScreenLauncherStatus(): string {
-    return this.settingScreenLauncherService.settingScreenLauncherStatus;
   }
 
 }
