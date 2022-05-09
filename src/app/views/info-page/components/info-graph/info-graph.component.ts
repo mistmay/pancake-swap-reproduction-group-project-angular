@@ -81,4 +81,21 @@ export class InfoGraphComponent implements OnInit {
       });
   }
 
+  updateData(event: any): void {
+    if (this.isBoxed === true) {
+      if (event.active[0].index) {
+        if (this.lineChartData.datasets[0].data[event.active[0].index]) {
+          this.price = Number(this.lineChartData.datasets[0].data[event.active[0].index]);
+          if (this.lineChartData.labels) {
+            if (this.lineChartData.labels[event.active[0].index]) {
+              this.date = String(this.lineChartData.labels[event.active[0].index]);
+            }
+          }
+        }
+      }
+    } else {
+      return;
+    }
+  }
+
 }
