@@ -8,13 +8,13 @@ import { InfoTokenDetailsComponent } from './views/info-page/sub-pages/info-toke
 import { InfoTokensComponent } from './views/info-page/sub-pages/info-tokens/info-tokens.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomepageComponent },
-  { path: 'info', component: InfoPageComponent },
-  { path: 'info/pools', component: InfoPoolsComponent },
-  { path: 'info/tokens', component: InfoTokensComponent },
   { path: 'info/token/:id', component: InfoTokenDetailsComponent },
+  { path: 'info/tokens', component: InfoTokensComponent },
+  { path: 'info/pools', component: InfoPoolsComponent },
+  { path: 'info', component: InfoPageComponent },
+  { path: 'home', component: HomepageComponent },
   { path: 'error', component: ErrorPageComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'error', pathMatch: 'full' }
 ];
 
