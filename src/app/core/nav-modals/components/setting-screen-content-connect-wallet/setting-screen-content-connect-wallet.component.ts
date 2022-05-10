@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { SettingScreenLauncherService } from 'src/app/services/setting-screen-launcher.service';
 
 @Component({
@@ -6,16 +7,21 @@ import { SettingScreenLauncherService } from 'src/app/services/setting-screen-la
   templateUrl: './setting-screen-content-connect-wallet.component.html',
   styleUrls: ['./setting-screen-content-connect-wallet.component.scss']
 })
-export class SettingScreenContentConnectWalletComponent implements OnInit {
+export class SettingScreenContentConnectWalletComponent implements OnInit, OnDestroy {
   showMoreWallet!: boolean;
+  subscription!: Subscription;
 
   constructor(private settingScreenLauncherService: SettingScreenLauncherService) { }
 
   ngOnInit(): void {
-    this.settingScreenLauncherService.getShowMoreWallet()
+    this.subscription = this.settingScreenLauncherService.getShowMoreWallet()
       .subscribe((res: boolean) => {
         this.showMoreWallet = res;
       });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   setShowMoreWalletIconsTrue(): void {

@@ -1,4 +1,5 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { SettingScreenLauncherService } from 'src/app/services/setting-screen-launcher.service';
 
 @Component({
@@ -6,7 +7,8 @@ import { SettingScreenLauncherService } from 'src/app/services/setting-screen-la
   templateUrl: './nav-modals.component.html',
   styleUrls: ['./nav-modals.component.scss']
 })
-export class NavModalsComponent implements OnInit {
+export class NavModalsComponent implements OnInit, OnDestroy {
+  subscription!: Subscription;
   settingScreenTitle!: string;
   settingScreenTitleBackgroundType!: boolean;
   modalType!: 'connect' | 'settings' | 'roi';
@@ -15,7 +17,7 @@ export class NavModalsComponent implements OnInit {
   constructor(private settingScreenLauncherService: SettingScreenLauncherService) { }
 
   ngOnInit(): void {
-    this.settingScreenLauncherService.getModalType()
+    this.subscription = this.settingScreenLauncherService.getModalType()
       .subscribe((res: 'connect' | 'settings' | 'roi') => {
         this.modalType = res;
         switch (this.modalType) {
@@ -31,6 +33,10 @@ export class NavModalsComponent implements OnInit {
             break;
         }
       });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   getSettingScreenTitleBackground(): string {
