@@ -1,19 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ErrorPageComponent } from './views/error-page/error-page.component';
-import { HomepageComponent } from './views/homepage/homepage.component';
-import { InfoPageComponent } from './views/info-page/info-page.component';
-import { InfoPoolsComponent } from './views/info-page/sub-pages/info-pools/info-pools.component';
-import { InfoTokenDetailsComponent } from './views/info-page/sub-pages/info-token-details/info-token-details.component';
-import { InfoTokensComponent } from './views/info-page/sub-pages/info-tokens/info-tokens.component';
 
 const routes: Routes = [
-  { path: 'info/token/:id', component: InfoTokenDetailsComponent },
-  { path: 'info/tokens', component: InfoTokensComponent },
-  { path: 'info/pools', component: InfoPoolsComponent },
-  { path: 'info', component: InfoPageComponent },
-  { path: 'home', component: HomepageComponent },
-  { path: 'error', component: ErrorPageComponent },
+  {
+    path: 'info',
+    loadChildren: () => import('./modules/info/info.module').then(m => m.InfoModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
+  },
+  {
+    path: 'error',
+    loadChildren: () => import('./modules/error/error.module').then(m => m.ErrorModule)
+  },
+  {
+    path: 'nfts',
+    loadChildren: () => import('./modules/nfts/nfts.module').then(m => m.NftsModule)
+  },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'error', pathMatch: 'full' }
 ];
