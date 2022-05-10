@@ -1,42 +1,50 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { CoingeckoApiService } from 'src/app/api/coingecko-api.service';
 import { PancakeApiService } from 'src/app/api/pancake-api.service';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-info-table',
   templateUrl: './info-table.component.html',
   styleUrls: ['./info-table.component.scss']
 })
-export class InfoTableComponent implements OnInit {
+export class InfoTableComponent implements OnInit, OnDestroy {
   @Input() tableType!: 'tokens' | 'pools';
   @Input() isFiltered: boolean = false;
   @Input() filteringToken!: string;
   tokensList!: any[];
   currentPage: number = 1;
   itemsForPage: number = 10;
+  subscriptions: Subscription[] = [];
 
   constructor(private api: CoingeckoApiService, private api2: PancakeApiService, private router: Router) { }
 
   ngOnInit(): void {
     if (this.tableType === 'tokens') {
-      this.api.getTokensData('USD')
+      this.subscriptions.push(this.api.getTokensData('USD')
         .subscribe((res: any) => {
           this.tokensList = res.slice(0, 30);
-        });
+        }));
     }
     if (this.tableType === 'pools' && !this.isFiltered) {
-      this.api2.getPairs()
+      this.subscriptions.push(this.api2.getPairs()
         .subscribe((res: any) => {
           this.tokensList = Object.values(res.data).slice(0, 30);
-        });
+        }));
     }
     if (this.tableType === 'pools' && this.isFiltered) {
-      this.api2.getPairs()
+      this.subscriptions.push(this.api2.getPairs()
         .subscribe((res: any) => {
           this.tokensList = Object.values(res.data);
-        });
+        }));
     }
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.forEach((subscription: Subscription) => {
+      subscription.unsubscribe();
+    });
   }
 
   chooseImg(symbol: string): string {

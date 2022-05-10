@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { Subscription } from 'rxjs';
 import { PancakeApiService } from '../api/pancake-api.service';
 import { Token } from '../models/token';
 
@@ -9,6 +10,7 @@ import { Token } from '../models/token';
 export class TitleService {
   titleStart: string = '';
   cakePrice!: string;
+  subscription!: Subscription
 
   constructor(private title: Title, private api: PancakeApiService) {
   }

@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { InfoSearchModalService } from 'src/app/services/info-search-modal.service';
 
 @Component({
@@ -6,22 +7,29 @@ import { InfoSearchModalService } from 'src/app/services/info-search-modal.servi
   templateUrl: './search-navbar.component.html',
   styleUrls: ['./search-navbar.component.scss']
 })
-export class SearchNavbarComponent implements OnInit {
+export class SearchNavbarComponent implements OnInit, OnDestroy {
   showModal!: boolean;
   isModalUp!: boolean;
   @Input() pageChecker!: 'overview' | 'pools' | 'tokens';
+  subscriptions: Subscription[] = [];
 
   constructor(private modalService: InfoSearchModalService) { }
 
   ngOnInit(): void {
-    this.modalService.getModalStatus()
+    this.subscriptions.push(this.modalService.getModalStatus()
       .subscribe((res: boolean) => {
         this.showModal = res;
-      });
-    this.modalService.getModalTop()
+      }));
+    this.subscriptions.push(this.modalService.getModalTop()
       .subscribe((res: boolean) => {
         this.isModalUp = res;
-      });
+      }));
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.forEach((subscription: Subscription) => {
+      subscription.unsubscribe();
+    });
   }
 
   showSearchModal(): void {

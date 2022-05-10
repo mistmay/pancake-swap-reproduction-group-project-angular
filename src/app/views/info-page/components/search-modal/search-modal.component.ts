@@ -1,36 +1,44 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 import { InfoSearchModalService } from 'src/app/services/info-search-modal.service';
 import { CoingeckoApiService } from 'src/app/api/coingecko-api.service';
 import { PancakeApiService } from 'src/app/api/pancake-api.service';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-search-modal',
   templateUrl: './search-modal.component.html',
   styleUrls: ['./search-modal.component.scss']
 })
-export class SearchModalComponent implements OnInit, AfterViewInit {
+export class SearchModalComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('modal') modal!: ElementRef;
   @ViewChild('input') input!: ElementRef;
   searchedKey: string = '';
   tokensArray!: any[];
   pairsArray!: any[];
+  subscriptions: Subscription[] = [];
 
   constructor(private modalService: InfoSearchModalService, private api: CoingeckoApiService, private api2: PancakeApiService, private router: Router) { }
 
   ngOnInit(): void {
-    this.api.getTokensData('USD')
+    this.subscriptions.push(this.api.getTokensData('USD')
       .subscribe((res: any[]) => {
         this.tokensArray = res;
-      });
-    this.api2.getPairs()
+      }));
+    this.subscriptions.push(this.api2.getPairs()
       .subscribe((res: any) => {
         this.pairsArray = Object.values(res.data);
-      });
+      }));
   }
 
   ngAfterViewInit(): void {
     this.input.nativeElement.focus();
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.forEach((subscription: Subscription) => {
+      subscription.unsubscribe();
+    });
   }
 
   closeModal(event: Event): void {

@@ -1,14 +1,15 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, OnDestroy } from '@angular/core';
 import { CoingeckoApiService } from 'src/app/api/coingecko-api.service';
 import { ChartConfiguration, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-info-graph',
   templateUrl: './info-graph.component.html',
   styleUrls: ['./info-graph.component.scss']
 })
-export class InfoGraphComponent implements OnInit {
+export class InfoGraphComponent implements OnInit, OnDestroy {
   @Input() graphType!: 'price' | 'volume';
   @Input() isBoxed: boolean = true;
   @Input() token: string = 'pancakeswap-token';
@@ -41,6 +42,7 @@ export class InfoGraphComponent implements OnInit {
   };
   public lineChartType: ChartType = 'line';
   @ViewChild(BaseChartDirective) myLineChart !: BaseChartDirective;
+  subscription!: Subscription;
 
   constructor(private api: CoingeckoApiService) { }
 
@@ -53,8 +55,12 @@ export class InfoGraphComponent implements OnInit {
     this.getGraphData();
   }
 
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
   getGraphData(): void {
-    this.api.getGraphData(this.token, 'USD', 365)
+    this.subscription = this.api.getGraphData(this.token, 'USD', 365)
       .subscribe((res: any) => {
         setTimeout(() => {
           this.myLineChart.chart?.update();
