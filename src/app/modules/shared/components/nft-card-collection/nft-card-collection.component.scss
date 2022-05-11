@@ -1,0 +1,127 @@
+.grid-container {
+    display: grid;
+    margin-bottom: 64px;
+    gap: 16px;
+}
+
+.border-inner {
+    border-radius: 8px 8px 8px 56px;
+}
+
+.card-outside {
+    transition: opacity 200ms ease 0s;
+    background: rgb(231, 227, 235);
+    color: rgb(40, 13, 95);
+    padding: 1px 1px 3px;
+}
+
+.card-outside:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.card-outside > div {
+    border-radius: 8px 8px 8px 56px !important;
+}
+
+.card-backimg {
+    background: rgb(255, 255, 255) ;
+    color: rgb(40, 13, 95);
+    overflow: inherit;
+    padding: 1px 1px 3px;
+    border-radius: 24px;
+}
+
+.card-padding {
+    padding: 8px;
+}
+
+.card-top-image {
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+}
+
+.card-bottom {
+    height: 65px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.avatar {
+    background-image: url("https://static-nft.pancakeswap.com/mainnet/0x8e311dB45B55DF68b7C1C8D01888a4C43986c60F/avatar.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+    position: absolute;
+    left: 0px;
+    top: -32px;
+    border: 4px solid white;
+    max-height: 96px;
+    max-width: 96px;
+    width: 100%;
+}
+
+.avatar::after {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.color-text {
+    color: #280D5F;
+}
+
+.color-text:hover {
+    color: #280D5F;
+}
+
+.nft-name {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    font-family: "Kanit", sans-serif;
+}
+
+.card-footer-text {
+    color: rgb(122, 110, 170);
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 12px;
+    font-family: "Kanit", sans-serif;
+}
+
+.card-svg {
+    align-self: center;
+    fill: #280D5F;
+    flex-shrink: 0;
+    margin-left: 4px;
+    margin-right: 4px; 
+}
+
+.volume-text {
+    color: rgb(40, 13, 95);
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 600;
+    font-family: "Kanit", sans-serif;
+}
+
+@media screen and (min-width: 852px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 851px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 370px) and (max-width: 575px){
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
