@@ -3,15 +3,21 @@ import { NftArrivalCardComponent } from './components/nft-arrival-card/nft-arriv
 import { NftsRoutingModule } from './nfts-routing.module';
 import { NftOverviewComponent } from './views/nft-overview/nft-overview.component';
 import { NftsTopComponent } from './views/nfts-top.component';
+import { NftHeaderComponent } from './components/nft-header/nft-header.component';
+import { NftSeparatorComponent } from './components/nft-separator/nft-separator.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
     declarations: [
         NftsTopComponent,
         NftArrivalCardComponent,
-        NftOverviewComponent
+        NftOverviewComponent,
+        NftHeaderComponent,
+        NftSeparatorComponent,
     ],
     imports: [
-        NftsRoutingModule
+        NftsRoutingModule,
+        SharedModule
     ],
     exports: [
         NftsTopComponent

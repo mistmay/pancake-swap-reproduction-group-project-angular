@@ -1,1 +1,19 @@
-<p>nft-overview works!</p>
+<div class="position-relative d-flex mt-0">
+    <div id="wrapper" class="mw-100">
+        <div class="header-container">
+            <app-nft-header></app-nft-header>
+        </div>
+        <div>
+            <app-nft-separator></app-nft-separator>
+        </div>
+        <div id="collections-wrapper" class="position-relative d-flex flex-column align-items-center">
+            <main>
+                <div class="d-flex align-items-center justify-content-between mb-5">
+                    <h3>Newest Collections</h3>
+                    <app-standard-button [isTransparent]="true" [isSmall]="true" [arrowCheck]="true" [isBlue]="true" [content]="'View All '"></app-standard-button>
+                </div>
+                    <app-nft-card-collection [nfts]="nfts"></app-nft-card-collection>
+            </main>
+        </div>
+    </div>
+</div>

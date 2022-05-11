@@ -9,7 +9,7 @@ nav {
     font-weight: 400;
     gap: 15px;
     a {
-        color: rgb(122, 110, 170) !important;
+        color: rgb(122, 110, 170);
         font-size: 16px;
         font-weight: 400; 
     }
@@ -147,4 +147,12 @@ nav {
     #money-bunny {
         display: flex;
     }
+}
+
+// Active Link
+
+.active {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: var(--color-1) !important;
 }

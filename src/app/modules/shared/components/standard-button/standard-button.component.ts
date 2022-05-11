@@ -10,6 +10,7 @@ export class StandardButtonComponent implements OnInit {
   @Input() arrowCheck: boolean = false;
   @Input() isTransparent: boolean = false;
   @Input() isSmall: boolean = false;
+  @Input() isBlue: boolean = false;
 
   constructor() { }
 

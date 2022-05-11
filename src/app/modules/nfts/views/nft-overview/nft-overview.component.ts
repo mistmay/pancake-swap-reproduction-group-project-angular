@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NFTS, RootObject } from 'src/app/models/nfts';
 
 @Component({
   selector: 'app-nft-overview',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nft-overview.component.scss']
 })
 export class NftOverviewComponent implements OnInit {
+
+  nfts: RootObject = NFTS
 
   constructor() { }
 
