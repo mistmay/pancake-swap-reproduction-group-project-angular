@@ -12,7 +12,6 @@
 }
 
 #collections-wrapper {
-    padding: 14px 0px 48px;
     background: var(--background-0);
 }
 
@@ -30,7 +29,7 @@ main {
 }
 
 h3 {
-    color: rgb(40, 13, 95);
+    color: var(--color-2);
     font-size: 24px;
     font-weight: 600;
     line-height: 1.1;
@@ -40,6 +39,15 @@ h3 {
     display: grid;
     margin-bottom: 64px;
     gap: 16px;
+}
+
+.faq-container{
+    background: var(--background-7);
+}
+
+.faq-container > div {
+    max-width: 888px;
+    margin: auto;
 }
 
 @media screen and (min-width: 370px) {
@@ -59,7 +67,6 @@ h3 {
 @media screen and (min-width: 968px) {
     main {
         padding-top: 48px;
-        padding-bottom: 48px;
     }
     h3 {
         font-size: 24px;

@@ -8,6 +8,7 @@ import { FaqBox } from 'src/app/models/faq-box';
 })
 export class FaqComponent implements OnInit {
   @Input() faqBoxes!: FaqBox[];
+  @Input() title!: String;
 
   constructor() { }
 

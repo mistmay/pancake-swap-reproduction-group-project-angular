@@ -25,10 +25,17 @@
                     <app-standard-button [isTransparent]="true" [isSmall]="true" [arrowCheck]="true" [isBlue]="true"
                         [content]="'View All '"></app-standard-button>
                 </div>
-                <div>
+                <div class="pb-5">
                      <app-nft-arrival-card [nfts]="nfts.data.items.slice(14,30)"></app-nft-arrival-card>
                 </div>
             </main>
+            <div class="w-100">
+                <div class="py-5 faq-container">
+                    <div>
+                        <app-faq [title]="'FAQs'" [faqBoxes]="faqBox"></app-faq>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
