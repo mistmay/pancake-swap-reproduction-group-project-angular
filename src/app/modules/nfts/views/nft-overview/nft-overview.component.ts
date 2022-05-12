@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NFTS, RootObject } from 'src/app/models/nfts';
+import { Data, NFTS, RootObject } from 'src/app/models/nfts';
 
 @Component({
   selector: 'app-nft-overview',

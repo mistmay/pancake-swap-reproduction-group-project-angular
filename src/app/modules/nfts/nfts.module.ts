@@ -6,6 +6,7 @@ import { NftsTopComponent } from './views/nfts-top.component';
 import { NftHeaderComponent } from './components/nft-header/nft-header.component';
 import { NftSeparatorComponent } from './components/nft-separator/nft-separator.component';
 import { SharedModule } from '../shared/shared.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
     declarations: [
@@ -17,7 +18,9 @@ import { SharedModule } from '../shared/shared.module';
     ],
     imports: [
         NftsRoutingModule,
-        SharedModule
+        SharedModule,
+        CommonModule
+        
     ],
     exports: [
         NftsTopComponent

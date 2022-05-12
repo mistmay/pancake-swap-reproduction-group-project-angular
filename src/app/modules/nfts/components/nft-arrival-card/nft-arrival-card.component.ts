@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { RootObject } from 'src/app/models/nfts';
 
 @Component({
   selector: 'app-nft-arrival-card',
@@ -6,11 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./nft-arrival-card.component.scss']
 })
 export class NftArrivalCardComponent implements OnInit {
-  @Input() image!: string;
-  @Input() category!: string;
-  @Input() title!: string;
-  @Input() price!: string;
-  @Input() cake!: string;
+  
+  @Input() nfts!: any
 
   constructor() { }
 

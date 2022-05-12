@@ -10,9 +10,24 @@
             <main>
                 <div class="d-flex align-items-center justify-content-between mb-5">
                     <h3>Newest Collections</h3>
-                    <app-standard-button [isTransparent]="true" [isSmall]="true" [arrowCheck]="true" [isBlue]="true" [content]="'View All '"></app-standard-button>
+                    <app-standard-button [isTransparent]="true" [isSmall]="true" [arrowCheck]="true" [isBlue]="true"
+                        [content]="'View All '"></app-standard-button>
                 </div>
-                    <app-nft-card-collection [nfts]="nfts"></app-nft-card-collection>
+                <app-nft-card-collection [nfts]="nfts.data.items.slice(1,7)"></app-nft-card-collection>
+                <div class="d-flex align-items-center justify-content-between mb-5">
+                    <h3>Hot Collections</h3>
+                    <app-standard-button [isTransparent]="true" [isSmall]="true" [arrowCheck]="true" [isBlue]="true"
+                        [content]="'View All '"></app-standard-button>
+                </div>
+                <app-nft-card-collection [nfts]="nfts.data.items.slice(7,13)"></app-nft-card-collection>
+                <div class="d-flex align-items-center justify-content-between mb-5">
+                    <h3>Newest Arrivals</h3>
+                    <app-standard-button [isTransparent]="true" [isSmall]="true" [arrowCheck]="true" [isBlue]="true"
+                        [content]="'View All '"></app-standard-button>
+                </div>
+                <div>
+                     <app-nft-arrival-card [nfts]="nfts.data.items.slice(14,30)"></app-nft-arrival-card>
+                </div>
             </main>
         </div>
     </div>

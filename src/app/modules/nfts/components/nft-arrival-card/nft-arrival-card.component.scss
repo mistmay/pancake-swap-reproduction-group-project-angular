@@ -7,6 +7,7 @@
   transition: 200ms ease;
   border: var(--border);
   box-shadow: var(--box-shadow);
+  position: relative;
 }
 
 .newest-arrivals-card:hover {
@@ -45,4 +46,47 @@
 
 .newest-arrivals-card-coin-section {
   gap: 4px;
+}
+
+.card-container {
+  border-radius: 8px;
+  overflow: inherit;
+}
+
+.image {
+  border-radius: 8px;
+  max-height: 320px;
+  max-width: 320px;
+  position: relative;
+  width: 100%;
+  margin-bottom: 8px;
+  height: max-content;
+  overflow: hidden;
+
+  & ::after {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+}
+
+#image {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.grid-container {
+  display: grid;
+  gap: 24px 16px;
+}
+
+@media screen and (min-width: 852px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+@media screen and (min-width: 370px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+}
 }
