@@ -19,7 +19,7 @@ import { CommonModule } from '@angular/common';
     imports: [
         NftsRoutingModule,
         SharedModule,
-        CommonModule
+        CommonModule,
         
     ],
     exports: [

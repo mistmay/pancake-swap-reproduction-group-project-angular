@@ -10,6 +10,7 @@ import { LiquidityCardComponent } from './components/liquidity-card/liquidity-ca
 import { NftCardCollectionComponent } from '../nfts/components/nft-card-collection/nft-card-collection.component';
 import { StandardButtonComponent } from './components/standard-button/standard-button.component';
 import { ToogleBtnComponent } from './components/toogle-btn/toogle-btn.component';
+import { HeroNavComponent } from './components/hero-nav/hero-nav.component';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,8 @@ import { ToogleBtnComponent } from './components/toogle-btn/toogle-btn.component
         LiquidityCardComponent,
         NftCardCollectionComponent,
         StandardButtonComponent,
-        ToogleBtnComponent
+        ToogleBtnComponent,
+        HeroNavComponent
     ],
     imports: [
         CommonModule
@@ -37,7 +39,8 @@ import { ToogleBtnComponent } from './components/toogle-btn/toogle-btn.component
         LiquidityCardComponent,
         NftCardCollectionComponent,
         StandardButtonComponent,
-        ToogleBtnComponent
+        ToogleBtnComponent,
+        HeroNavComponent
     ]
 })
 export class SharedModule { }
