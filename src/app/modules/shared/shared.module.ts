@@ -11,6 +11,7 @@ import { NftCardCollectionComponent } from '../nfts/components/nft-card-collecti
 import { StandardButtonComponent } from './components/standard-button/standard-button.component';
 import { ToogleBtnComponent } from './components/toogle-btn/toogle-btn.component';
 import { HeroNavComponent } from './components/hero-nav/hero-nav.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
@@ -27,7 +28,8 @@ import { HeroNavComponent } from './components/hero-nav/hero-nav.component';
         HeroNavComponent
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        RouterModule
     ],
     exports: [
         AccordionBtnComponent,
