@@ -1,0 +1,9 @@
+<div class="d-flex justify-content-around">
+    <div class="hero-nav-container">
+        <div class="hero-link d-flex">
+            <ng-container class="postion-relative" *ngFor="let hero of _heroNav">
+                <a routerLinkActive="link-active fw-bold" [routerLink]="hero.link" class="link me-3">{{hero.name}}</a>
+            </ng-container>
+        </div>
+    </div>
+</div>
