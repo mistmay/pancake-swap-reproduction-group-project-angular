@@ -1,0 +1,12 @@
+#separator-wrapper {
+    background: none;
+    z-index: 1;
+    -webkit-box-align: center;
+}
+
+.separator {
+    height: 20px;
+    clip-path: url(#topConcaveCurve);
+    background: var(--background-0);
+    transform: translate(0px, 1px);
+}

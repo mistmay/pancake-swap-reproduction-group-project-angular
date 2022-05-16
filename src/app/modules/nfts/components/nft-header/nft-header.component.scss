@@ -1,0 +1,82 @@
+header {
+    padding-top: 32px;
+    max-width: 1200px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header > div {
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+header > div :nth-child(1) {
+    order: 1;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: var(--color-1);
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--color-2);
+}
+
+.search-bar {
+    order: 0;
+    margin-bottom: 32px;
+    align-self: end;
+}
+
+.search-bar input {
+    z-index: 16;
+    padding-right: 40px;
+    background-color: var(--background-10);
+    border-radius: 16px;
+    box-shadow: var(--box-shadow-3);
+    color: var(--color-2);
+    font-size: 16px;
+    height: 40px;
+    outline: 0px;
+    padding: 0px 16px;
+    width: 100%;
+    border: var(--border-2);
+}
+
+@media screen and (min-width: 370px) {
+    header {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .search-bar {
+        order: 1;
+        margin-bottom: 0px;
+        align-self: auto;
+    }
+    header > div:nth-child(1) {
+        order: 0;
+    }
+}
+
+@media screen and (min-width: 968px) {
+    h1 {
+        font-size: 64px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+}
