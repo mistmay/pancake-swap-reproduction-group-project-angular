@@ -7,10 +7,8 @@ import { DarkModeBtnSunComponent } from './components/dark-mode-btn-sun/dark-mod
 import { DarkModeButtonComponent } from './components/dark-mode-button/dark-mode-button.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { LiquidityCardComponent } from './components/liquidity-card/liquidity-card.component';
-import { NftCardCollectionComponent } from '../nfts/components/nft-card-collection/nft-card-collection.component';
 import { StandardButtonComponent } from './components/standard-button/standard-button.component';
 import { ToogleBtnComponent } from './components/toogle-btn/toogle-btn.component';
-import { HeroNavComponent } from './components/hero-nav/hero-nav.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -22,10 +20,8 @@ import { RouterModule } from '@angular/router';
         DarkModeButtonComponent,
         FaqComponent,
         LiquidityCardComponent,
-        NftCardCollectionComponent,
         StandardButtonComponent,
-        ToogleBtnComponent,
-        HeroNavComponent
+        ToogleBtnComponent
     ],
     imports: [
         CommonModule,
@@ -39,10 +35,8 @@ import { RouterModule } from '@angular/router';
         DarkModeButtonComponent,
         FaqComponent,
         LiquidityCardComponent,
-        NftCardCollectionComponent,
         StandardButtonComponent,
-        ToogleBtnComponent,
-        HeroNavComponent
+        ToogleBtnComponent
     ]
 })
 export class SharedModule { }

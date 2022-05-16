@@ -6,8 +6,9 @@ import { NftsTopComponent } from './views/nfts-top.component';
 const routes: Routes = [
     {
         path: '',
-        component: NftOverviewComponent,
+        component: NftsTopComponent,
         children: [
+            { path: '', component: NftOverviewComponent }
         ]
     }
 ];
