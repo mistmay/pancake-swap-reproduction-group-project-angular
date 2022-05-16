@@ -36,6 +36,8 @@ body {
   --background-11: rgb(238, 234, 244);
   --background-12: rgb(122, 110, 170);
   --background-13: linear-gradient(rgb(255, 255, 255) 22%, rgb(215, 202, 236) 100%);
+  --background-14: rgb(231, 227, 235);
+  --background-15: white;
   --border: 1px solid rgb(231, 227, 235);
   --border-2: 1px solid rgb(215, 202, 236);
   --border-3: 1px solid rgb(215, 202, 236);
@@ -55,6 +57,7 @@ body {
   --filter-3: invert(58%) sepia(5%) saturate(3918%) hue-rotate(211deg) brightness(77%) contrast(85%);
   --box-shadow: 1px 3px 3px rgb(231, 227, 235);
   --box-shadow-2: rgb(118 69 217) 0px 0px 0px 1px, rgb(118 69 217 / 60%) 0px 0px 0px 4px;
+  --box-shadow-3: rgb(74 74 104 / 10%) 0px 2px 2px -1px inset;
   background-color: var(--background-0);
 }
 
@@ -73,6 +76,8 @@ body.dark-mode {
   --background-11: rgba(55, 47, 71, 255);
   --background-12: rgb(184, 173, 210);
   --background-13: linear-gradient(rgb(9, 7, 12) 22%, rgb(32, 19, 53) 100%);
+  --background-14: rgb(56, 50, 65);
+  --background-15: rgb(39, 38, 44);
   --border: 1px solid rgb(56, 50, 65);
   --border-2: 1px solid rgb(38, 33, 48);
   --border-3: none;

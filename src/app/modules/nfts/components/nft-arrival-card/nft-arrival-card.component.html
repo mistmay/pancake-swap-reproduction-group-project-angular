@@ -1,16 +1,26 @@
-<button class="newest-arrivals-card">
-  <img src="{{image}}">
-  <div class="newest-arrivals-card-text d-flex flex-column justify-content-between align-items-start">
-    <span>{{category}}</span>
-    <h4>{{title}}</h4>
-    <hr class="w-100" />
-    <div class="d-flex justify-content-between align-items-center w-100">
-      <span>Asking Price</span>
-      <div class="newest-arrivals-card-coin-section d-flex justify-content-between align-items-center">
-        <span>({{price}})</span>
-        <img src="../../../../../assets/svg/nft-arrivals-card.svg">
-        <h4>{{cake}}</h4>
+<div class="grid-container justify-content-center">
+  <ng-container *ngFor="let nft of nfts">
+    <div class="newest-arrivals-card">
+      <div class="w-100 h-100 card-container">
+        <div class="p-1">
+          <div class="image h-100 w-100">
+            <div id="image" [style.background-image]="'url('+nft.first_nft_image_1024+')'"></div>
+          </div>
+          <div class="newest-arrivals-card-text d-flex flex-column justify-content-between align-items-start">
+            <span>Pancake Squad</span>
+            <h4>{{nft.collection_name}}</h4>
+            <hr class="w-100" />
+            <div class="d-flex justify-content-between align-items-center w-100">
+              <span>Asking Price</span>
+              <div class="newest-arrivals-card-coin-section d-flex justify-content-between align-items-center">
+                <span>(${{nft.floor_price_quote_7d /100 | number : '1.2-2'}})</span>
+                <img src="../../../../../assets/svg/nft-arrivals-card.svg">
+                <h4>{{nft.volume_quote_24h / 100 | number : '.2-2'}}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</button>
+  </ng-container>
+</div>

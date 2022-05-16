@@ -36,12 +36,12 @@
           <a href="#">Lottery</a>
         </div>
       </li>
-      <li class="position-relative" (mouseover)="showNftMenu = true" (mouseout)="showNftMenu = false">
-        <a href="#" class="d-flex justify-content-center align-items-center">NFT</a>
+      <li class="position-relative" routerLinkActive="active" (mouseover)="showNftMenu = true" (mouseout)="showNftMenu = false">
+        <a routerLink="/nfts" routerLinkActive="active" class="d-flex justify-content-center align-items-center">NFT</a>
         <div
           class="d-none toogle-menu toogle-menu-top position-absolute flex-column align-items-start justify-content-start"
           [class.open-menu]="showNftMenu">
-          <a href="#">Overview</a>
+          <a routerLink="/nfts" routerLinkActive="active">Overview</a>
           <a href="#">Collections</a>
           <a href="#">Activity</a>
         </div>
