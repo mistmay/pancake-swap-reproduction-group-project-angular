@@ -9,6 +9,7 @@ import { FaqComponent } from './components/faq/faq.component';
 import { LiquidityCardComponent } from './components/liquidity-card/liquidity-card.component';
 import { StandardButtonComponent } from './components/standard-button/standard-button.component';
 import { ToogleBtnComponent } from './components/toogle-btn/toogle-btn.component';
+import { HeroNavComponent } from './components/hero-nav/hero-nav.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -21,7 +22,8 @@ import { RouterModule } from '@angular/router';
         FaqComponent,
         LiquidityCardComponent,
         StandardButtonComponent,
-        ToogleBtnComponent
+        ToogleBtnComponent,
+        HeroNavComponent
     ],
     imports: [
         CommonModule,
@@ -36,7 +38,8 @@ import { RouterModule } from '@angular/router';
         FaqComponent,
         LiquidityCardComponent,
         StandardButtonComponent,
-        ToogleBtnComponent
+        ToogleBtnComponent,
+        HeroNavComponent
     ]
 })
 export class SharedModule { }
