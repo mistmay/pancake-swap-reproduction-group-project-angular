@@ -74,3 +74,9 @@
 .escape.logo {
     filter: invert(47%) sepia(15%) saturate(1221%) hue-rotate(211deg) brightness(93%) contrast(85%);
 }
+
+.active {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: var(--color-1) !important;
+}
