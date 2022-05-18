@@ -1,1 +1,147 @@
-div.
+/* Teams & Profiles Cards */
+.teams-card {
+    margin-bottom: 16px;
+    background: rgb(231, 227, 235);
+    border-radius: 24px;
+    color: rgb(40, 13, 95);
+    padding: 1px 1px 3px;
+}
+
+.teams-card-inner {
+    width: 100%;
+    height: 100%;
+    overflow: inherit;
+    background: rgb(255, 255, 255);
+    border-radius: 24px;
+}
+
+.teams-card-left {
+    align-self: stretch;
+    background: linear-gradient(139.73deg, rgb(230, 253, 255) 0%, rgb(239, 244, 245) 46.87%, rgb(243, 239, 255) 100%);
+    flex: 0 0 auto;
+    padding: 16px 0px;
+    text-align: center;
+    width: 56px;
+    color: rgb(40, 13, 95);
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 24px;
+    font-family: "Kanit", sans-serif;
+}
+
+.teams-card-right {
+    -webkit-box-align: start;
+    align-items: start;
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    padding: 24px;
+}
+
+.teams-card-right-inner {
+    flex: 1 1 0%;
+}
+
+.teams-card-right-inner-head {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.teams-card-right-inner-head-img {
+    flex: 0 0 auto;
+    margin-right: 8px;
+}
+
+.teams-card-right-inner-head-img > img {
+    border-radius: 50%;
+    height: 64px;
+    width: 64px;
+}
+
+.teams-card-h3 {
+    color: rgb(40, 13, 95);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.5;
+    font-family: "Kanit", sans-serif;
+}
+
+.teams-card-p {
+    color: rgb(122, 110, 170);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    padding-right: 24px;
+    margin-bottom: 16px;
+    font-family: "Kanit", sans-serif;
+}
+
+.teams-svg-cup {
+    fill: rgb(189, 194, 196);
+    flex-shrink: 0;
+    margin-right: 8px;
+}
+
+.teams-svg-crowd {
+    fill: rgb(40, 13, 95);
+    flex-shrink: 0;
+    margin-right: 8px;
+}
+
+.teams-card-footer-paragraph {
+    color: rgb(189, 194, 196);
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 24px;
+    font-family: "Kanit", sans-serif;
+
+}
+
+.footer-crowd {
+    margin-left: 24px;
+    color: rgb(40, 13, 95);
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 24px;
+}
+
+.teams-card-image-container {
+    display: none;
+}
+
+.teams-card-image {
+    margin-left: 24px;
+    height: auto;
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+@media screen and (min-width: 852px){
+    .teams-card-right {
+        -webkit-box-align: center;
+        align-items: center;
+        flex-direction: row;
+        font-size: 40px;
+        font-family: "Kanit", sans-serif;
+    }
+    .teams-card-h3 {
+        font-size: 40px;
+    }
+
+    .teams-card-image {
+        height: 128px;
+        width: 128px;
+    }
+
+    .teams-card-right-inner-head-img {
+        display: none;
+    }
+
+    .teams-card-image-container {
+        display: block;
+        margin-left: 24px;
+    }
+}
+
+/* Teams & Profiles Cards */
