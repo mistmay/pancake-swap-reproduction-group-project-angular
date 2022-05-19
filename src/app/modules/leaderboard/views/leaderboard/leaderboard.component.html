@@ -10,8 +10,8 @@
             <div class="d-flex align-items-center justify-content-between teams">
                 <h2>Teams</h2>
             </div>
-            <div class="card-teams">
-                <app-teams-card></app-teams-card>
+            <div class="card-teams" *ngFor="let team of teams">
+                <app-teams-card [team]="team"></app-teams-card>
             </div>
         </div>
     </div>
