@@ -1,11 +1,11 @@
 <div class="d-flex justify-content-between align-items-center flex-wrap position-relative" id="info-search-section">
   <div class="d-flex justify-content-center align-items-center">
-    <a id="info-search-section-overview" [class.info-search-section-selected-button]="pageChecker === 'overview'"
-      routerLink="/info">Overview</a>
-    <a id="info-search-section-pools" [class.info-search-section-selected-button]="pageChecker === 'pools'"
-      routerLink="/info/pools">Pools</a>
-    <a id="info-search-section-tokens" [class.info-search-section-selected-button]="pageChecker === 'tokens'"
-      routerLink="/info/tokens">Tokens</a>
+    <a id="info-search-section-overview" routerLink="/info/overview"
+      routerLinkActive="info-search-section-selected-button">Overview</a>
+    <a id="info-search-section-pools" routerLink="/info/pools"
+      routerLinkActive="info-search-section-selected-button">Pools</a>
+    <a id="info-search-section-tokens" routerLink="/info/tokens"
+      routerLinkActive="info-search-section-selected-button">Tokens</a>
   </div>
   <input type="text" placeholder="Search polls or tokens" id="info-page-fake-searchbar" (click)="showSearchModal()">
   <app-search-modal class="position-fixed start-0 w-100" *ngIf="showModal" [ngStyle]="{'top': getModalTop()}">

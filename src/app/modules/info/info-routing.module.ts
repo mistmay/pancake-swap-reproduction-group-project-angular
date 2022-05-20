@@ -14,7 +14,8 @@ const routes: Routes = [
             { path: 'token/:id', component: InfoTokenDetailsComponent },
             { path: 'tokens', component: InfoTokensComponent },
             { path: 'pools', component: InfoPoolsComponent },
-            { path: '', component: InfoPageComponent }
+            { path: 'overview', component: InfoPageComponent },
+            { path: '', redirectTo: 'overview' }
         ]
     }
 ];

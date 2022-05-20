@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { InfoSearchModalService } from 'src/app/services/info-search-modal.service';
 
@@ -10,7 +10,6 @@ import { InfoSearchModalService } from 'src/app/services/info-search-modal.servi
 export class SearchNavbarComponent implements OnInit, OnDestroy {
   showModal!: boolean;
   isModalUp!: boolean;
-  @Input() pageChecker!: 'overview' | 'pools' | 'tokens';
   subscriptions: Subscription[] = [];
 
   constructor(private modalService: InfoSearchModalService) { }
