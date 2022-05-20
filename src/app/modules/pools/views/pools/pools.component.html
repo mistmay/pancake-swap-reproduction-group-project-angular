@@ -1,0 +1,19 @@
+<app-hero-nav [heroNav]="[
+    {name: 'Farms', link: '/farms'},
+    {name: 'Pools', link: '/pools'},
+    ]"></app-hero-nav>
+
+<div class="position-relative d-flex">
+    <div id="wrapper" class="">
+        <app-page-header [pageTitle]="'Syrup Pools'" [subTitle]="'Just stake some tokens to earn. High APR, low risk.'" [search]="false" ></app-page-header>
+    </div>
+</div>
+
+<!-- ci sarà la navigazione / toggle / search -->
+
+    <div class="d-flex flex-wrap justify-content-center">
+            <app-card [isCake]="true"></app-card>
+        <div *ngFor="let i of [1,2,3]">
+            <app-card [isCake]="false" ></app-card>
+        </div>
+    </div>

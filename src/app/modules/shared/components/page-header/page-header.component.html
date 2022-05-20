@@ -1,0 +1,13 @@
+<div class="mb-5 header-container">
+    <header>
+        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center">
+            <div>
+                <h1>{{ pageTitle }}</h1>
+                <h2>{{ subTitle }}</h2>
+            </div>
+            <div *ngIf="search" class="position-relative search-bar">
+                <input placeholder="Search address" class="d-block" type="search" name="searchBar" id="searchBar">
+            </div>
+        </div>
+    </header>
+</div>

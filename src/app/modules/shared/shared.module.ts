@@ -11,6 +11,13 @@ import { StandardButtonComponent } from './components/standard-button/standard-b
 import { ToogleBtnComponent } from './components/toogle-btn/toogle-btn.component';
 import { HeroNavComponent } from './components/hero-nav/hero-nav.component';
 import { RouterModule } from '@angular/router';
+import { CardComponent } from './components/card/card.component';
+import { CardHeadComponent } from './components/card/components/card-head/card-head.component';
+import { CardBodyComponent } from './components/card/components/card-body/card-body.component';
+import { CardFooterComponent } from './components/card/components/card-footer/card-footer.component';
+import { PageHeaderComponent } from './components/page-header/page-header.component';
+
+
 
 @NgModule({
     declarations: [
@@ -23,7 +30,13 @@ import { RouterModule } from '@angular/router';
         LiquidityCardComponent,
         StandardButtonComponent,
         ToogleBtnComponent,
-        HeroNavComponent
+        HeroNavComponent,
+        CardComponent,
+        CardHeadComponent,
+        CardBodyComponent,
+        CardFooterComponent,
+        PageHeaderComponent,
+
     ],
     imports: [
         CommonModule,
@@ -39,7 +52,10 @@ import { RouterModule } from '@angular/router';
         LiquidityCardComponent,
         StandardButtonComponent,
         ToogleBtnComponent,
-        HeroNavComponent
+        HeroNavComponent,
+        CardComponent,
+        PageHeaderComponent,
+        
     ]
 })
 export class SharedModule { }

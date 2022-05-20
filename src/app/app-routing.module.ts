@@ -22,6 +22,10 @@ const routes: Routes = [
     path: 'teams',
     loadChildren: () => import('./modules/leaderboard/leaderboard.module').then(m => m.LeaderboardModule)
   },
+  {
+    path: 'pools',
+    loadChildren: () => import('./modules/pools/pools.module').then(m => m.PoolsModule)
+  },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'error', pathMatch: 'full' }
 ];
