@@ -11,6 +11,9 @@ export class StandardButtonComponent implements OnInit {
   @Input() isTransparent: boolean = false;
   @Input() isSmall: boolean = false;
   @Input() isBlue: boolean = false;
+  @Input() fullWidth: boolean = false;
+  @Input() cardAutoManual: boolean = false
+  @Input() isAuto: boolean = false
 
   constructor() { }
 

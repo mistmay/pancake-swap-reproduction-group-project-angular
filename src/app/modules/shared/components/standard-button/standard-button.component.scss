@@ -47,6 +47,36 @@ button {
   padding: 0px 16px;
 }
 
+.btn-auto {
+  -moz-box-align: center;
+  align-items: center;
+  border-radius: 16px;
+  display: inline-flex;
+  font-weight: 400;
+  white-space: nowrap;
+  height: 28px;
+  padding: 0px 8px;
+  font-size: 14px;
+  color: rgb(49, 208, 170);
+  background: var(--background-0);
+  border: 2px solid rgb(49, 208, 170);
+}
+
+.btn-manual {
+  -moz-box-align: center;
+  align-items: center;
+  border-radius: 16px;
+  display: inline-flex;
+  font-weight: 400;
+  white-space: nowrap;
+  height: 28px;
+  padding: 0px 8px;
+  font-size: 14px;
+  color: rgb(118, 69, 217);
+  background: var(--background-0);
+  border: 2px solid rgb(118, 69, 217);
+}
+
 .btn-blue {
   filter: brightness(0) saturate(100%) invert(72%) sepia(76%) saturate(862%) hue-rotate(137deg) brightness(88%) contrast(87%) ;
 }

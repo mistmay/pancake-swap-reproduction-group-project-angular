@@ -23,7 +23,7 @@
           class="d-none toogle-menu toogle-menu-top position-absolute flex-column align-items-start justify-content-start"
           [class.open-menu]="showEarnMenu">
           <a href="#">Farms</a>
-          <a href="#">Pools</a>
+          <a routerLink="/pools" routerLinkActive="active">Pools</a>
         </div>
       </li>
       <li class="position-relative" (mouseover)="showWinMenu = true" (mouseout)="showWinMenu = false">
