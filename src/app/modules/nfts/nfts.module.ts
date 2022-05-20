@@ -5,16 +5,15 @@ import { NftOverviewComponent } from './views/nft-overview/nft-overview.componen
 import { NftsTopComponent } from './views/nfts-top.component';
 import { SharedModule } from '../shared/shared.module';
 import { CommonModule } from '@angular/common';
-import { NftHeaderComponent } from './components/nft-header/nft-header.component';
 import { NftSeparatorComponent } from './components/nft-separator/nft-separator.component';
 import { NftCardCollectionComponent } from './components/nft-card-collection/nft-card-collection.component';
+import { PageHeaderComponent } from '../shared/components/page-header/page-header.component';
 
 @NgModule({
     declarations: [
         NftsTopComponent,
         NftArrivalCardComponent,
         NftOverviewComponent,
-        NftHeaderComponent,
         NftSeparatorComponent,
         NftCardCollectionComponent
     ],
@@ -22,7 +21,6 @@ import { NftCardCollectionComponent } from './components/nft-card-collection/nft
         NftsRoutingModule,
         SharedModule,
         CommonModule,
-
     ],
     exports: [
         NftsTopComponent

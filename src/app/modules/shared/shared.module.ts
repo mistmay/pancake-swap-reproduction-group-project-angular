@@ -15,6 +15,7 @@ import { CardComponent } from './components/card/card.component';
 import { CardHeadComponent } from './components/card/components/card-head/card-head.component';
 import { CardBodyComponent } from './components/card/components/card-body/card-body.component';
 import { CardFooterComponent } from './components/card/components/card-footer/card-footer.component';
+import { PageHeaderComponent } from './components/page-header/page-header.component';
 
 
 
@@ -34,6 +35,7 @@ import { CardFooterComponent } from './components/card/components/card-footer/ca
         CardHeadComponent,
         CardBodyComponent,
         CardFooterComponent,
+        PageHeaderComponent,
 
     ],
     imports: [
@@ -51,7 +53,9 @@ import { CardFooterComponent } from './components/card/components/card-footer/ca
         StandardButtonComponent,
         ToogleBtnComponent,
         HeroNavComponent,
-        CardComponent
+        CardComponent,
+        PageHeaderComponent,
+        
     ]
 })
 export class SharedModule { }
