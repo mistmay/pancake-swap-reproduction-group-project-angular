@@ -1,0 +1,157 @@
+/* Teams & Profiles Cards */
+.teams-card {
+    margin-bottom: 16px;
+    background: var(--background-14);
+    border-radius: 24px;
+    color: var(--color-2);
+    padding: 1px 1px 3px;
+}
+
+.teams-card-inner {
+    max-width: 100%;
+    height: 100%;
+    overflow: inherit;
+    background: var( --background-1);
+    border-radius: 24px;
+}
+
+.teams-card-left {
+    align-self: stretch;
+    background: var(--background-16);
+    flex: 0 0 auto;
+    padding: 16px 0px;
+    text-align: center;
+    width: 56px;
+    color: var(--color-2);
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 24px;
+}
+
+.teams-card-right {
+    -webkit-box-align: start;
+    align-items: start;
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    padding: 24px;
+}
+
+.teams-card-right-inner {
+    flex: 1 1 0%;
+}
+
+.teams-card-right-inner-head {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.teams-card-right-inner-head-img {
+    flex: 0 0 auto;
+    margin-right: 8px;
+}
+
+.teams-card-right-inner-head-img > img {
+    border-radius: 50%;
+    height: 64px;
+    width: 64px;
+}
+
+h3 {
+    color: var(--color-2);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.teams-card-p {
+    color: var(--color-3);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.teams-svg-cup {
+    fill: var(--color-12);
+    flex-shrink: 0;
+    margin-right: 8px;
+}
+
+.teams-svg-crowd {
+    fill: var(--color-2);
+    flex-shrink: 0;
+    margin-right: 8px;
+}
+
+.teams-card-footer-paragraph {
+    color: var(--color-12);
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.word-breaker {
+    white-space: nowrap
+}
+
+.footer-crowd {
+    margin-left: 24px;
+    color: var(--color-2);
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.teams-card-image-container {
+    display: none;
+}
+
+.teams-card-image {
+    margin-left: 24px;
+    height: auto;
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+@media screen and (min-width: 852px){
+    .teams-card-right {
+        -webkit-box-align: center;
+        align-items: center;
+        flex-direction: row;
+        font-size: 40px;
+
+    }
+    h3 {
+        font-size: 40px;
+    }
+
+    .teams-card-image {
+        height: 128px;
+        width: 128px;
+    }
+
+    .teams-card-right-inner-head-img {
+        display: none;
+    }
+
+    .teams-card-image-container {
+        display: block;
+    }
+
+    .teams-card-footer-paragraph {
+        font-size: 24px;
+    }
+
+    .footer-crowd {
+        font-size: 24px;
+    }
+
+    .teams-card-p {
+        padding-right: 24px;
+    }
+}
+
+/* Teams & Profiles Cards */

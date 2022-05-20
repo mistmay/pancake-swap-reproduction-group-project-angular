@@ -25,7 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarProperComponent,
     NavModalsComponent,
     SettingScreenContentConnectWalletComponent,
-    SettingScreenContentSettingMenuComponent
+    SettingScreenContentSettingMenuComponent,
   ],
   imports: [
     BrowserModule,

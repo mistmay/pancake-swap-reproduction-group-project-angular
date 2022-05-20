@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'nfts',
     loadChildren: () => import('./modules/nfts/nfts.module').then(m => m.NftsModule)
   },
+  {
+    path: 'teams',
+    loadChildren: () => import('./modules/leaderboard/leaderboard.module').then(m => m.LeaderboardModule)
+  },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'error', pathMatch: 'full' }
 ];

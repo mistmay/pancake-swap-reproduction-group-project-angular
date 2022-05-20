@@ -47,17 +47,17 @@
         </div>
       </li>
       <li class="position-relative" (mouseover)="showPointsMenu = true" (mouseout)="showPointsMenu = false">
-        <a routerLink="/info" class="d-flex justify-content-center align-items-center">
+        <a routerLinkActive="active" class="d-flex justify-content-center align-items-center">
           <img src="../../../../../assets/svg/nav-points.svg" id="nav-points">
         </a>
         <div
           class="d-none toogle-menu toogle-menu-top position-absolute flex-column align-items-start justify-content-start"
           [class.open-menu]="showPointsMenu">
-          <a routerLink="/info">Info</a>
+          <a routerLink="/info" routerLinkActive="active">Info</a>
           <a href="#">IFO</a>
           <a href="#">Voting</a>
           <hr />
-          <a href="#">Leaderboard</a>
+          <a routerLink="/teams" routerLinkActive="active">Leaderboard</a>
           <hr />
           <a href="#" class="d-flex justify-content-between align-items-center">
             IFO
