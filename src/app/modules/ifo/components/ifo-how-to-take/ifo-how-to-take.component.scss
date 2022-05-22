@@ -1,0 +1,115 @@
+#ifo-page-how-to-take>div>div {
+  height: 300px;
+}
+
+#ifo-page-how-to-take-section-2 {
+  height: 500px !important;
+}
+
+#ifo-page-how-to-take-section-2 .ifo-page-how-to-take-text-container {
+  height: 100%;
+}
+
+.ifo-page-how-to-take-round {
+  border-radius: 100%;
+  background-color: var(--background-17);
+  font-size: 32px;
+  width: 48px;
+  height: 48px;
+  box-shadow: rgb(25 19 38 / 15%) 0px 1px 4px;
+  border: 2px solid transparent;
+  color: var(--color-12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+.ifo-page-how-to-take-line {
+  width: 4px;
+  min-height: 70px;
+  height: calc((100% - 48px) / 2);
+  background-color: var(--color-12);
+}
+
+.ifo-page-how-to-take-text-container {
+  padding: 24px;
+  border-radius: 24px;
+  background-color: var(--background-1);
+  border: var(--border);
+  gap: 16px;
+  width: calc(100% - 48px);
+  max-height: 90%;
+}
+
+.ifo-page-how-to-take-text-container h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--color-1);
+}
+
+.ifo-page-how-to-take-text-container p {
+  color: var(--color-3);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.ifo-page-how-to-take-text-container span {
+  color: var(--color-3);
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 700;
+  text-decoration: underline dotted var(--color-3);
+}
+
+#ifo-page-how-to-take-round-first {
+  background-color: var(--background-19) !important;
+  color: var(--background-17) !important;
+}
+
+#ifo-page-how-to-take-line-first {
+  height: calc(100% - 48px);
+  background-color: rgb(49, 208, 170);
+}
+
+@media (min-width: 350px) {
+  #ifo-page-how-to-take>div {
+    height: 240px;
+  }
+
+  #ifo-page-how-to-take-section-2 {
+    height: 425px !important;
+  }
+}
+
+@media (min-width: 600px) {
+  #ifo-page-how-to-take>div {
+    height: 200px;
+  }
+
+  #ifo-page-how-to-take-section-2 {
+    height: 280px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .ifo-page-how-to-take-text-container {
+    width: calc(50% - 80px);
+  }
+
+  .ifo-page-how-to-take-round {
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+  }
+
+  .ifo-page-how-to-take-line {
+    height: calc((100% - 80px) / 2);
+  }
+
+  #ifo-page-how-to-take-line-first {
+    height: calc(100% - 80px);
+  }
+}

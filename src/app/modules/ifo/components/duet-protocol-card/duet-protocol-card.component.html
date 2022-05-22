@@ -1,0 +1,187 @@
+<div id="ifo-page-duet-protocol-main-card" class="ifo-page-duet-protocol w-100 mx-auto">
+  <div id="ifo-page-duet-protocol-header-main-card"
+    class="ifo-page-duet-protocol-header position-relative d-flex justify-content-end align-items-center p-4"
+    [ngStyle]="{'background-image': 'url('+ backgroundImage +')'}">
+    <img src="../../../../../assets/img/bunnypop-right.png"
+      class="position-absolute ifo-duet-protocol-bunny d-none d-lg-block" *ngIf="!showAlways && showContent">
+    <button type="button" class="btn-type-1 ifo-page-finished-btn" (click)="showContent = !showContent"
+      *ngIf="!showAlways">
+      <svg viewBox="0 0 24 24" color="invertedContrast" width="20px" xmlns="http://www.w3.org/2000/svg"
+        class="sc-5a69fd5e-0 euPMmD" [ngStyle]="{'transform': showContent ? 'rotate(180deg)' : 'none'}">
+        <path
+          d="M8.11997 9.29006L12 13.1701L15.88 9.29006C16.27 8.90006 16.9 8.90006 17.29 9.29006C17.68 9.68006 17.68 10.3101 17.29 10.7001L12.7 15.2901C12.31 15.6801 11.68 15.6801 11.29 15.2901L6.69997 10.7001C6.30997 10.3101 6.30997 9.68006 6.69997 9.29006C7.08997 8.91006 7.72997 8.90006 8.11997 9.29006Z">
+        </path>
+      </svg>
+    </button>
+  </div>
+  <div class="d-flex justify-content-center align-items-center ifo-page-duet-protocol-sale-finished"
+    *ngIf="showContent || showAlways">
+    <h3>Sale Finished!</h3>
+  </div>
+  <div
+    class="d-flex flex-column flex-lg-row justify-content-between align-items-center align-items-lg-start p-4 gap-4 ifo-page-duet-protocol-main"
+    *ngIf="showContent || showAlways">
+    <div class="ifo-page-duet-protocol-card">
+      <div
+        class="d-flex justify-content-between align-items-center ifo-page-duet-protocol-card-header ifo-page-duet-protocol-card-header-1">
+        <h4>Public Sale</h4>
+        <svg viewBox="0 0 24 24" color="text" width="20px" xmlns="http://www.w3.org/2000/svg"
+          class="sc-5a69fd5e-0 fIBjTm">
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM11 16H13V18H11V16ZM12.61 6.04C10.55 5.74 8.73 7.01 8.18 8.83C8 9.41 8.44 10 9.05 10H9.25C9.66 10 9.99 9.71 10.13 9.33C10.45 8.44 11.4 7.83 12.43 8.05C13.38 8.25 14.08 9.18 14 10.15C13.9 11.49 12.38 11.78 11.55 13.03C11.55 13.04 11.54 13.04 11.54 13.05C11.53 13.07 11.52 13.08 11.51 13.1C11.42 13.25 11.33 13.42 11.26 13.6C11.25 13.63 11.23 13.65 11.22 13.68C11.21 13.7 11.21 13.72 11.2 13.75C11.08 14.09 11 14.5 11 15H13C13 14.58 13.11 14.23 13.28 13.93C13.3 13.9 13.31 13.87 13.33 13.84C13.41 13.7 13.51 13.57 13.61 13.45C13.62 13.44 13.63 13.42 13.64 13.41C13.74 13.29 13.85 13.18 13.97 13.07C14.93 12.16 16.23 11.42 15.96 9.51C15.72 7.77 14.35 6.3 12.61 6.04Z">
+          </path>
+        </svg>
+      </div>
+      <div class="ifo-page-duet-protocol-card-main">
+        <div class="d-flex justify-content-start align-items-start gap-3">
+          <img src="../../../../../assets/svg/duet-protocol-mini.svg">
+          <div class="ifo-page-duet-protocol-card-on-sale">
+            <h5>ON SALE</h5>
+            <span>4,800,000 {{name | uppercase}}</span>
+            <p>80% of total sale</p>
+          </div>
+        </div>
+        <div class="w-100 my-3">
+          <app-standard-button [content]="'Connect Wallet'" (click)="changeSettingScreenLauncherStatus('connect')"
+            class="w-100">
+          </app-standard-button>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <p>Max. CAKE entry</p>
+          <span class="ifo-page-duet-protocol-card-cake-entry">0,000 ~($0)</span>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <p>Additional fee</p>
+          <span>0.5%</span>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <p>Total committed:</p>
+          <span>~$49.952.441 (3751.84%)</span>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <p>Funds to raise:</p>
+          <span>$1,440,000</span>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <p>Price per DUET:</p>
+          <span>$0.3</span>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <p>Price per DUET with fee:</p>
+          <span>~$0,36</span>
+        </div>
+      </div>
+    </div>
+    <div class="ifo-page-duet-protocol-card">
+      <div
+        class="d-flex justify-content-between align-items-center ifo-page-duet-protocol-card-header ifo-page-duet-protocol-card-header-2">
+        <h4>Private Sale</h4>
+        <svg viewBox="0 0 24 24" color="text" width="20px" xmlns="http://www.w3.org/2000/svg"
+          class="sc-5a69fd5e-0 fIBjTm">
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM11 16H13V18H11V16ZM12.61 6.04C10.55 5.74 8.73 7.01 8.18 8.83C8 9.41 8.44 10 9.05 10H9.25C9.66 10 9.99 9.71 10.13 9.33C10.45 8.44 11.4 7.83 12.43 8.05C13.38 8.25 14.08 9.18 14 10.15C13.9 11.49 12.38 11.78 11.55 13.03C11.55 13.04 11.54 13.04 11.54 13.05C11.53 13.07 11.52 13.08 11.51 13.1C11.42 13.25 11.33 13.42 11.26 13.6C11.25 13.63 11.23 13.65 11.22 13.68C11.21 13.7 11.21 13.72 11.2 13.75C11.08 14.09 11 14.5 11 15H13C13 14.58 13.11 14.23 13.28 13.93C13.3 13.9 13.31 13.87 13.33 13.84C13.41 13.7 13.51 13.57 13.61 13.45C13.62 13.44 13.63 13.42 13.64 13.41C13.74 13.29 13.85 13.18 13.97 13.07C14.93 12.16 16.23 11.42 15.96 9.51C15.72 7.77 14.35 6.3 12.61 6.04Z">
+          </path>
+        </svg>
+      </div>
+      <div class="ifo-page-duet-protocol-card-main">
+        <div class="d-flex justify-content-start align-items-start gap-3">
+          <img src="../../../../../assets/svg/duet-protocol-mini.svg">
+          <div class="ifo-page-duet-protocol-card-on-sale">
+            <h5>ON SALE</h5>
+            <span>1,200,000 {{name | uppercase}}</span>
+            <p>20% of total sale</p>
+          </div>
+        </div>
+        <div class="w-100 my-3">
+          <app-standard-button [content]="'Connect Wallet'" (click)="changeSettingScreenLauncherStatus('connect')"
+            class="w-100">
+          </app-standard-button>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <p>Max. CAKE entry</p>
+          <span class="ifo-page-duet-protocol-card-cake-entry">0,000 ~($0)</span>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <p>Total committed:</p>
+          <span>~$673.128 (201.70%)</span>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <p>Funds to raise:</p>
+          <span>$360,000</span>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <p>Price per DUET:</p>
+          <span>$0.3</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center align-items-center ifo-page-duet-protocol-btn-hide-section"
+    *ngIf="showContent || showAlways">
+    <app-accordion-btn (click)="showDetails = !showDetails"></app-accordion-btn>
+  </div>
+  <div id="ifo-page-duet-protocol-hidden"
+    class="d-flex flex-column flex-lg-row justify-content-between align-items-center align-items-lg-start ifo-page-duet-protocol-hidden-general "
+    *ngIf="showDetails">
+    <div class="d-flex justify-content-center justify-content-lg-between align-items-start">
+      <img src="../../../../../assets/svg/ifo-duet.svg">
+      <div class="d-flex flex-column justify-content-between align-items-start gap-3">
+        <div>
+          <p>Achievement:</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <h4>IFO Shopper: {{name | uppercase}}</h4>
+            <svg viewBox="0 0 48 48" color="textSubtle" width="16px" xmlns="http://www.w3.org/2000/svg"
+              class="sc-5a69fd5e-0 rlpEE">
+              <path
+                d="M38 10H34C34 7.79086 32.2091 6 30 6H18C15.7909 6 14 7.79086 14 10H10C7.8 10 6 11.8 6 14V16C6 21.1 9.84 25.26 14.78 25.88C16.04 28.88 18.74 31.14 22 31.8V38H16C14.8954 38 14 38.8954 14 40C14 41.1046 14.8954 42 16 42H32C33.1046 42 34 41.1046 34 40C34 38.8954 33.1046 38 32 38H26V31.8C29.26 31.14 31.96 28.88 33.22 25.88C38.16 25.26 42 21.1 42 16V14C42 11.8 40.2 10 38 10ZM10 16V14H14V21.64C11.68 20.8 10 18.6 10 16ZM24 28C20.7 28 18 25.3 18 22V10H30V22C30 25.3 27.3 28 24 28ZM38 16C38 18.6 36.32 20.8 34 21.64V14H38V16Z">
+              </path>
+            </svg>
+            <span>100</span>
+          </div>
+          <p>Commit ~1.652 CAKE in total to earn!</p>
+        </div>
+        <div class="d-flex justify-content-between align-items-center gap-3">
+          <a href="#">
+            <svg viewBox="0 0 24 24" color="textSubtle" width="20px" xmlns="http://www.w3.org/2000/svg"
+              class="sc-5a69fd5e-0 jNuCsa">
+              <path
+                d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.44C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.52 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.44C8.81 5.55 8.35 6.75 8.03 8ZM12 19.96C11.17 18.76 10.52 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56ZM16.36 14C16.44 13.34 16.5 12.68 16.5 12C16.5 11.32 16.44 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z">
+              </path>
+            </svg>
+          </a>
+          <a href="#">
+            <svg viewBox="0 0 25 24" xmlns="http://www.w3.org/2000/svg" color="textSubtle" width="20px"
+              class="sc-5a69fd5e-0 jNuCsa">
+              <path
+                d="M10.037 6a.75.75 0 000 1.5h7.5a.75.75 0 000-1.5h-7.5zM9.287 9.75a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM10.037 12a.75.75 0 000 1.5h7.5a.75.75 0 000-1.5h-7.5z">
+              </path>
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M5.287 4a2 2 0 012-2h13a2 2 0 012 2v15c0 1.66-1.34 3-3 3h-14c-1.66 0-3-1.34-3-3v-2c0-.55.45-1 1-1h2V4zm0 16h11v-2h-12v1c0 .55.45 1 1 1zm14 0c.55 0 1-.45 1-1V4h-13v12h10c.55 0 1 .45 1 1v2c0 .55.45 1 1 1z">
+              </path>
+            </svg>
+          </a>
+          <a href="#">
+            <svg viewBox="0 0 18 15" color="textSubtle" width="20px" xmlns="http://www.w3.org/2000/svg"
+              class="sc-5a69fd5e-0 jNuCsa">
+              <path
+                d="M5.659 15c6.79 0 10.507-5.766 10.507-10.763 0-.16 0-.32-.01-.49A7.578 7.578 0 0018 1.79c-.663.3-1.376.5-2.127.6a3.824 3.824 0 001.63-2.1c-.713.44-1.503.75-2.352.92A3.6 3.6 0 0012.46 0C10.419 0 8.76 1.699 8.76 3.787c0 .3.039.58.098.86-3.064-.15-5.786-1.669-7.61-3.957A3.858 3.858 0 00.75 2.598c0 1.31.654 2.469 1.64 3.148a3.638 3.638 0 01-1.669-.47v.05c0 1.83 1.278 3.368 2.956 3.708-.312.09-.634.13-.976.13-.234 0-.468-.02-.692-.07.468 1.509 1.834 2.598 3.453 2.628a7.284 7.284 0 01-4.585 1.62c-.293 0-.595-.01-.878-.05A10.206 10.206 0 005.659 15z">
+              </path>
+            </svg>
+          </a>
+          <a href="#">
+            <svg viewBox="0 0 20 20" color="textSubtle" width="20px" xmlns="http://www.w3.org/2000/svg"
+              class="sc-5a69fd5e-0 jNuCsa">
+              <path
+                d="M10 0C4.478 0 0 4.478 0 9.99 0 15.511 4.478 20 10 20s10-4.488 10-10.01C20 4.477 15.522 0 10 0zm4.925 6.28c-.064.927-1.78 7.856-1.78 7.856s-.107.406-.48.416a.644.644 0 01-.49-.192c-.395-.33-1.29-.97-2.132-1.556a.953.953 0 01-.107.096c-.192.17-.48.416-.789.714a10.7 10.7 0 00-.373.352l-.01.01a2.214 2.214 0 01-.193.171c-.415.341-.458.053-.458-.096l.224-2.441v-.021l.01-.022c.011-.032.033-.043.033-.043s4.36-3.88 4.477-4.296c.01-.021-.021-.042-.074-.021-.288.096-5.31 3.273-5.864 3.625-.032.02-.128.01-.128.01l-2.441-.8s-.288-.117-.192-.383c.021-.053.053-.107.17-.181.544-.384 10-3.785 10-3.785s.267-.085.427-.032c.074.032.117.064.16.17.01.043.021.128.021.224 0 .054-.01.118-.01.224z">
+              </path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <p>
+      DUET Protocol is a multi-chain synthetic assets ecosystem, enabling pegged assets from
+      various markets – from individual stocks, to indexes, ETFs, and commodities.
+    </p>
+  </div>
+</div>

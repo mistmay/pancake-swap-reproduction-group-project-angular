@@ -1,0 +1,147 @@
+<div id="ifo-page-card-mobile"
+  class="d-flex d-lg-none flex-column justify-content-between align-items-start w-100 mx-auto">
+  <div class="d-flex justify-content-between align-items-center w-100" id="ifo-page-card-mobile-header">
+    <div class="d-flex justify-content-between align-items-center gap-2">
+      <img src="../../../../../assets/svg/bunny-card-mobile.svg" class=" d-none d-sm-block">
+      <div>
+        <span>STAKED</span>
+        <h4>IFO CAKE</h4>
+        <p>Stake Cake</p>
+      </div>
+    </div>
+    <div>
+      <p>IFO Credit</p>
+      <h4>0.000</h4>
+      <p>-0.00 USD</p>
+    </div>
+    <button type="button" class="btn-type-1" id="ifo-page-card-mobile-hide-btn" (click)="showDetails = !showDetails">
+      <svg viewBox="0 0 24 24" color="invertedContrast" width="20px" xmlns="http://www.w3.org/2000/svg"
+        class="sc-5a69fd5e-0 euPMmD" [ngStyle]="{'transform': showDetails ? 'rotate(180deg)' : 'none'}">
+        <path
+          d="M8.11997 9.29006L12 13.1701L15.88 9.29006C16.27 8.90006 16.9 8.90006 17.29 9.29006C17.68 9.68006 17.68 10.3101 17.29 10.7001L12.7 15.2901C12.31 15.6801 11.68 15.6801 11.29 15.2901L6.69997 10.7001C6.30997 10.3101 6.30997 9.68006 6.69997 9.29006C7.08997 8.91006 7.72997 8.90006 8.11997 9.29006Z">
+        </path>
+      </svg>
+    </button>
+  </div>
+  <div class="d-flex justify-content-between align-items-center w-100 ifo-page-card-mobile-section-1"
+    *ngIf="showDetails">
+    <span>APY:</span>
+    <div class="d-flex justify-content-between align-items-center gap-2">
+      <span class="roi-calculator-activator">60.43%</span>
+      <svg viewBox="0 0 24 24" color="textSubtle" width="18px" xmlns="http://www.w3.org/2000/svg"
+        class="sc-5a69fd5e-0 jNuCsa roi-calculator-activator">
+        <path
+          d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19Z">
+        </path>
+        <path d="M11.25 7.72H6.25V9.22H11.25V7.72Z"></path>
+        <path d="M18 15.75H13V17.25H18V15.75Z"></path>
+        <path d="M18 13.25H13V14.75H18V13.25Z"></path>
+        <path d="M8 18H9.5V16H11.5V14.5H9.5V12.5H8V14.5H6V16H8V18Z"></path>
+        <path
+          d="M14.09 10.95L15.5 9.54L16.91 10.95L17.97 9.89L16.56 8.47L17.97 7.06L16.91 6L15.5 7.41L14.09 6L13.03 7.06L14.44 8.47L13.03 9.89L14.09 10.95Z">
+        </path>
+      </svg>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between align-items-center w-100 ifo-page-card-mobile-section-2"
+    *ngIf="showDetails">
+    <span>Credit calculation ended:</span>
+    <div class="d-flex justify-content-between align-items-center">
+      <a href="#">15954340</a>
+      <svg viewBox="0 0 24 24" color="textSubtle" width="20px" xmlns="http://www.w3.org/2000/svg"
+        class="sc-5a69fd5e-0 jNuCsa">
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM11 16H13V18H11V16ZM12.61 6.04C10.55 5.74 8.73 7.01 8.18 8.83C8 9.41 8.44 10 9.05 10H9.25C9.66 10 9.99 9.71 10.13 9.33C10.45 8.44 11.4 7.83 12.43 8.05C13.38 8.25 14.08 9.18 14 10.15C13.9 11.49 12.38 11.78 11.55 13.03C11.55 13.04 11.54 13.04 11.54 13.05C11.53 13.07 11.52 13.08 11.51 13.1C11.42 13.25 11.33 13.42 11.26 13.6C11.25 13.63 11.23 13.65 11.22 13.68C11.21 13.7 11.21 13.72 11.2 13.75C11.08 14.09 11 14.5 11 15H13C13 14.58 13.11 14.23 13.28 13.93C13.3 13.9 13.31 13.87 13.33 13.84C13.41 13.7 13.51 13.57 13.61 13.45C13.62 13.44 13.63 13.42 13.64 13.41C13.74 13.29 13.85 13.18 13.97 13.07C14.93 12.16 16.23 11.42 15.96 9.51C15.72 7.77 14.35 6.3 12.61 6.04Z">
+        </path>
+      </svg>
+    </div>
+  </div>
+  <div class="w-100 ifo-page-card-mobile-border-section" id="ifo-page-card-mobile-section-3" *ngIf="showDetails">
+    <div class="d-flex justify-content-start align-items-center gap-2">
+      <span>IFO CREDIT</span>
+      <svg viewBox="0 0 24 24" color="textSubtle" width="24px" xmlns="http://www.w3.org/2000/svg"
+        class="sc-5a69fd5e-0 jNuCsa">
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM11 16H13V18H11V16ZM12.61 6.04C10.55 5.74 8.73 7.01 8.18 8.83C8 9.41 8.44 10 9.05 10H9.25C9.66 10 9.99 9.71 10.13 9.33C10.45 8.44 11.4 7.83 12.43 8.05C13.38 8.25 14.08 9.18 14 10.15C13.9 11.49 12.38 11.78 11.55 13.03C11.55 13.04 11.54 13.04 11.54 13.05C11.53 13.07 11.52 13.08 11.51 13.1C11.42 13.25 11.33 13.42 11.26 13.6C11.25 13.63 11.23 13.65 11.22 13.68C11.21 13.7 11.21 13.72 11.2 13.75C11.08 14.09 11 14.5 11 15H13C13 14.58 13.11 14.23 13.28 13.93C13.3 13.9 13.31 13.87 13.33 13.84C13.41 13.7 13.51 13.57 13.61 13.45C13.62 13.44 13.63 13.42 13.64 13.41C13.74 13.29 13.85 13.18 13.97 13.07C14.93 12.16 16.23 11.42 15.96 9.51C15.72 7.77 14.35 6.3 12.61 6.04Z">
+        </path>
+      </svg>
+    </div>
+    <h4>0.00000</h4>
+    <p>-0.00 USD</p>
+  </div>
+  <div class="w-100 ifo-page-card-mobile-border-section ifo-page-card-mobile-section-4" *ngIf="showDetails">
+    <p>START STAKING</p>
+    <app-standard-button [content]="'Connect Wallet'" (click)="changeSettingScreenLauncherStatus('connect')"
+      class="w-100">
+    </app-standard-button>
+  </div>
+  <div class="w-100 ifo-page-card-mobile-border-section ifo-page-card-mobile-section-5" *ngIf="showDetails">
+    <p>Recent CAKE profit:</p>
+    <p>1% unstaking fee if withdrawn within 24h</p>
+  </div>
+  <div class="d-flex justify-content-between align-items-center w-100 ifo-page-card-mobile-prefooter"
+    *ngIf="showDetails">
+    <p>Total staked:</p>
+    <div class="d-flex justify-content-between align-items-center gap-2">
+      <p>32,161,400 CAKE</p>
+      <svg viewBox="0 0 24 24" color="textSubtle" width="20px" xmlns="http://www.w3.org/2000/svg"
+        class="sc-5a69fd5e-0 ezHrbw">
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM11 16H13V18H11V16ZM12.61 6.04C10.55 5.74 8.73 7.01 8.18 8.83C8 9.41 8.44 10 9.05 10H9.25C9.66 10 9.99 9.71 10.13 9.33C10.45 8.44 11.4 7.83 12.43 8.05C13.38 8.25 14.08 9.18 14 10.15C13.9 11.49 12.38 11.78 11.55 13.03C11.55 13.04 11.54 13.04 11.54 13.05C11.53 13.07 11.52 13.08 11.51 13.1C11.42 13.25 11.33 13.42 11.26 13.6C11.25 13.63 11.23 13.65 11.22 13.68C11.21 13.7 11.21 13.72 11.2 13.75C11.08 14.09 11 14.5 11 15H13C13 14.58 13.11 14.23 13.28 13.93C13.3 13.9 13.31 13.87 13.33 13.84C13.41 13.7 13.51 13.57 13.61 13.45C13.62 13.44 13.63 13.42 13.64 13.41C13.74 13.29 13.85 13.18 13.97 13.07C14.93 12.16 16.23 11.42 15.96 9.51C15.72 7.77 14.35 6.3 12.61 6.04Z">
+        </path>
+      </svg>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between align-items-center w-100 ifo-page-card-mobile-prefooter"
+    *ngIf="showDetails">
+    <p>Performance Fee</p>
+    <p>2%</p>
+  </div>
+  <div class="d-flex flex-column justify-content-between align-items-end w-100 ifo-page-card-mobile-links-container"
+    *ngIf="showDetails">
+    <a href="#">
+      See Token Info
+      <svg viewBox="0 0 24 24" color="primary" width="20px" xmlns="http://www.w3.org/2000/svg"
+        class="sc-5a69fd5e-0 bQHWlV">
+        <path
+          d="M18 19H6C5.45 19 5 18.55 5 18V6C5 5.45 5.45 5 6 5H11C11.55 5 12 4.55 12 4C12 3.45 11.55 3 11 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V13C21 12.45 20.55 12 20 12C19.45 12 19 12.45 19 13V18C19 18.55 18.55 19 18 19ZM14 4C14 4.55 14.45 5 15 5H17.59L8.46 14.13C8.07 14.52 8.07 15.15 8.46 15.54C8.85 15.93 9.48 15.93 9.87 15.54L19 6.41V9C19 9.55 19.45 10 20 10C20.55 10 21 9.55 21 9V4C21 3.45 20.55 3 20 3H15C14.45 3 14 3.45 14 4Z">
+        </path>
+      </svg>
+    </a>
+    <a href="#">
+      View Project Site
+      <svg viewBox="0 0 24 24" color="primary" width="20px" xmlns="http://www.w3.org/2000/svg"
+        class="sc-5a69fd5e-0 bQHWlV">
+        <path
+          d="M18 19H6C5.45 19 5 18.55 5 18V6C5 5.45 5.45 5 6 5H11C11.55 5 12 4.55 12 4C12 3.45 11.55 3 11 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V13C21 12.45 20.55 12 20 12C19.45 12 19 12.45 19 13V18C19 18.55 18.55 19 18 19ZM14 4C14 4.55 14.45 5 15 5H17.59L8.46 14.13C8.07 14.52 8.07 15.15 8.46 15.54C8.85 15.93 9.48 15.93 9.87 15.54L19 6.41V9C19 9.55 19.45 10 20 10C20.55 10 21 9.55 21 9V4C21 3.45 20.55 3 20 3H15C14.45 3 14 3.45 14 4Z">
+        </path>
+      </svg>
+    </a>
+    <a href="#">
+      View Contract
+      <svg viewBox="0 0 24 24" color="primary" width="20px" xmlns="http://www.w3.org/2000/svg"
+        class="sc-5a69fd5e-0 bQHWlV">
+        <path
+          d="M18 19H6C5.45 19 5 18.55 5 18V6C5 5.45 5.45 5 6 5H11C11.55 5 12 4.55 12 4C12 3.45 11.55 3 11 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V13C21 12.45 20.55 12 20 12C19.45 12 19 12.45 19 13V18C19 18.55 18.55 19 18 19ZM14 4C14 4.55 14.45 5 15 5H17.59L8.46 14.13C8.07 14.52 8.07 15.15 8.46 15.54C8.85 15.93 9.48 15.93 9.87 15.54L19 6.41V9C19 9.55 19.45 10 20 10C20.55 10 21 9.55 21 9V4C21 3.45 20.55 3 20 3H15C14.45 3 14 3.45 14 4Z">
+        </path>
+      </svg>
+    </a>
+  </div>
+  <div class="d-flex justify-content-start align-items-center gap-2 ifo-page-card-mobile-footer" *ngIf="showDetails">
+    <button type="button">
+      <svg viewBox="0 0 24 24" width="18px" color="success" xmlns="http://www.w3.org/2000/svg"
+        class="sc-5a69fd5e-0 blMvcY">
+        <path
+          d="M12 6V7.79C12 8.24 12.54 8.46 12.85 8.14L15.64 5.35C15.84 5.15 15.84 4.84 15.64 4.64L12.85 1.85C12.54 1.54 12 1.76 12 2.21V4C7.58 4 4 7.58 4 12C4 13.04 4.2 14.04 4.57 14.95C4.84 15.62 5.7 15.8 6.21 15.29C6.48 15.02 6.59 14.61 6.44 14.25C6.15 13.56 6 12.79 6 12C6 8.69 8.69 6 12 6ZM17.79 8.71C17.52 8.98 17.41 9.4 17.56 9.75C17.84 10.45 18 11.21 18 12C18 15.31 15.31 18 12 18V16.21C12 15.76 11.46 15.54 11.15 15.86L8.36 18.65C8.16 18.85 8.16 19.16 8.36 19.36L11.15 22.15C11.46 22.46 12 22.24 12 21.8V20C16.42 20 20 16.42 20 12C20 10.96 19.8 9.96 19.43 9.05C19.16 8.38 18.3 8.2 17.79 8.71Z">
+        </path>
+      </svg>
+      Auto
+    </button>
+    <svg viewBox="0 0 24 24" width="20px" height="20px" color="textSubtle" xmlns="http://www.w3.org/2000/svg"
+      class="sc-5a69fd5e-0 eBjzcL">
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM11 16H13V18H11V16ZM12.61 6.04C10.55 5.74 8.73 7.01 8.18 8.83C8 9.41 8.44 10 9.05 10H9.25C9.66 10 9.99 9.71 10.13 9.33C10.45 8.44 11.4 7.83 12.43 8.05C13.38 8.25 14.08 9.18 14 10.15C13.9 11.49 12.38 11.78 11.55 13.03C11.55 13.04 11.54 13.04 11.54 13.05C11.53 13.07 11.52 13.08 11.51 13.1C11.42 13.25 11.33 13.42 11.26 13.6C11.25 13.63 11.23 13.65 11.22 13.68C11.21 13.7 11.21 13.72 11.2 13.75C11.08 14.09 11 14.5 11 15H13C13 14.58 13.11 14.23 13.28 13.93C13.3 13.9 13.31 13.87 13.33 13.84C13.41 13.7 13.51 13.57 13.61 13.45C13.62 13.44 13.63 13.42 13.64 13.41C13.74 13.29 13.85 13.18 13.97 13.07C14.93 12.16 16.23 11.42 15.96 9.51C15.72 7.77 14.35 6.3 12.61 6.04Z">
+      </path>
+    </svg>
+  </div>
+</div>

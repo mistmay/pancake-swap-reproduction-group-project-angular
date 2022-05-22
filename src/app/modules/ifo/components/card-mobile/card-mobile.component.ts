@@ -1,14 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SettingScreenLauncherService } from 'src/app/services/setting-screen-launcher.service';
 
 @Component({
-  selector: 'app-card-body',
-  templateUrl: './card-body.component.html',
-  styleUrls: ['./card-body.component.scss']
+  selector: 'app-card-mobile',
+  templateUrl: './card-mobile.component.html',
+  styleUrls: ['./card-mobile.component.scss']
 })
-export class CardBodyComponent implements OnInit {
-
-  @Input() isCake: boolean = true
+export class CardMobileComponent implements OnInit {
+  showDetails: boolean = false;
 
   constructor(private settingScreenLauncherService: SettingScreenLauncherService) { }
 

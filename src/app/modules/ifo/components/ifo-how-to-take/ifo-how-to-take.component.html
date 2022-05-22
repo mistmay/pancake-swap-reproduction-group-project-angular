@@ -1,0 +1,60 @@
+<ng-container id="ifo-page-how-to-take">
+  <div class="d-flex justify-content-start justify-content-lg-end align-items-end gap-sm-3 w-100 pe-lg-5">
+    <div class="d-flex flex-column justify-content-start align-items-center h-50">
+      <div class="ifo-page-how-to-take-round" id="ifo-page-how-to-take-round-first">1</div>
+      <div class="ifo-page-how-to-take-line" id="ifo-page-how-to-take-line-first"></div>
+    </div>
+    <div class="d-flex flex-column justify-content-between align-items-start ifo-page-how-to-take-text-container">
+      <h3>Activate your Profile</h3>
+      <p>You’ll need an active PancakeSwap Profile to take part in an IFO!</p>
+      <app-standard-button [content]="'Connect Wallet'" (click)="changeSettingScreenLauncherStatus('connect')">
+      </app-standard-button>
+    </div>
+  </div>
+  <div
+    class="d-flex justify-content-start justify-content-lg-end flex-lg-row-reverse align-items-center gap-sm-3 w-100 ps-lg-5 "
+    id="ifo-page-how-to-take-section-2">
+    <div class="d-flex flex-column justify-content-start align-items-center h-100">
+      <div class="ifo-page-how-to-take-line"></div>
+      <div class="ifo-page-how-to-take-round">2</div>
+      <div class="ifo-page-how-to-take-line"></div>
+    </div>
+    <div class="d-flex flex-column justify-content-between align-items-start ifo-page-how-to-take-text-container">
+      <h3>Stake CAKE in IFO pool</h3>
+      <p>
+        The maximum amount of CAKE user can commit to the Public Sale, is equal to the average CAKE
+        balance in the IFO CAKE pool prior to the IFO. Stake more CAKE to increase the maximum CAKE
+        you can commit to the sale. Missed this IFO? You can keep staking in the IFO CAKE Pool to
+        join the next IFO sale.
+      </p>
+      <span>How does the IFO credit calculated?</span>
+    </div>
+  </div>
+  <div class="d-flex justify-content-start justify-content-lg-end align-items-center gap-sm-3 w-100 pe-lg-5">
+    <div class="d-flex flex-column justify-content-start align-items-center h-100">
+      <div class="ifo-page-how-to-take-line"></div>
+      <div class="ifo-page-how-to-take-round">3</div>
+      <div class="ifo-page-how-to-take-line"></div>
+    </div>
+    <div class="d-flex flex-column justify-content-between align-items-start ifo-page-how-to-take-text-container">
+      <h3>Commit CAKE</h3>
+      <p>
+        When the IFO sales are live, you can “commit” your CAKE to buy the tokens being sold.
+      </p>
+    </div>
+  </div>
+  <div
+    class="d-flex justify-content-start justify-content-lg-end flex-lg-row-reverse align-items-start gap-sm-3 w-100 ps-lg-5">
+    <div class="d-flex flex-column justify-content-start align-items-center h-50">
+      <div class="ifo-page-how-to-take-line"></div>
+      <div class="ifo-page-how-to-take-round">4</div>
+    </div>
+    <div class="d-flex flex-column justify-content-between align-items-start ifo-page-how-to-take-text-container">
+      <h3>Claim your tokens and achievement</h3>
+      <p>
+        After the IFO sales finish, you can claim any IFO tokens that you bought, and any unspent
+        CAKE tokens will be returned to your wallet.
+      </p>
+    </div>
+  </div>
+</ng-container>
