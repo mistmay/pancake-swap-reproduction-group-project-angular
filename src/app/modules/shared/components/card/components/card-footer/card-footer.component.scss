@@ -55,6 +55,7 @@
     border: var(--border-4);
 }
 
+
 .puntatore {
     position: absolute;
     left: 140px;
@@ -77,7 +78,7 @@
 .cloud-hover {
     position: absolute;
     inset: auto auto 0px 0px;
-    transform: translate3d(-13px, 62px, 0px);
+    transform: translate3d(-13px, 60px, 0px);
     opacity: 1;
     padding: 16px;
     font-size: 16px;
