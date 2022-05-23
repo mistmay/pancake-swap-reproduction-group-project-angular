@@ -19,4 +19,4 @@ const routes: Routes = [
         RouterModule
     ]
 })
-export class PoolsRoutingModule { }
+export class TradeRoutingModule { }

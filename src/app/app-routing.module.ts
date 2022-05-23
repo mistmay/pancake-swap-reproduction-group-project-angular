@@ -24,7 +24,7 @@ const routes: Routes = [
   },
   {
     path: 'pools',
-    loadChildren: () => import('./modules/pools/pools.module').then(m => m.PoolsModule)
+    loadChildren: () => import('./modules/trade/trade.module').then(m => m.TradeModule)
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'error', pathMatch: 'full' }
