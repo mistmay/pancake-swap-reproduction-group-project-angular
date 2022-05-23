@@ -55,40 +55,52 @@
     border: var(--border-4);
 }
 
-.div-prova {
-    display: block;
-    position: absolute;
-    /* inset: 0px auto auto 0px; */
-    top: 35px;
-    left: -146px;
-    padding: 16px;
-    font-size: 16px;
-    line-height: 130%;
-    border-radius: 16px;
-    max-width: 320px;
-    z-index: 101;
-    width: 520px;
-    background: var(--background-9);
-    color: var(--color-8);
-    box-shadow: rgb(0 0 0 / 20%) 0px 0px 2px, rgb(14 14 44 / 10%) 0px 4px 12px -8px;
-    opacity: 0;
-}
 
 .puntatore {
     position: absolute;
-    left: 155px;
+    left: 140px;
     top: -4px;
     width: 10px;
     height: 10px;
     border-radius: 2px;
-    z-index: -1;
+    z-index: 1;
 }
 
 .puntatore::before {
     content: "";
     position: absolute;
     transform: rotate(45deg);
-    background: rgb(39, 38, 44);
+    background: var(--background-9);
     width: 10px;
     height: 10px;
+}
+
+.cloud-hover {
+    position: absolute;
+    inset: auto auto 0px 0px;
+    transform: translate3d(-13px, 60px, 0px);
+    opacity: 1;
+    padding: 16px;
+    font-size: 16px;
+    line-height: 130%;
+    border-radius: 16px;
+    width: 280px;
+    z-index: 101;
+    background: var(--background-9);
+    color: var(--color-8);
+}
+
+.cloud-hover-auto {
+    position: absolute;
+    inset: auto auto 0px 0px;
+    transform: translate3d(-30px, 62px, 0px);
+    opacity: 1;
+    padding: 16px;
+    font-size: 16px;
+    line-height: 130%;
+    border-radius: 16px;
+    width: 280px;
+    z-index: 101;
+    background: var(--background-9);
+    color: var(--color-8);
 }

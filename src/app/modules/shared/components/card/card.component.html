@@ -1,7 +1,7 @@
 <div class="card-pools me-5 d-flex flex-column align-self-baseline position-relative">
     <div class="card-pools-outer w-100 h-100">
-        <app-card-head></app-card-head>
-        <app-card-body [isCake]="isCake"></app-card-body>
+        <app-card-head [isCake]="isCake" [poolName]="poolName"></app-card-head>
+        <app-card-body [poolName]="poolName" [poolPrice]="poolPrice" [isCake]="isCake"></app-card-body>
         <app-card-footer [isCake]="isCake"></app-card-footer>
     </div>
 </div>

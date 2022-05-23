@@ -27,8 +27,6 @@ export class HeroNavComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    console.log(this._heroNav)
-  }
+  ngOnInit(): void {  }
 
 }

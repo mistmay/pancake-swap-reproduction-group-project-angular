@@ -1,16 +1,20 @@
 <div class="card-pools-top">
     <div class="d-flex align-items-center justify-content-between">
         <div class="d-flex flex-column">
-            <h2 class="card-pools-title">IFO CAKE</h2>
+            <h2 class="card-pools-title">{{poolName | uppercase}}</h2>
             <p class="card-pool-p">Stake CAKE to participate in IFOs</p>
         </div>
         <div class="card-pools-top-right position-relative w-100">
             <div class="">
-                <img src="https://pancakeswap.finance/images/tokens/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82.svg"
+                <img *ngIf="!isCake" (error)="errorHandler($event)"
+                    src="https://bsctools.xyz/pancakeswap/img/{{poolName}}.svg" alt="">
+                <img *ngIf="isCake"
+                    src="https://pancakeswap.finance/images/tokens/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82.svg"
                     alt="">
             </div>
             <div class="position-absolute">
-                <img src="https://pancakeswap.finance/images/tokens/ifo-pool-icon.svg"
+                <img *ngIf="!isCake" src="https://pancakeswap.finance/images/tokens/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82.png" alt="">
+                <img *ngIf="isCake"  src="https://pancakeswap.finance/images/tokens/autorenew.svg"
                     alt="">
             </div>
         </div>
