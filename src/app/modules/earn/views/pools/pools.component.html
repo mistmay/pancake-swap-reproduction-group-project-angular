@@ -5,10 +5,11 @@
 </div>
 
 <!-- ci sarà la navigazione / toggle / search -->
-
+<div class="wrapper">
     <div class="d-flex flex-wrap justify-content-center">
             <app-card [poolName]="'IFO CAKE'" [poolPrice]="14.55" [isCake]="true"></app-card>
         <div *ngFor="let pool of pools" >
             <app-card [poolName]="pool[0]" [poolPrice]="pool[1]" [isCake]="false" ></app-card>
         </div>
     </div>
+</div>
