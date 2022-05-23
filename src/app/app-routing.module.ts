@@ -23,8 +23,8 @@ const routes: Routes = [
     loadChildren: () => import('./modules/leaderboard/leaderboard.module').then(m => m.LeaderboardModule)
   },
   {
-    path: 'pools',
-    loadChildren: () => import('./modules/trade/trade.module').then(m => m.TradeModule)
+    path: 'earn',
+    loadChildren: () => import('./modules/earn/earn.module').then(m => m.EarnModule)
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'error', pathMatch: 'full' }

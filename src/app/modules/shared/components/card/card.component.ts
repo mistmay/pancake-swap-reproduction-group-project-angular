@@ -7,6 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
+  @Input() poolName!: string
+  @Input() poolPrice!: number
+
   @Input() isCake: boolean = true
 
   constructor() { }
