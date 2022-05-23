@@ -6,25 +6,27 @@
       <div class="d-flex flex-column justify-content-between align-items-end">
         <div class="d-flex justify-content-end align-items-center">
           <input pattern="^[0-9]*[.,]?[0-9]{0,18}$" inputmode="decimal" min="0" placeholder="0.00" scale="md"
-            value="0.00" id="roi-calculator-input">
-          <span>USD</span>
+            id="roi-calculator-input" [(ngModel)]="inputValue">
+          <span>{{currencyInput1}}</span>
         </div>
         <div class="d-flex justify-content-between align-items-center gap-1"
           id="roi-calculator-input-area-second-input">
-          <p>0.00</p>
-          <p>CAKE</p>
+          <p>{{inputValue2}}</p>
+          <p>{{currencyInput2}}</p>
         </div>
       </div>
       <svg viewBox="0 0 24 25" color="textSubtle" width="20px" xmlns="http://www.w3.org/2000/svg"
-        class="sc-5a69fd5e-0 jNuCsa">
+        class="sc-5a69fd5e-0 jNuCsa" (click)="switchInputs()">
         <path
           d="M16 17.01V11C16 10.45 15.55 10 15 10C14.45 10 14 10.45 14 11V17.01H12.21C11.76 17.01 11.54 17.55 11.86 17.86L14.65 20.64C14.85 20.83 15.16 20.83 15.36 20.64L18.15 17.86C18.47 17.55 18.24 17.01 17.8 17.01H16ZM8.65003 3.35002L5.86003 6.14002C5.54003 6.45002 5.76003 6.99002 6.21003 6.99002H8.00003V13C8.00003 13.55 8.45003 14 9.00003 14C9.55003 14 10 13.55 10 13V6.99002H11.79C12.24 6.99002 12.46 6.45002 12.14 6.14002L9.35003 3.35002C9.16003 3.16002 8.84003 3.16002 8.65003 3.35002Z">
         </path>
       </svg>
     </div>
     <div class="d-flex justify-content-between align-items-center w-100 mt-2">
-      <button type="button" class="roi-calculator-input-area-btn" id="roi-calculator-add-amount-100">$100</button>
-      <button type="button" class="roi-calculator-input-area-btn" id="roi-calculator-add-amount-1000">$1000</button>
+      <button type="button" class="roi-calculator-input-area-btn" id="roi-calculator-add-amount-100"
+        (click)="putUsd(100)">$100</button>
+      <button type="button" class="roi-calculator-input-area-btn" id="roi-calculator-add-amount-1000"
+        (click)="putUsd(1000)">$1000</button>
       <button type="button" class="roi-calculator-input-area-btn roi-calculator-input-area-btn-disabled">
         MY BALANCE
       </button>
@@ -40,16 +42,25 @@
     <h4>STAKED FOR</h4>
     <div class="d-flex justify-content-between align-items-center w-100" id="roi-calculator-button-line-container">
       <button type="button" class="roi-calculator-button-line-container-btn"
-        id="roi-calculator-button-line-container-btn-1d">1D</button>
+        id="roi-calculator-button-line-container-btn-1d"
+        [class.roi-calculator-button-line-container-btn-selected]="stakedFor[0]"
+        (click)="updatestakedFor(0)">1D</button>
       <button type="button" class="roi-calculator-button-line-container-btn"
-        id="roi-calculator-button-line-container-btn-7d">7D</button>
+        id="roi-calculator-button-line-container-btn-7d"
+        [class.roi-calculator-button-line-container-btn-selected]="stakedFor[1]"
+        (click)="updatestakedFor(1)">7D</button>
       <button type="button" class="roi-calculator-button-line-container-btn"
-        id="roi-calculator-button-line-container-btn-30d">30D</button>
-      <button type="button"
-        class="roi-calculator-button-line-container-btn roi-calculator-button-line-container-btn-selected"
-        id="roi-calculator-button-line-container-btn-1y">1Y</button>
+        id="roi-calculator-button-line-container-btn-30d"
+        [class.roi-calculator-button-line-container-btn-selected]="stakedFor[2]"
+        (click)="updatestakedFor(2)">30D</button>
       <button type="button" class="roi-calculator-button-line-container-btn"
-        id="roi-calculator-button-line-container-btn-5y">5Y</button>
+        id="roi-calculator-button-line-container-btn-1y"
+        [class.roi-calculator-button-line-container-btn-selected]="stakedFor[3]"
+        (click)="updatestakedFor(3)">1Y</button>
+      <button type="button" class="roi-calculator-button-line-container-btn"
+        id="roi-calculator-button-line-container-btn-5y"
+        [class.roi-calculator-button-line-container-btn-selected]="stakedFor[4]"
+        (click)="updatestakedFor(4)">5Y</button>
     </div>
   </div>
   <div class="d-flex justify-content-center align-items-center w-100">
@@ -64,20 +75,23 @@
     <div>
       <h4>ROI AT CURRENT RATES</h4>
       <div class="mt-1">
-        <span id="roi-calculator-current-rates-span">$0.00</span>
-        <input type="text" inputmode="decimal" pattern="^[0-9]+[.,]?[0-9]*$" scale="sm" placeholder="0.0" value="0.00"
-          id="roi-calculator-current-rates-input">
+        <span id="roi-calculator-current-rates-span" *ngIf="!showCurrentRates"
+          (click)="showCurrentRates = true">{{currentRatesValue | currency}}</span>
+        <input type="text" inputmode="decimal" pattern="^[0-9]+[.,]?[0-9]*$" scale="sm" placeholder="0.0"
+          id="roi-calculator-current-rates-input" *ngIf="showCurrentRates" [(ngModel)]="currentRatesValue">
       </div>
       <p class="text-start">~ 0 CAKE (0.00%)</p>
     </div>
     <svg viewBox="0 0 19 19" color="primary" width="20px" xmlns="http://www.w3.org/2000/svg"
-      class="sc-5a69fd5e-0 dwUojQ" id="roi-calculator-current-rates-pencil">
+      class="sc-5a69fd5e-0 dwUojQ" id="roi-calculator-current-rates-pencil" *ngIf="!showCurrentRates"
+      (click)="showCurrentRates = true">
       <path
         d="M0 15.46V18.5C0 18.78 0.22 19 0.5 19H3.54C3.67 19 3.8 18.95 3.89 18.85L14.81 7.94L11.06 4.19L0.15 15.1C0.0500001 15.2 0 15.32 0 15.46ZM17.71 5.04C18.1 4.65 18.1 4.02 17.71 3.63L15.37 1.29C14.98 0.899998 14.35 0.899998 13.96 1.29L12.13 3.12L15.88 6.87L17.71 5.04Z">
       </path>
     </svg>
     <svg viewBox="0 0 24 24" color="primary" width="20px" xmlns="http://www.w3.org/2000/svg"
-      class="sc-5a69fd5e-0 dwUojQ" id="roi-calculator-current-rates-checked">
+      class="sc-5a69fd5e-0 dwUojQ" id="roi-calculator-current-rates-checked" *ngIf="showCurrentRates"
+      (click)="showCurrentRates = false">
       <path
         d="M9.00012 16.2L5.50012 12.7C5.11012 12.31 4.49012 12.31 4.10012 12.7C3.71012 13.09 3.71012 13.71 4.10012 14.1L8.29012 18.29C8.68012 18.68 9.31012 18.68 9.70012 18.29L20.3001 7.70001C20.6901 7.31001 20.6901 6.69001 20.3001 6.30001C19.9101 5.91001 19.2901 5.91001 18.9001 6.30001L9.00012 16.2Z">
       </path>
