@@ -18,4 +18,8 @@ export class CardMobileComponent implements OnInit {
     this.settingScreenLauncherService.openModal(status);
   }
 
+  roi(): void {
+    this.settingScreenLauncherService.openModal('roi');
+  }
+
 }

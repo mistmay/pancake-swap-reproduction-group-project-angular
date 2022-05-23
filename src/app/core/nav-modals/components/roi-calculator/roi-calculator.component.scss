@@ -1,0 +1,265 @@
+.setting-screen-padding {
+  padding: 24px;
+  gap: 24px;
+}
+
+.setting-screen-first-section {
+  border-bottom: var(--border);
+}
+
+.setting-screen-second-section {
+  padding: 24px 24px 0 24px;
+  gap: 24px;
+}
+
+#roi-calculator-input-area {
+  background-color: var(--background-11);
+  border: var(--border-2);
+  border-radius: 16px;
+  box-shadow: rgb(74 74 104 / 10%) 0px 2px 2px -1px inset;
+  padding: 8px 16px;
+  overflow: hidden;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: right;
+  gap: 12px;
+}
+
+#roi-calculator-input-area svg {
+  fill: var(--color-3);
+  cursor: pointer;
+}
+
+#roi-calculator-input-area svg:hover {
+  opacity: 0.8;
+}
+
+#roi-calculator-input-area span {
+  font-size: 16px;
+  color: var(--color-3);
+}
+
+#roi-calculator-input-area p {
+  font-size: 12px;
+  color: var(--color-3);
+}
+
+#roi-calculator-input {
+  background: transparent;
+  border-radius: 0px;
+  box-shadow: none;
+  padding-left: 0px;
+  padding-right: 0px;
+  text-align: right;
+  border: none;
+  color: var(--color-3);
+  font-size: 16px;
+  height: 40px;
+  outline: 0px;
+  margin-right: 4px;
+}
+
+#roi-calculator-input::placeholder {
+  color: var(--color-3);
+  font-size: 16px;
+}
+
+.roi-calculator-input-area-btn {
+  border: 0px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  outline: 0px;
+  height: 20px;
+  font-size: 12px;
+  background-color: var(--background-2);
+  box-shadow: none;
+  color: rgb(31, 199, 212);
+  width: 68px;
+  padding: 4px 16px;
+}
+
+.roi-calculator-input-area-btn:hover {
+  opacity: 0.8;
+}
+
+.roi-calculator-input-area-btn-disabled {
+  background-color: var(--background-22);
+  border-color: var(--background-22);
+  box-shadow: none;
+  color: var(--color-12);
+  cursor: not-allowed !important;
+  width: 128px;
+}
+
+.roi-calculator-input-area-btn~svg {
+  fill: var(--color-3);
+}
+
+#roi-calculator-button-line-container {
+  background-color: var(--background-2);
+  border-radius: 16px;
+  border: var(--border);
+}
+
+.roi-calculator-button-line-container-btn {
+  background-color: transparent;
+  color: rgb(31, 199, 212);
+  border: 0px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  opacity: 1;
+  outline: 0px;
+  height: 32px;
+  padding: 0px 16px;
+  transition: 0.2s ease;
+  width: 20%;
+}
+
+.roi-calculator-button-line-container-btn:hover {
+  opacity: 0.8;
+}
+
+.roi-calculator-button-line-container-btn-selected {
+  color: white !important;
+  background-color: rgb(31, 199, 212) !important;
+  box-shadow: rgb(14 14 44 / 40%) 0px -1px 0px 0px inset;
+}
+
+#roi-calculator-arrow {
+  fill: var(--color-3);
+}
+
+#roi-calculator-current-rates-section {
+  height: 120px;
+  padding: 24px;
+  border-radius: 16px;
+  background: var(--background-8);
+  border: 1px solid rgb(83, 222, 233);
+}
+
+#roi-calculator-current-rates-section p {
+  color: var(--color-3);
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 12px;
+}
+
+#roi-calculator-current-rates-section svg {
+  fill: rgb(31, 199, 212);
+  cursor: pointer;
+}
+
+#roi-calculator-current-rates-section svg:hover {
+  opacity: 0.8;
+}
+
+#roi-calculator-current-rates-span {
+  color: var(--color-2);
+  font-weight: 600;
+  line-height: 1.5;
+  font-size: 24px;
+}
+
+#roi-calculator-current-rates-input {
+  display: none;
+  width: 150px;
+  background-color: var(--background-11);
+  border-radius: 16px;
+  box-shadow: rgb(74 74 104 / 10%) 0px 2px 2px -1px inset;
+  color: var(--color-2);
+  font-size: 16px;
+  height: 32px;
+  outline: 0px;
+  padding: 0px 16px;
+  border: var(--border-2);
+  margin-bottom: 4px;
+}
+
+#roi-calculator-current-rates-input:focus {
+  box-shadow: rgb(118 69 217) 0px 0px 0px 1px, rgb(118 69 217 / 60%) 0px 0px 0px 4px;
+}
+
+#roi-calculator-footer {
+  background: var(--background-23);
+  padding: 16px 24px;
+}
+
+#roi-calculator-footer h5 {
+  color: var(--color-3);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+#roi-calculator-footer span {
+  color: var(--color-2);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+#roi-calculator-footer p {
+  color: var(--color-3);
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 12px;
+  text-align: left;
+}
+
+#roi-calculator-footer ul {
+  margin-top: 10px;
+}
+
+#roi-calculator-footer a {
+  margin-top: 11px;
+}
+
+#roi-calculator-footer a:hover {
+  color: rgb(31, 199, 212);
+  opacity: 0.8;
+}
+
+#roi-calculator-footer-hidden>div {
+  gap: 13px;
+}
+
+.ifo-page-card-xl-hide-btn {
+  border: 0px;
+  border-radius: 16px;
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  transition: 0.2s ease;
+  height: 48px;
+  background-color: transparent;
+  color: rgb(31, 199, 212);
+  gap: 10px;
+  padding: 0;
+}
+
+.ifo-page-card-xl-hide-btn svg {
+  fill: rgb(31, 199, 212);
+}
+
+.ifo-page-card-xl-hide-btn:hover {
+  opacity: 0.8;
+}
+
+h4 {
+  color: var(--color-1);
+  font-weight: 600;
+  line-height: 1.5;
+  font-size: 12px;
+}

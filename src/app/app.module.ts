@@ -13,6 +13,7 @@ import { SettingScreenContentConnectWalletComponent } from './core/nav-modals/co
 import { SettingScreenContentSettingMenuComponent } from './core/nav-modals/components/setting-screen-content-setting-menu/setting-screen-content-setting-menu.component';
 import { SharedModule } from './modules/shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import { RoiCalculatorComponent } from './core/nav-modals/components/roi-calculator/roi-calculator.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     NavModalsComponent,
     SettingScreenContentConnectWalletComponent,
     SettingScreenContentSettingMenuComponent,
+    RoiCalculatorComponent,
   ],
   imports: [
     BrowserModule,

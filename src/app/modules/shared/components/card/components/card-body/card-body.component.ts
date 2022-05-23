@@ -19,4 +19,8 @@ export class CardBodyComponent implements OnInit {
     this.settingScreenLauncherService.openModal(status);
   }
 
+  roi(): void {
+    this.settingScreenLauncherService.openModal('roi');
+  }
+
 }
