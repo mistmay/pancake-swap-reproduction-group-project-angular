@@ -9,6 +9,7 @@ export class CardFooterComponent implements OnInit {
 
   cardFooter: boolean = false
   @Input() isCake!: boolean
+  @Input() hover: boolean = false
 
   constructor() { }
 
