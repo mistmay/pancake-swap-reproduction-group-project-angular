@@ -1,0 +1,56 @@
+#ifo-background-section {
+  padding: 32px 0;
+  background-position: center top, center center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+
+#ifo-background-section>div {
+  max-width: 1200px;
+  padding: 0 24px;
+}
+
+#ifo-background-section>div>h1 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  color: var(--color-2);
+}
+
+#ifo-background-section>div>div>p {
+  font-size: 16px;
+  color: var(--color-2);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+#ifo-background-section button {
+  border: none;
+  border-radius: 16px;
+  box-shadow: rgb(14 14 44 / 40%) 0px -1px 0px 0px inset;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  height: 48px;
+  padding: 0px 24px;
+  background-color: var(--color-3);
+  color: var(--background-1);
+  transition: 0.2s ease;
+}
+
+#ifo-background-section button:hover {
+  opacity: 0.5;
+}
+
+@media (min-width: 992px) {
+  #ifo-background-section>div>h1 {
+    font-size: 64px;
+  }
+
+  #ifo-background-section>div>div>p {
+    font-size: 20px;
+  }
+}

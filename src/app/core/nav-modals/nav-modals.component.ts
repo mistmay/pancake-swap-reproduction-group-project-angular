@@ -11,6 +11,7 @@ export class NavModalsComponent implements OnInit, OnDestroy {
   subscription!: Subscription;
   settingScreenTitle!: string;
   settingScreenTitleBackgroundType!: boolean;
+  showFinal!: boolean;
   modalType!: 'connect' | 'settings' | 'roi';
   @ViewChild('modal') modal!: ElementRef;
 
@@ -24,12 +25,17 @@ export class NavModalsComponent implements OnInit, OnDestroy {
           case 'connect':
             this.settingScreenTitle = 'Connect Wallet';
             this.settingScreenTitleBackgroundType = false;
+            this.showFinal = true;
             break;
           case 'settings':
             this.settingScreenTitle = 'Settings';
             this.settingScreenTitleBackgroundType = true;
+            this.showFinal = true;
             break;
           case 'roi':
+            this.settingScreenTitle = 'ROI Calculator';
+            this.settingScreenTitleBackgroundType = true;
+            this.showFinal = false;
             break;
         }
       });

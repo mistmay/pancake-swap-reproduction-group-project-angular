@@ -1,0 +1,23 @@
+<section class="ifo-page-container">
+  <div
+    class="d-flex flex-column flex-lg-row justify-content-start align-items-center justify-content-lg-between align-items-lg-start">
+    <app-card-mobile class="w-100 d-lg-none"></app-card-mobile>
+    <app-card [isCake]="true" class="d-none d-lg-block pb-4"></app-card>
+    <app-duet-protocol-card [backgroundImage]="'../../../../../assets/img/duet-bg.png'" [showAlways]="true"
+      [name]="'duet'">
+    </app-duet-protocol-card>
+  </div>
+</section>
+<section class="ifo-page-container" id="how-to-take">
+  <div>
+    <h2 class="mb-5">How to Take Part in the Public Sale</h2>
+    <app-ifo-how-to-take class="w-100"></app-ifo-how-to-take>
+  </div>
+</section>
+<section class="ifo-page-container" id="ifo-page-accordion-section">
+  <div
+    class="d-flex flex-column flex-lg-row-reverse justify-content-between align-items-center align-items-lg-start gap-4">
+    <app-faq [faqBoxes]="faq" [title]="'Details'" class="w-100"></app-faq>
+    <img src="../../../../../assets/img/ifo-bunny.png" class="mw-100">
+  </div>
+</section>

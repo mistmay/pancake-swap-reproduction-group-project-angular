@@ -1,0 +1,6 @@
+<section class="ifo-page-container" id="ifo-page-finished">
+  <div class="d-flex flex-column justify-content-between align-items-center gap-4">
+    <app-duet-protocol-card *ngFor="let ifo of ifosArray" [backgroundImage]="ifo.img" [name]="ifo.name"
+      [showAlways]="false" class="w-100"></app-duet-protocol-card>
+  </div>
+</section>

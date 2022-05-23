@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SyrupPoolsService } from 'src/app/api/syrup-pools.service';
+import { SettingScreenLauncherService } from 'src/app/services/setting-screen-launcher.service';
 
 @Component({
   selector: 'app-card-body',
@@ -17,7 +17,7 @@ export class CardBodyComponent implements OnInit {
   decimal: number = 0
   timer!: ReturnType<typeof setInterval>
 
-  constructor() { }
+  constructor(private settingScreenLauncherService: SettingScreenLauncherService) { }
 
   ngOnInit(): void {
     this.counts()
@@ -38,6 +38,14 @@ export class CardBodyComponent implements OnInit {
       this.count = (this.poolPrice).toFixed(2) + "%"
       clearInterval(this.timer);
     }
+  }
+
+  changeSettingScreenLauncherStatus(status: 'connect' | 'settings' | 'roi'): void {
+    this.settingScreenLauncherService.openModal(status);
+  }
+
+  roi(): void {
+    this.settingScreenLauncherService.openModal('roi');
   }
 
 }

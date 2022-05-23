@@ -36,7 +36,8 @@
           <a href="#">Lottery</a>
         </div>
       </li>
-      <li class="position-relative" routerLinkActive="active" (mouseover)="showNftMenu = true" (mouseout)="showNftMenu = false">
+      <li class="position-relative" routerLinkActive="active" (mouseover)="showNftMenu = true"
+        (mouseout)="showNftMenu = false">
         <a routerLink="/nfts" routerLinkActive="active" class="d-flex justify-content-center align-items-center">NFT</a>
         <div
           class="d-none toogle-menu toogle-menu-top position-absolute flex-column align-items-start justify-content-start"
@@ -54,7 +55,7 @@
           class="d-none toogle-menu toogle-menu-top position-absolute flex-column align-items-start justify-content-start"
           [class.open-menu]="showPointsMenu">
           <a routerLink="/info" routerLinkActive="active">Info</a>
-          <a href="#">IFO</a>
+          <a routerLink="/ifo" routerLinkActive="active">IFO</a>
           <a href="#">Voting</a>
           <hr />
           <a routerLink="/teams" routerLinkActive="active">Leaderboard</a>

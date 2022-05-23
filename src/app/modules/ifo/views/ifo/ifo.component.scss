@@ -1,0 +1,32 @@
+.ifo-page-container {
+  padding: 40px 0;
+}
+
+.ifo-page-container>div {
+  max-width: 1200px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+#how-to-take {
+  padding: 48px 0;
+  background: var(--background-8);
+}
+
+#how-to-take h2 {
+  font-size: 40px;
+  color: var(--color-1);
+  font-weight: 600;
+  line-height: 1.1;
+  text-align: center;
+}
+
+app-duet-protocol-card {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  app-duet-protocol-card {
+    width: calc(100% - 352px - 40px) !important;
+  }
+}
