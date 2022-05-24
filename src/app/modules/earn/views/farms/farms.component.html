@@ -1,1 +1,16 @@
-<p>farms works!</p>
+<div class="position-relative d-flex">
+    <div id="wrapper" class="">
+        <app-page-header [pageTitle]="'Farms'" [subTitle]="'Stake LP tokens to earn.'" [search]="false">
+        </app-page-header>
+    </div>
+</div>
+
+<div class="container wrapper">
+    <div class="row justify-content-center">
+        <div class="farms-table w-100">
+            <ng-container *ngFor="let i of [1,2,3,4]">
+                <app-table-row></app-table-row>
+            </ng-container>
+        </div>
+    </div>
+</div>
