@@ -1,1 +1,8 @@
 @import "../../table-row.component.scss";
+
+#farm-name {
+    color: var(--color-2);
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 16px;
+}

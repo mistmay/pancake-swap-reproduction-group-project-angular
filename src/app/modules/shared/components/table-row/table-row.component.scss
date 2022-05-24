@@ -1,3 +1,7 @@
+// #table {
+
+// }
+
 .scroll-margin {
     scroll-margin-top: 64px
 }
@@ -20,7 +24,7 @@ table {
 
 .tr-n {
     cursor: pointer;
-    border-bottom: 2px solid rgb(231, 227, 235);
+    border-bottom: var(--border-7);
 }
 
 td {
@@ -130,7 +134,7 @@ td {
     font-weight: 600;
     // text-align: right;
     margin-right: 14px;
-    color: rgb(40, 13, 95);
+    color: var(--color-2);
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
@@ -154,7 +158,7 @@ td {
 }
 
 .card-footer-text {
-    color: rgb(122, 110, 170);
+    color: var(--color-3);
     font-weight: 400;
     line-height: 1.1;
     font-size: 12px;
@@ -167,14 +171,14 @@ td {
 
 
 .card-pools-center-p {
-    color: rgb(40, 13, 95);
+    color: var(--color-2);
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
 }
 
 .card-pools-center-p-smaller {
-    color: rgb(40, 13, 95);
+    color: var(--color-2);
     font-size: 14px;
     font-weight: 400;
     line-height: 1.5;
