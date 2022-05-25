@@ -16,6 +16,8 @@ import { CardHeadComponent } from './components/card/components/card-head/card-h
 import { CardBodyComponent } from './components/card/components/card-body/card-body.component';
 import { CardFooterComponent } from './components/card/components/card-footer/card-footer.component';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
+import { TableRowComponent } from './components/table-row/table-row.component';
+import { TableRowInnerComponent } from './components/table-row/components/table-row-inner/table-row-inner.component';
 
 
 
@@ -36,6 +38,8 @@ import { PageHeaderComponent } from './components/page-header/page-header.compon
         CardBodyComponent,
         CardFooterComponent,
         PageHeaderComponent,
+        TableRowComponent,
+        TableRowInnerComponent,
 
     ],
     imports: [
@@ -55,6 +59,7 @@ import { PageHeaderComponent } from './components/page-header/page-header.compon
         HeroNavComponent,
         CardComponent,
         PageHeaderComponent,
+        TableRowComponent
         
     ]
 })
