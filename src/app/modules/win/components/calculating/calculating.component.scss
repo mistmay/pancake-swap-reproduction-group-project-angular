@@ -1,5 +1,5 @@
 .calculating {
-  max-width: 370px;
+  width: 252px;
   border-radius: 24px;
   background: linear-gradient(rgb(118, 69, 217) 0%, rgb(69, 42, 122) 100%);
   padding: 24px;
@@ -58,5 +58,11 @@
       height: 32px;
       filter: invert(91%) sepia(15%) saturate(7416%) hue-rotate(330deg) brightness(102%) contrast(101%);
     }
+  }
+}
+
+@media (min-width: 576px) {
+  .calculating {
+    width: 370px;
   }
 }

@@ -8,6 +8,8 @@ import { HeroCompetitionComponent } from './components/hero-competition/hero-com
 import { CalculatingComponent } from './components/calculating/calculating.component';
 import { YourScoreComponent } from './components/your-score/your-score.component';
 import { RibbonComponent } from './components/ribbon/ribbon.component';
+import { TeamRanksComponent } from './components/team-ranks/team-ranks.component';
+import { RibbonTitleComponent } from './components/ribbon-title/ribbon-title.component';
 
 @NgModule({
     declarations: [
@@ -16,7 +18,9 @@ import { RibbonComponent } from './components/ribbon/ribbon.component';
         HeroCompetitionComponent,
         CalculatingComponent,
         YourScoreComponent,
-        RibbonComponent
+        RibbonComponent,
+        TeamRanksComponent,
+        RibbonTitleComponent
     ],
     imports: [
         CommonModule,

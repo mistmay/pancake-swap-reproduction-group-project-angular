@@ -1,12 +1,12 @@
 section {
-  padding: 250px 24px 110px 24px;
+  padding: 250px 24px 140px 24px;
   background: var(--background-24);
 
   #box {
     padding: 24px;
     background-color: var(--background-14);
     border-radius: 24px;
-    width: 378px;
+    width: 252px;
 
     #bunny-container {
       top: -120px;
@@ -25,7 +25,7 @@ section {
     }
 
     app-ribbon {
-      width: 330px;
+      width: 204px;
       top: -40px;
       left: 24px;
     }
@@ -46,6 +46,18 @@ section {
       text-align: center;
       font-size: 14px;
       margin-bottom: 25px;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  section {
+    #box {
+      width: 378px;
+
+      app-ribbon {
+        width: 330px;
+      }
     }
   }
 }
