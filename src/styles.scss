@@ -67,6 +67,7 @@ body {
   --filter-1: invert(87%) sepia(4%) saturate(1583%) hue-rotate(216deg) brightness(95%) contrast(95%);
   --filter-2: invert(83%) sepia(3%) saturate(7%) hue-rotate(252deg) brightness(116%) contrast(102%);
   --filter-3: invert(58%) sepia(5%) saturate(3918%) hue-rotate(211deg) brightness(77%) contrast(85%);
+  --filter-4: invert(48%) sepia(15%) saturate(1136%) hue-rotate(211deg) brightness(92%) contrast(89%);
   --box-shadow: 1px 3px 3px rgb(231, 227, 235);
   --box-shadow-2: rgb(118 69 217) 0px 0px 0px 1px, rgb(118 69 217 / 60%) 0px 0px 0px 4px;
   --box-shadow-3: rgb(74 74 104 / 10%) 0px 2px 2px -1px inset;
@@ -116,6 +117,7 @@ body.dark-mode {
   --filter-1: invert(10%) sepia(27%) saturate(1639%) hue-rotate(224deg) brightness(95%) contrast(101%);
   --filter-2: invert(3%) sepia(3%) saturate(5916%) hue-rotate(222deg) brightness(97%) contrast(100%);
   --filter-3: invert(83%) sepia(35%) saturate(617%) hue-rotate(197deg) brightness(86%) contrast(90%);
+  --filter-4: invert(87%) sepia(6%) saturate(3534%) hue-rotate(197deg) brightness(93%) contrast(76%);
   --box-shadow: 1px 3px 3px rgb(56, 50, 65);
   --box-shadow-2: rgb(154 106 255) 0px 0px 0px 1px, rgb(154 106 255 / 60%) 0px 0px 0px 4px;
 }
@@ -282,20 +284,20 @@ table {
 
 @media screen and (min-width: 370px) {
   .wrapper {
-      padding-left: 24px;
-      padding-right: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
 @media screen and (min-width: 576px) {
   .wrapper {
-      padding-top: 32px;
-      padding-bottom: 32PX;
+    padding-top: 32px;
+    padding-bottom: 32PX;
   }
 }
 
 @media screen and (min-width: 968px) {
   .wrapper {
-      padding-top: 48px;
+    padding-top: 48px;
   }
 }
