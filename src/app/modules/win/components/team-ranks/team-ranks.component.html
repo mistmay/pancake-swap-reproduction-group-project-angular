@@ -54,18 +54,7 @@
         </h4>
       </div>
     </div>
-    <div id="ranks-table">
-      <div class="w-100 d-flex justify-content-between align-items-center" id="ranks-table-header">
-        <div>
-          <h3>Top Traders</h3>
-          <p>Since start of the competition</p>
-        </div>
-        <div class="d-flex align-items-center gap-2">
-          <div id="pink-round"></div>
-          <span>Delayed</span>
-          <img src="../../../../../assets/svg/question-mark.svg">
-        </div>
-      </div>
-    </div>
+    <app-competition-table [hasRightHeader]="true" [title]="'Top Traders'" [subtitle]="'Since start of the competition'"
+      [isType1]="true" [tableData1]="tableData1" [hasFooterText]="false" id="ranks-table"></app-competition-table>
   </div>
 </section>

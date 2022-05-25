@@ -1,11 +1,15 @@
 section {
-  padding: 14px 24px 140px 24px;
+  padding: 14px 24px 125px 24px;
   background-color: var(--background-0);
 
   #team-ranks-main {
     max-width: 1200px;
     margin: 0 auto;
     gap: 40px;
+
+    #ranks-table {
+      width: 100%;
+    }
 
     #ranks {
       width: 100%;
@@ -115,51 +119,6 @@ section {
       }
 
     }
-
-    #ranks-table {
-      width: 100%;
-
-      #ranks-table-header {
-        padding: 24px;
-        border-radius: 24px 24px 0px 0px;
-        background: var(--background-7);
-
-        h3 {
-          color: var(--color-1);
-          font-size: 24px;
-          font-weight: 600;
-          line-height: 1.1;
-        }
-
-        p {
-          color: var(--color-3);
-          font-weight: 400;
-          line-height: 1.5;
-          font-size: 14px;
-        }
-
-        #pink-round {
-          border-radius: 100%;
-          overflow: hidden;
-          width: 12px;
-          height: 12px;
-          background: rgb(237, 75, 158);
-        }
-
-        span {
-          color: var(--color-2);
-          font-weight: 400;
-          line-height: 1.5;
-          font-size: 16px;
-        }
-
-        img {
-          width: 20px;
-          height: 20px;
-          filter: var(--filter-7);
-        }
-      }
-    }
   }
 }
 
@@ -205,9 +164,11 @@ section {
 
 @media (min-width: 992px) {
   section {
+    padding: 14px 24px 190px 24px;
+
     #team-ranks-main {
       #ranks {
-        width: calc(40% - 40px);
+        width: calc(45% - 40px);
 
         #partecipants {
           width: 100%;
@@ -215,7 +176,7 @@ section {
       }
 
       #ranks-table {
-        width: calc(60% - 40px);
+        width: calc(55% - 40px);
       }
     }
   }

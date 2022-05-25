@@ -47,6 +47,7 @@ body {
   --background-22: rgb(233, 234, 235);
   --background-23: rgb(246, 246, 246);
   --background-24: linear-gradient(rgb(203, 215, 239) 0%, rgb(154, 159, 208) 100%);
+  --background-25: white;
   --border: 1px solid rgb(231, 227, 235);
   --border-2: 1px solid rgb(215, 202, 236);
   --border-3: 1px solid rgb(215, 202, 236);
@@ -54,6 +55,7 @@ body {
   --border-5: linear-gradient(rgb(83, 222, 233), rgb(118, 69, 217)) 0% 0% / 400% 400%;
   --border-6: 1px solid rgba(128, 91, 219, 255);
   --border-7: 2px solid rgb(238, 234, 244);
+  --border-8: 1px solid rgb(189, 194, 196);
   --color-1: rgb(118, 69, 217);
   --color-2: rgb(40, 13, 95);
   --color-3: rgb(122, 110, 170);
@@ -104,12 +106,14 @@ body.dark-mode {
   --background-22: rgb(60, 55, 66);
   --background-23: rgb(30, 29, 32);
   --background-24: linear-gradient(rgb(67, 69, 117) 0%, rgb(102, 87, 141) 100%);
+  --background-25: rgb(56, 50, 65);
   --border: 1px solid rgb(56, 50, 65);
   --border-2: 1px solid rgb(38, 33, 48);
   --border-3: none;
   --border-4: 1px solid rgb(154, 106, 255);
   --border-6: 1px solid rgb(83, 222, 233);
   --border-7: 2px solid rgb(55, 47, 71);
+  --border-8: 1px solid rgb(102, 97, 113);
   --color-1: rgb(154, 106, 255);
   --color-2: rgb(244, 238, 255);
   --color-3: rgb(184, 173, 210);
