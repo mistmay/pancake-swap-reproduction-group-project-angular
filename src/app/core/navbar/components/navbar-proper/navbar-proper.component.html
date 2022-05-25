@@ -18,7 +18,8 @@
         </div>
       </li>
       <li class="position-relative" (mouseover)="showEarnMenu = true" (mouseout)="showEarnMenu = false">
-        <a routerLink="/earn" routerLinkActive="active" class="d-flex justify-content-center align-items-center">Earn</a>
+        <a routerLink="/earn" routerLinkActive="active"
+          class="d-flex justify-content-center align-items-center">Earn</a>
         <div
           class="d-none toogle-menu toogle-menu-top position-absolute flex-column align-items-start justify-content-start"
           [class.open-menu]="showEarnMenu">
@@ -27,13 +28,13 @@
         </div>
       </li>
       <li class="position-relative" (mouseover)="showWinMenu = true" (mouseout)="showWinMenu = false">
-        <a href="#" class="d-flex justify-content-center align-items-center">Win</a>
+        <a routerLink="/win" routerLinkActive="active" class="d-flex justify-content-center align-items-center">Win</a>
         <div
           class="d-none toogle-menu toogle-menu-top position-absolute flex-column align-items-start justify-content-start"
           [class.open-menu]="showWinMenu">
-          <a href="#">Trading Competition</a>
-          <a href="#">Prediction (BETA)</a>
-          <a href="#">Lottery</a>
+          <a routerLink="/win/competition" routerLinkActive="active">Trading Competition</a>
+          <a routerLink="/win/prediction" routerLinkActive="active">Prediction (BETA)</a>
+          <a routerLink="/win/lottery" routerLinkActive="active">Lottery</a>
         </div>
       </li>
       <li class="position-relative" routerLinkActive="active" (mouseover)="showNftMenu = true"
@@ -48,7 +49,7 @@
         </div>
       </li>
       <li class="position-relative" (mouseover)="showPointsMenu = true" (mouseout)="showPointsMenu = false">
-        <a routerLinkActive="active" class="d-flex justify-content-center align-items-center">
+        <a routerLink="/info" routerLinkActive="active" class="d-flex justify-content-center align-items-center">
           <img src="../../../../../assets/svg/nav-points.svg" id="nav-points">
         </a>
         <div

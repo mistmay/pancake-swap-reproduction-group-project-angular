@@ -23,6 +23,14 @@ const routes: Routes = [
     loadChildren: () => import('./modules/nfts/nfts.module').then(m => m.NftsModule)
   },
   {
+    path: 'win',
+    loadChildren: () => import('./modules/win/win.module').then(m => m.WinModule)
+  },
+  {
+    path: 'trade',
+    loadChildren: () => import('./modules/trade/trade.module').then(m => m.TradeModule)
+  },
+  {
     path: 'teams',
     loadChildren: () => import('./modules/leaderboard/leaderboard.module').then(m => m.LeaderboardModule)
   },
