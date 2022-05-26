@@ -1,46 +1,42 @@
-<app-hero-nav [heroNav]="[
-    {name: 'Overview', link: '/nfts'},
-    {name: 'Collections', link: '/nfts/collections'},
-    {name: 'Activity', link: '/nfts/activity'},
-    ]"></app-hero-nav>
 <div class="position-relative d-flex">
-    <div id="wrapper" class="mw-100">
+  <div id="wrapper" class="mw-100">
 
-            <app-page-header [search]="true" [pageTitle]="'NFT Market'" [subTitle]="'Buy and Sell NFTs on BNB Smart Chain'"></app-page-header>
+    <app-page-header [search]="true" [pageTitle]="'NFT Market'" [subTitle]="'Buy and Sell NFTs on BNB Smart Chain'">
+    </app-page-header>
 
-        <div>
-            <app-nft-separator></app-nft-separator>
-        </div>
-        <div id="collections-wrapper" class="position-relative d-flex flex-column align-items-center">
-            <main>
-                <div class="d-flex align-items-center justify-content-between mb-5">
-                    <h3>Newest Collections</h3>
-                    <app-standard-button [isTransparent]="true" [isSmall]="true" [arrowCheck]="true" [isBlue]="true"
-                        [content]="'View All '"></app-standard-button>
-                </div>
-                <app-nft-card-collection [nfts]="nfts.data.items.slice(1,7)"></app-nft-card-collection>
-                <div class="d-flex align-items-center justify-content-between mb-5">
-                    <h3>Hot Collections</h3>
-                    <app-standard-button [isTransparent]="true" [isSmall]="true" [arrowCheck]="true" [isBlue]="true"
-                        [content]="'View All '"></app-standard-button>
-                </div>
-                <app-nft-card-collection [nfts]="nfts.data.items.slice(7,13)"></app-nft-card-collection>
-                <div class="d-flex align-items-center justify-content-between mb-5">
-                    <h3>Newest Arrivals</h3>
-                    <app-standard-button [isTransparent]="true" [isSmall]="true" [arrowCheck]="true" [isBlue]="true"
-                        [content]="'View All '"></app-standard-button>
-                </div>
-                <div class="pb-5 collection">
-                    <app-nft-arrival-card [nfts]="nfts.data.items.slice(14,30)"></app-nft-arrival-card>
-                </div>
-            </main>
-            <div class="w-100">
-                <div class="py-5 faq-container">
-                    <div>
-                        <app-faq [title]="'FAQs'" [faqBoxes]="faqBox"></app-faq>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div>
+      <app-nft-separator></app-nft-separator>
     </div>
+    <div id="collections-wrapper" class="position-relative d-flex flex-column align-items-center">
+      <main>
+        <div class="d-flex align-items-center justify-content-between mb-5">
+          <h3>Newest Collections</h3>
+          <app-standard-button [isTransparent]="true" [isSmall]="true" [arrowCheck]="true" [isBlue]="true"
+            [content]="'View All '"></app-standard-button>
+        </div>
+        <app-nft-card-collection [nfts]="nfts.data.items.slice(1,7)"></app-nft-card-collection>
+        <div class="d-flex align-items-center justify-content-between mb-5">
+          <h3>Hot Collections</h3>
+          <app-standard-button [isTransparent]="true" [isSmall]="true" [arrowCheck]="true" [isBlue]="true"
+            [content]="'View All '"></app-standard-button>
+        </div>
+        <app-nft-card-collection [nfts]="nfts.data.items.slice(7,13)"></app-nft-card-collection>
+        <div class="d-flex align-items-center justify-content-between mb-5">
+          <h3>Newest Arrivals</h3>
+          <app-standard-button [isTransparent]="true" [isSmall]="true" [arrowCheck]="true" [isBlue]="true"
+            [content]="'View All '"></app-standard-button>
+        </div>
+        <div class="pb-5 collection">
+          <app-nft-arrival-card [nfts]="nfts.data.items.slice(14,30)"></app-nft-arrival-card>
+        </div>
+      </main>
+      <div class="w-100">
+        <div class="py-5 faq-container">
+          <div>
+            <app-faq [title]="'FAQs'" [faqBoxes]="faqBox"></app-faq>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

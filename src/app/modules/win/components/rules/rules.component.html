@@ -1,0 +1,15 @@
+<section class="position-relative">
+  <app-ribbon-title [ribbonImg]="ribbonImg" [ribbonText]="ribbonText"></app-ribbon-title>
+  <div id="rules-main"
+    class="d-flex flex-column flex-lg-row justify-content-center align-items-center align-items-lg-start">
+    <div id="faq-side" class="d-flex flex-column align-items-center">
+      <div class="w-100 d-flex flex-column align-items-center" *ngFor="let faqSide of faqSides">
+        <h3>{{faqSide[0]}}</h3>
+        <p>{{faqSide[1]}}</p>
+      </div>
+    </div>
+    <div id="faq">
+      <app-faq [title]="'Details'" [faqBoxes]="faq"></app-faq>
+    </div>
+  </div>
+</section>

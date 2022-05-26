@@ -2,16 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { TitleService } from 'src/app/services/title.service';
 
 @Component({
-  selector: 'app-farms',
-  templateUrl: './farms.component.html',
-  styleUrls: ['./farms.component.scss']
+  selector: 'app-lottery',
+  templateUrl: './lottery.component.html',
+  styleUrls: ['./lottery.component.scss']
 })
-export class FarmsComponent implements OnInit {
+export class LotteryComponent implements OnInit {
 
   constructor(private titleService: TitleService) { }
 
   ngOnInit(): void {
-    this.titleService.setTitle('Farms');
+    this.titleService.setTitle('Lottery');
   }
 
 }

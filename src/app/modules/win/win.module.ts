@@ -12,6 +12,10 @@ import { TeamRanksComponent } from './components/team-ranks/team-ranks.component
 import { RibbonTitleComponent } from './components/ribbon-title/ribbon-title.component';
 import { CompetitionTableComponent } from './components/competition-table/competition-table.component';
 import { PrizesComponent } from './components/prizes/prizes.component';
+import { RulesComponent } from './components/rules/rules.component';
+import { CompetitionFooterComponent } from './components/competition-footer/competition-footer.component';
+import { LotteryComponent } from './views/lottery/lottery.component';
+import { PredictionComponent } from './views/prediction/prediction.component';
 
 @NgModule({
     declarations: [
@@ -24,7 +28,11 @@ import { PrizesComponent } from './components/prizes/prizes.component';
         TeamRanksComponent,
         RibbonTitleComponent,
         CompetitionTableComponent,
-        PrizesComponent
+        PrizesComponent,
+        RulesComponent,
+        CompetitionFooterComponent,
+        LotteryComponent,
+        PredictionComponent
     ],
     imports: [
         CommonModule,

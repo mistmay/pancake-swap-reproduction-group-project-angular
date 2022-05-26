@@ -5,9 +5,7 @@ import { LeaderboardComponent } from './views/leaderboard/leaderboard.component'
 const routes: Routes = [
     {
         path: '',
-        component: LeaderboardComponent,
-        children: [
-        ]
+        component: LeaderboardComponent
     }
 ];
 

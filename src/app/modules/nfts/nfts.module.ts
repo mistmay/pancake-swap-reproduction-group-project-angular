@@ -7,6 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { CommonModule } from '@angular/common';
 import { NftSeparatorComponent } from './components/nft-separator/nft-separator.component';
 import { NftCardCollectionComponent } from './components/nft-card-collection/nft-card-collection.component';
+import { NftsCollectionsComponent } from './views/nfts-collections/nfts-collections.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { NftCardCollectionComponent } from './components/nft-card-collection/nft
         NftArrivalCardComponent,
         NftOverviewComponent,
         NftSeparatorComponent,
-        NftCardCollectionComponent
+        NftCardCollectionComponent,
+        NftsCollectionsComponent
     ],
     imports: [
         NftsRoutingModule,
