@@ -11,6 +11,7 @@ import { RibbonComponent } from './components/ribbon/ribbon.component';
 import { TeamRanksComponent } from './components/team-ranks/team-ranks.component';
 import { RibbonTitleComponent } from './components/ribbon-title/ribbon-title.component';
 import { CompetitionTableComponent } from './components/competition-table/competition-table.component';
+import { PrizesComponent } from './components/prizes/prizes.component';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,8 @@ import { CompetitionTableComponent } from './components/competition-table/compet
         RibbonComponent,
         TeamRanksComponent,
         RibbonTitleComponent,
-        CompetitionTableComponent
+        CompetitionTableComponent,
+        PrizesComponent
     ],
     imports: [
         CommonModule,

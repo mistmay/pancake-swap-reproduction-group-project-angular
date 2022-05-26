@@ -27,6 +27,48 @@
         </div>
       </div>
     </ng-container>
+    <ng-container *ngIf="!isType1">
+      <div class="row row-title">
+        <div class="col-3 d-flex justify-content-center align-items-center">
+          <h5>RANK IN TEAM</h5>
+        </div>
+        <div class="col-4 col-sm-2 d-flex justify-content-center align-items-center">
+          <h5>TIER</h5>
+        </div>
+        <div class="col-3 d-none d-sm-flex justify-content-center align-items-center">
+          <h5>TOKEN PRIZES (SPLIT)</h5>
+        </div>
+        <div class="col-5 col-sm-3 d-flex justify-content-center align-items-center">
+          <h5>ACHIEVEMENTS</h5>
+        </div>
+        <div class="col-1 d-none d-sm-flex justify-content-center align-items-center">
+          <h5>NFT</h5>
+        </div>
+      </div>
+      <div class="row row-type-2" *ngFor="let row of tableData2">
+        <div class="col-3 d-flex justify-content-center align-items-center">
+          <h3>{{row.rank}}</h3>
+        </div>
+        <div class="col-4 col-sm-2 d-flex flex-column justify-content-center align-items-center">
+          <img [src]="returnTierImage(row.tier)" class="prize-type">
+          <span [style.color]="returnTierColor(row.tier)">{{row.tier | uppercase}}</span>
+        </div>
+        <div class="col-3 d-none d-sm-flex justify-content-center align-items-center">
+          <h3>{{row.prizes}}</h3>
+        </div>
+        <div class="col-5 col-sm-3 d-flex justify-content-center align-items-center">
+          <img [src]="returnAchievementsImage(row.achievements)" class="achievement">
+          <p>+{{row.achievements}}</p>
+        </div>
+        <div class="col-1 d-none d-sm-flex justify-content-center align-items-center">
+          <img src="../../../../../assets/svg/competition-prizes-nft-check.svg" class="nft"
+            *ngIf="row.hasNft; else noNft">
+        </div>
+        <ng-template #noNft>
+          <img src="../../../../../assets/svg/competition-prizes-no-nft.svg" class="no-nft">
+        </ng-template>
+      </div>
+    </ng-container>
   </div>
   <div class="w-100" id="table-footer">
     <p *ngIf="hasFooterText">

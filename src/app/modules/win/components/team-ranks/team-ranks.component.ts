@@ -8,7 +8,7 @@ import { CompetitionTable1 } from '../../models/competition-table-1';
 })
 export class TeamRanksComponent implements OnInit {
   ribbonImg: string = '../../../../../assets/svg/team-ranks-trophy.svg';
-  ribbonText: string = 'Team Ranks'
+  ribbonText: string = 'Team Ranks';
   tableData1: CompetitionTable1[] = [
     { secondColumn: '$2,734,120', image: 1, link: '0xd2...6b9A' },
     { secondColumn: '$1,801,694', image: 1, link: '0x6E...809b' },

@@ -1,0 +1,26 @@
+<section class="position-relative">
+  <app-ribbon-title [ribbonImg]="ribbonImg" [ribbonText]="ribbonText"></app-ribbon-title>
+  <div id="prizes-main"
+    class="d-flex flex-column-reverse flex-lg-row justify-content-center align-items-center align-items-lg-start">
+    <app-competition-table [hasRightHeader]="false" [title]="'Prizes by Team'"
+      [subtitle]="'Higher trading volume = higher rank!'" [isType1]="false" [hasFooterText]="true"
+      [tableData2]="tableData2">
+    </app-competition-table>
+    <div id="prizes-side" class="d-flex flex-column">
+      <p>Every eligible participant will win prizes at the end of the competition.</p>
+      <h3>The better your team performs, the better prizes you will get!</h3>
+      <div class="d-flex flex-column">
+        <p>
+          The final winning team will be the team with the highest total volume score at the end of the competition
+          period.
+        </p>
+        <p>
+          In addition to token prizes there are NFT rewards:<br>
+          A. 300 newly-designed PancakeSwap NFTs to the Top 100 Traders in each team.<br>
+          B. 100 Mines of Dalarnia NFTs to the Top 100 Traders ranked by the $DAR Trading Volume.
+        </p>
+      </div>
+      <img src="../../../../../assets/img/MoD-flipper.webp" class="align-self-center d-none d-lg-block">
+    </div>
+  </div>
+</section>
