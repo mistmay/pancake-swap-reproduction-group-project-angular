@@ -1,0 +1,58 @@
+section {
+  padding: 14px 24px 125px 24px;
+  background: var(--background-3);
+
+  #prizes-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+
+    app-competition-table {
+      width: 100%;
+    }
+
+    #prizes-side {
+      width: 100%;
+      gap: 24px;
+
+      p {
+        color: var(--color-2);
+        font-weight: 400;
+        line-height: 1.5;
+        font-size: 16px;
+      }
+
+      h3 {
+        color: var(--color-1);
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.1;
+      }
+
+      div {
+        gap: 10px;
+      }
+
+      img {
+        width: 270px;
+      }
+    }
+  }
+}
+
+
+@media (min-width: 992px) {
+  section {
+    padding: 14px 24px 190px 24px;
+
+    #prizes-main {
+      app-competition-table {
+        width: calc(50% - 40px);
+      }
+
+      #prizes-side {
+        width: calc(50% - 40px);
+      }
+    }
+  }
+}

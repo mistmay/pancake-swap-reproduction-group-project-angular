@@ -1,0 +1,37 @@
+.ribbon {
+  width: 32px;
+  height: 64px;
+}
+
+.ribbon-right {
+  transform: scaleX(-1);
+}
+
+.ribbon-center {
+  width: calc(100% - 32px - 32px);
+  height: 46px;
+  background-color: rgb(118, 69, 217);
+  gap: 10px;
+
+  h2 {
+    font-size: 20px;
+    text-align: center;
+    line-height: 110%;
+    color: rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
+    font-weight: 600;
+  }
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (min-width: 576px) {
+  .ribbon-center {
+    h2 {
+      font-size: 40px;
+    }
+  }
+}

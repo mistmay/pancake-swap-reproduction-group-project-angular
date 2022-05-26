@@ -1,0 +1,13 @@
+<section class="d-flex justify-content-center align-items-center">
+  <div class="position-relative d-flex flex-column align-items-center" id="box">
+    <div class="d-flex justify-content-center align-items-center w-100 position-absolute" id="bunny-container">
+      <img src="../../../../../assets/svg/calculating-left.svg" class="bunny-side">
+      <img src="../../../../../assets/svg/your-score-bunny.svg" id="bunny">
+      <img src="../../../../../assets/svg/calculating-right.svg" class="bunny-side">
+    </div>
+    <app-ribbon class="position-absolute" [text]="'Your Score'"></app-ribbon>
+    <h4>Check your Rank</h4>
+    <p>Connect wallet to view</p>
+    <app-standard-button [content]="'Connect Wallet'" (click)="openModal()"></app-standard-button>
+  </div>
+</section>

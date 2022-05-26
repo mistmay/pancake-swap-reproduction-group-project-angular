@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FaqBox } from 'src/app/models/faq-box';
-import { Data, NFTS, RootObject } from 'src/app/models/nfts';
+import { NFTS, RootObject } from 'src/app/models/nfts';
+import { TitleService } from 'src/app/services/title.service';
 
 @Component({
   selector: 'app-nft-overview',
@@ -33,9 +34,10 @@ export class NftOverviewComponent implements OnInit {
     }
   ]
 
-  constructor() { }
+  constructor(private titleService: TitleService) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Overview');
   }
 
 }

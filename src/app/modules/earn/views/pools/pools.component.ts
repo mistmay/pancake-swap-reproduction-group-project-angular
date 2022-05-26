@@ -1,7 +1,7 @@
-import { APP_ID, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { SyrupPoolsService } from 'src/app/api/syrup-pools.service';
-import { Pools } from 'src/app/models/pools';
+import { TitleService } from 'src/app/services/title.service';
 
 @Component({
   selector: 'app-pools',
@@ -13,11 +13,12 @@ export class PoolsComponent implements OnInit {
   subscription!: Subscription
   pools!: any
 
-  constructor(private api: SyrupPoolsService) { }
+  constructor(private api: SyrupPoolsService, private titleService: TitleService) { }
 
   ngOnInit(): void {
-    this.pools = Object.entries(this.api.syrupPools).sort((a ,b) => b[1] - a[1]).slice(0, 10)
-  }  
+    this.titleService.setTitle('Pools');
+    this.pools = Object.entries(this.api.syrupPools).sort((a, b) => b[1] - a[1]).slice(0, 10)
+  }
 
 
 }
