@@ -9,10 +9,10 @@ import { TitleService } from 'src/app/services/title.service';
 export class ExchangeComponent implements OnInit {
 
   constructor(private titleService: TitleService) {
-    this.titleService.setTitle('Exchange');
   }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Exchange');
   }
 
 }

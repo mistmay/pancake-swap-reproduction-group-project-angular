@@ -5,12 +5,14 @@ import { TradeTopComponent } from './views/trade-top.component';
 import { TradeRoutingModule } from './trade-routing.module';
 import { ExchangeComponent } from './views/exchange/exchange.component';
 import { LiquidityComponent } from './views/liquidity/liquidity.component';
+import { LimitComponent } from './views/limit/limit.component';
 
 @NgModule({
     declarations: [
         TradeTopComponent,
         ExchangeComponent,
-        LiquidityComponent
+        LiquidityComponent,
+        LimitComponent
     ],
     imports: [
         CommonModule,
