@@ -2,12 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-nft-arrival-card',
-  templateUrl: './nft-arrival-card.component.html',
-  styleUrls: ['./nft-arrival-card.component.scss']
+  selector: 'app-nfts-table',
+  templateUrl: './nfts-table.component.html',
+  styleUrls: ['./nfts-table.component.scss']
 })
-export class NftArrivalCardComponent implements OnInit {
-  @Input() searchedKey!: string;
+export class NftsTableComponent implements OnInit {
   @Input() nfts!: any[];
 
   constructor(private router: Router) { }

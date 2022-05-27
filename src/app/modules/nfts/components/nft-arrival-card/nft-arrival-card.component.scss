@@ -8,6 +8,7 @@
   border: var(--border);
   box-shadow: var(--box-shadow);
   position: relative;
+  cursor: pointer;
 }
 
 .newest-arrivals-card:hover {
@@ -79,8 +80,9 @@
     grid-template-columns: repeat(4, 1fr) !important;
   }
 }
+
 @media screen and (min-width: 370px) {
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
-}
+  }
 }

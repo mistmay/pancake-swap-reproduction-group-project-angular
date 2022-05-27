@@ -7,9 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GetYourTicketsComponent implements OnInit {
   tomorrow!: Date;
-  matchArray: [number, number][] = [
-    [479, 2.046], [722, 3.091], [1204, 5.154], [2407, 10.308], [4814, 20.615], [9629, 41.240]
-  ];
   showTableDetails: boolean = false;
 
   constructor() { }

@@ -1,0 +1,56 @@
+section {
+  padding: 0px 24px 32px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  #view-selection {
+    height: 62px;
+    margin-bottom: 8px;
+
+    button {
+      border: none;
+      background-color: transparent;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+
+      .view-not-selected {
+        fill: rgb(189, 194, 196);
+      }
+
+      .view-selected {
+        fill: rgb(31, 199, 212);
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.arrow-btn {
+  width: 20px;
+  height: 20px;
+  margin: 0 20px;
+  cursor: pointer;
+
+  img {
+    width: 100% !important;
+    height: auto !important;
+    filter: invert(74%) sepia(67%) saturate(1307%) hue-rotate(136deg) brightness(89%) contrast(85%);
+  }
+
+  &:disabled {
+    img {
+      filter: invert(80%) sepia(19%) saturate(30%) hue-rotate(152deg) brightness(96%) contrast(86%);
+    }
+  }
+}
+
+#paginator {
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 16px;
+  color: var(--color-2);
+}
