@@ -11,7 +11,8 @@
     </div>
   </div>
   <div class="row nfts-row" *ngFor="let nft of nfts">
-    <div class="col-6 col-sm-5 d-flex align-items-center gap-3">
+    <div class="col-6 col-sm-5 d-flex align-items-center gap-3 nfts-cursor"
+      (click)="goToDetails(nft.collection_address)">
       <div class="circle d-none d-sm-block">
         <img class="w-100 h-100" [src]="nft.first_nft_image_256">
       </div>

@@ -3,7 +3,7 @@
   <ng-container *ngFor="let nft of (nfts | search:searchedKey)">
     <div class="card-outside border-inner position-relative overflow-hidden">
       <div class="w-100 h-100 card-backimg">
-        <a class="text-decoration-none color-text" href="#">
+        <a class="text-decoration-none color-text" (click)="goToDetails(nft.collection_address)">
           <div class="card-padding">
             <div class="d-inline-block overflow-hidden m-0 p-0 border-0">
               <div class="image-container">

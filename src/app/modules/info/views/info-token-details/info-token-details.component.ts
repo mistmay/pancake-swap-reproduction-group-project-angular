@@ -25,6 +25,8 @@ export class InfoTokenDetailsComponent implements OnInit, OnDestroy {
         .subscribe((res: any) => {
           this.token = res;
           this.titleService.setTitle(this.token.symbol.toUpperCase());
+        }, (error: Error) => {
+          this.router.navigate(['/error']);
         }));
     }));
   }

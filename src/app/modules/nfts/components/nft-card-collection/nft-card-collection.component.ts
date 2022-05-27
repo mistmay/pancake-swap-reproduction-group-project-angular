@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Data, NFTS, RootObject } from 'src/app/models/nfts';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nft-card-collection',
@@ -10,9 +10,13 @@ export class NftCardCollectionComponent implements OnInit {
   @Input() searchedKey!: string;
   @Input() nfts!: any[];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  goToDetails(address: string): void {
+    this.router.navigate(['/nfts', 'collections', address]);
   }
 
 

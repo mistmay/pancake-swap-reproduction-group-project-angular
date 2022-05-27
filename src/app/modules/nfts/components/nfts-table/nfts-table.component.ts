@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nfts-table',
@@ -8,9 +9,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class NftsTableComponent implements OnInit {
   @Input() nfts!: any[];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  goToDetails(address: string): void {
+    this.router.navigate(['/nfts', 'collections', address]);
   }
 
 }

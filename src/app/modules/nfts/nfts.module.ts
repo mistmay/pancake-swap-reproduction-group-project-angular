@@ -12,6 +12,7 @@ import { SearchPipe } from './pipes/search.pipe';
 import { PaginatorPipe } from './pipes/paginator.pipe';
 import { MathCeilPipe } from './pipes/math-ceil.pipe';
 import { NftsTableComponent } from './components/nfts-table/nfts-table.component';
+import { NftsDetailsComponent } from './views/nfts-details/nfts-details.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { NftsTableComponent } from './components/nfts-table/nfts-table.component
         SearchPipe,
         PaginatorPipe,
         MathCeilPipe,
-        NftsTableComponent
+        NftsTableComponent,
+        NftsDetailsComponent
     ],
     imports: [
         NftsRoutingModule,
