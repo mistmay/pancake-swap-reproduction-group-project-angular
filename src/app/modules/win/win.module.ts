@@ -19,6 +19,8 @@ import { PredictionComponent } from './views/prediction/prediction.component';
 import { LotteryHeroComponent } from './components/lottery-hero/lottery-hero.component';
 import { GetYourTicketsComponent } from './components/get-your-tickets/get-your-tickets.component';
 import { CheckWonComponent } from './components/check-won/check-won.component';
+import { FinishedRoundsComponent } from './components/finished-rounds/finished-rounds.component';
+import { HiddenTableComponent } from './components/hidden-table/hidden-table.component';
 
 @NgModule({
     declarations: [
@@ -38,7 +40,9 @@ import { CheckWonComponent } from './components/check-won/check-won.component';
         PredictionComponent,
         LotteryHeroComponent,
         GetYourTicketsComponent,
-        CheckWonComponent
+        CheckWonComponent,
+        FinishedRoundsComponent,
+        HiddenTableComponent
     ],
     imports: [
         CommonModule,

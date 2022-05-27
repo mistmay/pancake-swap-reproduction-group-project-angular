@@ -7,8 +7,8 @@ import { Data, NFTS, RootObject } from 'src/app/models/nfts';
   styleUrls: ['./nft-card-collection.component.scss']
 })
 export class NftCardCollectionComponent implements OnInit {
-
-  @Input() nfts!: any
+  @Input() searchedKey!: string;
+  @Input() nfts!: any[];
 
   constructor() { }
 

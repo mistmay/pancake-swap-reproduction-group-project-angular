@@ -8,6 +8,10 @@ import { CommonModule } from '@angular/common';
 import { NftSeparatorComponent } from './components/nft-separator/nft-separator.component';
 import { NftCardCollectionComponent } from './components/nft-card-collection/nft-card-collection.component';
 import { NftsCollectionsComponent } from './views/nfts-collections/nfts-collections.component';
+import { SearchPipe } from './pipes/search.pipe';
+import { PaginatorPipe } from './pipes/paginator.pipe';
+import { MathCeilPipe } from './pipes/math-ceil.pipe';
+import { NftsTableComponent } from './components/nfts-table/nfts-table.component';
 
 
 @NgModule({
@@ -17,7 +21,11 @@ import { NftsCollectionsComponent } from './views/nfts-collections/nfts-collecti
         NftOverviewComponent,
         NftSeparatorComponent,
         NftCardCollectionComponent,
-        NftsCollectionsComponent
+        NftsCollectionsComponent,
+        SearchPipe,
+        PaginatorPipe,
+        MathCeilPipe,
+        NftsTableComponent
     ],
     imports: [
         NftsRoutingModule,

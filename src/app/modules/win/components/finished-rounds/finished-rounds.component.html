@@ -1,0 +1,50 @@
+<section class="d-flex flex-column align-items-center">
+  <h2>Finished Rounds</h2>
+  <div id="table">
+    <div class="table-section w-100">
+      <h3>Round 546</h3>
+      <p>Draw {{yesterday | date}}, 2:00PM</p>
+    </div>
+    <div
+      class="table-section w-100 d-flex flex-column flex-md-row justify-content-md-between align-items-center align-items-md-start position-relative">
+      <div class="position-absolute d-flex justify-content-center align-items-center" id="latest">
+        <h5>Latest</h5>
+      </div>
+      <h4>Winning Number</h4>
+      <div class="d-flex align-items-center gap-1" id="ball-container">
+        <div [style.backgroundImage]="'url(../../../../../assets/svg/ball-9.svg)'"
+          class="ball d-flex justify-content-center align-items-center">
+          <h3>9</h3>
+        </div>
+        <div [style.backgroundImage]="'url(../../../../../assets/svg/ball-5.svg)'"
+          class="ball d-flex justify-content-center align-items-center">
+          <h3>5</h3>
+        </div>
+        <div [style.backgroundImage]="'url(../../../../../assets/svg/ball-4.svg)'"
+          class="ball d-flex justify-content-center align-items-center">
+          <h3>4</h3>
+        </div>
+        <div [style.backgroundImage]="'url(../../../../../assets/svg/ball-6.svg)'"
+          class="ball d-flex justify-content-center align-items-center">
+          <h3>6</h3>
+        </div>
+        <div [style.backgroundImage]="'url(../../../../../assets/svg/ball-7.svg)'"
+          class="ball d-flex justify-content-center align-items-center">
+          <h3>7</h3>
+        </div>
+        <div [style.backgroundImage]="'url(../../../../../assets/svg/ball-4.svg)'"
+          class="ball d-flex justify-content-center align-items-center">
+          <h3>4</h3>
+        </div>
+      </div>
+    </div>
+    <div class="w-100" *ngIf="showTableDetails">
+      <app-hidden-table></app-hidden-table>
+    </div>
+    <div class="w-100 d-flex justify-content-center align-items-center">
+      <div class="my-2">
+        <app-accordion-btn (click)="showTableDetails = !showTableDetails"></app-accordion-btn>
+      </div>
+    </div>
+  </div>
+</section>

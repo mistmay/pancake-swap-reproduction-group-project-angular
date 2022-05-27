@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TitleService } from 'src/app/services/title.service';
+import { NFTS, RootObject } from 'src/app/models/nfts';
 
 @Component({
   selector: 'app-nfts-collections',
@@ -7,6 +8,9 @@ import { TitleService } from 'src/app/services/title.service';
   styleUrls: ['./nfts-collections.component.scss']
 })
 export class NftsCollectionsComponent implements OnInit {
+  nfts: RootObject = NFTS;
+  isCardView: boolean = true;
+  currentPage: number = 1;
 
   constructor(private titleService: TitleService) { }
 

@@ -18,6 +18,7 @@ import { CardFooterComponent } from './components/card/components/card-footer/ca
 import { PageHeaderComponent } from './components/page-header/page-header.component';
 import { TableRowComponent } from './components/table-row/table-row.component';
 import { TableRowInnerComponent } from './components/table-row/components/table-row-inner/table-row-inner.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -44,7 +45,8 @@ import { TableRowInnerComponent } from './components/table-row/components/table-
     ],
     imports: [
         CommonModule,
-        RouterModule
+        RouterModule,
+        FormsModule
     ],
     exports: [
         AccordionBtnComponent,
@@ -60,7 +62,7 @@ import { TableRowInnerComponent } from './components/table-row/components/table-
         CardComponent,
         PageHeaderComponent,
         TableRowComponent
-        
+
     ]
 })
 export class SharedModule { }

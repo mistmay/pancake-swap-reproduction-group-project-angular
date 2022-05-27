@@ -1,0 +1,18 @@
+<div class="table-hidden w-100">
+  <p>Match the winning number in the same order to share prizes. Current prizes up for grabs:</p>
+  <div class="container-fluid">
+    <div class="row gy-3">
+      <div class="col-6 col-sm-3 d-flex flex-column align-items-start hidden-columns"
+        *ngFor="let item of matchArray; let index = index">
+        <h4>Match first {{index + 1}}</h4>
+        <h3>{{item[0]}} CAKE</h3>
+        <span>~${{item[1]}}</span>
+      </div>
+      <div class="col-6 col-sm-3 d-flex flex-column align-items-start hidden-columns">
+        <h4 class="pink-title">Burn</h4>
+        <h3>4813 CAKE</h3>
+        <span>~$20,606</span>
+      </div>
+    </div>
+  </div>
+</div>
