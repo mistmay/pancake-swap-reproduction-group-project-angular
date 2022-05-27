@@ -1,0 +1,54 @@
+<section class="d-flex flex-column align-items-center">
+  <h2>Get your tickets now!</h2>
+  <p>
+    <span>
+      <span>3</span>
+      h
+      <span>32</span>
+      m
+    </span>
+    until the draw
+  </p>
+  <div id="table">
+    <div id="table-header" class="d-flex justify-content-between align-items-center w-100">
+      <h3>Next Draw</h3>
+      <p>#546 | Draw: {{tomorrow | date}}, 2:00 PM</p>
+    </div>
+    <div id="table-main" class="d-flex flex-column align-items-center align-items-lg-start w-100">
+      <div class="prize-pot w-100 d-flex flex-column flex-lg-row align-items-center align-items-lg-start">
+        <h4>Prize Pot</h4>
+        <div class="d-flex flex-column align-items-center align-items-lg-start gap-1">
+          <h3>~$101,778</h3>
+          <p>23,886 CAKE</p>
+        </div>
+      </div>
+      <div class="d-flex align-items-start justify-content-center justify-content-lg-start prize-pot w-100">
+        <h4 class="d-none d-lg-block">Your tickets</h4>
+        <app-standard-button [content]="'Buy Tickets'"></app-standard-button>
+      </div>
+    </div>
+    <div id="table-hidden" *ngIf="showTableDetails">
+      <p>Match the winning number in the same order to share prizes. Current prizes up for grabs:</p>
+      <div class="container-fluid">
+        <div class="row gy-3">
+          <div class="col-6 col-sm-3 d-flex flex-column align-items-start hidden-columns"
+            *ngFor="let item of matchArray; let index = index">
+            <h4>Match first {{index + 1}}</h4>
+            <h3>{{item[0]}} CAKE</h3>
+            <span>~${{item[1]}}</span>
+          </div>
+          <div class="col-6 col-sm-3 d-flex flex-column align-items-start hidden-columns">
+            <h4 class="pink-title">Burn</h4>
+            <h3>4813 CAKE</h3>
+            <span>~$20,606</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+      <div class="my-2">
+        <app-accordion-btn (click)="showTableDetails = !showTableDetails"></app-accordion-btn>
+      </div>
+    </div>
+  </div>
+</section>

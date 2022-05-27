@@ -1,0 +1,23 @@
+section {
+  background: linear-gradient(139.73deg, rgb(49, 61, 92) 0%, rgb(61, 42, 84) 100%);
+  padding: 96px 0px;
+
+  img {
+    width: 68px;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: white;
+  }
+}
+
+@media (min-width: 576px) {
+  section {
+    img {
+      width: 114px;
+    }
+  }
+}
