@@ -1,19 +1,45 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { LotteryService } from 'src/app/services/lottery.service';
+import { TitleService } from 'src/app/services/title.service';
 
 @Component({
   selector: 'app-get-your-tickets',
   templateUrl: './get-your-tickets.component.html',
   styleUrls: ['./get-your-tickets.component.scss']
 })
-export class GetYourTicketsComponent implements OnInit {
-  tomorrow!: Date;
+export class GetYourTicketsComponent implements OnInit, OnDestroy {
+  currentLottery!: number;
   showTableDetails: boolean = false;
+  subscription!: Subscription;
 
-  constructor() { }
+  constructor(private titleService: TitleService, private lottery: LotteryService) { }
 
   ngOnInit(): void {
-    this.tomorrow = new Date();
-    this.tomorrow.setDate(this.tomorrow.getDate() + 1);
+    this.subscription = this.lottery.getCurrentIdObservable()
+      .subscribe((res: number) => {
+        this.currentLottery = res;
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
+  getCakePrice(): number {
+    return Number(this.titleService.cakePrice);
+  }
+
+  getCakePrize(): number {
+    return this.lottery.cakePrize;
+  }
+
+  getLotteryMinutes(): number {
+    return this.lottery.minutes;
+  }
+
+  getLotterySeconds(): number {
+    return this.lottery.seconds;
   }
 
 }

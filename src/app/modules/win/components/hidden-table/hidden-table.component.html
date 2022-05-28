@@ -5,8 +5,8 @@
       <div class="col-6 col-sm-3 d-flex flex-column align-items-start hidden-columns"
         *ngFor="let item of matchArray; let index = index">
         <h4>Match first {{index + 1}}</h4>
-        <h3>{{item[0]}} CAKE</h3>
-        <span>~${{item[1]}}</span>
+        <h3>{{item}} CAKE</h3>
+        <span>~${{(item * getCakePrice()).toFixed(2)}}</span>
       </div>
       <div class="col-6 col-sm-3 d-flex flex-column align-items-start hidden-columns">
         <h4 class="pink-title">Burn</h4>

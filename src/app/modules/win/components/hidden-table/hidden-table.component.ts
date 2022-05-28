@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TitleService } from 'src/app/services/title.service';
+import { LotteryService } from 'src/app/services/lottery.service';
 
 @Component({
   selector: 'app-hidden-table',
@@ -6,13 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hidden-table.component.scss']
 })
 export class HiddenTableComponent implements OnInit {
-  matchArray: [number, number][] = [
-    [479, 2.046], [722, 3.091], [1204, 5.154], [2407, 10.308], [4814, 20.615], [9629, 41.240]
-  ];
+  matchArray!: number[];
 
-  constructor() { }
+  constructor(private titleService: TitleService, private lottery: LotteryService) { }
 
   ngOnInit(): void {
+    this.matchArray = this.getMatchArray();
+  }
+
+  getCakePrice(): number {
+    return Number(this.titleService.cakePrice);
+  }
+
+  getMatchArray(): number[] {
+    return this.lottery.matchArray;
   }
 
 }

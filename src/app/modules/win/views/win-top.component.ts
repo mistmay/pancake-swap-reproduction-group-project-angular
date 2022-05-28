@@ -5,8 +5,7 @@ import { Component } from '@angular/core';
     template: `
     <app-hero-nav [heroNav]="[
     {name: 'Trading Competition', link: '/win/competition'},
-    {name: 'Prediction', link: '/win/prediction'},
-    {name: 'Lottery', link: '/win/lottery'},
+    {name: 'Lottery', link: '/win/lottery'}
     ]"></app-hero-nav>
     <router-outlet></router-outlet>
     `
