@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
 import { PancakeApiService } from '../api/pancake-api.service';
-import { Token } from '../models/token';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +18,7 @@ export class TitleService {
     this.titleStart = start;
     this.api.getTokens()
       .subscribe((res: any) => {
-        const tokensArray: Token[] = Object.values(res.data);
-        this.cakePrice = Number(tokensArray[3].price).toFixed(3)
+        this.cakePrice = Number(res.data['0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82'].price).toFixed(3)
         this.title.setTitle(this.titleStart + ` | PancakeSwap - $${this.cakePrice}`);
       });
   }

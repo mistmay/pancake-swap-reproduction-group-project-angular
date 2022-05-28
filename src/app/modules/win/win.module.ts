@@ -15,12 +15,12 @@ import { PrizesComponent } from './components/prizes/prizes.component';
 import { RulesComponent } from './components/rules/rules.component';
 import { CompetitionFooterComponent } from './components/competition-footer/competition-footer.component';
 import { LotteryComponent } from './views/lottery/lottery.component';
-import { PredictionComponent } from './views/prediction/prediction.component';
 import { LotteryHeroComponent } from './components/lottery-hero/lottery-hero.component';
 import { GetYourTicketsComponent } from './components/get-your-tickets/get-your-tickets.component';
 import { CheckWonComponent } from './components/check-won/check-won.component';
 import { FinishedRoundsComponent } from './components/finished-rounds/finished-rounds.component';
 import { HiddenTableComponent } from './components/hidden-table/hidden-table.component';
+import { MathCeilPipe } from './pipes/math-ceil.pipe';
 
 @NgModule({
     declarations: [
@@ -37,12 +37,12 @@ import { HiddenTableComponent } from './components/hidden-table/hidden-table.com
         RulesComponent,
         CompetitionFooterComponent,
         LotteryComponent,
-        PredictionComponent,
         LotteryHeroComponent,
         GetYourTicketsComponent,
         CheckWonComponent,
         FinishedRoundsComponent,
-        HiddenTableComponent
+        HiddenTableComponent,
+        MathCeilPipe
     ],
     imports: [
         CommonModule,

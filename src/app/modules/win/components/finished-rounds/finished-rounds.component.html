@@ -2,39 +2,54 @@
   <h2>Finished Rounds</h2>
   <div id="table">
     <div class="table-section w-100">
-      <h3>Round 546</h3>
-      <p>Draw {{yesterday | date}}, 2:00PM</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <h3>Round {{currentLottery + 1}}</h3>
+        <div class="d-flex align-items-center gap-2">
+          <button type="button"
+            class="arrow-btn border-0 bg-transparent p-0 mb-3 d-flex justify-content-center align-items-center"
+            [disabled]="currentLottery <= 0" (click)="currentLottery = currentLottery - 1">
+            <img src="../../../../../assets/svg/table-arrow-left.svg">
+          </button>
+          <button type="button"
+            class="arrow-btn border-0 bg-transparent p-0 mb-3 d-flex justify-content-center align-items-center"
+            [disabled]="currentLottery >= lotteryHistory.length - 1" (click)="currentLottery = currentLottery + 1">
+            <img src="../../../../../assets/svg/table-arrow-right.svg">
+          </button>
+        </div>
+      </div>
+      <p>Draw {{lotteryHistory[currentLottery].date | date:'medium'}}</p>
     </div>
     <div
       class="table-section w-100 d-flex flex-column flex-md-row justify-content-md-between align-items-center align-items-md-start position-relative">
-      <div class="position-absolute d-flex justify-content-center align-items-center" id="latest">
+      <div class="position-absolute d-flex justify-content-center align-items-center" id="latest"
+        *ngIf="currentLottery === lotteryHistory.length - 1">
         <h5>Latest</h5>
       </div>
       <h4>Winning Number</h4>
       <div class="d-flex align-items-center gap-1" id="ball-container">
         <div [style.backgroundImage]="'url(../../../../../assets/svg/ball-9.svg)'"
           class="ball d-flex justify-content-center align-items-center">
-          <h3>9</h3>
+          <h3>{{lotteryHistory[currentLottery].results[0]}}</h3>
         </div>
         <div [style.backgroundImage]="'url(../../../../../assets/svg/ball-5.svg)'"
           class="ball d-flex justify-content-center align-items-center">
-          <h3>5</h3>
+          <h3>{{lotteryHistory[currentLottery].results[1]}}</h3>
         </div>
         <div [style.backgroundImage]="'url(../../../../../assets/svg/ball-4.svg)'"
           class="ball d-flex justify-content-center align-items-center">
-          <h3>4</h3>
+          <h3>{{lotteryHistory[currentLottery].results[2]}}</h3>
         </div>
         <div [style.backgroundImage]="'url(../../../../../assets/svg/ball-6.svg)'"
           class="ball d-flex justify-content-center align-items-center">
-          <h3>6</h3>
+          <h3>{{lotteryHistory[currentLottery].results[3]}}</h3>
         </div>
         <div [style.backgroundImage]="'url(../../../../../assets/svg/ball-7.svg)'"
           class="ball d-flex justify-content-center align-items-center">
-          <h3>7</h3>
+          <h3>{{lotteryHistory[currentLottery].results[4]}}</h3>
         </div>
         <div [style.backgroundImage]="'url(../../../../../assets/svg/ball-4.svg)'"
           class="ball d-flex justify-content-center align-items-center">
-          <h3>4</h3>
+          <h3>{{lotteryHistory[currentLottery].results[5]}}</h3>
         </div>
       </div>
     </div>

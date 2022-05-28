@@ -84,6 +84,24 @@ section {
   }
 }
 
+.arrow-btn {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+
+  img {
+    width: 100% !important;
+    height: auto !important;
+    filter: invert(74%) sepia(67%) saturate(1307%) hue-rotate(136deg) brightness(89%) contrast(85%);
+  }
+
+  &:disabled {
+    img {
+      filter: invert(80%) sepia(19%) saturate(30%) hue-rotate(152deg) brightness(96%) contrast(86%);
+    }
+  }
+}
+
 @media (min-width: 768px) {
   section {
     #table {

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { LotteryHistory } from 'src/app/models/lottery-history';
+import { LotteryService } from 'src/app/services/lottery.service';
 
 @Component({
   selector: 'app-finished-rounds',
@@ -6,14 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./finished-rounds.component.scss']
 })
 export class FinishedRoundsComponent implements OnInit {
-  yesterday!: Date;
   showTableDetails: boolean = false;
+  lotteryHistory!: LotteryHistory[];
+  currentLottery!: number;
+  subscription!: Subscription;
 
-  constructor() { }
+  constructor(private lottery: LotteryService) { }
 
   ngOnInit(): void {
-    this.yesterday = new Date();
-    this.yesterday.setDate(this.yesterday.getDate() - 1);
+    this.subscription = this.lottery.getLotteryHistoryObservable()
+      .subscribe((res: LotteryHistory[]) => {
+        this.lotteryHistory = res;
+        this.currentLottery = this.lotteryHistory.length - 1;
+      });
   }
 
 }
