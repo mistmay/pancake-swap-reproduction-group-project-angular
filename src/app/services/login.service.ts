@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { Wallet, LogFormInput, Ticket } from '../models/wallet';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
+  @Output() somethingChanged: EventEmitter<void> = new EventEmitter<void>();
   wallets: Wallet[] = [
     { id: 'wallet-1', password: 'password-1', name: 'John', surname: 'Smith', balance: 3, tickets: [] }
   ];
@@ -43,7 +44,12 @@ export class LoginService {
         return wallet;
       }
     });
+    this.emitChanges();
     alert('Ticket Purchased Successfully');
+  }
+
+  emitChanges(): void {
+    this.somethingChanged.emit();
   }
 
 }

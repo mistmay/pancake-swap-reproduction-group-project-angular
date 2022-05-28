@@ -4,6 +4,7 @@ import { SettingScreenLauncherService } from 'src/app/services/setting-screen-la
 import { Wallet } from 'src/app/models/wallet';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LotteryService } from 'src/app/services/lottery.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-lottery-form',
@@ -13,6 +14,7 @@ import { LotteryService } from 'src/app/services/lottery.service';
 export class LotteryFormComponent implements OnInit, OnDestroy {
   currentUser!: Wallet;
   form!: FormGroup;
+  subscription!: Subscription;
 
   constructor(private loginService: LoginService, private modalService: SettingScreenLauncherService, private fb: FormBuilder, private lottery: LotteryService) { }
 
@@ -20,6 +22,11 @@ export class LotteryFormComponent implements OnInit, OnDestroy {
     if (this.isLoggedIn()) {
       this.currentUser = this.loginService.getLoggedUser();
     }
+    this.subscription = this.loginService.somethingChanged.subscribe(() => {
+      if (this.isLoggedIn()) {
+        this.currentUser = this.loginService.getLoggedUser();
+      }
+    });
     this.form = this.fb.group({
       ticket: ['', Validators.compose([Validators.required, Validators.pattern('\\d{1}-\\d{1}-\\d{1}-\\d{1}-\\d{1}-\\d{1}')])]
     });
@@ -27,6 +34,7 @@ export class LotteryFormComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.form.reset();
+    this.subscription.unsubscribe();
   }
 
   isLoggedIn(): boolean {
