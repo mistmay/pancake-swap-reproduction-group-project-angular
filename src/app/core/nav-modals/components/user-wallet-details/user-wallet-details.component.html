@@ -4,23 +4,23 @@
     <h2>Your Wallet Details:</h2>
     <div class="w-100 d-flex flex-column align-items-center gap-2">
       <h3>Wallet-ID:</h3>
-      <p>{{currentWallet.id}}</p>
+      <p>{{currentWallet?.id}}</p>
     </div>
     <div class="w-100 d-flex flex-column align-items-center gap-2">
       <h3>User Name:</h3>
-      <p>{{currentWallet.name}}</p>
+      <p>{{currentWallet?.name}}</p>
     </div>
     <div class="w-100 d-flex flex-column align-items-center gap-2">
       <h3>User Surname:</h3>
-      <p>{{currentWallet.surname}}</p>
+      <p>{{currentWallet?.surname}}</p>
     </div>
     <div class="w-100 d-flex flex-column align-items-center gap-2">
       <h3>Balance:</h3>
-      <p>{{currentWallet.balance}} CAKES</p>
+      <p>{{currentWallet?.balance}} CAKES</p>
     </div>
     <div class="w-100 d-flex flex-column align-items-center gap-2">
       <h3>Purchased Lottery Tickets:</h3>
-      <p>{{currentWallet.tickets.length}}</p>
+      <p>{{currentWallet?.tickets?.length}}</p>
     </div>
   </div>
 </div>

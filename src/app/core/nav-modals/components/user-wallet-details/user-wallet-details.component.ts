@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./user-wallet-details.component.scss']
 })
 export class UserWalletDetailsComponent implements OnInit, OnDestroy {
-  currentWallet!: Wallet;
+  currentWallet!: Wallet | undefined;
   subscription!: Subscription;
 
   constructor(private loginService: LoginService) { }
@@ -21,6 +21,8 @@ export class UserWalletDetailsComponent implements OnInit, OnDestroy {
     this.subscription = this.loginService.somethingChanged.subscribe(() => {
       if (this.isLoggedIn()) {
         this.currentWallet = this.loginService.getLoggedUser();
+      } else {
+        this.currentWallet = undefined;
       }
     });
   }

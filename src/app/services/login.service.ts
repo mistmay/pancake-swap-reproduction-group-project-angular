@@ -19,11 +19,13 @@ export class LoginService {
     } else {
       alert('Login Successfull');
       localStorage.setItem('login-token', walletToFind.id);
+      this.emitChanges();
     }
   }
 
   logout(): void {
     localStorage.removeItem('login-token');
+    this.emitChanges();
   }
 
   isLoggedIn(): boolean {
