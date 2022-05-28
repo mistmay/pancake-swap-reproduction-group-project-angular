@@ -21,6 +21,7 @@ import { CheckWonComponent } from './components/check-won/check-won.component';
 import { FinishedRoundsComponent } from './components/finished-rounds/finished-rounds.component';
 import { HiddenTableComponent } from './components/hidden-table/hidden-table.component';
 import { MathCeilPipe } from './pipes/math-ceil.pipe';
+import { HowToPlayComponent } from './components/how-to-play/how-to-play.component';
 
 @NgModule({
     declarations: [
@@ -42,7 +43,8 @@ import { MathCeilPipe } from './pipes/math-ceil.pipe';
         CheckWonComponent,
         FinishedRoundsComponent,
         HiddenTableComponent,
-        MathCeilPipe
+        MathCeilPipe,
+        HowToPlayComponent
     ],
     imports: [
         CommonModule,
