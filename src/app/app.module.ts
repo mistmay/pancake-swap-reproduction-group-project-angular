@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RoiCalculatorComponent } from './core/nav-modals/components/roi-calculator/roi-calculator.component';
 import { LogInFormComponent } from './core/nav-modals/components/log-in-form/log-in-form.component';
 import { UserWalletDetailsComponent } from './core/nav-modals/components/user-wallet-details/user-wallet-details.component';
+import { LotteryFormComponent } from './core/nav-modals/components/lottery-form/lottery-form.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { UserWalletDetailsComponent } from './core/nav-modals/components/user-wa
     RoiCalculatorComponent,
     LogInFormComponent,
     UserWalletDetailsComponent,
+    LotteryFormComponent,
   ],
   imports: [
     BrowserModule,
