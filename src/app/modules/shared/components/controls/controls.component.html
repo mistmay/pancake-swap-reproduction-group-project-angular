@@ -49,8 +49,10 @@
                         <ul class="list">
                             <li *ngIf="sortedBy != 'Hot'" (click)="sortedBy = 'Hot'; sorted.emit('Hot')" class="list-item">Hot</li>
                             <li *ngIf="sortedBy != 'APR'" (click)="sortedBy = 'APR'; sorted.emit('APR')" class="list-item">APR</li>
+                            <li *ngIf="sortedBy != 'Multiplier' && isFarms" (click)="sortedBy = 'Multiplier'; sorted.emit('Multiplier')" class="list-item">Multiplier</li>
                             <li *ngIf="sortedBy != 'Earned'" (click)="sortedBy = 'Earned'; sorted.emit('Earned')" class="list-item">Earned</li>
-                            <li *ngIf="sortedBy != 'Total Staked'" (click)="sortedBy = 'Total Staked'; sorted.emit('Total Staked')" class="list-item">Total Staked</li>
+                            <li *ngIf="sortedBy != 'Total Staked' && !isFarms" (click)="sortedBy = 'Total Staked'; sorted.emit('Total Staked')" class="list-item">Total Staked</li>
+                            <li *ngIf="sortedBy != 'Liquidity' && isFarms" (click)="sortedBy = 'Liquidity'; sorted.emit('Liquidity')" class="list-item">Liquidity</li>
                             <li *ngIf="sortedBy != 'Latest'"(click)="sortedBy = 'Latest'; sorted.emit('Latest')" class="list-item">Latest</li>
                         </ul>
                     </div>

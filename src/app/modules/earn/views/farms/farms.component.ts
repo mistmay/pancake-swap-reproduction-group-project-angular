@@ -8,6 +8,11 @@ import { TitleService } from 'src/app/services/title.service';
 })
 export class FarmsComponent implements OnInit {
 
+  CardView: Boolean = true
+  stakedOnly: Boolean = false
+  finished: Boolean = false
+  sortBy: String = 'Hot'
+
   constructor(private titleService: TitleService) { }
 
   ngOnInit(): void {

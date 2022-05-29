@@ -17,6 +17,8 @@ export class ControlsComponent implements OnInit {
   sortedByEarned: String = 'Earned'
   sortedByTotalStaked: String = 'Total Staked'
   sortedByLatest: String = 'Latest'
+  @Input() isFarms: boolean = false
+
   @Output() stakedOnly = new EventEmitter<boolean>()
   @Output() finished = new EventEmitter<boolean>()
   @Output() sorted = new EventEmitter<String>()
