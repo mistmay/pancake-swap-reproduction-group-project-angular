@@ -8,16 +8,23 @@
 <div class="wrapper">
     <app-controls (sorted)="sortBy = $event" (finished)="finished = $event" (stakedOnly)="stakedOnly = $event"
         (CardView)="CardView = $event"></app-controls>
-    <div *ngIf="CardView && !stakedOnly && !finished" class="d-flex flex-wrap justify-content-start gap-3">
-        <app-card [poolName]="'IFO CAKE'" [poolPrice]="14.55" [isCake]="true"></app-card>
-        <ng-container *ngIf="sortBy === 'Hot'">
+    <div *ngIf="CardView && !stakedOnly && !finished" class="d-flex flex-wrap justify-content-center gap-3">
+        <app-card [cakes]="'5,545,871'" [poolName]="'IFO CAKE'" [poolPrice]="14.55" [isCake]="true"></app-card>
+        <ng-container *ngIf="sortBy == 'Hot'">
             <div *ngFor="let pool of sortedPools">
-                <app-card [poolName]="pool[0]" [poolPrice]="pool[1]" [isCake]="false"></app-card>
+                <app-card [cakes]="pool.cake" [poolName]="pool.name" [poolPrice]="pool.apr" [isCake]="false"></app-card>
             </div>
         </ng-container>
         <ng-container *ngIf="sortBy != 'Hot'">
             <div *ngFor="let pool of pools">
-                <app-card [poolName]="pool[0]" [poolPrice]="pool[1]" [isCake]="false"></app-card>
+                <app-card [cakes]="pool.cake" [poolName]="pool.name" [poolPrice]="pool.apr" [isCake]="false"></app-card>
+            </div>
+        </ng-container>
+    </div>
+    <div *ngIf="!CardView && !stakedOnly && !finished" class="farms-table w-100">
+        <ng-container *ngIf="sortBy == 'Hot'">
+            <div *ngFor="let pool of sortedPools">
+                <app-table-row [pool]="pool" [isPools]="true" ></app-table-row>
             </div>
         </ng-container>
     </div>

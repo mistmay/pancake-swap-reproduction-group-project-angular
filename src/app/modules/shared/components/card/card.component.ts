@@ -11,6 +11,7 @@ export class CardComponent implements OnInit {
   @Input() poolPrice!: number
 
   @Input() isCake: boolean = true
+  @Input() cakes!: string
 
   constructor() { }
 

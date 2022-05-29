@@ -30,10 +30,12 @@ table {
 td {
     font-size: 16px;
     vertical-align: middle;
+    // max-width: 180px !important;
 }
 
 .td-n-1 {
     padding: 24px 8px 24px 0px;
+    max-width: 126px;
 }
 
 .td-n-2 {

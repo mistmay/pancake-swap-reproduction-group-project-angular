@@ -27,11 +27,30 @@ export class SyrupPoolsService {
   //     ));
   // }
 
-  syrupPools : Pools = {
-    "mix": 85.61,
-    "metis": 28.61,
-    "gal": 6.37,
-    "ankr": 24.04,
-    "froyo": 45.02,
-  }
+  syrupPools : Pools[] = [
+    {
+      name: "mix",
+      apr: 85.61,
+      cake: "5,545,871"
+    },
+    {
+      name: "metis",
+      apr: 28.61,
+      cake: "4,169,115"
+    },    {
+      name: "gal",
+      apr: 16.37,
+      cake: "8,167,075"
+    },
+    {
+      name: "ankr",
+      apr: 24.04,
+      cake: "3,169,242"
+    },
+    {
+      name: "froyo",
+      apr: 45.02,
+      cake: "2,687,715"
+    },
+  ]
 }

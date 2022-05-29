@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { SyrupPoolsService } from 'src/app/api/syrup-pools.service';
 import { TitleService } from 'src/app/services/title.service';
@@ -13,7 +13,7 @@ export class PoolsComponent implements OnInit {
   subscription!: Subscription
   pools!: any
   sortedPools!: any
-  CardView: Boolean = true
+  CardView: Boolean = false
   stakedOnly: Boolean = false
   finished: Boolean = false
   sortBy: String = 'Hot'
@@ -22,8 +22,8 @@ export class PoolsComponent implements OnInit {
 
   ngOnInit(): void {
     this.titleService.setTitle('Pools');
-    this.pools = Object.entries(this.api.syrupPools).sort((a, b) => b[1] - a[1]).slice(0, 10)
-    this.sortedPools = Object.entries(this.api.syrupPools).sort()
+    this.pools = (this.api.syrupPools).sort((a, b) => b.apr - a.apr).slice()
+    this.sortedPools = this.api.syrupPools.sort((a, b) => (a.name > b.name ) ? 1 : ((b.name > a.name) ? -1 : 0)).slice()
   }
 
 
