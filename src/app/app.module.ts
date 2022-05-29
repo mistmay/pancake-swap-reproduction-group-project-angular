@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './core/navbar/navbar.component';
@@ -14,6 +14,9 @@ import { SettingScreenContentSettingMenuComponent } from './core/nav-modals/comp
 import { SharedModule } from './modules/shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RoiCalculatorComponent } from './core/nav-modals/components/roi-calculator/roi-calculator.component';
+import { LogInFormComponent } from './core/nav-modals/components/log-in-form/log-in-form.component';
+import { UserWalletDetailsComponent } from './core/nav-modals/components/user-wallet-details/user-wallet-details.component';
+import { LotteryFormComponent } from './core/nav-modals/components/lottery-form/lottery-form.component';
 
 
 @NgModule({
@@ -28,13 +31,17 @@ import { RoiCalculatorComponent } from './core/nav-modals/components/roi-calcula
     SettingScreenContentConnectWalletComponent,
     SettingScreenContentSettingMenuComponent,
     RoiCalculatorComponent,
+    LogInFormComponent,
+    UserWalletDetailsComponent,
+    LotteryFormComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

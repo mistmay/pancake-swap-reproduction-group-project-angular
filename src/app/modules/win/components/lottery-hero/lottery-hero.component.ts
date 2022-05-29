@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TitleService } from 'src/app/services/title.service';
 import { LotteryService } from 'src/app/services/lottery.service';
 import { PancakeApiService } from 'src/app/api/pancake-api.service';
+import { SettingScreenLauncherService } from 'src/app/services/setting-screen-launcher.service';
 
 @Component({
   selector: 'app-lottery-hero',
@@ -17,7 +17,7 @@ export class LotteryHeroComponent implements OnInit {
   interval1!: ReturnType<typeof setInterval>;
   interval2!: ReturnType<typeof setInterval>;
 
-  constructor(private lottery: LotteryService, private api: PancakeApiService) { }
+  constructor(private lottery: LotteryService, private api: PancakeApiService, private modalService: SettingScreenLauncherService) { }
 
   ngOnInit(): void {
     this.api.getTokens()
@@ -43,6 +43,10 @@ export class LotteryHeroComponent implements OnInit {
 
   getCakePrize(): number {
     return this.lottery.cakePrize;
+  }
+
+  openModal(): void {
+    this.modalService.openModal('lottery');
   }
 
 }

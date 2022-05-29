@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { LotteryHistory } from '../models/lottery-history';
+import { LoginService } from './login.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class LotteryService {
   minutes: number = 3;
   seconds: number = 0;
 
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
   startCounter(): void {
     setInterval(() => {
@@ -52,6 +53,14 @@ export class LotteryService {
     this.currentId++;
     this.lotteryHistoryObservable.next(this.lotteryHistory);
     this.currentIdObservable.next(this.currentId);
+  }
+
+  buyTicket(ticket: string): void {
+    const ticketArray: number[] = [];
+    ticket.split('-').forEach((number: string) => {
+      ticketArray.push(Number(number));
+    });
+    this.loginService.buyTicket({ forId: this.currentId, numbers: ticketArray, isTaken: false, isWon: false, winType: 0 });
   }
 
 }

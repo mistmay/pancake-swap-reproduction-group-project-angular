@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LotteryService } from 'src/app/services/lottery.service';
 import { TitleService } from 'src/app/services/title.service';
+import { SettingScreenLauncherService } from 'src/app/services/setting-screen-launcher.service';
 
 @Component({
   selector: 'app-get-your-tickets',
@@ -13,7 +14,7 @@ export class GetYourTicketsComponent implements OnInit, OnDestroy {
   showTableDetails: boolean = false;
   subscription!: Subscription;
 
-  constructor(private titleService: TitleService, private lottery: LotteryService) { }
+  constructor(private titleService: TitleService, private lottery: LotteryService, private modalService: SettingScreenLauncherService) { }
 
   ngOnInit(): void {
     this.subscription = this.lottery.getCurrentIdObservable()
@@ -40,6 +41,10 @@ export class GetYourTicketsComponent implements OnInit, OnDestroy {
 
   getLotterySeconds(): number {
     return this.lottery.seconds;
+  }
+
+  openModal(): void {
+    this.modalService.openModal('lottery');
   }
 
 }

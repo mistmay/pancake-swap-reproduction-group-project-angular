@@ -1,5 +1,6 @@
 <section class="d-flex justify-content-center align-items-center text-center">
-  <div class="d-flex justify-content-center align-items-center gap-3">
+  <div class="d-flex justify-content-center align-items-center gap-3"
+    *ngIf="!isLoggedIn() || !currentUser; else logged">
     <img src="../../../../../assets/img/ticket-l.png">
     <div class="d-flex flex-column align-items-center gap-4">
       <h2>Connect your wallet<br>to check if you've won!</h2>
@@ -8,3 +9,50 @@
     <img src="../../../../../assets/img/ticket-r.png">
   </div>
 </section>
+<ng-template #logged>
+  <div class="d-flex flex-column align-items-center gap-4"
+    *ngIf="currentUser && currentUser.tickets.length > 0; else noTickets">
+    <h2>Your Lottery Tickets.<br>Check if you've won!</h2>
+    <div class="d-flex align-items-center justify-content-center flex-wrap gap-4 text-center logged-section">
+      <div class="d-flex flex-column align-items-center gap-2 p-3 bg-white border border-light text-center"
+        *ngFor="let ticket of currentUser.tickets; let index = index">
+        <p>Lottery ID:<br><span>{{ticket.forId}}</span></p>
+        <p>
+          Your Ticket numbers:<br>
+          <span *ngFor="let number of ticket.numbers">{{number}}-</span>
+        </p>
+        <p *ngIf="currentLotteryArray && currentLotteryArray[index]; else noExtracted">
+          Extracted numbers:<br>
+          <span *ngFor="let extractedNumber of currentLotteryArray[index]?.results">{{extractedNumber}}-</span>
+        </p>
+        <p *ngIf="currentLotteryArray && currentLotteryArray[index]">
+          <ng-container *ngIf="ticket.isWon; else lost">
+            <span>
+              You Won {{prize(ticket.winType)}} CAKES!<br>
+              First {{ticket.winType}} numbers Matched;
+            </span>
+          </ng-container>
+        </p>
+        <ng-container *ngIf="currentLotteryArray && currentLotteryArray[index] && ticket.isWon">
+          <app-standard-button [isSmall]="true" [content]="'Take Your Prize'" *ngIf="!ticket.isTaken; else taken"
+            (click)="takePrize(prize(ticket.winType), ticket)">
+          </app-standard-button>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #noTickets>
+  <div class="d-flex flex-column align-items-center gap-3 text-center logged-section">
+    <h2>You Have Not Purchased Any Ticket yet!</h2>
+  </div>
+</ng-template>
+<ng-template #noExtracted>
+  <p>Not Extracted Yet</p>
+</ng-template>
+<ng-template #lost>
+  <span>You Lost!</span>
+</ng-template>
+<ng-template #taken>
+  <p>You have already taken your prize</p>
+</ng-template>

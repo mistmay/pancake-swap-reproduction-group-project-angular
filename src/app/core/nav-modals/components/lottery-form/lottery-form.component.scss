@@ -1,0 +1,91 @@
+.setting-screen-padding {
+  padding: 24px;
+  gap: 24px;
+}
+
+.setting-screen-first-section {
+  border-bottom: var(--border);
+}
+
+.setting-screen-second-section {
+  padding: 24px 24px 0 24px;
+  gap: 24px;
+}
+
+button {
+  border-radius: 16px;
+  box-shadow: rgb(14 14 44 / 40%) 0px -1px 0px 0px inset;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  outline: 0px;
+  height: 48px;
+  padding: 0px 24px;
+  background-color: var(--background-12);
+  color: var(--background-1);
+  border: none;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:disabled {
+    background-color: var(--background-22);
+    border-color: var(--background-22);
+    box-shadow: none;
+    color: var(--color-12)
+  }
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--color-1);
+  text-align: center;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--color-2);
+  text-align: center;
+}
+
+p {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--color-3);
+  text-align: center;
+}
+
+label {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--color-2);
+}
+
+input {
+  background-color: var(--background-11);
+  border-radius: 16px;
+  box-shadow: rgb(74 74 104 / 10%) 0px 2px 2px -1px inset;
+  padding: 0px 16px;
+  text-align: right;
+  border: var(--border-2);
+  color: var(--color-2);
+  font-size: 16px;
+  height: 40px;
+  outline: 0px;
+  margin-right: 4px;
+  text-align: center;
+
+  &::placeholder {
+    color: var(--color-2);
+    font-size: 16px;
+  }
+
+  &:focus {
+    box-shadow: var(--box-shadow-2);
+  }
+}

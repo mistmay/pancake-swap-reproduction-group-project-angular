@@ -1,0 +1,54 @@
+.setting-screen-padding {
+  padding: 24px;
+  gap: 24px;
+}
+
+.setting-screen-first-section {
+  border-bottom: var(--border);
+}
+
+.setting-screen-second-section {
+  padding: 24px 24px 0 24px;
+  gap: 24px;
+}
+
+button {
+  border-radius: 16px;
+  box-shadow: rgb(14 14 44 / 40%) 0px -1px 0px 0px inset;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  outline: 0px;
+  height: 48px;
+  padding: 0px 24px;
+  background-color: var(--background-12);
+  color: var(--background-1);
+  border: none;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--color-1);
+  text-align: center;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--color-2);
+  text-align: center;
+}
+
+p {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--color-3);
+  text-align: center;
+}
