@@ -31,7 +31,6 @@ export class SyrupPoolsService {
     "mix": 85.61,
     "metis": 28.61,
     "gal": 6.37,
-    "rpg": 3.42,
     "ankr": 24.04,
     "froyo": 45.02,
   }

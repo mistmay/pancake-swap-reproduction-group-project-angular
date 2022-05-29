@@ -19,6 +19,7 @@ import { PageHeaderComponent } from './components/page-header/page-header.compon
 import { TableRowComponent } from './components/table-row/table-row.component';
 import { TableRowInnerComponent } from './components/table-row/components/table-row-inner/table-row-inner.component';
 import { FormsModule } from '@angular/forms';
+import { ControlsComponent } from './components/controls/controls.component';
 
 
 
@@ -41,6 +42,7 @@ import { FormsModule } from '@angular/forms';
         PageHeaderComponent,
         TableRowComponent,
         TableRowInnerComponent,
+        ControlsComponent,
 
     ],
     imports: [
@@ -61,7 +63,8 @@ import { FormsModule } from '@angular/forms';
         HeroNavComponent,
         CardComponent,
         PageHeaderComponent,
-        TableRowComponent
+        TableRowComponent,
+        ControlsComponent
 
     ]
 })
