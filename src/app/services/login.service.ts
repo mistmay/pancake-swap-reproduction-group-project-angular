@@ -7,7 +7,7 @@ import { Wallet, LogFormInput, Ticket } from '../models/wallet';
 export class LoginService {
   @Output() somethingChanged: EventEmitter<void> = new EventEmitter<void>();
   wallets: Wallet[] = [
-    { id: 'wallet-1', password: 'password-1', name: 'John', surname: 'Smith', balance: 3, tickets: [] }
+    { id: 'wallet-1', password: 'password-1', name: 'John', surname: 'Smith', balance: 10, tickets: [] }
   ];
 
   constructor() { }
@@ -48,6 +48,18 @@ export class LoginService {
     });
     this.emitChanges();
     alert('Ticket Purchased Successfully');
+  }
+
+  addLiquidity(liquidity: number): void {
+    this.wallets = this.wallets.map((wallet: Wallet) => {
+      if (wallet.id === localStorage.getItem('login-token')) {
+        return { ...wallet, balance: wallet.balance + liquidity };
+      } else {
+        return wallet;
+      }
+    });
+    this.emitChanges();
+    alert(`${liquidity} CAKES added to your Wallet Successfully!`);
   }
 
   emitChanges(): void {

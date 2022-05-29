@@ -1,29 +1,31 @@
-<div
-  class="d-flex flex-column justify-content-between align-items-start setting-screen-padding setting-screen-first-section">
-  <div class="w-100 d-flex flex-column align-items-center gap-3">
-    <h2>Your Wallet Details:</h2>
-    <div class="w-100 d-flex flex-column align-items-center gap-2">
-      <h3>Wallet-ID:</h3>
-      <p>{{currentWallet?.id}}</p>
-    </div>
-    <div class="w-100 d-flex flex-column align-items-center gap-2">
-      <h3>User Name:</h3>
-      <p>{{currentWallet?.name}}</p>
-    </div>
-    <div class="w-100 d-flex flex-column align-items-center gap-2">
-      <h3>User Surname:</h3>
-      <p>{{currentWallet?.surname}}</p>
-    </div>
-    <div class="w-100 d-flex flex-column align-items-center gap-2">
-      <h3>Balance:</h3>
-      <p>{{currentWallet?.balance}} CAKES</p>
-    </div>
-    <div class="w-100 d-flex flex-column align-items-center gap-2">
-      <h3>Purchased Lottery Tickets:</h3>
-      <p>{{currentWallet?.tickets?.length}}</p>
+<ng-container *ngIf="currentWallet && isLoggedIn()">
+  <div
+    class="d-flex flex-column justify-content-between align-items-start setting-screen-padding setting-screen-first-section">
+    <div class="w-100 d-flex flex-column align-items-center gap-3">
+      <h2>Your Wallet Details:</h2>
+      <div class="w-100 d-flex flex-column align-items-center gap-2">
+        <h3>Wallet-ID:</h3>
+        <p>{{currentWallet.id}}</p>
+      </div>
+      <div class="w-100 d-flex flex-column align-items-center gap-2">
+        <h3>User Name:</h3>
+        <p>{{currentWallet.name}}</p>
+      </div>
+      <div class="w-100 d-flex flex-column align-items-center gap-2">
+        <h3>User Surname:</h3>
+        <p>{{currentWallet.surname}}</p>
+      </div>
+      <div class="w-100 d-flex flex-column align-items-center gap-2">
+        <h3>Balance:</h3>
+        <p>{{currentWallet.balance}} CAKES</p>
+      </div>
+      <div class="w-100 d-flex flex-column align-items-center gap-2">
+        <h3>Purchased Lottery Tickets:</h3>
+        <p>{{currentWallet.tickets.length}}</p>
+      </div>
     </div>
   </div>
-</div>
-<div class="d-flex flex-column justify-content-between align-items-center setting-screen-second-section">
-  <button type="button" (click)="logout()">LogOut</button>
-</div>
+  <div class="d-flex flex-column justify-content-between align-items-center setting-screen-second-section">
+    <button type="button" (click)="logout()">LogOut</button>
+  </div>
+</ng-container>

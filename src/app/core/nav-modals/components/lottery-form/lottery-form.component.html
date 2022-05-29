@@ -1,7 +1,7 @@
 <form class="text-center" [formGroup]="form" (ngSubmit)="buyTicket()">
   <div
     class="d-flex flex-column justify-content-between align-items-start setting-screen-padding setting-screen-first-section">
-    <ng-container *ngIf="isLoggedIn(); else noLoggedIn">
+    <ng-container *ngIf="isLoggedIn() && currentUser; else noLoggedIn">
       <div class="w-100 d-flex justify-content-between align-items-center">
         <h3>Ticket Price:</h3>
         <p>1 CAKE</p>
@@ -22,7 +22,7 @@
     </ng-container>
   </div>
   <div class="d-flex flex-column justify-content-between align-items-center setting-screen-second-section">
-    <ng-container *ngIf="isLoggedIn(); else closeModal">
+    <ng-container *ngIf="isLoggedIn() && currentUser; else closeModal">
       <button type="submit" [disabled]="currentUser.balance < 1 || form.invalid">Buy your Ticket</button>
     </ng-container>
   </div>

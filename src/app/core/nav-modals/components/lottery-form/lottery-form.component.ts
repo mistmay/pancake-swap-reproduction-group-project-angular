@@ -12,7 +12,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./lottery-form.component.scss']
 })
 export class LotteryFormComponent implements OnInit, OnDestroy {
-  currentUser!: Wallet;
+  currentUser!: Wallet | undefined;
   form!: FormGroup;
   subscription!: Subscription;
 
@@ -25,6 +25,8 @@ export class LotteryFormComponent implements OnInit, OnDestroy {
     this.subscription = this.loginService.somethingChanged.subscribe(() => {
       if (this.isLoggedIn()) {
         this.currentUser = this.loginService.getLoggedUser();
+      } else {
+        this.currentUser = undefined;
       }
     });
     this.form = this.fb.group({

@@ -60,7 +60,7 @@ export class LotteryService {
     ticket.split('-').forEach((number: string) => {
       ticketArray.push(Number(number));
     });
-    this.loginService.buyTicket({ forId: this.currentId, numbers: ticketArray });
+    this.loginService.buyTicket({ forId: this.currentId, numbers: ticketArray, isTaken: false, isWon: false, winType: 0 });
   }
 
 }
