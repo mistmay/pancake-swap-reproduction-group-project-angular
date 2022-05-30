@@ -4,7 +4,7 @@
     color: var(--color-2);
     font-weight: 400;
     line-height: 1;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .staked-text {
@@ -31,10 +31,213 @@
     flex: 1 1 0%;
 }
 
+h2 {
+    color: var(--color-2);
+}
+
 td {
     font-size: 16px;
     vertical-align: middle;
-    max-width: 140px !important;
+    // max-width: 140px !important;
+}
+
+ .row-footer {
+    padding: 16px 32px;
+    animation: 300ms linear 0s 1 normal forwards running;
+    overflow: hidden;
+    background: var(--background-23);
+ }
+
+ .row-footer-left {
+    font-size: 14px;
+
+    & a {
+        color: rgb(31, 199, 212);
+
+        & svg {
+            fill: rgb(31, 199, 212);
+        }
+    }
+
+    & a:hover {
+        text-decoration: underline;
+    }
+ }
+
+ .underlined {
+    text-decoration: underline dotted rgb(122, 110, 170);
+    text-underline-offset: 0.1em;
+ }
+
+ .text-color {
+    color: var(--color-2);
+ }
+
+ .puntatore {
+    position: absolute;
+    left: 140px;
+    top: -4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    z-index: 1;
+}
+
+.puntatore::before {
+    content: "";
+    position: absolute;
+    transform: rotate(45deg);
+    background: var(--background-9);
+    width: 10px;
+    height: 10px;
+}
+
+.cloud-hover {
+    position: absolute;
+    inset: auto auto 0px 0px;
+    transform: translate3d(-5px, 81px, 0px);
+    opacity: 1;
+    padding: 16px;
+    font-size: 16px;
+    line-height: 130%;
+    border-radius: 16px;
+    width: 280px;
+    z-index: 101;
+    background: var(--background-9);
+    color: var(--color-8);
+}
+
+.cloud-average {
+    position: absolute;
+    inset: auto auto 0px 0px;
+    transform: translate3d(-20px, 100px, 0px);
+    opacity: 1;
+    padding: 16px;
+    font-size: 16px;
+    line-height: 130%;
+    border-radius: 16px;
+    width: 280px;
+    z-index: 101;
+    background: var(--background-9);
+    color: var(--color-8);
+}
+
+.cloud-performance {
+    position: absolute;
+    inset: auto auto 0px 0px;
+    transform: translate3d(-20px, 100px, 0px);
+    opacity: 1;
+    padding: 16px;
+    font-size: 16px;
+    line-height: 130%;
+    border-radius: 16px;
+    width: 280px;
+    z-index: 101;
+    background: var(--background-9);
+    color: var(--color-8);
+}
+
+.cloud-hover-auto {
+    position: absolute;
+    inset: auto auto 0px 0px;
+    transform: translate3d(-21px, 81px, 0px);
+    opacity: 1;
+    padding: 16px;
+    font-size: 16px;
+    line-height: 130%;
+    border-radius: 16px;
+    width: 280px;
+    z-index: 101;
+    background: var(--background-9);
+    color: var(--color-8);
+}
+
+.puntatore1 {
+    position: absolute;
+    left: 50px;
+    top: -4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    z-index: 1;
+}
+
+.puntatore1::before {
+    content: "";
+    position: absolute;
+    transform: rotate(45deg);
+    background: var(--background-9);
+    width: 10px;
+    height: 10px;
+}
+
+.profit-staking {
+    padding: 16px;
+    border: 2px solid rgb(238, 234, 244);
+    border-radius: 16px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.text-color-3 {
+    color: var(--color-3);
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.text-color-3-1 {
+    color: var(--color-3)
+}
+
+.text-color-1 {
+    color: var(--color-1);
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.text-color-purple {
+    color: purple;
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.harvest {
+    background-color: rgb(233, 234, 235);
+    border-color: rgb(233, 234, 235);
+    box-shadow: none;
+    color: rgb(189, 194, 196);
+    cursor: not-allowed;
+    align-items: center;
+    border: 0px;
+    border-radius: 16px;
+    box-shadow: rgb(14 14 44 / 40%) 0px -1px 0px 0px inset;
+    display: inline-flex;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    -webkit-box-pack: center;
+    justify-content: center;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    opacity: 1;
+    outline: 0px;
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+    height: 48px;
+    padding: 0px 24px;
+    color: var(--color-3);
+}
+
+.text-sub {
+    color: var(--color-3);
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 10px;
 }
 
 @media screen and (min-width: 576px){
@@ -46,4 +249,20 @@ td {
         font-size: 16px;
     }
 
+    .profit-staking {
+        margin-left: 12px;
+        margin-right: 12px;
+        margin-bottom: 0px;
+    }
+
+ }
+
+ @media screen and (min-width: 768px) {
+    .row-footer-left {
+        max-width: 230px;
+    }
+
+    .profit-staking {
+        width: 48%;
+    }
  }

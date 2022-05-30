@@ -1,5 +1,5 @@
 <div class="d-flex controls-container mb-md-0 align-items-center justify-content-between position-relative w-100">
-    <div class="d-flex left-controls align-items-center gap-1">
+    <div class="d-flex left-controls align-items-center">
         <div class="buttons-container gap-2 d-flex">
             <button type="button" class="h-100 d-flex justify-content-center align-items-center"
                 (click)="isCardView = true; CardView.emit(true)">
@@ -61,7 +61,7 @@
         </div>
         <div class="ms-2">
             <div class="text">Search</div>
-            <input type="text" placeholder="Search Pools">
+            <input (input)="onSearch.emit(searched)" [(ngModel)]="searched" type="text" placeholder="Search Pools">
         </div>
     </div>
 </div>

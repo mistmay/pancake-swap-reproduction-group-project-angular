@@ -5,12 +5,14 @@ import { CommonModule } from '@angular/common';
 import { EarnRoutingModule } from './earn-routing.module';
 import { FarmsComponent } from './views/farms/farms.component';
 import { EarnTopComponent } from './views/earn-top.component';
+import { PoolsSearchPipe } from './pipes/earn-search.pipe';
 
 @NgModule({
     declarations: [
         PoolsComponent,
         FarmsComponent,
-        EarnTopComponent
+        EarnTopComponent,
+        PoolsSearchPipe
     ],
     imports: [
         SharedModule,

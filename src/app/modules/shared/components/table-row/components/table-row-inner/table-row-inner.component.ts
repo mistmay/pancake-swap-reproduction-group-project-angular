@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Pools } from 'src/app/models/pools';
-import { PoolsComponent } from 'src/app/modules/earn/views/pools/pools.component';
 import { SettingScreenLauncherService } from 'src/app/services/setting-screen-launcher.service';
 
 @Component({
@@ -13,20 +12,41 @@ export class TableRowInnerComponent implements OnInit {
   rowFooter: boolean = false
   hover: boolean = false
   hover2: boolean = false
+  hover3: boolean = false
+  hover4: boolean = false
   @Input() isPools!: boolean
   @Input() isFarms!: boolean
   @Input() pool!: Pools
+  @Input() isCake!: boolean
 
   random = Math. floor((Math.random() * 10000000) + 1)
 
   constructor(private settingScreenLauncherService: SettingScreenLauncherService) { }
 
+  count!: String
+  integer: number = 0
+  decimal: number = 0
+  timer!: ReturnType<typeof setInterval>
+
   ngOnInit(): void {
+    this.counts()
   }
 
+  counts: any = () => {
+    this.timer = setInterval(() => {
+      this.counter();
+    }, 20);
+  }
 
-  toggleRowFooter() {
-    this.rowFooter = !this.rowFooter
+  // Cambiare num in base al valore della APY
+
+  counter() {
+    let arr = ((this.pool.apr)).toString().split(".")
+    this.count = `${this.integer++}.${(String(this.decimal++)).split("").splice(0,2).join("")}%`;
+    if (this.integer == Number(arr[0]) || this.decimal == Number(arr[1])) {
+      this.count = (this.pool.apr).toFixed(2) + "%"
+      clearInterval(this.timer);
+    }
   }
 
   roi(): void {
@@ -36,6 +56,10 @@ export class TableRowInnerComponent implements OnInit {
   errorHandler(event: any) {
     console.debug(event);
     event.target.src = `https://bsctools.xyz/pancakeswap/img/${this.pool.name}.png`;
+ }
+
+ connectWallet() {
+  this.settingScreenLauncherService.openModal("connect")
  }
 
 }
