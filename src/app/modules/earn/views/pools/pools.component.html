@@ -5,23 +5,23 @@
     </div>
 </div>
 
-<div class="wrapper">
+<div class="wrapper" *ngIf="pools && sortedPools">
     <app-controls (onSearch)="searchedKey = $event" (sorted)="sortBy = $event" (finished)="finished = $event" (stakedOnly)="stakedOnly = $event"
         (CardView)="CardView = $event"></app-controls>
     <div *ngIf="CardView && !stakedOnly && !finished" class="d-flex flex-wrap justify-content-center gap-3">
-        <app-card [cakes]="'5,545,871'" [poolName]="'IFO CAKE'" [poolPrice]="14.55" [isCake]="true"></app-card>
+        <app-card [cakes]="pools[0].cake" [poolName]="'IFO CAKE'" [poolPrice]="pools[0].apr" [isCake]="true"></app-card>
         <ng-container *ngIf="sortBy == 'Hot'">
-            <div *ngFor="let pool of sortedPools | poolsSearch: searchedKey">
+            <div *ngFor="let pool of sortedPools.slice(1,6) | poolsSearch: searchedKey">
                 <app-card [cakes]="pool.cake" [poolName]="pool.name" [poolPrice]="pool.apr" [isCake]="false"></app-card>
             </div>
         </ng-container>
         <ng-container *ngIf="sortBy != 'Hot'">
             <div *ngFor="let pool of pools | poolsSearch: searchedKey">
-                <app-card [cakes]="pool.cake" [poolName]="pool.name" [poolPrice]="pool.apr" [isCake]="false"></app-card>
+                <app-card  [cakes]="pool.cake" [poolName]="pool.name" [poolPrice]="pool.apr" [isCake]="false"></app-card>
             </div>
         </ng-container>
     </div>
-    <div *ngIf="!CardView && !stakedOnly && !finished" class="farms-table w-100">
+    <div *ngIf="!CardView && !stakedOnly && !finished" class="farms-table w-100" >
         <ng-container *ngIf="sortBy == 'Hot'">
             <div *ngFor="let pool of sortedPools | poolsSearch: searchedKey">
                 <app-table-row [pool]="pool" [isPools]="true" ></app-table-row>

@@ -86,7 +86,7 @@
                         <div class="min-height d-flex align-items-center">
                             <div class="d-flex align-items-center justify-content-start">
                                 <div class="card-pools-center-p">
-                                    {{ pool.cake }}
+                                    {{ pool.cake | number }}
                                 </div>
                             </div>
                         </div>
@@ -312,7 +312,7 @@
         <div class="row-footer-left d-flex flex-column justify-content-between w-100 gap-2">
             <div class="d-flex justify-content-between text-color w-100">
                 <div class="">Total locked: </div>
-                <div>{{ pool.cake }} CAKE</div>
+                <div>{{ pool.cake | number}} CAKE</div>
             </div>
             <div class="d-flex justify-content-between text-color position-relative">
                 <div (mouseenter)="hover3 = true" (mouseleave)="hover3 = false" class="underlined">Average lock duration: </div>

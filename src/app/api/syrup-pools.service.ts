@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Pools } from '../models/pools';
+import { from, Observable } from 'rxjs';
 
 
 @Injectable({
@@ -8,54 +9,59 @@ import { Pools } from '../models/pools';
 })
 export class SyrupPoolsService {
 
+  @Output() dataFromApi = new EventEmitter<void>()
 
+  syrupPools!: Pools[]
+  checkApi: boolean = false
+  
   constructor(private http: HttpClient) {
-    // this.headers.set('Content-Type', 'application/json');
+
   }
 
-  //  getData(): Observable<any> {
-  //   return from(
-  //     fetch(
-  //       'https://bsctools.xyz/pancakeswap/api/farm_rewards_blocks.php', // the url you are trying to access
-  //       {
-  //         headers: {
-  //           'Content-Type': 'application/json; charset=utf-8',
-  //         },
-  //         method: 'GET', // GET, POST, PUT, DELETE
-  //         mode: 'no-cors' // the most important option
-  //       }
-  //     ));
-  // }
+  emitDataFromApi():void {
+    this.dataFromApi.emit()
+  }
 
-  syrupPools : Pools[] = [
-    {
-      name: "mix",
-      apr: 85.61,
-      cake: "5,545,871"
-    },
-    {
-      name: "metis",
-      apr: 28.61,
-      cake: "4,169,115"
-    },    {
-      name: "gal",
-      apr: 16.37,
-      cake: "8,167,075"
-    },
-    {
-      name: "ankr",
-      apr: 24.04,
-      cake: "3,169,242"
-    },
-    {
-      name: "froyo",
-      apr: 45.02,
-      cake: "2,687,715"
-    },
-    {
-      name: "cake",
-      apr: 113.85,
-      cake: "173,938,920"
-    },
-  ]
+  getData(): Observable<any> {
+    return this.http.get<any>("http://localhost:4200/api/pancakeswap/api/pools_syrup.php")
+  }
+
+  getPoolsPrice():void {
+    this.getData().subscribe((res: any) => {
+      this.syrupPools = [
+        {
+          name: "mix",
+          apr: 85.61,
+          cake: String(res["mix_in_syrup_pool"])
+        },
+        {
+          name: "metis",
+          apr: 28.61,
+          cake: String(res["metis_in_syrup_pool"])
+        },    {
+          name: "gal",
+          apr: 16.37,
+          cake: String(res["gal_in_syrup_pool"])
+        },
+        {
+          name: "ankr",
+          apr: 24.04,
+          cake: String(res["ankr_in_syrup_pool"])
+        },
+        {
+          name: "froyo",
+          apr: 45.02,
+          cake: String(res["froyo_in_syrup_pool"])
+        },
+        {
+          name: "cake",
+          apr: 113.85,
+          cake: String(res["cake_new_in_syrup_pool"])
+        },
+      ]
+      this.emitDataFromApi()
+    }
+    )
+  }
+
 }

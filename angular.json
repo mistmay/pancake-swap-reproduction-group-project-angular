@@ -95,6 +95,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "pancake-swap-angular:build",
+            "proxyConfig": "src/proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "browserTarget": "pancake-swap-angular:build:production"

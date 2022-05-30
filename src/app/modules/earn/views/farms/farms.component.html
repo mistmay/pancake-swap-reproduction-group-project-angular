@@ -10,7 +10,9 @@
     (CardView)="CardView = $event"></app-controls>
     <div class="row justify-content-center">
         <div class="farms-table w-100">
-                <!-- <app-table-row [isFarms]="true"></app-table-row> -->
+                <ng-container *ngFor="let farm of farms">
+                    <app-table-row [isPools]="false" [pool]="farm" [isFarms]="true"></app-table-row>
+                </ng-container>
         </div>
     </div>
 </div>

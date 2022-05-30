@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SyrupPoolsService } from 'src/app/api/syrup-pools.service';
 import { SettingScreenLauncherService } from 'src/app/services/setting-screen-launcher.service';
 
 @Component({
