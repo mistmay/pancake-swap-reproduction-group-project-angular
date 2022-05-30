@@ -32,7 +32,6 @@ export class PoolsComponent implements OnInit {
           numeric: true,
           sensitivity: "base"
         }))).slice()
-        this.api.checkApi = true
       }
     )
 

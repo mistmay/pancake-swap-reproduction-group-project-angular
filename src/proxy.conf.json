@@ -6,5 +6,13 @@
       "^/api": ""
     },
     "changeOrigin": true
+  },
+  "/farms_api": {
+    "target": "https://farm.army",
+    "secure": false,
+    "pathRewrite": {
+      "^/farms_api": ""
+    },
+    "changeOrigin": true
   }
 }

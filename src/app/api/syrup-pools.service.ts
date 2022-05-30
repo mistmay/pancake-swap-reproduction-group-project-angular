@@ -20,6 +20,7 @@ export class SyrupPoolsService {
 
   emitDataFromApi():void {
     this.dataFromApi.emit()
+    this.checkApi = true
   }
 
   getData(): Observable<any> {
@@ -60,6 +61,7 @@ export class SyrupPoolsService {
         },
       ]
       this.emitDataFromApi()
+      
     }
     )
   }
