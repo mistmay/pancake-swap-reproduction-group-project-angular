@@ -2,21 +2,22 @@
 
 #farm-name {
     color: var(--color-2);
-    font-weight: 600;
-    line-height: 1.5;
-    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    font-size: 14px;
 }
 
 .staked-text {
     color: rgb(189, 194, 196);
     font-weight: 400;
     font-size: 12px;
+    line-height: 1;
 }
 
 .staked-text-top {
     color: rgb(189, 194, 196);
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .flex-1 {
@@ -35,3 +36,14 @@ td {
     vertical-align: middle;
     max-width: 140px !important;
 }
+
+@media screen and (min-width: 576px){
+
+    #farm-name {
+        color: var(--color-2);
+        font-weight: 600;
+        line-height: 1.5;
+        font-size: 16px;
+    }
+
+ }

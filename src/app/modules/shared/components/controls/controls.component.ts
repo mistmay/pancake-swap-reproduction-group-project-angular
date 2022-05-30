@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class ControlsComponent implements OnInit {
 
   @Output() CardView = new EventEmitter<boolean>()
-  isCardView: Boolean = true
+  isCardView: Boolean = false
   checked: Boolean = false
   isLive: Boolean = true
   sort: Boolean = false

@@ -8,6 +8,7 @@
 
 table {
     border-collapse: collapse;
+    table-layout: fixed;
     font-size: 14px;
     border-radius: 4px;
     margin-left: auto;
@@ -30,16 +31,17 @@ table {
 td {
     font-size: 16px;
     vertical-align: middle;
-    // max-width: 180px !important;
+    max-width: 200px !important;
 }
 
 .td-n-1 {
     padding: 24px 8px 24px 0px;
-    max-width: 126px;
+    min-width: 90px;
 }
 
 .td-n-2 {
     padding: 24px 8px 24px 0px;
+    min-width: 90px;
 }
 
 .min-height {
@@ -50,85 +52,107 @@ td {
     padding-left: 16px;
 }
 
-.tokenImage-container {
-    padding-right: 8px;
-    width: 24px;
-}
-
-.tokenImage-container-inner {
+.name {
     max-height: 40px;
-    max-width: 40px; 
 }
 
-.tokenImage1 {
+.head {
+    display: flex;
+    color: black;
+    flex: 5 1 0%;
+    flex-direction: row;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    padding: 24px 0px 0px 12px;
+    width: 173px;
+}
+
+.tokenImage-container {
     max-height: 40px;
     max-width: 40px;
-    position: absolute;
-    width: 82%;
-    top: -12px;
-    z-index: 6;
+    position: relative;
+    width: 100%;
+    margin-right: 8px;
+
+    &::after {
+        content: "";
+        display: block;
+        padding-top: 100%;
+    }
 }
 
-.tokenImage2 {
-    max-height: 20px;
-    max-width: 20px;
+
+.tokenImage-container-inner {
+    position: absolute;
+    width: 92%;
+    inset: 0px auto auto 0px;
+    z-index: 5;
+    max-height: 40px;
+    max-width: 40px;
+    width: 100%;
+
+    &::before {
+        border-radius: 50%;
+        border: 1px solid rgba(0, 0, 0, 0.25);
+        content: "";
+        height: 100%;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        z-index: 7;
+    }
+
+    & img {
+        height: 100%;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 100%;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        padding-top: 100%;
+    }
+}
+
+
+.tokenImage-container-inner2 {
     position: absolute;
     width: 50%;
-    top: -18px;
-    left: -7px;
-    z-index: 5;
-}
-
-.tokenImage1::before {
-    border-radius: 50%;
-    border: 1px solid rgba(0, 0, 0, 0.25);
-    content: "";
-    height: 100%;
-    left: 0px;
-    position: absolute;
-    top: 0px;
+    inset: auto 0px 0px auto;
+    z-index: 6;
+    max-height: 20px;
+    max-width: 20px;
     width: 100%;
-    z-index: 7;
-}
 
-.tokenImage1 > img {
-    height: 100%;
-    left: 0px;
-    position: absolute;
-    top: 0px;
-    width: 100%;
-}
+    &::before {
+        border-radius: 50%;
+        border: 1px solid rgba(0, 0, 0, 0.25);
+        content: "";
+        height: 100%;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        z-index: 7;
+    }
 
-.tokenImage1::after {
-    content: "";
-    display: block;
-    padding-top: 100%;
-}
+    & img {
+        height: 100%;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 100%;
+    }
 
-.tokenImage2::before {
-    border-radius: 50%;
-    border: 1px solid rgba(0, 0, 0, 0.25);
-    content: "";
-    height: 100%;
-    left: 0px;
-    position: absolute;
-    top: 0px;
-    width: 100%;
-    z-index: 7;
-}
-
-.tokenImage2 > img {
-    height: 100%;
-    left: 0px;
-    position: absolute;
-    top: 0px;
-    width: 100%;
-}
-
-.tokenImage2::after {
-    content: "";
-    display: block;
-    padding-top: 100%;
+    &::after {
+        content: "";
+        display: block;
+        padding-top: 100%;
+    }
 }
 
 .liquidity {
@@ -290,6 +314,7 @@ td {
     color: var(--color-8);
 }
 
+
 @media screen and (min-width: 1080px){
     .td-n-1 {
         padding-right: 32px;
@@ -305,6 +330,7 @@ td {
         text-align: left;
         margin-right: 0px;
     }
+
 }
 
 @media screen and (min-width: 576px){
@@ -318,6 +344,11 @@ td {
 
     .icon-dropdown-container {
         padding-right: 0px;
+    }
+
+    .head {
+        flex: 1 0 150px;
+        padding-left: 32px;
     }
 
 

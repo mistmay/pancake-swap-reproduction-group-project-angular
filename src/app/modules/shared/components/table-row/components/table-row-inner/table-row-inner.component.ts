@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Pools } from 'src/app/models/pools';
+import { PoolsComponent } from 'src/app/modules/earn/views/pools/pools.component';
 import { SettingScreenLauncherService } from 'src/app/services/setting-screen-launcher.service';
 
 @Component({
@@ -31,5 +32,10 @@ export class TableRowInnerComponent implements OnInit {
   roi(): void {
     this.settingScreenLauncherService.openModal('roi');
   }
+
+  errorHandler(event: any) {
+    console.debug(event);
+    event.target.src = `https://bsctools.xyz/pancakeswap/img/${this.pool.name}.png`;
+ }
 
 }
