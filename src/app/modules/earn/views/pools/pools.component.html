@@ -6,34 +6,44 @@
 </div>
 
 <div class="wrapper">
-    <app-controls (sorted)="sortBy = $event" (finished)="finished = $event" (stakedOnly)="stakedOnly = $event"
+    <app-controls (onSearch)="searchedKey = $event" (sorted)="sortBy = $event" (finished)="finished = $event" (stakedOnly)="stakedOnly = $event"
         (CardView)="CardView = $event"></app-controls>
     <div *ngIf="CardView && !stakedOnly && !finished" class="d-flex flex-wrap justify-content-center gap-3">
         <app-card [cakes]="'5,545,871'" [poolName]="'IFO CAKE'" [poolPrice]="14.55" [isCake]="true"></app-card>
         <ng-container *ngIf="sortBy == 'Hot'">
-            <div *ngFor="let pool of sortedPools">
+            <div *ngFor="let pool of sortedPools | poolsSearch: searchedKey">
                 <app-card [cakes]="pool.cake" [poolName]="pool.name" [poolPrice]="pool.apr" [isCake]="false"></app-card>
             </div>
         </ng-container>
         <ng-container *ngIf="sortBy != 'Hot'">
-            <div *ngFor="let pool of pools">
+            <div *ngFor="let pool of pools | poolsSearch: searchedKey">
                 <app-card [cakes]="pool.cake" [poolName]="pool.name" [poolPrice]="pool.apr" [isCake]="false"></app-card>
             </div>
         </ng-container>
     </div>
     <div *ngIf="!CardView && !stakedOnly && !finished" class="farms-table w-100">
         <ng-container *ngIf="sortBy == 'Hot'">
-            <div *ngFor="let pool of sortedPools">
+            <div *ngFor="let pool of sortedPools | poolsSearch: searchedKey">
                 <app-table-row [pool]="pool" [isPools]="true" ></app-table-row>
             </div>
             <div class="back">
-                <button>
+                <a [scrollTop]="" href="http://localhost:4200/earn/pools#top">
                     To Top
                     <svg viewBox="0 0 24 24" color="primary" width="20px" xmlns="http://www.w3.org/2000/svg" class="sc-eaf7e66-0 etGTJB"><path d="M8.11997 14.7101L12 10.8301L15.88 14.7101C16.27 15.1001 16.9 15.1001 17.29 14.7101C17.68 14.3201 17.68 13.6901 17.29 13.3001L12.7 8.7101C12.31 8.3201 11.68 8.3201 11.29 8.7101L6.69997 13.3001C6.30997 13.6901 6.30997 14.3201 6.69997 14.7101C7.08997 15.0901 7.72997 15.1001 8.11997 14.7101Z"></path></svg>
-                </button>
+                </a>
             </div>
         </ng-container>
-        
+        <ng-container *ngIf="sortBy != 'Hot'">
+            <div *ngFor="let pool of pools | poolsSearch: searchedKey">
+                <app-table-row [pool]="pool" [isPools]="true" ></app-table-row>
+            </div>
+            <div class="back">
+                <a [scrollTop]="" href="http://localhost:4200/earn/pools#top">
+                    To Top
+                    <svg viewBox="0 0 24 24" color="primary" width="20px" xmlns="http://www.w3.org/2000/svg" class="sc-eaf7e66-0 etGTJB"><path d="M8.11997 14.7101L12 10.8301L15.88 14.7101C16.27 15.1001 16.9 15.1001 17.29 14.7101C17.68 14.3201 17.68 13.6901 17.29 13.3001L12.7 8.7101C12.31 8.3201 11.68 8.3201 11.29 8.7101L6.69997 13.3001C6.30997 13.6901 6.30997 14.3201 6.69997 14.7101C7.08997 15.0901 7.72997 15.1001 8.11997 14.7101Z"></path></svg>
+                </a>
+            </div>
+        </ng-container>
     </div>
     <div class="d-flex flex-row pb-4" *ngIf="finished">
         <div class="text-danger">Looking for v1 CAKE syrup pools? </div>

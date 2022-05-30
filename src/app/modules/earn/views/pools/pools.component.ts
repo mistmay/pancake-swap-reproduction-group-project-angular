@@ -17,14 +17,17 @@ export class PoolsComponent implements OnInit {
   stakedOnly: Boolean = false
   finished: Boolean = false
   sortBy: String = 'Hot'
+  searchedKey: string = ""
 
   constructor(private api: SyrupPoolsService, private titleService: TitleService) { }
 
   ngOnInit(): void {
     this.titleService.setTitle('Pools');
     this.pools = (this.api.syrupPools).sort((a, b) => b.apr - a.apr).slice()
-    this.sortedPools = this.api.syrupPools.sort((a, b) => (a.name > b.name ) ? 1 : ((b.name > a.name) ? -1 : 0)).slice()
+    this.sortedPools = this.api.syrupPools.sort((a, b) => (b.cake.localeCompare(a.cake, undefined, {
+      numeric: true,
+      sensitivity: "base"
+    }))).slice()
   }
-
 
 }

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-earn-top',
   template: `
-  <app-hero-nav [heroNav]="[
+  <app-hero-nav id="top" [heroNav]="[
     {name: 'Farms', link: '/earn/farms'},
     {name: 'Pools', link: '/earn/pools'},
     ]"></app-hero-nav>

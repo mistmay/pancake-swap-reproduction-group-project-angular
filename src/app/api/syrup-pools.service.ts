@@ -52,5 +52,10 @@ export class SyrupPoolsService {
       apr: 45.02,
       cake: "2,687,715"
     },
+    {
+      name: "cake",
+      apr: 113.85,
+      cake: "173,938,920"
+    },
   ]
 }

@@ -12,18 +12,21 @@ export class ControlsComponent implements OnInit {
   checked: Boolean = false
   isLive: Boolean = true
   sort: Boolean = false
-  sortedByHot: String = "Hot"
-  sortedByAPR: String = 'APR'
-  sortedByEarned: String = 'Earned'
-  sortedByTotalStaked: String = 'Total Staked'
-  sortedByLatest: String = 'Latest'
+  sortedByHot: string = "Hot"
+  sortedByAPR: string = 'APR'
+  sortedByEarned: string = 'Earned'
+  sortedByTotalStaked: string = 'Total Staked'
+  sortedByLatest: string = 'Latest'
   @Input() isFarms: boolean = false
+  searched: string = ""
+
 
   @Output() stakedOnly = new EventEmitter<boolean>()
   @Output() finished = new EventEmitter<boolean>()
-  @Output() sorted = new EventEmitter<String>()
+  @Output() sorted = new EventEmitter<string>()
+  @Output() onSearch = new EventEmitter<string>()
   
-  sortedBy: String = this.sortedByHot
+  sortedBy: string = this.sortedByHot
 
   constructor() { }
 
