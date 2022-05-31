@@ -27,7 +27,7 @@
     height: 40px;
     min-width: 136px;
     user-select: none;
-    z-index: 1;
+    z-index: 10;
     flex: 1 1 0%;
   }
 
@@ -112,7 +112,7 @@
     top: 2px;
     transition: left 200ms ease-in 0s;
     width: 16px;
-    z-index: 1;
+    z-index: 10;
   }
 
   input {
@@ -121,7 +121,7 @@
     height: 100%;
     position: absolute;
     width: 100%;
-    z-index: 3;
+    z-index: 10;
 
     &:checked~.check {
       left: calc(100% - 18px);

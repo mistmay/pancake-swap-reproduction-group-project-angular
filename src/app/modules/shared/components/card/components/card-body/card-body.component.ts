@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SyrupPoolsService } from 'src/app/api/syrup-pools.service';
+import { Farms } from 'src/app/models/farms';
+import { Pools } from 'src/app/models/pools';
 import { SettingScreenLauncherService } from 'src/app/services/setting-screen-launcher.service';
 
 @Component({
@@ -12,6 +14,10 @@ export class CardBodyComponent implements OnInit {
   @Input() isCake: boolean = true
   @Input() poolName!: string
   @Input() poolPrice!: number
+  @Input() isPools!: boolean
+  @Input() isFarms!: boolean
+  @Input() pool!: Pools
+  @Input() farm!: Farms
 
   count!: String
   integer: number = 0
@@ -26,17 +32,23 @@ export class CardBodyComponent implements OnInit {
 
   counts: any = () => {
     this.timer = setInterval(() => {
-      this.counter();
-    }, 10);
+      if (this.isPools) {
+        if (this.isCake) {
+          this.counter(113.85)
+        } else {
+          this.counter(this.pool.apr)
+        }
+      } else {
+        this.counter(Number(this.farm.apr))
+      }
+    }, 20);
   }
 
-  // Cambiare num in base al valore della APY
-
-  counter() {
-    let arr = ((this.poolPrice)).toString().split(".")
-    this.count = `${this.integer++}.${(String(this.decimal++)).split("").splice(0,2).join("")}%`;
+  counter(apr: number) {
+    let arr = ((apr)).toString().split(".")
+    this.count = `${this.integer++}.${(String(this.decimal++)).split("").splice(0, 2).join("")}%`;
     if (this.integer == Number(arr[0]) || this.decimal == Number(arr[1])) {
-      this.count = (this.poolPrice).toFixed(2) + "%"
+      this.count = (apr).toFixed(2) + "%"
       clearInterval(this.timer);
     }
   }

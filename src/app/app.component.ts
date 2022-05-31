@@ -14,7 +14,7 @@ export class AppComponent implements OnInit, OnDestroy {
   marginTop: string = 'calc(70px + 56px)';
   showModal!: boolean;
 
-  constructor(private api: SyrupPoolsService , private settingScreenLauncherService: SettingScreenLauncherService, private lottery: LotteryService) { }
+  constructor(private settingScreenLauncherService: SettingScreenLauncherService, private lottery: LotteryService) { }
 
   ngOnInit(): void {
     this.lottery.addLotteryHistory();
@@ -23,7 +23,7 @@ export class AppComponent implements OnInit, OnDestroy {
       .subscribe((res: boolean) => {
         this.showModal = res;
       });
-    this.api.getPoolsPrice()
+    
   }
 
   ngOnDestroy(): void {

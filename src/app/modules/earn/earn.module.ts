@@ -6,13 +6,15 @@ import { EarnRoutingModule } from './earn-routing.module';
 import { FarmsComponent } from './views/farms/farms.component';
 import { EarnTopComponent } from './views/earn-top.component';
 import { PoolsSearchPipe } from './pipes/earn-search.pipe';
+import { SortFarmsPipe } from './pipes/sort-farms.pipe';
 
 @NgModule({
     declarations: [
         PoolsComponent,
         FarmsComponent,
         EarnTopComponent,
-        PoolsSearchPipe
+        PoolsSearchPipe,
+        SortFarmsPipe
     ],
     imports: [
         SharedModule,

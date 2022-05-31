@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { Farms } from 'src/app/models/farms';
 import { Pools } from 'src/app/models/pools';
 
 @Pipe({
@@ -6,11 +7,11 @@ import { Pools } from 'src/app/models/pools';
 })
 export class PoolsSearchPipe implements PipeTransform {
 
-  transform(value: Pools[], searchedKey: string): Pools[] {
+  transform(value: any, searchedKey: string): any {
     if(searchedKey.trim() == "") {
       return value
     } else {
-      return value.filter(el => el.name.trim().toLowerCase().includes(searchedKey.trim().toLowerCase()))
+      return value.filter((el: any) => el.name.trim().toLowerCase().includes(searchedKey.trim().toLowerCase()))
     }
   }
 

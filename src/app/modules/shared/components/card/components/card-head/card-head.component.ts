@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Farms } from 'src/app/models/farms';
+import { Pools } from 'src/app/models/pools';
 
 @Component({
   selector: 'app-card-head',
@@ -9,6 +11,11 @@ export class CardHeadComponent implements OnInit {
   @Input() poolName!: string
   @Input() poolPrice!: number
   @Input() isCake!: boolean
+  @Input() isFarms!: boolean
+  @Input() farm!: Farms
+  @Input() pool!: Pools
+
+
 
   constructor() { }
 

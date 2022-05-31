@@ -1,7 +1,7 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Pools } from '../models/pools';
-import { from, Observable } from 'rxjs';
+import { BehaviorSubject, from, Observable } from 'rxjs';
 
 
 @Injectable({
@@ -9,27 +9,20 @@ import { from, Observable } from 'rxjs';
 })
 export class SyrupPoolsService {
 
-  @Output() dataFromApi = new EventEmitter<void>()
-
-  syrupPools!: Pools[]
-  checkApi: boolean = false
+  syrupPools: BehaviorSubject<Pools[]> = new BehaviorSubject<Pools[]>([])
   
   constructor(private http: HttpClient) {
 
   }
 
-  emitDataFromApi():void {
-    this.dataFromApi.emit()
-    this.checkApi = true
-  }
-
-  getData(): Observable<any> {
+  callApi(): Observable<any> {
     return this.http.get<any>("http://localhost:4200/api/pancakeswap/api/pools_syrup.php")
   }
 
-  getPoolsPrice():void {
-    this.getData().subscribe((res: any) => {
-      this.syrupPools = [
+  getData(): void {
+    this.callApi().subscribe((res: any) => {
+      this.syrupPools.next(
+        [
         {
           name: "mix",
           apr: 85.61,
@@ -59,11 +52,13 @@ export class SyrupPoolsService {
           apr: 113.85,
           cake: String(res["cake_new_in_syrup_pool"])
         },
-      ]
-      this.emitDataFromApi()
-      
-    }
-    )
+      ])
+    })
   }
+
+  getObservable(): Observable<Pools[]> {
+    return this.syrupPools.asObservable()
+  }
+
 
 }
