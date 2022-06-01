@@ -1,0 +1,268 @@
+.card-pools {
+    margin: 0px 8px 24px;
+    min-width: 300px;
+    max-width: 352px;
+    width: 100%;
+    color: var(--color-1);
+    background: var(--border-5);
+    border-radius: 24px;
+    /* overflow: hidden; */
+    animation: 3s ease 0s infinite normal none running idZEjz;
+    padding: 1px 1px 3px;
+}
+
+.card-pools-outer {
+    border-radius: 24px;
+    background: var(--background-1);
+}
+
+
+.color-manual {
+    color: var(--color-1);
+    border: var(--border-4);
+}
+
+.card-pool-p {
+    color: var(--color-3);
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.card-pools-top {
+    background: var(--background-7);
+    border-radius: 24px 24px 0px 0px;
+    padding: 24px;
+}
+
+.card-pools-top-right {
+    max-height: 64px;
+    max-width: 64px;
+}
+
+.card-pools-top-right :nth-child(1) {
+    width: 92%;
+    inset: 0px auto auto 0px;
+    z-index: 5;
+    max-height: 64px;
+    max-width: 64px;
+    left: 0px;
+    top: 0px;
+}
+
+.card-pools-top-right :nth-child(1) img {
+    top: 0px;
+    left: 0px;
+}
+
+.card-pools-top-right :nth-child(1)::before {
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    content: "";
+    height: 96%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 85%;
+    z-index: 5;
+}
+
+.card-pools-top-right :nth-child(2) {
+    inset: auto 0px 0px auto;
+    z-index: 6;
+    max-height: 32px;
+    max-width: 32px;
+}
+
+.card-pools-top-right :nth-child(2)::before {
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    content: "";
+    height: 93%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 92%;
+    z-index: 5;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 4px;
+    color: var(--color-2) !important;
+}
+
+.core {
+    -moz-box-align: center;
+    align-items: center;
+    border-radius: 16px;
+    display: inline-flex;
+    font-weight: 400;
+    white-space: nowrap;
+    height: 28px;
+    padding: 0px 8px;
+    font-size: 14px;
+    color: var(--color-1);
+    background: rgb(250, 249, 250) none repeat scroll 0% 0%;
+    border: var(--border-4);
+
+    svg {
+        fill: var(--color-1);
+    }
+}
+
+.multiplier {
+    -moz-box-align: center;
+    align-items: center;
+    border-radius: 16px;
+    color: rgb(255, 255, 255);
+    display: inline-flex;
+    font-weight: 400;
+    white-space: nowrap;
+    height: 28px;
+    padding: 0px 8px;
+    font-size: 14px;
+    background-color: var(--background-26);
+}
+
+.card-pools-center {
+    padding: 24px;
+}
+
+.hover-opacity:hover {
+    opacity: 0.5;
+}
+
+.card-pools-center-p {
+    color: var(--color-2);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.card-pools-center-bold {
+    color: var(--color-2);
+    font-size: 16px;
+    font-weight: 600 !important;
+    line-height: 1.5;
+}
+
+.text-cake {
+    color: var(--color-1);
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
+    padding-right: 4px;
+    font-size: 12px;
+}
+
+.text-earned {
+    color: var(--color-3);
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.harvest-text {
+    font-weight: 600;
+    line-height: 1.1;
+    font-size: 20px;
+    color: rgb(189, 194, 196);
+}
+
+.harvest {
+    background-color: rgb(233, 234, 235);
+    border-color: rgb(233, 234, 235);
+    box-shadow: none;
+    color: rgb(189, 194, 196);
+    cursor: not-allowed;
+    align-items: center;
+    border: 0px;
+    border-radius: 16px;
+    box-shadow: rgb(14 14 44 / 40%) 0px -1px 0px 0px inset;
+    display: inline-flex;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    -webkit-box-pack: center;
+    justify-content: center;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    opacity: 1;
+    outline: 0px;
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+    height: 48px;
+    padding: 0px 24px;
+    color: var(--color-3);
+}
+
+.card-pools-center-p-smaller {
+    color: var(--color-2);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.card-pools-center-p-dotted {
+    text-decoration: underline dotted rgb(122, 110, 170);
+    text-underline-offset: 0.1em;
+}
+
+.credit-calculation {
+    color: rgb(255, 178, 55);
+    font-weight: 600;
+    line-height: 1.5;
+    margin-right: 4px;
+    font-size: 14px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: fit-content;
+}
+
+.credit-calculation:hover {
+    color: rgb(255, 178, 55);
+    text-decoration: underline;
+}
+
+.card-pools-center-svg {
+    -webkit-box-align: center;
+    align-items: center;
+    border: 0px;
+    border-radius: 16px;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    -webkit-box-pack: center;
+    justify-content: center;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    opacity: 1;
+    outline: 0px;
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+    background-color: transparent;
+    color: rgb(31, 199, 212);
+    box-shadow: none;
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    margin-left: 4px;
+}
+
+.card-pools-center-bottom {
+    gap: 24px;
+}
+
+
+@media screen and (min-width: 968px) {
+    .card-pools-title {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.1;
+    }
+}

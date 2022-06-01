@@ -13,7 +13,7 @@
         <ng-container *ngFor="let page of pageIndex; let index = index">
             <ng-container *ngIf="page">
                 <ng-container *ngFor="let farm of (farms | sortFarms: sortBy | poolsSearch: searchedKey ).slice(index * 12, (index + 1) * 12)">
-                    <app-card [farm]="farm" [isFarms]="true" [cakes]="farm.liquidity" [poolName]="farm.name" [poolPrice]="farm.apr" [isCake]="false"></app-card>
+                    <app-farm-card [farm]="farm"></app-farm-card>
                 </ng-container>
             </ng-container>
         </ng-container>
