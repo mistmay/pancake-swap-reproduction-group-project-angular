@@ -12,6 +12,7 @@ export class CardFooterComponent implements OnInit {
   @Input() hover: boolean = false
   @Input() poolName!: string
   @Input() poolPrice!: number
+  @Input() cakes!: string
 
   constructor() { }
 

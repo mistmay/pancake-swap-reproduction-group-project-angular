@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { SettingScreenLauncherService } from './services/setting-screen-launcher.service';
 import { LotteryService } from './services/lottery.service';
+import { SyrupPoolsService } from './api/syrup-pools.service';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,7 @@ export class AppComponent implements OnInit, OnDestroy {
       .subscribe((res: boolean) => {
         this.showModal = res;
       });
+    
   }
 
   ngOnDestroy(): void {

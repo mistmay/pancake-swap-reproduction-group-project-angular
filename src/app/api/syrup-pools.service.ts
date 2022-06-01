@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Pools } from '../models/pools';
+import { BehaviorSubject, from, Observable } from 'rxjs';
 
 
 @Injectable({
@@ -8,31 +9,56 @@ import { Pools } from '../models/pools';
 })
 export class SyrupPoolsService {
 
-
+  syrupPools: BehaviorSubject<Pools[]> = new BehaviorSubject<Pools[]>([])
+  
   constructor(private http: HttpClient) {
-    // this.headers.set('Content-Type', 'application/json');
+
   }
 
-  //  getData(): Observable<any> {
-  //   return from(
-  //     fetch(
-  //       'https://bsctools.xyz/pancakeswap/api/farm_rewards_blocks.php', // the url you are trying to access
-  //       {
-  //         headers: {
-  //           'Content-Type': 'application/json; charset=utf-8',
-  //         },
-  //         method: 'GET', // GET, POST, PUT, DELETE
-  //         mode: 'no-cors' // the most important option
-  //       }
-  //     ));
-  // }
-
-  syrupPools : Pools = {
-    "mix": 85.61,
-    "metis": 28.61,
-    "gal": 6.37,
-    "rpg": 3.42,
-    "ankr": 24.04,
-    "froyo": 45.02,
+  callApi(): Observable<any> {
+    return this.http.get<any>("http://localhost:4200/api/pancakeswap/api/pools_syrup.php")
   }
+
+  getData(): void {
+    this.callApi().subscribe((res: any) => {
+      this.syrupPools.next(
+        [
+        {
+          name: "mix",
+          apr: 85.61,
+          cake: String(res["mix_in_syrup_pool"])
+        },
+        {
+          name: "metis",
+          apr: 28.61,
+          cake: String(res["metis_in_syrup_pool"])
+        },    {
+          name: "gal",
+          apr: 16.37,
+          cake: String(res["gal_in_syrup_pool"])
+        },
+        {
+          name: "ankr",
+          apr: 24.04,
+          cake: String(res["ankr_in_syrup_pool"])
+        },
+        {
+          name: "froyo",
+          apr: 45.02,
+          cake: String(res["froyo_in_syrup_pool"])
+        },
+        {
+          name: "cake",
+          apr: 113.85,
+          cake: String(res["cake_new_in_syrup_pool"])
+        },
+      ])
+    })
+  }
+
+  getObservable(): Observable<Pools[]> {
+    return this.syrupPools.asObservable()
+  }
+
+
 }

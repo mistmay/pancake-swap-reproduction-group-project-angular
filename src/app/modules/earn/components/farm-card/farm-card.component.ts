@@ -1,22 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SyrupPoolsService } from 'src/app/api/syrup-pools.service';
 import { Farms } from 'src/app/models/farms';
-import { Pools } from 'src/app/models/pools';
 import { SettingScreenLauncherService } from 'src/app/services/setting-screen-launcher.service';
 
 @Component({
-  selector: 'app-card-body',
-  templateUrl: './card-body.component.html',
-  styleUrls: ['./card-body.component.scss']
+  selector: 'app-farm-card',
+  templateUrl: './farm-card.component.html',
+  styleUrls: ['./farm-card.component.scss']
 })
-export class CardBodyComponent implements OnInit {
+export class FarmCardComponent implements OnInit {
 
-  @Input() isCake: boolean = true
-  @Input() poolName!: string
-  @Input() poolPrice!: number
-  @Input() isPools!: boolean
-  @Input() isFarms!: boolean
-  @Input() pool!: Pools
   @Input() farm!: Farms
 
   count!: String
@@ -32,15 +24,7 @@ export class CardBodyComponent implements OnInit {
 
   counts: any = () => {
     this.timer = setInterval(() => {
-      if (this.isPools) {
-        if (this.isCake) {
-          this.counter(113.85)
-        } else {
-          this.counter(this.pool.apr)
-        }
-      } else {
-        this.counter(Number(this.farm.apr))
-      }
+      this.counter(Number(this.farm.apr))
     }, 20);
   }
 

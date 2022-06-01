@@ -7,3 +7,61 @@
     border: var(--border);
     border-radius: 16px;
 }
+
+.back {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    & a {
+        position: relative;
+        -webkit-box-align: center;
+        align-items: center;
+        border: 0px;
+        border-radius: 16px;
+        cursor: pointer;
+        display: inline-flex;
+        font-family: inherit;
+        font-size: 16px;
+        font-weight: 600;
+        -webkit-box-pack: center;
+        justify-content: center;
+        letter-spacing: 0.03em;
+        line-height: 1;
+        opacity: 1;
+        outline: 0px;
+        transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+        height: 48px;
+        padding: 0px 24px;
+        background-color: transparent;
+        color: rgb(31, 199, 212);
+        box-shadow: none;
+    }
+
+    & svg {
+        fill: rgb(31, 199, 212);
+    }
+
+    &:hover {
+        opacity: 0.65;
+    }
+
+}
+
+.bottom-image {
+    max-height: 184.5px;
+    max-width: 192px;
+    position: relative;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 12px;
+    
+    &::after {
+        content: "";
+        display: block;
+        padding-top: 96.0938%;
+    }
+}

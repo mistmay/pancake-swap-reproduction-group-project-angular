@@ -1,18 +1,6 @@
 <div class="card-pools-footer">
-    <div class="d-flex align-items-center justify-content-between">
-        <div class="d-flex align-items-center">
-            <app-standard-button [isAuto]="isCake" [cardAutoManual]="true" [content]="isCake ? 'Auto' : 'Manual'"></app-standard-button>
-            <div class="d-flex">
-                <div (mouseenter)="hover = true" (mouseleave)="hover = false">
-                    <svg style="fill: rgb(122, 110, 170); flex-shrink: 0; align-self: center;margin-left: 4px;" viewBox="0 0 24 24" width="20px" height="20px" color="textSubtle" xmlns="http://www.w3.org/2000/svg" class=""><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM11 16H13V18H11V16ZM12.61 6.04C10.55 5.74 8.73 7.01 8.18 8.83C8 9.41 8.44 10 9.05 10H9.25C9.66 10 9.99 9.71 10.13 9.33C10.45 8.44 11.4 7.83 12.43 8.05C13.38 8.25 14.08 9.18 14 10.15C13.9 11.49 12.38 11.78 11.55 13.03C11.55 13.04 11.54 13.04 11.54 13.05C11.53 13.07 11.52 13.08 11.51 13.1C11.42 13.25 11.33 13.42 11.26 13.6C11.25 13.63 11.23 13.65 11.22 13.68C11.21 13.7 11.21 13.72 11.2 13.75C11.08 14.09 11 14.5 11 15H13C13 14.58 13.11 14.23 13.28 13.93C13.3 13.9 13.31 13.87 13.33 13.84C13.41 13.7 13.51 13.57 13.61 13.45C13.62 13.44 13.63 13.42 13.64 13.41C13.74 13.29 13.85 13.18 13.97 13.07C14.93 12.16 16.23 11.42 15.96 9.51C15.72 7.77 14.35 6.3 12.61 6.04Z"></path></svg>
-                    <div *ngIf="hover" [ngClass]="isCake ? 'cloud-hover-auto' : 'cloud-hover'">
-                            <div>You must harvest and compound your earnings from this pool manually.</div>
-                            <div class="puntatore"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <button (click)="toggleCardFooter()" class="details p-0">
+    <div class="d-flex justify-content-center align-items-center">
+        <button (click)="cardFooter = !cardFooter" class="details p-0">
             <span id="details-span">{{ cardFooter ? 'Hide' : 'Details' }}</span>
             <svg
             style="fill: rgb(31, 199, 212); align-self: center; margin-left: 0.5em; flex-shrink: 0;"
@@ -21,29 +9,15 @@
     </div>
     <div [ngClass]="cardFooter ? '' : 'collapsable'">
         <div class="d-flex justify-content-between align-items-center">
-            <div class="card-pools-center-p-smaller">Total staked:</div>
+            <div class="card-pools-center-p">Total Liquidity:</div>
             <div class="d-flex align-items-start">
-                <div class="card-pools-center-p-smaller">{{ cakes | number }} CAKE</div>
+                <div class="card-pools-center-p">{{ farm.liquidity | number }} CAKE</div>
                 <svg
                 style="height: 14px; width: 14px; align-self: center; fill: rgb(122, 110, 170);flex-shrink: 0;margin-left: 6px;margin-top: 4px;"
                 viewBox="0 0 24 24" color="textSubtle" width="20px" xmlns="http://www.w3.org/2000/svg" class=""><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM11 16H13V18H11V16ZM12.61 6.04C10.55 5.74 8.73 7.01 8.18 8.83C8 9.41 8.44 10 9.05 10H9.25C9.66 10 9.99 9.71 10.13 9.33C10.45 8.44 11.4 7.83 12.43 8.05C13.38 8.25 14.08 9.18 14 10.15C13.9 11.49 12.38 11.78 11.55 13.03C11.55 13.04 11.54 13.04 11.54 13.05C11.53 13.07 11.52 13.08 11.51 13.1C11.42 13.25 11.33 13.42 11.26 13.6C11.25 13.63 11.23 13.65 11.22 13.68C11.21 13.7 11.21 13.72 11.2 13.75C11.08 14.09 11 14.5 11 15H13C13 14.58 13.11 14.23 13.28 13.93C13.3 13.9 13.31 13.87 13.33 13.84C13.41 13.7 13.51 13.57 13.61 13.45C13.62 13.44 13.63 13.42 13.64 13.41C13.74 13.29 13.85 13.18 13.97 13.07C14.93 12.16 16.23 11.42 15.96 9.51C15.72 7.77 14.35 6.3 12.61 6.04Z"></path></svg>
             </div>
         </div>
-        <div class="d-flex justify-content-between align-items-center">
-            <div class="card-pools-center-p-smaller">Ends in:</div>
-            <div class="d-flex align-items-center">
-                <a class="d-flex align-items-center aColor" rel="noreferrer noopener" href="#">
-                    <div>1,096,041</div>
-                    <div class="ms-1">blocks</div>
-                    <div class="ms-1">
-                        <svg
-                        style="fill: rgb(49, 208, 170); align-self: center; flex-shrink: 0; height: 14px; width: 14px;"
-                        viewBox="0 0 24 24" color="primary" width="20px" xmlns="http://www.w3.org/2000/svg" class=""><path d="M15.0701 1.01H9.07007V3.01H15.0701V1.01ZM11.0701 14.01H13.0701V8.01H11.0701V14.01ZM19.1001 7.39L20.5201 5.97C20.0901 5.46 19.6201 4.98 19.1101 4.56L17.6901 5.98C16.1401 4.74 14.1901 4 12.0701 4C7.10007 4 3.07007 8.03 3.07007 13C3.07007 17.97 7.09007 22 12.0701 22C17.0501 22 21.0701 17.97 21.0701 13C21.0701 10.89 20.3301 8.94 19.1001 7.39ZM12.0701 20.01C8.20007 20.01 5.07007 16.88 5.07007 13.01C5.07007 9.14 8.20007 6.01 12.0701 6.01C15.9401 6.01 19.0701 9.14 19.0701 13.01C19.0701 16.88 15.9401 20.01 12.0701 20.01Z"></path></svg>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-start align-items-center">
             <div class="card-pools-center-p-smaller"></div>
             <div class="d-flex align-items-center">
                 <a class="d-flex align-items-center aColor" rel="noreferrer noopener" href="#">
@@ -56,7 +30,7 @@
                 </a>
             </div>
         </div>
-        <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-start align-items-center">
             <div class="card-pools-center-p-smaller"></div>
             <div class="d-flex align-items-center">
                 <a class="d-flex align-items-center aColor" rel="noreferrer noopener" href="#">
@@ -69,7 +43,7 @@
                 </a>
             </div>
         </div>
-        <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-start align-items-center">
             <div class="card-pools-center-p-smaller"></div>
             <div class="d-flex align-items-center">
                 <a class="d-flex align-items-center aColor" rel="noreferrer noopener" href="#">

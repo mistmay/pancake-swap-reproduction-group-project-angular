@@ -5,12 +5,50 @@
     </div>
 </div>
 
-<div class="container wrapper">
-    <div class="row justify-content-center">
-        <div class="farms-table w-100">
-            <ng-container *ngFor="let i of [1,2,3,4]">
-                <app-table-row></app-table-row>
+<div class="container wrapper" *ngIf="farms.length > 0; else noItems">
+    <app-controls (onSearch)="searchedKey = $event" [isFarms]="true" (sorted)="sortBy = $event" (finished)="finished = $event" (stakedOnly)="stakedOnly = $event"
+    (CardView)="CardView = $event"></app-controls>
+
+    <div *ngIf="CardView && !stakedOnly && !finished" class="d-flex flex-wrap justify-content-center gap-3">
+        <ng-container *ngFor="let page of pageIndex; let index = index">
+            <ng-container *ngIf="page">
+                <ng-container *ngFor="let farm of (farms | sortFarms: sortBy | poolsSearch: searchedKey ).slice(index * 12, (index + 1) * 12)">
+                    <app-farm-card [farm]="farm"></app-farm-card>
+                </ng-container>
             </ng-container>
+        </ng-container>
+    </div>
+
+    <div *ngIf="!CardView" class="row justify-content-center">
+        <div class="farms-table w-100" *ngIf="!finished && !stakedOnly">
+            <ng-container *ngFor="let page of pageIndex; let index = index">
+                <ng-container *ngIf="page">
+                    <ng-container *ngFor="let farm of (farms | sortFarms: sortBy | poolsSearch: searchedKey ).slice(index * 12, (index + 1) * 12)">
+                        <app-table-row [isPools]="false" [farm]="farm" [isFarms]="true"></app-table-row>
+                    </ng-container>
+                </ng-container>
+            </ng-container>
+            <div *ngIf="!finished" class="back" #farmPage>
+                <a [scrollTop]="" href="http://localhost:4200/earn/farms#top">
+                    To Top
+                    <svg viewBox="0 0 24 24" color="primary" width="20px" xmlns="http://www.w3.org/2000/svg" class="sc-eaf7e66-0 etGTJB"><path d="M8.11997 14.7101L12 10.8301L15.88 14.7101C16.27 15.1001 16.9 15.1001 17.29 14.7101C17.68 14.3201 17.68 13.6901 17.29 13.3001L12.7 8.7101C12.31 8.3201 11.68 8.3201 11.29 8.7101L6.69997 13.3001C6.30997 13.6901 6.30997 14.3201 6.69997 14.7101C7.08997 15.0901 7.72997 15.1001 8.11997 14.7101Z"></path></svg>
+                </a>
+            </div>
         </div>
     </div>
+    <div class="d-flex flex-row pb-4" *ngIf="finished">
+        <div class="text-danger">Don't see the farm you are staking? </div>
+        <a href="" class="text-danger text-decoration-underline">Go to migration page or check out v1 farms.</a>
+    </div>
+    <div class="bottom-image">
+        <img src="https://pancakeswap.finance/images/decorations/3dpan.png" alt="" srcset="">
+    </div>
 </div>
+
+<ng-template #noItems>
+    <div class="container wrapper">
+        <div class="d-flex justify-content-center align-items-center text-danger">
+            Loading
+        </div>
+    </div>
+</ng-template>
