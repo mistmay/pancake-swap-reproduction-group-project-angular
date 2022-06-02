@@ -1,0 +1,27 @@
+section {
+    padding: 40px;
+    height: 100%;
+    background: var(--background-8);
+}
+.content{
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+.tab-orders{
+    width: 100%;
+}
+
+.card-trade{
+    width: 100%;
+}
+
+@media(min-width: 768px) {
+    .tab-orders{
+        width: calc(100% - 328px - 40px);
+    }
+    
+    .card-trade{
+        width: 328px;
+    }
+}
