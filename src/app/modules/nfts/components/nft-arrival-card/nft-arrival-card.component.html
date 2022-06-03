@@ -1,6 +1,6 @@
-<div class="grid-container justify-content-center">
-  <ng-container *ngFor="let nft of nfts">
-    <div class="newest-arrivals-card">
+<div class="grid-container justify-content-center" *ngIf="(nfts | search:searchedKey).length > 0; else noResults">
+  <ng-container *ngFor="let nft of (nfts | search:searchedKey)">
+    <div class="newest-arrivals-card" (click)="goToDetails(nft.collection_address)">
       <div class="w-100 h-100 card-container">
         <div class="p-1">
           <div class="image h-100 w-100">
@@ -24,3 +24,6 @@
     </div>
   </ng-container>
 </div>
+<ng-template #noResults>
+  <p class="fw-bold mb-5 text-danger">No results</p>
+</ng-template>

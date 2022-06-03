@@ -6,9 +6,9 @@
         </div>
         <div class="card-pools-top-right position-relative w-100">
             <div class="">
-                <img *ngIf="!isCake" (error)="errorHandler($event)"
+                <img *ngIf="!isCake && !isFarms" (error)="errorHandler($event)"
                     src="https://bsctools.xyz/pancakeswap/img/{{poolName}}.svg" alt="">
-                <img *ngIf="isCake"
+                <img *ngIf="isCake && !isFarms"
                     src="https://pancakeswap.finance/images/tokens/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82.svg"
                     alt="">
             </div>

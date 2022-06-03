@@ -1,0 +1,16 @@
+<section class="d-flex justify-content-center align-items-center">
+  <div id="hero-main" class="position-relative d-flex flex-column align-items-center">
+    <img src="../../../../../assets/img/three-stars.png" class="position-absolute d-none d-md-block" id="three-stars">
+    <img src="../../../../../assets/img/ticket-r.png" class="position-absolute d-none d-md-block" id="ticket-r">
+    <img src="../../../../../assets/img/ticket-l.png" class="position-absolute d-none d-md-block" id="ticket-l">
+    <img src="../../../../../assets/img/star-big.png" class="position-absolute d-none d-md-block" id="star-big">
+    <img src="../../../../../assets/img/star-small.png" class="position-absolute d-none d-md-block" id="star-small">
+    <h4>The PancakeSwap Lottery</h4>
+    <h2>${{incrementingNumberInteger}},{{incrementingNumberDecimal}}</h2>
+    <h3>in prizes!</h3>
+    <div class="position-relative" id="ticket">
+      <img src="../../../../../assets/svg/lottery-ticket.svg" class="w-100 h-100">
+      <button type="button" class="position-absolute" (click)="openModal()">Buy Tickets</button>
+    </div>
+  </div>
+</section>

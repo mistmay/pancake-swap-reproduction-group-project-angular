@@ -9,7 +9,7 @@ import { TitleService } from 'src/app/services/title.service';
   styleUrls: ['./nft-overview.component.scss']
 })
 export class NftOverviewComponent implements OnInit {
-
+  searchedKey: string = '';
   nfts: RootObject = NFTS
   faqBox: FaqBox[] = [
     {

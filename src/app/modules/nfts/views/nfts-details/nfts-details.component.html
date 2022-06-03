@@ -1,0 +1,16 @@
+<section *ngIf="currentNft$ | async as currentNft">
+  <div class="d-flex flex-column">
+    <a routerLink="/nfts/collections">All Collections</a>
+    <div class="w-100 position-relative" [ngStyle]="{ 'background-image': 'url('+ currentNft.first_nft_image_512 +')'}">
+      <div class="position-absolute">
+        <img class="w-100 h-100" [src]="currentNft.first_nft_image_256">
+      </div>
+    </div>
+    <h1>{{currentNft.collection_name}}</h1>
+    <p>Volume: {{currentNft.volume_quote_24h / 100 | number : '.2-2'}}</p>
+  </div>
+</section>
+<div class="collection">
+  <app-nft-arrival-card [nfts]="nfts.data.items.slice(14,30)" [searchedKey]="''">
+  </app-nft-arrival-card>
+</div>

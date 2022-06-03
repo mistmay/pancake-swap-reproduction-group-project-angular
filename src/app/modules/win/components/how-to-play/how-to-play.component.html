@@ -1,0 +1,56 @@
+<section>
+  <div class="w-100 d-flex flex-column align-items-center">
+    <h1>How to Play</h1>
+    <h4>
+      If the digits on your tickets match the winning numbers in the correct order, you win a portion of the prize
+      pool.<br>
+      Simple!
+    </h4>
+    <div class="w-100 d-flex flex-column flex-md-row justify-content-md-between align-items-center" id="card-container">
+      <div class="play-card d-flex flex-column justify-content-between" *ngFor="let card of cards; let index = index">
+        <h5 class="align-self-end m-0">STEP {{index + 1}}</h5>
+        <h2 class="m-0">{{card[0]}}</h2>
+        <p class="m-0">{{card[1]}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="w-100">
+    <h2>Winning Criteria</h2>
+    <h3>The digits on your ticket must match in the correct order to win.</h3>
+    <p>Here’s an example lottery draw, with two tickets, A and B.</p>
+    <ul>
+      <li>Ticket A: The first 3 digits and the last 2 digits match, but the 4th digit is wrong, so this ticket only wins
+        a “Match first 3” prize.</li>
+      <li>Ticket B: Even though the last 5 digits match, the first digit is wrong, so this ticket doesn’t win a prize.
+      </li>
+    </ul>
+    <p class="m-0">Prize brackets don’t ‘stack’: if you match the first 3 digits in order, you’ll only win prizes from
+      the ‘Match 3’ bracket, and not from ‘Match 1’ and ‘Match 2’.</p>
+  </div>
+  <div class="w-100">
+    <h2>Prize Funds</h2>
+    <p>The prizes for each lottery round come from three sources:</p>
+    <h3>Ticket Purchases</h3>
+    <ul>
+      <li>100% of the CAKE paid by people buying tickets that round goes back into the prize pools.</li>
+    </ul>
+    <h3>Rollover Prizes</h3>
+    <ul>
+      <li>After every round, if nobody wins in one of the prize brackets, the unclaimed CAKE for that bracket rolls over
+        into the next round and are redistributed among the prize pools.</li>
+    </ul>
+    <h3>CAKE Injections</h3>
+    <ul>
+      <li>An average total of 35,000 CAKE from the treasury is added to lottery rounds over the course of a week. This
+        CAKE is of course also included in rollovers! Read more in our guide to <span>CAKE Tokenomics</span></li>
+    </ul>
+  </div>
+  <div class="w-100 border-0 d-flex flex-column flex-md-row justify-content-center align-items-center gap-3"
+    id="how-to-play-footer">
+    <img src="../../../../../assets/img/tombola.png">
+    <div>
+      <h3>Still got questions?</h3>
+      <p class="m-0">Check our in-depth guide on <span>how to play the PancakeSwap lottery!</span></p>
+    </div>
+  </div>
+</section>

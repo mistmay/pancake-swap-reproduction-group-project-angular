@@ -1,5 +1,5 @@
 section {
-  min-height: calc(100vh - 200px);
+  min-height: calc(100vh - 250px);
   background-color: rgb(25, 19, 53);
   padding: 0 24px 242px 24px;
 
@@ -187,6 +187,30 @@ section {
       span {
         text-align: left;
       }
+    }
+  }
+}
+
+@media (min-width: 1800px) {
+  section {
+    #first-circle {
+      left: 33%;
+    }
+
+    #second-circle {
+      right: 40%;
+    }
+
+    #hero-bunnies {
+      right: 350px;
+    }
+
+    #finished {
+      right: 470px;
+    }
+
+    #hero-text {
+      left: 450px;
     }
   }
 }

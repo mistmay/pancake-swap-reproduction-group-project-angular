@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CompetitionComponent } from './views/competition/competition.component';
 import { LotteryComponent } from './views/lottery/lottery.component';
-import { PredictionComponent } from './views/prediction/prediction.component';
 import { WinTopComponent } from './views/win-top.component';
 
 const routes: Routes = [
@@ -12,7 +11,6 @@ const routes: Routes = [
         children: [
             { path: 'competition', component: CompetitionComponent },
             { path: 'lottery', component: LotteryComponent },
-            { path: 'prediction', component: PredictionComponent },
             { path: '', redirectTo: 'competition' }
         ]
     }

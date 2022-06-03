@@ -1,0 +1,112 @@
+section {
+  padding: 48px 24px;
+  background: linear-gradient(rgb(118, 69, 217) 0%, rgb(81, 33, 177) 100%);
+  gap: 24px;
+
+  h2 {
+    font-weight: 600;
+    line-height: 1.1;
+    font-size: 40px;
+    text-align: center;
+    color: white;
+  }
+
+  p {
+    font-weight: 600;
+    line-height: 1.1;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+
+    span {
+      color: rgb(253, 171, 50);
+
+      span {
+        font-size: 40px;
+      }
+    }
+  }
+
+  #table {
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    background-color: var(--background-25);
+
+    #table-header {
+      background: var(--background-4);
+      padding: 16px 24px;
+
+      h3 {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.1;
+        color: var(--color-2);
+      }
+
+      p {
+        color: var(--color-2);
+        font-weight: 400;
+        line-height: 1.5;
+        font-size: 16px;
+
+        span {
+          color: var(--color-2);
+        }
+      }
+    }
+
+    #table-main {
+      gap: 20px;
+      padding: 24px;
+      border-bottom: var(--border-2);
+
+      h4 {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.1;
+        color: var(--color-2);
+      }
+
+      h3 {
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 1;
+        color: var(--color-1);
+      }
+
+      p {
+        font-weight: 400;
+        line-height: 1.5;
+        font-size: 14px;
+        color: var(--color-3);
+      }
+
+      .prize-pot {
+        gap: 5px;
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  section {
+    #table {
+      width: 520px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  section {
+    #table {
+      width: 756px;
+
+      #table-main {
+        .prize-pot {
+          gap: 55px;
+        }
+      }
+    }
+  }
+}
