@@ -11,7 +11,7 @@ export class LimitComponent implements OnInit {
   constructor(private titleService: TitleService) { }
 
   ngOnInit(): void {
-    this.titleService.setTitle('Limit');
+    this.titleService.setTitle('Your Wallet');
   }
 
 }
