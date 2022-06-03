@@ -10,10 +10,10 @@
     </div>
     <div class="text-center m-top10">Trade tokens in an instant</div>
   </div>
-  <div class="token-container" *ngIf="tokenPairs; else loading">
+  <div class="token-container" *ngIf="tokenPairs !== undefined; else loading">
     <div class="token-a">
       <div class="token-section">
-        <div class="selection" (click)="selectToken()">
+        <div class="selection" (click)="selectToken(0)">
           <img class="token-img" [src]="tokenPairs[0].image">
           <div>{{tokenPairs[0].symbol | uppercase}}</div>
           <img class="white" src="assets/svg/section-arrow.svg" alt="">
@@ -31,14 +31,14 @@
     </div>
     <div class="token-b">
       <div class="token-section">
-        <div class="selection" (click)="selectToken()">
+        <div class="selection" (click)="selectToken(1)">
           <img [src]="tokenPairs[1].image">
           <div>{{tokenPairs[1].symbol | uppercase}}</div>
           <img class="white" src="assets/svg/section-arrow.svg" alt="">
         </div>
       </div>
       <div class="input-cake">
-        <input type="number" placeholder="0.0">
+        <div class="input">0.0</div>
         <span></span>
       </div>
     </div>

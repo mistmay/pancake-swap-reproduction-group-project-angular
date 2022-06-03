@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { SettingScreenLauncherService } from 'src/app/services/setting-screen-launcher.service';
 import { CoingeckoApiService } from 'src/app/api/coingecko-api.service';
+import { ConverterService } from 'src/app/services/converter.service';
 
 @Component({
   selector: 'app-trade-card',
@@ -10,13 +11,16 @@ import { CoingeckoApiService } from 'src/app/api/coingecko-api.service';
 })
 export class TradeCardComponent implements OnInit, OnDestroy {
   subscriptions: Subscription[] = [];
-  tokenPairs!: [any, any];
+  tokenPairs!: [any, any] | undefined;
 
-  constructor(private modalService: SettingScreenLauncherService, private api: CoingeckoApiService) { }
+  constructor(private modalService: SettingScreenLauncherService, private api: CoingeckoApiService, private converter: ConverterService) { }
 
   ngOnInit(): void {
     this.subscriptions.push(this.api.getTokensData('usd').subscribe((res: any) => {
-      this.tokenPairs = [res.find((element: any) => element.symbol === 'cake'), res.find((element: any) => element.symbol === 'bnb')];
+      this.converter.updateTokenPairs([res.find((element: any) => element.symbol === 'cake'), res.find((element: any) => element.symbol === 'bnb')]);
+    }));
+    this.subscriptions.push(this.converter.getTokenPairsObservable().subscribe((res: [any, any] | undefined) => {
+      this.tokenPairs = res;
     }));
   }
 
@@ -34,7 +38,8 @@ export class TradeCardComponent implements OnInit, OnDestroy {
     this.modalService.openModal('settings');
   }
 
-  selectToken(): void {
+  selectToken(type: 0 | 1): void {
+    this.converter.tokenType.next(type);
     this.modalService.openModal('token');
   }
 
