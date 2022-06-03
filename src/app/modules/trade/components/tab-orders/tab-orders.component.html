@@ -1,40 +1,45 @@
-
-            <div class="table-content">
-                <div class="table-card">
-                    <div class="header">
-                        <div class="left-side">
-                            <button class="toggle">Open Orders</button>
-                        </div>
-                        <div class="right-side">
-                            <button class="toggle">Orders History</button>
-                        </div>
-                    </div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>From</th>
-                                    <th>To</th>
-                                    <th>Limit Price</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
-                        <div class="middle-content">
-                            <div class="icon-content">
-                                <img src="assets/imgs/rabbit.svg" alt="">
-                            </div>
-                            <div class="text-content white">No open orders</div>
-                        </div>
-                        <div class="footer">
-                            <div class="left-side-foo"></div>
-                            <div class="middle-side-foo">
-                                <img class="arrows" src="assets/svg/table-arrow-left.svg" alt="">
-                                <div class="text-content white">Page 1 of 1 </div>
-                                <img class="arrows" src="assets/svg/table-arrow-right.svg" alt="">
-                            </div>
-                            <div class="right-side-foo white">🟣 Delayed </div>
-                        </div>
-                </div>
-            </div>
-
+<div class="table-content">
+  <div class="table-card">
+    <div class="header">
+      <h2>Account Details:</h2>
+    </div>
+    <div class="middle-content d-flex flex-column align-items-center gap-2 p-3">
+      <ng-container *ngIf="!isLoggedIn() || !currentUser; else logged">
+        <div class="icon-content">
+          <img src="assets/svg/question-rabbit.svg">
+        </div>
+        <div class="text-content white">No Logged-In</div>
+        <div class="w-100">
+          <app-standard-button [content]="'Connect Wallet'" [isSmall]="true" (click)="openModal()">
+          </app-standard-button>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <ng-template #logged>
+    <ng-container *ngIf="isLoggedIn() && currentUser">
+      <div class="w-100 d-flex flex-column align-items-center gap-3">
+        <h2>Your Wallet Details:</h2>
+        <div class="w-100 d-flex flex-column align-items-center gap-2">
+          <h3>Wallet-ID:</h3>
+          <p>{{currentUser.id}}</p>
+        </div>
+        <div class="w-100 d-flex flex-column align-items-center gap-2">
+          <h3>User Name:</h3>
+          <p>{{currentUser.name}}</p>
+        </div>
+        <div class="w-100 d-flex flex-column align-items-center gap-2">
+          <h3>User Surname:</h3>
+          <p>{{currentUser.surname}}</p>
+        </div>
+        <div class="w-100 d-flex flex-column align-items-center gap-2">
+          <h3>Balance:</h3>
+          <p>{{currentUser.balance}} CAKES</p>
+        </div>
+        <div class="w-100 d-flex flex-column align-items-center gap-2">
+          <h3>Purchased Lottery Tickets:</h3>
+          <p>{{currentUser.tickets.length}}</p>
+        </div>
+      </div>
+    </ng-container>
+  </ng-template>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SettingScreenLauncherService } from 'src/app/services/setting-screen-launcher.service';
 
 @Component({
   selector: 'app-trade-card',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TradeCardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalService: SettingScreenLauncherService) { }
 
   ngOnInit(): void {
+  }
+
+  connect(): void {
+    this.modalService.openModal('connect');
   }
 
 }

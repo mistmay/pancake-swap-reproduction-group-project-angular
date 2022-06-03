@@ -8,6 +8,7 @@ import { LiquidityComponent } from './views/liquidity/liquidity.component';
 import { LimitComponent } from './views/limit/limit.component';
 import { TradeCardComponent } from './components/trade-card/trade-card.component';
 import { TabOrdersComponent } from './components/tab-orders/tab-orders.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { TabOrdersComponent } from './components/tab-orders/tab-orders.component
     imports: [
         CommonModule,
         SharedModule,
-        TradeRoutingModule
+        TradeRoutingModule,
+        FormsModule
     ],
     exports: [
         TradeTopComponent

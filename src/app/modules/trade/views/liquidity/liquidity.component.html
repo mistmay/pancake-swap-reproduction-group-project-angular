@@ -1,26 +1,36 @@
 <section>
-    <div class="box-container">
+  <div class="box-container">
     <div class="box-content">
-        <div class="header">
-            <div class="text-header">
-                <h3>your liquidity</h3>
-                <p>remove liquidity to recive tokens back</p>
-            </div>
-            <div class="icon-header">
-                <img src="assets/svg/setting.svg" alt="">
-                <img src="assets/svg/history.svg" alt="">
-            </div>
+      <div class="header">
+        <div class="text-header">
+          <h3>your liquidity</h3>
+          <p>remove liquidity to recive tokens back</p>
         </div>
-        <div class="middle-content">
-            <div class="text-middle">
-                <p>connect to a wallet to view your liquidity</p>
-            </div>
+        <div class="icon-header">
+          <img src="assets/svg/setting.svg" (click)="openSettings()">
+          <img src="assets/svg/history.svg" class="d-none d-sm-block">
         </div>
-        <div class="footer-content">
-            <div class="button-contatiner">
-                <app-standard-button [content]="'+ Add Liquidity'"></app-standard-button>
-            </div>
+      </div>
+      <div class="middle-content">
+        <div class="text-middle">
+          <p *ngIf="!isLoggedIn() || !currentUser; else input">connect to a wallet to view your liquidity</p>
         </div>
+      </div>
+      <div class="footer-content">
+        <div>
+          <app-standard-button [content]="'+ Add Liquidity'" *ngIf="isLoggedIn() && currentUser; else noLogged"
+            (click)="addLiquidity()"></app-standard-button>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 </section>
+<ng-template #noLogged>
+  <app-standard-button [content]="'Connect Wallet'" (click)="openModal()"></app-standard-button>
+</ng-template>
+<ng-template #input>
+  <div class="d-flex flex-column align-items-center gap-2" *ngIf="currentUser && isLoggedIn()">
+    <p>Current Balance:<br>{{currentUser.balance}} CAKES</p>
+    <input type="number" min="0" [(ngModel)]="inputValue">
+  </div>
+</ng-template>

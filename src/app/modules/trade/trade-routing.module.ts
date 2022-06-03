@@ -12,7 +12,7 @@ const routes: Routes = [
         children: [
             { path: 'exchange', component: ExchangeComponent },
             { path: 'liquidity', component: LiquidityComponent },
-            { path: 'limit-order', component: LimitComponent },
+            { path: 'your-wallet', component: LimitComponent },
             { path: '', redirectTo: 'exchange' }
         ]
     }
