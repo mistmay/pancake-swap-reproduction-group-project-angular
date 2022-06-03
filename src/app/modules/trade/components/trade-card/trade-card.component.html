@@ -3,24 +3,21 @@
     <div class="header-content">
       <img class="header-icon white" src="assets/svg/chart.svg">
       <div class="text-center bold">Swap</div>
-      <div class="d-flex">
-        <img class="header-icon white m-rh5" src="assets/svg/setting.svg">
+      <div class="d-flex justify-content-end align-items-center">
+        <img class="header-icon white m-rh5" src="assets/svg/setting.svg" (click)="openSettings()">
         <img class="header-icon white m-rh5" src="assets/svg/history.svg">
-        <img class="header-icon white m-rh5" src="assets/svg/setting.svg">
       </div>
     </div>
     <div class="text-center m-top10">Trade tokens in an instant</div>
   </div>
-  <div class="token-container">
+  <div class="token-container" *ngIf="tokenPairs; else loading">
     <div class="token-a">
       <div class="token-section">
-        <div class="selection">
-          <img class="token-img"
-            src="https://pancakeswap.finance/images/tokens/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82.png" alt=""> -->
-          <div>CAKE</div>
+        <div class="selection" (click)="selectToken()">
+          <img class="token-img" [src]="tokenPairs[0].image">
+          <div>{{tokenPairs[0].symbol | uppercase}}</div>
           <img class="white" src="assets/svg/section-arrow.svg" alt="">
         </div>
-        <img class="white" src="assets/svg/copy.svg" alt="">
       </div>
       <div class="input-cake">
         <input type="number" placeholder="0.0">
@@ -34,11 +31,11 @@
     </div>
     <div class="token-b">
       <div class="token-section">
-        <div class="selection">
-          <img src="assets/svg/bnb.svg" alt="">
-          <div>BNB</div>
+        <div class="selection" (click)="selectToken()">
+          <img [src]="tokenPairs[1].image">
+          <div>{{tokenPairs[1].symbol | uppercase}}</div>
+          <img class="white" src="assets/svg/section-arrow.svg" alt="">
         </div>
-        <img class="white" src="assets/svg/section-arrow.svg" alt="">
       </div>
       <div class="input-cake">
         <input type="number" placeholder="0.0">
@@ -48,9 +45,12 @@
     <div class="sub">
       <h5>Slippage Tolerance</h5>
       <p>
-        40%
+        5%
       </p>
     </div>
     <app-standard-button [content]="'Connect Wallet'" (click)="connect()"></app-standard-button>
   </div>
 </div>
+<ng-template #loading>
+  <p class="text-danger fw-bold text-center">Loading</p>
+</ng-template>

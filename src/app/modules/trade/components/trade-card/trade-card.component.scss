@@ -12,6 +12,14 @@
   border-bottom: var(--border);
 }
 
+.header-icon {
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
 .header-content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -45,12 +53,10 @@
 }
 
 .section-icon {
-  // background-image: url('../../../../../assets/svg/arrow.svg');
-  background-repeat: no-repeat;
-  height: 24px;
+  height: 32px;
   border-radius: 25px;
   background-color: var(--background-10);
-  width: 24px;
+  width: 32px;
   background-position: center;
 
 }
@@ -60,6 +66,20 @@
   display: flex;
   align-items: center;
   gap: .3rem;
+  color: var(--color-2);
+  font-weight: 600;
+  line-height: 1.5;
+  font-size: 16px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .input-cake {
@@ -67,7 +87,7 @@
   flex-direction: column;
   width: 100%;
   border-radius: 16px;
-  background-color: var(--background-10);
+  background-color: var(--background-11);
 
   span {
     padding: 0.75rem 0.75rem 0.75rem 1rem;
@@ -79,13 +99,13 @@
     background-color: transparent;
     text-align: right;
     padding: 0.75rem 1rem 0px;
-    color: rgb(244, 238, 255);
+    color: var(--color-2);
     flex: 1 1 auto;
     outline: none;
   }
 
   input::placeholder {
-    color: #B8ADD2;
+    color: var(--color-2);
     opacity: .8;
   }
 }
@@ -103,17 +123,15 @@ app-standard-button {
 
 p {
   color: rgb(31, 199, 212);
-
+  font-weight: 600;
+  line-height: 1.5;
+  font-size: 16px;
 }
 
 h5 {
   color: var(--color-1);
-}
-
-// utility---------
-html,
-section {
-  height: 100%;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 section {
