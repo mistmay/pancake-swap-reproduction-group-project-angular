@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SettingScreenLauncherService {
   renderer: Renderer2;
-  modalType: BehaviorSubject<'connect' | 'settings' | 'roi' | 'lottery'> = new BehaviorSubject<'connect' | 'settings' | 'roi' | 'lottery'>('settings');
+  modalType: BehaviorSubject<'connect' | 'settings' | 'roi' | 'lottery' | 'token'> = new BehaviorSubject<'connect' | 'settings' | 'roi' | 'lottery' | 'token'>('settings');
   showModal: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   showMoreWallet: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
@@ -26,7 +26,7 @@ export class SettingScreenLauncherService {
     return this.showMoreWallet.asObservable();
   }
 
-  openModal(type: 'connect' | 'settings' | 'roi' | 'lottery'): void {
+  openModal(type: 'connect' | 'settings' | 'roi' | 'lottery' | 'token'): void {
     this.modalType.next(type);
     this.showModal.next(true);
     this.renderer.addClass(document.body, 'scroll-disabled');

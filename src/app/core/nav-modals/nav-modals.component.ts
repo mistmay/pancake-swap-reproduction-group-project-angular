@@ -12,14 +12,14 @@ export class NavModalsComponent implements OnInit, OnDestroy {
   settingScreenTitle!: string;
   settingScreenTitleBackgroundType!: boolean;
   showFinal!: boolean;
-  modalType!: 'connect' | 'settings' | 'roi' | 'lottery';
+  modalType!: 'connect' | 'settings' | 'roi' | 'lottery' | 'token';
   @ViewChild('modal') modal!: ElementRef;
 
   constructor(private settingScreenLauncherService: SettingScreenLauncherService) { }
 
   ngOnInit(): void {
     this.subscription = this.settingScreenLauncherService.getModalType()
-      .subscribe((res: 'connect' | 'settings' | 'roi' | 'lottery') => {
+      .subscribe((res: 'connect' | 'settings' | 'roi' | 'lottery' | 'token') => {
         this.modalType = res;
         switch (this.modalType) {
           case 'connect':
@@ -39,6 +39,11 @@ export class NavModalsComponent implements OnInit, OnDestroy {
             break;
           case 'lottery':
             this.settingScreenTitle = 'Buy Tickets';
+            this.settingScreenTitleBackgroundType = true;
+            this.showFinal = true;
+            break;
+          case 'token':
+            this.settingScreenTitle = 'Select a Token';
             this.settingScreenTitleBackgroundType = true;
             this.showFinal = true;
             break;

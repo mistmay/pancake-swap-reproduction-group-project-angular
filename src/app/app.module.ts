@@ -17,6 +17,8 @@ import { RoiCalculatorComponent } from './core/nav-modals/components/roi-calcula
 import { LogInFormComponent } from './core/nav-modals/components/log-in-form/log-in-form.component';
 import { UserWalletDetailsComponent } from './core/nav-modals/components/user-wallet-details/user-wallet-details.component';
 import { LotteryFormComponent } from './core/nav-modals/components/lottery-form/lottery-form.component';
+import { SelectTokenComponent } from './core/nav-modals/components/select-token/select-token.component';
+import { TokenSearchModalPipe } from './pipes/token-search-modal.pipe';
 
 
 @NgModule({
@@ -34,6 +36,8 @@ import { LotteryFormComponent } from './core/nav-modals/components/lottery-form/
     LogInFormComponent,
     UserWalletDetailsComponent,
     LotteryFormComponent,
+    SelectTokenComponent,
+    TokenSearchModalPipe,
   ],
   imports: [
     BrowserModule,

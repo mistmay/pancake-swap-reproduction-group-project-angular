@@ -1,0 +1,21 @@
+<div
+  class="d-flex flex-column justify-content-between align-items-start setting-screen-padding setting-screen-first-section">
+  <input type="text" class="w-100" placeholder="Search Name" [(ngModel)]="searchedKey">
+</div>
+<div class="d-flex flex-column justify-content-between align-items-center setting-screen-second-section">
+  <div class="w-100 token-container" *ngIf="tokenList && tokenType !== undefined; else loading">
+    <div class="d-flex align-items-center gap-2 single-token"
+      *ngFor="let token of tokenList | tokenSearchModal:searchedKey" (click)="selectToken(token)">
+      <div class="circle">
+        <img [src]="token.image">
+      </div>
+      <div class="d-flex flex-column gap-1">
+        <h2>{{token.symbol | uppercase}}</h2>
+        <p>{{token.name | titlecase}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #loading>
+  <p class="text-danger fw-bold text-center">Loading</p>
+</ng-template>
