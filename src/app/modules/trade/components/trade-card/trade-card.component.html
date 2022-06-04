@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="input-cake">
-        <input type="number" placeholder="0.0">
+        <input type="number" min="0" placeholder="0.00" [(ngModel)]="inputNumber" (input)="convert()">
         <span></span>
       </div>
     </div>
@@ -38,7 +38,7 @@
         </div>
       </div>
       <div class="input-cake">
-        <div class="input">0.0</div>
+        <div class="input">{{result.toFixed(2)}}</div>
         <span></span>
       </div>
     </div>

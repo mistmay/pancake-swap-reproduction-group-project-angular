@@ -12,6 +12,8 @@ import { ConverterService } from 'src/app/services/converter.service';
 export class TradeCardComponent implements OnInit, OnDestroy {
   subscriptions: Subscription[] = [];
   tokenPairs!: [any, any] | undefined;
+  inputNumber: number = 0;
+  result: number = 0;
 
   constructor(private modalService: SettingScreenLauncherService, private api: CoingeckoApiService, private converter: ConverterService) { }
 
@@ -21,6 +23,7 @@ export class TradeCardComponent implements OnInit, OnDestroy {
     }));
     this.subscriptions.push(this.converter.getTokenPairsObservable().subscribe((res: [any, any] | undefined) => {
       this.tokenPairs = res;
+      this.convert();
     }));
   }
 
@@ -41,6 +44,13 @@ export class TradeCardComponent implements OnInit, OnDestroy {
   selectToken(type: 0 | 1): void {
     this.converter.tokenType.next(type);
     this.modalService.openModal('token');
+  }
+
+  convert(): void {
+    if (this.tokenPairs !== undefined) {
+      const conversionFactor: number = this.tokenPairs[0].current_price / this.tokenPairs[1].current_price;
+      this.result = this.inputNumber * conversionFactor;
+    }
   }
 
 }
